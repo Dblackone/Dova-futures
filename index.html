@@ -307,7 +307,7 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
      <div class="flex items-center justify-between h-20">
       <a href="/" id="navLogo" aria-label="Dova Futures Home" onclick="navigateTo('home'); return false;">
-       <img src="/assets/logo/DOVA Logo - W.png" onerror="this.onerror=null;this.src='/assets/logo/logo.png';" alt="Dova Futures Limited Logo" class="brand-logo">
+       <img src="/assets/logo/Dova%20logo%20W.png" onerror="this.onerror=null;this.src='/assets/logo/logo.png';" alt="Dova Futures Limited Logo" class="brand-logo">
       </a>
       <div class="desktop-nav hidden lg:flex items-center gap-8">
        <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('home'); return false;">Home</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('about'); return false;">About</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('services'); return false;">Services</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('projects'); return false;">Projects</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('process'); return false;">Process</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('why'); return false;">Why Us</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('contact'); return false;">Contact</a>
@@ -358,10 +358,8 @@
         <p class="text-gray-400 text-lg leading-relaxed mb-10">From initial concept through final handover, we manage every detail with precision, ensuring quality, transparency, and excellence at every stage.</p><button class="btn-secondary" onclick="navigateTo('about')">Learn More About Us</button>
        </div>
        <div class="relative">
-        <div class="aspect-square bg-gradient-to-br from-gray-900 to-black border border-white/10 flex items-center justify-center">
-         <svg viewbox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1" class="w-3/4 text-white/20">
-          <rect x="20" y="60" width="160" height="120" /> <polygon points="100,20 180,60 20,60" /> <rect x="40" y="100" width="30" height="40" /> <rect x="85" y="100" width="30" height="40" /> <rect x="130" y="100" width="30" height="40" /> <rect x="75" y="150" width="50" height="30" /> <line x1="20" y1="180" x2="0" y2="180" /> <line x1="180" y1="180" x2="200" y2="180" />
-         </svg>
+        <div class="aspect-square bg-gradient-to-br from-gray-900 to-black border border-white/10 overflow-hidden">
+         <img id="aboutProjectImage" src="/assets/projects/body-shop.jpg" alt="Dova Futures Project Image" class="w-full h-full object-cover" loading="lazy">
         </div>
         <div class="absolute -bottom-8 -right-8 w-32 h-32 border border-white/20"></div>
        </div>
@@ -1322,6 +1320,28 @@
     function toggleMobileMenu() {
       document.getElementById('mobileMenu').classList.toggle('active');
     }
+
+    // Random project image for "Building Tomorrow's Landmarks" section
+    function setRandomAboutProjectImage() {
+      const aboutImage = document.getElementById('aboutProjectImage');
+      if (!aboutImage) return;
+
+      const projectImages = [
+        '/assets/projects/body-shop.jpg',
+        '/assets/projects/palm-oil-drainage.jpg',
+        '/assets/projects/residential-duplex.jpg',
+        '/assets/projects/interior-renovation.jpg'
+      ];
+
+      const randomIndex = Math.floor(Math.random() * projectImages.length);
+      const selectedImage = projectImages[randomIndex];
+      const imageName = selectedImage.split('/').pop().replace(/\.[^/.]+$/, '').replace(/-/g, ' ');
+
+      aboutImage.src = selectedImage;
+      aboutImage.alt = `Dova Futures Project Image - ${imageName}`;
+    }
+
+    setRandomAboutProjectImage();
 
     // Project filter functionality
     document.querySelectorAll('.project-filter').forEach(btn => {
