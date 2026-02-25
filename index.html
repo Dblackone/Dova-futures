@@ -127,6 +127,21 @@
       height: 100%;
       object-fit: cover;
     }
+
+    .brand-logo {
+      height: 44px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      display: block;
+    }
+
+    @media (max-width: 640px) {
+      .brand-logo {
+        height: 36px;
+        max-width: 150px;
+      }
+    }
     
     .project-card::before {
       content: '';
@@ -291,7 +306,9 @@
    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
      <div class="flex items-center justify-between h-20">
-      <a href="/" class="font-display text-2xl tracking-wider" id="navLogo" onclick="navigateTo('home'); return false;">DOVA FUTURES</a>
+      <a href="/" id="navLogo" aria-label="Dova Futures Home" onclick="navigateTo('home'); return false;">
+       <img src="/assets/logo/Dova%20logo%20W.png" onerror="this.onerror=null;this.src='/assets/logo/logo.png';" alt="Dova Futures Limited Logo" class="brand-logo">
+      </a>
       <div class="desktop-nav hidden lg:flex items-center gap-8">
        <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('home'); return false;">Home</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('about'); return false;">About</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('services'); return false;">Services</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('projects'); return false;">Projects</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('process'); return false;">Process</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('why'); return false;">Why Us</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('contact'); return false;">Contact</a>
       </div>
@@ -1422,10 +1439,7 @@
 
     // Element SDK Integration
     async function onConfigChange(config) {
-      // Update company name in nav and footer
-      const navLogo = document.getElementById('navLogo');
-      if (navLogo) navLogo.textContent = config.company_name || defaultConfig.company_name;
-      
+      // Update company name in footer (nav uses fixed brand logo image)
       const footerLogo = document.getElementById('footerLogo');
       if (footerLogo) footerLogo.textContent = (config.company_name || defaultConfig.company_name).toUpperCase();
 
