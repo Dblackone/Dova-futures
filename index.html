@@ -6,6 +6,17 @@
   <title>Dova Futures Limited | Premium Design–Build Construction in Nigeria</title>
   <meta name="description" content="Dova Futures Limited is a premier design-build construction company delivering integrated architectural planning, full-scale construction, and premium interior finishing across Nigeria.">
   <meta name="keywords" content="design-build construction, architecture, construction company Nigeria, Lagos, premium construction">
+  <link rel="canonical" href="https://dovafutures.com/">
+  <link rel="icon" type="image/png" href="/assets/logo/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dova Futures Limited | Premium Design?Build Construction in Nigeria">
+  <meta property="og:description" content="Dova Futures Limited is a premier design-build construction company delivering integrated architectural planning, full-scale construction, and premium interior finishing across Nigeria.">
+  <meta property="og:url" content="https://dovafutures.com/">
+  <meta property="og:image" content="https://dovafutures.com/assets/logo/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dova Futures Limited | Premium Design?Build Construction in Nigeria">
+  <meta name="twitter:description" content="Integrated design-build construction and premium interior finishing across Nigeria.">
+  <meta name="twitter:image" content="https://dovafutures.com/assets/logo/logo.png">
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="/_sdk/element_sdk.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,6 +118,14 @@
       position: relative;
       overflow: hidden;
       aspect-ratio: 4/3;
+    }
+
+    .project-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     
     .project-card::before {
@@ -272,9 +291,9 @@
    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
      <div class="flex items-center justify-between h-20">
-      <a href="#" class="font-display text-2xl tracking-wider" id="navLogo" onclick="navigateTo('home'); return false;">DOVA FUTURES</a>
+      <a href="/" class="font-display text-2xl tracking-wider" id="navLogo" onclick="navigateTo('home'); return false;">DOVA FUTURES</a>
       <div class="desktop-nav hidden lg:flex items-center gap-8">
-       <a href="#" class="nav-link text-sm tracking-wide" onclick="navigateTo('home'); return false;">Home</a> <a href="#" class="nav-link text-sm tracking-wide" onclick="navigateTo('about'); return false;">About</a> <a href="#" class="nav-link text-sm tracking-wide" onclick="navigateTo('services'); return false;">Services</a> <a href="#" class="nav-link text-sm tracking-wide" onclick="navigateTo('projects'); return false;">Projects</a> <a href="#" class="nav-link text-sm tracking-wide" onclick="navigateTo('process'); return false;">Process</a> <a href="#" class="nav-link text-sm tracking-wide" onclick="navigateTo('why'); return false;">Why Us</a> <a href="#" class="nav-link text-sm tracking-wide" onclick="navigateTo('contact'); return false;">Contact</a>
+       <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('home'); return false;">Home</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('about'); return false;">About</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('services'); return false;">Services</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('projects'); return false;">Projects</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('process'); return false;">Process</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('why'); return false;">Why Us</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('contact'); return false;">Contact</a>
       </div>
       <div class="hamburger" onclick="toggleMobileMenu()">
        <span></span> <span></span> <span></span>
@@ -284,7 +303,7 @@
    </nav><!-- Mobile Menu -->
    <div class="mobile-menu" id="mobileMenu">
     <div class="flex flex-col items-center gap-8">
-     <a href="#" class="font-display text-3xl tracking-wider" onclick="navigateTo('home'); toggleMobileMenu(); return false;">Home</a> <a href="#" class="font-display text-3xl tracking-wider" onclick="navigateTo('about'); toggleMobileMenu(); return false;">About</a> <a href="#" class="font-display text-3xl tracking-wider" onclick="navigateTo('services'); toggleMobileMenu(); return false;">Services</a> <a href="#" class="font-display text-3xl tracking-wider" onclick="navigateTo('projects'); toggleMobileMenu(); return false;">Projects</a> <a href="#" class="font-display text-3xl tracking-wider" onclick="navigateTo('process'); toggleMobileMenu(); return false;">Process</a> <a href="#" class="font-display text-3xl tracking-wider" onclick="navigateTo('why'); toggleMobileMenu(); return false;">Why Us</a> <a href="#" class="font-display text-3xl tracking-wider" onclick="navigateTo('contact'); toggleMobileMenu(); return false;">Contact</a>
+     <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('home'); toggleMobileMenu(); return false;">Home</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('about'); toggleMobileMenu(); return false;">About</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('services'); toggleMobileMenu(); return false;">Services</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('projects'); toggleMobileMenu(); return false;">Projects</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('process'); toggleMobileMenu(); return false;">Process</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('why'); toggleMobileMenu(); return false;">Why Us</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('contact'); toggleMobileMenu(); return false;">Contact</a>
     </div>
    </div><!-- HOME PAGE -->
    <div id="page-home" class="page active">
@@ -471,64 +490,57 @@
        <h2 class="font-display text-5xl md:text-6xl">Featured Projects</h2>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-       <!-- Project 1 -->
-       <div class="project-card bg-gradient-to-br from-gray-800 to-gray-900">
-        <svg class="absolute inset-0 w-full h-full p-8 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <rect x="50" y="50" width="300" height="300" /> <line x1="50" y1="100" x2="350" y2="100" /> <line x1="50" y1="150" x2="350" y2="150" /> <line x1="50" y1="200" x2="350" y2="200" /> <line x1="50" y1="250" x2="350" y2="250" /> <line x1="50" y1="300" x2="350" y2="300" /> <line x1="100" y1="50" x2="100" y2="350" /> <line x1="150" y1="50" x2="150" y2="350" /> <line x1="200" y1="50" x2="200" y2="350" /> <line x1="250" y1="50" x2="250" y2="350" /> <line x1="300" y1="50" x2="300" y2="350" />
-        </svg>
-        <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl">Residential Interior Fit-Out</h3>
-         <p class="text-gray-500 text-sm">Lagos, Nigeria</p>
-        </div>
-       </div><!-- Project 2 -->
-       <div class="project-card bg-gradient-to-br from-gray-700 to-gray-800">
-        <svg class="absolute inset-0 w-full h-full p-8 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <rect x="15" y="20" width="70" height="70" /> <line x1="15" y1="35" x2="85" y2="35" /> <line x1="15" y1="50" x2="85" y2="50" /> <line x1="15" y1="65" x2="85" y2="65" /> <line x1="15" y1="80" x2="85" y2="80" /> <line x1="35" y1="20" x2="35" y2="90" /> <line x1="50" y1="20" x2="50" y2="90" /> <line x1="65" y1="20" x2="65" y2="90" />
-        </svg>
+       <!-- PROJECT: The Body Shop Retail Fit-Out -->
+       <div class="project-card">
+        <img src="/assets/projects/body-shop.jpg" alt="The Body Shop Retail Fit-Out - Ikeja City Mall" class="project-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Commercial</p>
          <h3 class="font-display text-2xl">The Body Shop Retail Fit-Out</h3>
          <p class="text-gray-500 text-sm">Ikeja, Lagos</p>
         </div>
-       </div><!-- Project 3 -->
-       <div class="project-card bg-gradient-to-br from-gray-900 to-black">
-        <svg class="absolute inset-0 w-full h-full p-8 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <polygon points="50,15 85,45 85,90 15,90 15,45" /> <rect x="35" y="60" width="30" height="30" /> <circle cx="50" cy="35" r="10" />
-        </svg>
+       </div>
+       <!-- PROJECT: Palm Oil Drainage Infrastructure -->
+       <div class="project-card">
+        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Palm Oil Drainage Infrastructure Project" class="project-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl">Landscape Development Project</h3>
+         <h3 class="font-display text-2xl">Palm Oil Drainage Infrastructure</h3>
          <p class="text-gray-500 text-sm">Akure, Ondo State</p>
         </div>
-       </div><!-- Project 4 -->
-       <div class="project-card bg-gradient-to-br from-gray-800 to-gray-900">
-        <svg class="absolute inset-0 w-full h-full p-8 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <rect x="10" y="40" width="35" height="50" /> <rect x="55" y="25" width="35" height="65" /> <rect x="15" y="50" width="10" height="15" /> <rect x="30" y="50" width="10" height="15" /> <rect x="60" y="35" width="10" height="15" /> <rect x="75" y="35" width="10" height="15" />
-        </svg>
+       </div>
+       <!-- PROJECT: Residential Duplex Development -->
+       <div class="project-card">
+        <img src="/assets/projects/residential-duplex.jpg" alt="Residential Duplex Development" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Institutional</p>
+         <p class="text-gray-400 text-sm mb-1">Residential</p>
+         <h3 class="font-display text-2xl">Residential Duplex Development</h3>
+         <p class="text-gray-500 text-sm">Lagos, Nigeria</p>
+        </div>
+       </div>
+       <!-- PROJECT: Interior Renovation Project -->
+       <div class="project-card">
+        <img src="/assets/projects/interior-renovation.jpg" alt="Premium Interior Renovation Project" class="project-image">
+        <div class="content">
+         <p class="text-gray-400 text-sm mb-1">Interiors</p>
          <h3 class="font-display text-2xl">Interior Renovation Project</h3>
          <p class="text-gray-500 text-sm">Ekiti &amp; Lagos States</p>
         </div>
-       </div><!-- Project 5 -->
-       <div class="project-card bg-gradient-to-br from-gray-700 to-gray-800">
-        <svg class="absolute inset-0 w-full h-full p-8 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <rect x="20" y="30" width="60" height="50" rx="5" /> <rect x="30" y="40" width="15" height="15" /> <rect x="55" y="40" width="15" height="15" /> <rect x="40" y="65" width="20" height="15" /> <circle cx="50" cy="20" r="8" />
-        </svg>
+       </div>
+       <!-- PROJECT: Market Infrastructure Development -->
+       <div class="project-card">
+        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Market Infrastructure Development" class="project-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Commercial</p>
          <h3 class="font-display text-2xl">Market Infrastructure Development</h3>
          <p class="text-gray-500 text-sm">Edo State</p>
         </div>
-       </div><!-- Project 6 -->
-       <div class="project-card bg-gradient-to-br from-gray-900 to-black">
-        <svg class="absolute inset-0 w-full h-full p-8 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <path d="M10 80 L30 50 L50 65 L70 35 L90 55" /> <rect x="10" y="80" width="80" height="10" /> <circle cx="30" cy="50" r="3" /> <circle cx="50" cy="65" r="3" /> <circle cx="70" cy="35" r="3" />
-        </svg>
+       </div>
+       <!-- PROJECT: Structural Construction Works -->
+       <div class="project-card">
+        <img src="/assets/projects/residential-duplex.jpg" alt="Structural Construction Works" class="project-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl">Structural Construction</h3>
+         <h3 class="font-display text-2xl">Structural Construction Works</h3>
          <p class="text-gray-500 text-sm">Multi-State</p>
         </div>
        </div>
@@ -603,10 +615,10 @@
        <button class="bg-black text-white px-8 py-4 font-semibold hover:bg-gray-800 transition-colors" onclick="navigateTo('contact')"> Start Your Project </button>
       </div>
       <div class="flex flex-col sm:flex-row justify-center gap-8 text-gray-600">
-       <a href="tel:+2348000000000" class="flex items-center justify-center gap-2 hover:text-black transition-colors" id="ctaPhone">
+       <a href="tel:+2348163675439" class="flex items-center justify-center gap-2 hover:text-black transition-colors" id="ctaPhone">
         <svg class="w-5 h-5" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-        </svg><span>+234 800 000 0000</span> </a> <a href="mailto:info@dovafutures.com" class="flex items-center justify-center gap-2 hover:text-black transition-colors" id="ctaEmail">
+        </svg><span>+234 816 367 5439</span> </a> <a href="mailto:info@dovafutures.com" class="flex items-center justify-center gap-2 hover:text-black transition-colors" id="ctaEmail">
         <svg class="w-5 h-5" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /> <polyline points="22,6 12,13 2,6" />
         </svg><span>info@dovafutures.com</span> </a>
@@ -809,94 +821,85 @@
        <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter active" data-filter="all">All</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="residential">Residential</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="commercial">Commercial</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="infrastructure">Infrastructure</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="interiors">Interiors</button>
       </div><!-- Projects Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
-       <div class="project-card bg-gradient-to-br from-gray-800 to-gray-900 project-item" data-category="residential">
-        <svg class="absolute inset-0 w-full h-full p-12 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <rect x="10" y="40" width="80" height="50" /> <polygon points="50,15 90,40 10,40" /> <rect x="20" y="55" width="20" height="20" /> <rect x="60" y="55" width="20" height="20" /> <rect x="40" y="70" width="20" height="20" />
-        </svg>
-        <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl mb-2">Luxury Villa Estate</h3>
-         <p class="text-gray-500 text-sm">5,000 sqm | Lagos</p>
-        </div>
-       </div>
-       <div class="project-card bg-gradient-to-br from-gray-700 to-gray-800 project-item" data-category="commercial">
-        <svg class="absolute inset-0 w-full h-full p-12 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <rect x="20" y="15" width="60" height="75" /> <line x1="20" y1="30" x2="80" y2="30" /> <line x1="20" y1="45" x2="80" y2="45" /> <line x1="20" y1="60" x2="80" y2="60" /> <line x1="20" y1="75" x2="80" y2="75" /> <line x1="40" y1="15" x2="40" y2="90" /> <line x1="60" y1="15" x2="60" y2="90" />
-        </svg>
+       <!-- PROJECT: The Body Shop Retail Fit-Out -->
+       <div class="project-card project-item" data-category="commercial">
+        <img src="/assets/projects/body-shop.jpg" alt="The Body Shop Retail Fit-Out - Ikeja City Mall" class="project-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Commercial</p>
-         <h3 class="font-display text-2xl mb-2">Corporate Headquarters</h3>
-         <p class="text-gray-500 text-sm">12,000 sqm | Abuja</p>
+         <h3 class="font-display text-2xl mb-2">The Body Shop Retail Fit-Out</h3>
+         <p class="text-gray-500 text-sm">Ikeja, Lagos</p>
         </div>
        </div>
-       <div class="project-card bg-gradient-to-br from-gray-900 to-black project-item" data-category="infrastructure">
-        <svg class="absolute inset-0 w-full h-full p-12 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <path d="M10 80 Q30 60 50 65 Q70 70 90 50" stroke-width="1" /> <line x1="25" y1="80" x2="25" y2="62" /> <line x1="50" y1="80" x2="50" y2="65" /> <line x1="75" y1="80" x2="75" y2="58" /> <rect x="10" y="80" width="80" height="10" />
-        </svg>
+       <!-- PROJECT: Palm Oil Drainage Infrastructure -->
+       <div class="project-card project-item" data-category="infrastructure">
+        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Palm Oil Drainage Infrastructure Project" class="project-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl mb-2">Highway Bridge</h3>
-         <p class="text-gray-500 text-sm">500m span | Rivers</p>
+         <h3 class="font-display text-2xl mb-2">Palm Oil Drainage Infrastructure</h3>
+         <p class="text-gray-500 text-sm">Akure, Ondo State</p>
         </div>
        </div>
-       <div class="project-card bg-gradient-to-br from-gray-800 to-gray-900 project-item" data-category="interiors">
-        <svg class="absolute inset-0 w-full h-full p-12 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <rect x="15" y="20" width="70" height="60" /> <rect x="20" y="25" width="30" height="20" /> <rect x="55" y="25" width="25" height="50" /> <rect x="20" y="50" width="30" height="25" /> <circle cx="67" cy="65" r="8" />
-        </svg>
-        <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Interiors</p>
-         <h3 class="font-display text-2xl mb-2">Executive Office Suite</h3>
-         <p class="text-gray-500 text-sm">800 sqm | Lagos</p>
-        </div>
-       </div>
-       <div class="project-card bg-gradient-to-br from-gray-700 to-gray-800 project-item" data-category="residential">
-        <svg class="absolute inset-0 w-full h-full p-12 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <rect x="15" y="35" width="30" height="55" /> <rect x="55" y="25" width="30" height="65" /> <rect x="20" y="45" width="10" height="15" /> <rect x="60" y="35" width="10" height="15" /> <rect x="75" y="35" width="10" height="15" />
-        </svg>
+       <!-- PROJECT: Residential Duplex Development -->
+       <div class="project-card project-item" data-category="residential">
+        <img src="/assets/projects/residential-duplex.jpg" alt="Residential Duplex Development" class="project-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl mb-2">Duplex Development</h3>
-         <p class="text-gray-500 text-sm">3,200 sqm | Port Harcourt</p>
+         <h3 class="font-display text-2xl mb-2">Residential Duplex Development</h3>
+         <p class="text-gray-500 text-sm">Lagos, Nigeria</p>
         </div>
        </div>
-       <div class="project-card bg-gradient-to-br from-gray-900 to-black project-item" data-category="commercial">
-        <svg class="absolute inset-0 w-full h-full p-12 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <rect x="10" y="30" width="35" height="60" /> <rect x="55" y="20" width="35" height="70" /> <path d="M10 30 L27 15 L45 30" /> <path d="M55 20 L72 5 L90 20" />
-        </svg>
+       <!-- PROJECT: Interior Renovation Project -->
+       <div class="project-card project-item" data-category="interiors">
+        <img src="/assets/projects/interior-renovation.jpg" alt="Interior Renovation Project" class="project-image">
+        <div class="content">
+         <p class="text-gray-400 text-sm mb-1">Interiors</p>
+         <h3 class="font-display text-2xl mb-2">Interior Renovation Project</h3>
+         <p class="text-gray-500 text-sm">Ekiti &amp; Lagos States</p>
+        </div>
+       </div>
+       <!-- PROJECT: Residential Estate Build -->
+       <div class="project-card project-item" data-category="residential">
+        <img src="/assets/projects/residential-duplex.jpg" alt="Residential Estate Build" class="project-image">
+        <div class="content">
+         <p class="text-gray-400 text-sm mb-1">Residential</p>
+         <h3 class="font-display text-2xl mb-2">Residential Estate Build</h3>
+         <p class="text-gray-500 text-sm">Port Harcourt</p>
+        </div>
+       </div>
+       <!-- PROJECT: Commercial Fit-Out Program -->
+       <div class="project-card project-item" data-category="commercial">
+        <img src="/assets/projects/body-shop.jpg" alt="Commercial Fit-Out Program" class="project-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Commercial</p>
-         <h3 class="font-display text-2xl mb-2">Shopping Complex</h3>
-         <p class="text-gray-500 text-sm">25,000 sqm | Kano</p>
+         <h3 class="font-display text-2xl mb-2">Commercial Fit-Out Program</h3>
+         <p class="text-gray-500 text-sm">Lagos Mainland</p>
         </div>
        </div>
-       <div class="project-card bg-gradient-to-br from-gray-800 to-gray-900 project-item" data-category="infrastructure">
-        <svg class="absolute inset-0 w-full h-full p-12 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <ellipse cx="50" cy="50" rx="40" ry="25" /> <line x1="10" y1="50" x2="90" y2="50" /> <path d="M30 50 L30 80 M50 50 L50 80 M70 50 L70 80" /> <rect x="20" y="80" width="60" height="10" />
-        </svg>
+       <!-- PROJECT: Drainage Upgrade Phase II -->
+       <div class="project-card project-item" data-category="infrastructure">
+        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Drainage Upgrade Phase II" class="project-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl mb-2">Sports Stadium</h3>
-         <p class="text-gray-500 text-sm">45,000 capacity | Abuja</p>
+         <h3 class="font-display text-2xl mb-2">Drainage Upgrade Phase II</h3>
+         <p class="text-gray-500 text-sm">Southwest Nigeria</p>
         </div>
        </div>
-       <div class="project-card bg-gradient-to-br from-gray-700 to-gray-800 project-item" data-category="interiors">
-        <svg class="absolute inset-0 w-full h-full p-12 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <rect x="10" y="25" width="80" height="55" /> <rect x="15" y="30" width="35" height="25" /> <rect x="55" y="30" width="30" height="45" /> <rect x="15" y="60" width="35" height="15" />
-        </svg>
+       <!-- PROJECT: Premium Office Interiors -->
+       <div class="project-card project-item" data-category="interiors">
+        <img src="/assets/projects/interior-renovation.jpg" alt="Premium Office Interiors" class="project-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Interiors</p>
-         <h3 class="font-display text-2xl mb-2">Hotel Lobby Renovation</h3>
-         <p class="text-gray-500 text-sm">1,500 sqm | Lagos</p>
+         <h3 class="font-display text-2xl mb-2">Premium Office Interiors</h3>
+         <p class="text-gray-500 text-sm">Victoria Island, Lagos</p>
         </div>
        </div>
-       <div class="project-card bg-gradient-to-br from-gray-900 to-black project-item" data-category="residential">
-        <svg class="absolute inset-0 w-full h-full p-12 text-white/10" viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-         <rect x="25" y="20" width="50" height="70" /> <line x1="25" y1="35" x2="75" y2="35" /> <line x1="25" y1="50" x2="75" y2="50" /> <line x1="25" y1="65" x2="75" y2="65" /> <line x1="25" y1="80" x2="75" y2="80" /> <rect x="35" y="25" width="10" height="8" /> <rect x="55" y="25" width="10" height="8" />
-        </svg>
+       <!-- PROJECT: Multi-Unit Residential Complex -->
+       <div class="project-card project-item" data-category="residential">
+        <img src="/assets/projects/residential-duplex.jpg" alt="Multi-Unit Residential Complex" class="project-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl mb-2">Apartment Tower</h3>
-         <p class="text-gray-500 text-sm">48 units | Lagos</p>
+         <h3 class="font-display text-2xl mb-2">Multi-Unit Residential Complex</h3>
+         <p class="text-gray-500 text-sm">Lekki, Lagos</p>
         </div>
        </div>
       </div>
@@ -1180,7 +1183,7 @@
            </svg>
           </div>
           <div>
-           <h3 class="font-display text-xl mb-2">Phone</h3><a href="tel:+2348000000000" class="text-gray-400 hover:text-white transition-colors" id="contactPhone">+234 800 000 0000</a>
+           <h3 class="font-display text-xl mb-2">Phone</h3><a href="tel:+2348163675439" class="text-gray-400 hover:text-white transition-colors" id="contactPhone">+234 816 367 5439</a>
           </div>
          </div>
          <div class="flex items-start gap-6">
@@ -1214,13 +1217,13 @@
         <div class="mt-8">
          <p class="text-gray-500 text-sm mb-6">Connect With Us</p>
          <div class="flex gap-4">
-          <a href="#" class="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+          <a href="https://wa.me/2348163675439" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors" aria-label="WhatsApp">
            <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
             <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-           </svg></a> <a href="#" class="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+           </svg></a> <a href="https://www.instagram.com/dova_futures?igsh=MXF0djh4N2JzOTBtcA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors" aria-label="Instagram">
            <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-           </svg></a> <a href="#" class="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+           </svg></a> <a href="https://www.tiktok.com/@dovafutures?_r=1&_t=ZS-94C8QLyj9FJ" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors" aria-label="TikTok">
            <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
            </svg></a>
@@ -1241,15 +1244,23 @@
           <label for="email" class="block text-sm text-gray-400 mb-2">Email Address</label> <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
          </div>
          <div>
-          <label for="phone" class="block text-sm text-gray-400 mb-2">Phone Number</label> <input type="tel" id="phone" name="phone" class="form-input" placeholder="+234 000 000 0000">
+          <label for="phone" class="block text-sm text-gray-400 mb-2">Phone Number</label> <input type="tel" id="phone" name="phone" class="form-input" placeholder="+234 816 367 5439">
          </div>
          <div>
           <label for="projectType" class="block text-sm text-gray-400 mb-2">Project Type</label> <select id="projectType" name="projectType" class="form-input"> <option value="">Select project type</option> <option value="residential">Residential</option> <option value="commercial">Commercial</option> <option value="industrial">Industrial</option> <option value="infrastructure">Infrastructure</option> <option value="interior">Interior Finishing</option> <option value="other">Other</option> </select>
          </div>
          <div>
-          <label for="message" class="block text-sm text-gray-400 mb-2">Project Details</label> <textarea id="message" name="message" rows="5" class="form-input resize-none" placeholder="Tell us about your project..."></textarea>
-         </div><button type="submit" class="btn-primary w-full"> Send Message </button>
-         <p id="formSuccess" class="text-green-400 text-center hidden">Thank you! Your message has been sent. We'll be in touch soon.</p>
+          <label for="message" class="block text-sm text-gray-400 mb-2">Project Details</label> <textarea id="message" name="message" rows="5" class="form-input resize-none" placeholder="Tell us about your project..." required></textarea>
+         </div>
+         <div class="hidden" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+         </div>
+         <div class="grid sm:grid-cols-2 gap-4">
+          <button type="submit" class="btn-primary w-full" id="sendEmailButton">Send Email</button>
+          <button type="button" class="btn-secondary w-full" id="sendWhatsAppButton">Send via WhatsApp</button>
+         </div>
+         <p id="formStatus" class="text-center hidden"></p>
         </form>
        </div>
       </div>
@@ -1272,7 +1283,7 @@
       hero_headline: 'Designed With Intent. Built With Precision.',
       hero_subtext: 'Integrated architectural design and construction excellence — engineered for flawless execution.',
       ceo_name: 'Vollmann Akarakiri',
-      phone_number: '+234 800 000 0000',
+      phone_number: '+234 816 367 5439',
       email_address: 'info@dovafutures.com',
       background_color: '#000000',
       surface_color: '#1a1a1a',
@@ -1313,14 +1324,101 @@
     });
 
     // Contact form handler
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('formSuccess').classList.remove('hidden');
-      this.reset();
-      setTimeout(() => {
-        document.getElementById('formSuccess').classList.add('hidden');
-      }, 5000);
-    });
+    const CONTACT_API_ENDPOINT = '/api/contact';
+    const WHATSAPP_URL = 'https://wa.me/2348163675439';
+
+    function setFormStatus(message, type = 'success') {
+      const statusEl = document.getElementById('formStatus');
+      statusEl.textContent = message;
+      statusEl.classList.remove('hidden', 'text-green-400', 'text-red-400');
+      statusEl.classList.add(type === 'success' ? 'text-green-400' : 'text-red-400');
+    }
+
+    function getContactFormData() {
+      const form = document.getElementById('contactForm');
+      return {
+        firstName: form.firstName.value.trim(),
+        lastName: form.lastName.value.trim(),
+        email: form.email.value.trim(),
+        phone: form.phone.value.trim(),
+        projectType: form.projectType.value.trim(),
+        message: form.message.value.trim(),
+        website: form.website.value.trim()
+      };
+    }
+
+    function validateContactPayload(payload) {
+      if (!payload.firstName || !payload.lastName || !payload.email || !payload.projectType || !payload.message) {
+        return 'Please complete all required fields.';
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(payload.email)) {
+        return 'Please enter a valid email address.';
+      }
+      return '';
+    }
+
+    async function handleEmailSend(event) {
+      event.preventDefault();
+      const form = document.getElementById('contactForm');
+      const payload = getContactFormData();
+      const validationError = validateContactPayload(payload);
+
+      if (validationError) {
+        setFormStatus(validationError, 'error');
+        return;
+      }
+
+      const sendButton = document.getElementById('sendEmailButton');
+      sendButton.disabled = true;
+      sendButton.textContent = 'Sending...';
+
+      try {
+        const response = await fetch(CONTACT_API_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || 'Failed to send message.');
+        }
+
+        setFormStatus('Thank you! Your message has been sent. We will be in touch soon.', 'success');
+        form.reset();
+      } catch (error) {
+        console.error('Contact form submission error:', error);
+        setFormStatus('We could not send your message at the moment. Please try again shortly.', 'error');
+      } finally {
+        sendButton.disabled = false;
+        sendButton.textContent = 'Send Email';
+      }
+    }
+
+    function handleWhatsAppSend() {
+      const payload = getContactFormData();
+      const validationError = validateContactPayload(payload);
+
+      if (validationError) {
+        setFormStatus(validationError, 'error');
+        return;
+      }
+
+      const fullName = `${payload.firstName} ${payload.lastName}`.trim();
+      const whatsappMessage = [
+        'Hello Dova Futures,',
+        `My name is ${fullName}.`,
+        `Project Type: ${payload.projectType}.`,
+        `Details: ${payload.message}`
+      ].join('\\n');
+
+      const whatsappLink = `${WHATSAPP_URL}?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappLink, '_blank', 'noopener,noreferrer');
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', handleEmailSend);
+    document.getElementById('sendWhatsAppButton').addEventListener('click', handleWhatsAppSend);
 
     // Element SDK Integration
     async function onConfigChange(config) {
@@ -1452,3 +1550,4 @@
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d2a56fb23fbf52d',t:'MTc3MTg4NzYzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
