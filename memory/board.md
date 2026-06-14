@@ -21,9 +21,7 @@ _(empty)_
 _(empty)_
 
 ## Done (pending merge approval)
-| Card | Owner | Branch | Notes |
-|------|-------|--------|-------|
-| **HERO-01** Build before/after reveal component | @build/forge | `feat/forge/hero-reveal` | All 10 AC passed. ✅ APPROVED by @qa/vera 2026-06-14 |
+_(empty)_
 
 ## Merged ✅
-_(empty)_
+- 2026-06-14 — **HERO-01** before/after hero reveal slider — by @build/forge — verified @qa/vera ✅ — merged to main (PR #3)

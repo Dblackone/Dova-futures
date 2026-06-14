@@ -1,21 +1,22 @@
 # status.md — Current Snapshot
 
-**Last updated:** 2026-06-14 — bootstrap run
+**Last updated:** 2026-06-14 — post HERO-01 merge
 **Health:** 🟢 on track
 
 ## Now
-- Loop Engineering + Agent Team scaffold installed and pushed.
-- Planning hero before/after reveal feature.
+- Hero before/after reveal is live on `main` (PR #3 merged).
+- HERO-02 (asset documentation) still in backlog — low priority.
 
 ## Recently done (last 3)
-- Bootstrapped loop-engineering-kit into repo (CLAUDE.md, TEAM.md, context/, memory/, agents/)
-- Filled context/01-build-steps.md and context/02-architecture.md for Dova Futures
-- Applied token-economy model tiers to all agents
+- HERO-01 built by @build/forge, verified by @qa/vera ✅, merged to main
+- Loop Engineering + Agent Team scaffold bootstrapped into repo
+- context/ filled with Dova Futures project specifics
 
 ## Open / blocked
-- Need before/after image pairs (raw Revit/sketch + final render) — using placeholders until user supplies real assets.
+- Real before/after image pairs needed (higher-res Revit screenshots + final renders). Current placeholders: `assets/projects/ado-hall/before.jpg` and `after.png`.
+- No test suite yet.
 
 ## Notes for the next run
-- Project is a Node/Express static site deployed on Render.
-- No test suite yet. Manual curl smoke-test for /api/contact.
-- Hero reveal is a pure frontend change: index.html only, no new deps.
+- Render will auto-deploy from `main` — hero reveal is live.
+- To swap images: replace `assets/projects/ado-hall/before.jpg` and `after.png`, or update the `src` paths in `#heroReveal` in `index.html`.
+- Next objective: TBD — ask owner.
