@@ -110,12 +110,102 @@
     }
     
     .grid-pattern {
-      background-image: 
+      background-image:
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
       background-size: 60px 60px;
     }
-    
+
+    /* Hero Reveal Slider */
+    #heroReveal {
+      position: relative;
+    }
+
+    .reveal-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .reveal-after {
+      z-index: 1;
+    }
+
+    .reveal-before-panel {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .reveal-before {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .reveal-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: 3;
+      transform: translateX(-50%);
+      cursor: ew-resize;
+    }
+
+    .reveal-line {
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      left: -1px;
+    }
+
+    .reveal-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 20px;
+      z-index: 4;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .reveal-label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .reveal-label-left {
+      right: calc(100% + 16px);
+    }
+
+    .reveal-label-right {
+      left: calc(100% + 16px);
+    }
+
     .project-card {
       position: relative;
       overflow: hidden;
@@ -329,9 +419,21 @@
    <div id="page-home" class="page active">
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center relative grid-pattern">
-     <!-- Project Image Background -->
-     <div class="absolute inset-0 overflow-hidden">
-      <img id="heroProjectImage" src="/assets/projects/body-shop.jpg" alt="Dova Futures Project" class="w-full h-full object-cover opacity-50">
+     <!-- Before/After Hero Reveal -->
+     <div id="heroReveal" class="absolute inset-0 overflow-hidden" style="--split: 50%">
+      <!-- After Image (full width, clipped to right of split) -->
+      <img class="reveal-img reveal-after" src="/assets/projects/ado-hall/after.png" alt="Dova Futures - Rendered" style="opacity: 0.65">
+      <!-- Before Image (full width, clipped to left of split) -->
+      <div class="reveal-before-panel" style="clip-path: inset(0 calc(100% - var(--split)) 0 0)">
+       <img class="reveal-img reveal-before" src="/assets/projects/ado-hall/before.jpg" alt="Dova Futures - Draft" style="opacity: 0.5">
+      </div>
+      <!-- Divider line + handle + labels -->
+      <div class="reveal-divider" style="left: var(--split)">
+       <div class="reveal-line"></div>
+       <div class="reveal-handle">⇔</div>
+       <span class="reveal-label reveal-label-left">Draft</span>
+       <span class="reveal-label reveal-label-right">Render</span>
+      </div>
      </div>
      <div class="absolute inset-0 bg-gradient-to-br from-black via-black/75 to-black/80"></div>
      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32">
@@ -1323,21 +1425,24 @@
 
     setRandomAboutProjectImage();
 
-    // Random project image for hero section
-    function setRandomHeroImage() {
-      const heroImage = document.getElementById('heroProjectImage');
-      if (!heroImage) return;
-      const projectImages = [
-        '/assets/projects/body-shop.jpg',
-        '/assets/projects/palm-oil-drainage.jpg',
-        '/assets/projects/residential-duplex.jpg',
-        '/assets/projects/interior-renovation.jpg'
-      ];
-      const randomIndex = Math.floor(Math.random() * projectImages.length);
-      heroImage.src = projectImages[randomIndex];
-    }
+    // Hero reveal slider initialization
+    const reveal = document.getElementById('heroReveal');
+    if (reveal) {
+      const setSplit = (x) => {
+        const rect = reveal.getBoundingClientRect();
+        const pct = Math.min(Math.max((x - rect.left) / rect.width * 100, 5), 95);
+        reveal.style.setProperty('--split', pct + '%');
+      };
 
-    setRandomHeroImage();
+      // Desktop: mousemove to follow cursor
+      reveal.addEventListener('mousemove', e => setSplit(e.clientX));
+
+      // Mobile: touch drag
+      reveal.addEventListener('touchmove', e => {
+        e.preventDefault();
+        setSplit(e.touches[0].clientX);
+      }, { passive: false });
+    }
 
     // Project filter functionality
     document.querySelectorAll('.project-filter').forEach(btn => {
