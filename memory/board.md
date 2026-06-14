@@ -1,36 +1,28 @@
 # board.md — Team Board (shared coordination)
 
-> The office. Agents can't talk to each other, so they coordinate HERE. Read the
-> board before acting; write the board after. One card per task. Every card is
-> signed with an owner callsign and carries its branch. WIP limit: max 3 active.
+> The office. Agents can't talk to each other, so they coordinate HERE.
+> WIP limit: max 3 active.
 
 ## Backlog
-- [ ] <task> — _acceptance: <...>_
+_(empty)_
 
 ## Assigned
 | Card | Owner | Branch | Acceptance |
 |------|-------|--------|------------|
-| <task> | @build/forge | feat/forge/<slug> | <criteria> |
+| **HERO-01** Build before/after reveal component | @build/forge | `feat/forge/hero-reveal` | Drag/hover slider in hero reveals raw→rendered image; existing text + CTAs intact; works mobile + desktop; zero new npm deps; no regression on other pages |
+| **HERO-02** Supply placeholder before/after image pairs | @docs/quill | `docs/quill/hero-reveal-assets` | A `memory/decisions.md` entry noting placeholder strategy + instructions for swapping in real assets once available |
 
 ## In Progress
-| Card | Owner | Branch | Started |
-|------|-------|--------|---------|
-| <task> | @build/nova | fix/nova/<slug> | <ts> |
+_(empty)_
 
 ## In Review (with QA)
-| Card | Built by | Reviewer | Branch | Verdict |
-|------|----------|----------|--------|---------|
-| <task> | @build/forge | @qa/vera | feat/forge/<slug> | pending |
+_(empty)_
 
 ## Blocked
-| Card | Owner | Branch | Why blocked | Needs |
-|------|-------|--------|-------------|-------|
-| <task> | @build/nova | fix/nova/<slug> | <reason> | <decision / you> |
+_(empty)_
 
 ## Done (pending your merge approval)
-| Card | Built by | Verified by | Branch |
-|------|----------|-------------|--------|
-| <task> | @build/forge | @qa/vera ✅ | feat/forge/<slug> |
+_(empty)_
 
 ## Merged ✅
-- <date> — <task> — by @build/forge — verified @qa/vera — merged to main
+_(empty)_
