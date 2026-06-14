@@ -3,20 +3,20 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dova Futures Limited | Premium Design–Build Construction in Nigeria</title>
-  <meta name="description" content="Dova Futures Limited is a premier design-build construction company delivering integrated architectural planning, full-scale construction, and premium interior finishing across Nigeria.">
+  <title>Dova Futures Developers | Premium Design–Build Construction in Nigeria</title>
+  <meta name="description" content="Dova Futures Developers is a premier design-build construction company delivering integrated architectural planning, full-scale construction, and premium interior finishing across Nigeria.">
   <meta name="keywords" content="design-build construction, architecture, construction company Nigeria, Lagos, premium construction">
   <link rel="canonical" href="https://dovafutures.com/">
   <link rel="icon" type="image/png" href="/assets/logo/DOVA%20Logo%20-%20W.png">
   <link rel="apple-touch-icon" href="/assets/logo/DOVA%20Logo%20-%20W.png">
   <!-- og-image: replace /assets/logo/DOVA Logo - W.png with /assets/logo/og-image.jpg once a landscape project photo is available -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Dova Futures Limited | Premium Design–Build Construction in Nigeria">
-  <meta property="og:description" content="Dova Futures Limited is a premier design-build construction company delivering integrated architectural planning, full-scale construction, and premium interior finishing across Nigeria.">
+  <meta property="og:title" content="Dova Futures Developers | Premium Design–Build Construction in Nigeria">
+  <meta property="og:description" content="Dova Futures Developers is a premier design-build construction company delivering integrated architectural planning, full-scale construction, and premium interior finishing across Nigeria.">
   <meta property="og:url" content="https://dovafutures.com/">
   <meta property="og:image" content="https://dovafutures.com/assets/logo/DOVA%20Logo%20-%20W.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Dova Futures Limited | Premium Design–Build Construction in Nigeria">
+  <meta name="twitter:title" content="Dova Futures Developers | Premium Design–Build Construction in Nigeria">
   <meta name="twitter:description" content="Integrated design-build construction and premium interior finishing across Nigeria.">
   <meta name="twitter:image" content="https://dovafutures.com/assets/logo/DOVA%20Logo%20-%20W.png">
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
@@ -26,11 +26,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-primary: #000000;
-      --color-secondary: #1a1a1a;
-      --color-accent: #333333;
+      --color-primary: #333333;
+      --color-secondary: #1f1f1f;
+      --color-accent: #4a4a4a;
+      --color-cream: #F5EFE8;
       --color-text: #ffffff;
-      --color-muted: #888888;
+      --color-muted: #999999;
     }
     
     * {
@@ -53,6 +54,7 @@
     
     .font-display {
       font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.02em;
     }
     
     .nav-link {
@@ -104,7 +106,23 @@
       background: #fff;
       color: #000;
     }
-    
+
+    .btn-cream {
+      background: #F5EFE8;
+      color: #333333;
+      padding: 16px 32px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      border: 2px solid #F5EFE8;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
+
+    .btn-cream:hover {
+      background: transparent;
+      color: #F5EFE8;
+    }
+
     .section-padding {
       padding: 120px 0;
     }
@@ -272,7 +290,7 @@
       right: -50%;
       width: 100%;
       height: 1px;
-      background: linear-gradient(to right, #333, transparent);
+      background: linear-gradient(to right, #4a4a4a, transparent);
     }
     
     .process-step:last-child::after {
@@ -294,8 +312,8 @@
     }
     
     .service-card {
-      background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-      border: 1px solid #222;
+      background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+      border: 1px solid #3a3a3a;
       padding: 40px;
       transition: all 0.4s ease;
     }
@@ -321,26 +339,28 @@
     }
     
     .form-input {
-      background: #111;
-      border: 1px solid #333;
+      background: #F5EFE8;
+      color: #333333;
+      border: none;
+      border-radius: 8px;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.08);
       padding: 16px 20px;
-      color: #fff;
       width: 100%;
-      transition: border-color 0.3s ease;
+      transition: outline 0.3s ease;
     }
-    
+
     .form-input:focus {
-      outline: none;
-      border-color: #666;
+      outline: 2px solid #333333;
+      outline-offset: 2px;
     }
-    
+
     .form-input::placeholder {
-      color: #666;
+      color: #999999;
     }
     
     .divider {
       height: 1px;
-      background: linear-gradient(to right, transparent, #333, transparent);
+      background: linear-gradient(to right, transparent, #4a4a4a, transparent);
     }
 
     .mobile-menu {
@@ -349,7 +369,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0,0,0,0.98);
+      background: rgba(51,51,51,0.98);
       z-index: 100;
       display: flex;
       flex-direction: column;
@@ -396,11 +416,11 @@
  <body class="h-full">
   <div class="scroll-container" id="mainContainer">
    <!-- Navigation -->
-   <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/10">
+   <nav class="fixed top-0 left-0 right-0 z-50 bg-[#333]/90 backdrop-blur-sm border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
      <div class="flex items-center justify-between h-20">
       <a href="/" id="navLogo" aria-label="Dova Futures Home" onclick="navigateTo('home'); return false;">
-       <img src="/assets/logo/DOVA%20Logo%20-%20W.png" onerror="this.onerror=null;this.src='/assets/logo/DOVA%20Logo.png';" alt="Dova Futures Limited Logo" class="brand-logo">
+       <img src="/assets/logo/DOVA%20Logo%20-%20W.png" onerror="this.onerror=null;this.src='/assets/logo/DOVA%20Logo.png';" alt="Dova Futures Developers Logo" class="brand-logo">
       </a>
       <div class="desktop-nav hidden lg:flex items-center gap-8">
        <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('home'); return false;">Home</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('about'); return false;">About</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('services'); return false;">Services</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('projects'); return false;">Projects</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('process'); return false;">Process</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('why'); return false;">Why Us</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('contact'); return false;">Contact</a>
@@ -441,7 +461,7 @@
        <p class="text-gray-400 tracking-[0.3em] text-sm mb-6 uppercase">Design–Build Excellence</p>
        <h1 class="font-display text-6xl md:text-8xl lg:text-9xl leading-none mb-8" id="heroHeadline">Designed With Intent.<br>
          Built With Precision.</h1>
-       <p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-12 max-w-xl" id="heroSubtext">Integrated architectural design and construction excellence — engineered for flawless execution.</p>
+       <p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-12 max-w-xl" id="heroSubtext">Rethink the future — integrated design and construction excellence, engineered for precision.</p>
        <div class="flex flex-col sm:flex-row gap-4">
         <button class="btn-primary" onclick="navigateTo('contact')">Start Your Project</button> <button class="btn-secondary" onclick="navigateTo('projects')">View Portfolio</button>
        </div>
@@ -458,7 +478,7 @@
        <div>
         <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">Who We Are</p>
         <h2 class="font-display text-5xl md:text-6xl mb-8">Building Tomorrow's Landmarks</h2>
-        <p class="text-gray-400 text-lg leading-relaxed mb-6">Dova Futures Limited is a premier design–build construction company delivering exceptional architectural and construction services. We combine innovative design with superior craftsmanship to transform ambitious visions into remarkable structures.</p>
+        <p class="text-gray-400 text-lg leading-relaxed mb-6">Dova Futures Developers is a premier design–build construction company delivering exceptional architectural and construction services. We combine innovative design with superior craftsmanship to transform ambitious visions into remarkable structures.</p>
         <p class="text-gray-400 text-lg leading-relaxed mb-10">From initial concept through final handover, we manage every detail with precision, ensuring quality, transparency, and excellence at every stage.</p><button class="btn-secondary" onclick="navigateTo('about')">Learn More About Us</button>
        </div>
        <div class="relative">
@@ -511,7 +531,7 @@
       </div>
      </div>
     </section><!-- Design–Build Difference Section -->
-    <section class="section-padding bg-white text-black">
+    <section class="section-padding bg-[#F5EFE8] text-[#333]">
      <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
        <div>
@@ -716,7 +736,7 @@
       </div>
      </div>
     </section><!-- CTA Section -->
-    <section class="section-padding bg-white text-black">
+    <section class="section-padding bg-[#F5EFE8] text-[#333]">
      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
       <h2 class="font-display text-5xl md:text-7xl mb-8">Let's Build It Properly.</h2>
       <p class="text-gray-600 text-xl mb-12 max-w-2xl mx-auto">Ready to transform your vision into reality? Let's discuss your project and explore the possibilities.</p>
@@ -738,7 +758,7 @@
      <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
        <p class="font-display text-xl tracking-wider" id="footerLogo">DOVA FUTURES LIMITED</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Limited. All Rights Reserved.</p>
+       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
@@ -754,7 +774,7 @@
       <div class="grid lg:grid-cols-2 gap-16 mb-24">
        <div>
         <h2 class="font-display text-4xl mb-6">Company Introduction</h2>
-        <p class="text-gray-400 text-lg leading-relaxed mb-6">Dova Futures Limited stands at the forefront of integrated design–build construction, delivering exceptional architectural and construction services that transform visions into landmark structures.</p>
+        <p class="text-gray-400 text-lg leading-relaxed mb-6">Dova Futures Developers stands at the forefront of integrated design–build construction, delivering exceptional architectural and construction services that transform visions into landmark structures.</p>
         <p class="text-gray-400 text-lg leading-relaxed">Founded on principles of excellence, integrity, and innovation, we have established ourselves as a trusted partner for clients seeking premium construction services that exceed expectations.</p>
        </div>
        <div class="relative">
@@ -805,7 +825,7 @@
      <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
        <p class="font-display text-xl tracking-wider">DOVA FUTURES LIMITED</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Limited. All Rights Reserved.</p>
+       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
@@ -903,7 +923,7 @@
      <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
        <p class="font-display text-xl tracking-wider">DOVA FUTURES LIMITED</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Limited. All Rights Reserved.</p>
+       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
@@ -1008,7 +1028,7 @@
      <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
        <p class="font-display text-xl tracking-wider">DOVA FUTURES LIMITED</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Limited. All Rights Reserved.</p>
+       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
@@ -1149,7 +1169,7 @@
      <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
        <p class="font-display text-xl tracking-wider">DOVA FUTURES LIMITED</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Limited. All Rights Reserved.</p>
+       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
@@ -1250,7 +1270,7 @@
      <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
        <p class="font-display text-xl tracking-wider">DOVA FUTURES LIMITED</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Limited. All Rights Reserved.</p>
+       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
@@ -1346,7 +1366,7 @@
           <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
          </div>
          <div class="grid sm:grid-cols-2 gap-4">
-          <button type="submit" class="btn-primary w-full" id="sendEmailButton">Send Email</button>
+          <button type="submit" class="btn-cream w-full" id="sendEmailButton">Send Email</button>
           <button type="button" class="btn-secondary w-full" id="sendWhatsAppButton">Send via WhatsApp</button>
          </div>
          <p id="formStatus" class="text-center hidden"></p>
@@ -1359,7 +1379,7 @@
      <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
        <p class="font-display text-xl tracking-wider">DOVA FUTURES LIMITED</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Limited. All Rights Reserved.</p>
+       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
@@ -1376,9 +1396,9 @@
   <script>
     // Default configuration
     const defaultConfig = {
-      company_name: 'Dova Futures Limited',
+      company_name: 'Dova Futures Developers',
       hero_headline: 'Designed With Intent. Built With Precision.',
-      hero_subtext: 'Integrated architectural design and construction excellence — engineered for flawless execution.',
+      hero_subtext: 'Rethink the future — integrated design and construction excellence, engineered for precision.',
       ceo_name: 'Vollmann Akarakiri',
       phone_number: '+234 816 367 5439',
       email_address: 'info@dovafutures.com',
