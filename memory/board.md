@@ -21,7 +21,7 @@ _(empty)_
 _(empty)_
 
 ## Done (pending merge approval)
-_(empty)_
+- 2026-06-14 — **DESIGN-01** design kit update (F5EFE8 cream theme, --color-primary, .btn-cream, heroSubtext, service-card, heroReveal) — by @build/forge — verified @qa/vera ✅
 
 ## Merged ✅
 - 2026-06-14 — **HERO-01** before/after hero reveal slider — by @build/forge — verified @qa/vera ✅ — merged to main (PR #3)
