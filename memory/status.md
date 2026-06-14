@@ -4,16 +4,16 @@
 **Health:** 🟢 on track
 
 ## Now
-- Loop Engineering + Agent Team scaffold installed and pushed.
-- Planning hero before/after reveal feature.
+- Portfolio wired with 6 real projects; pushed to claude/new-session-yu5bb7.
 
 ## Recently done (last 3)
-- Bootstrapped loop-engineering-kit into repo (CLAUDE.md, TEAM.md, context/, memory/, agents/)
-- Filled context/01-build-steps.md and context/02-architecture.md for Dova Futures
-- Applied token-economy model tiers to all agents
+- PORTFOLIO-01: replaced 9 placeholder entries with 6 real projects (Ado Hall, Hillside, Civil Defence HQ, + 3 new text-only)
+- HERO-01: before/after slider built, QA-approved
+- DESIGN-01: design kit applied (charcoal/cream palette, DOVA FUTURES DEVELOPERS brand)
 
 ## Open / blocked
-- Need before/after image pairs (raw Revit/sketch + final render) — using placeholders until user supplies real assets.
+- 3 new projects (Ikotun 6-flat, Uselu apartment, Ikeja GRA interior) have no images yet — cards show dark background with text. Upload images and update data/projects.js + index.html when ready.
+- Branch not yet merged to main — awaiting user approval.
 
 ## Notes for the next run
 - Project is a Node/Express static site deployed on Render.
