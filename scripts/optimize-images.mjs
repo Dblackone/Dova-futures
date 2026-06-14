@@ -23,6 +23,21 @@ const JOBS = [
   [`${LIB}/Design For Ikeja confencens room/Image2_050.png`, 'ikeja-interior.jpg', 'Ikeja conference room — interior render'],
   [`${LIB}/Design For Ikeja confencens room/Image6_014.png`, 'ikeja-interior-2.jpg', 'Ikeja conference room — interior render 2'],
   [`${LIB}/Landsacpe Projects/NEW HOTEL 1.jpg`, 'landscape-plan.jpg', 'Landscape site plan'],
+
+  // ---- Added for the /work + /portfolio case studies (project-driven) ----
+  // project-01 — Ikeja residential living & dining (more interior renders)
+  [`${LIB}/Design For Ikeja confencens room/Image1_061.png`, 'ikeja-interior-3.jpg', 'Ikeja interior — living & dining render'],
+  [`${LIB}/Design For Ikeja confencens room/Image4_034.png`, 'ikeja-interior-4.jpg', 'Ikeja interior — dining area render'],
+  // project-02 — Hillside Terrace Residence (terrace design model)
+  [`${LIB}/SchemaProjects/3 BEDROOM TRERACE WITH PENT HOUSE - RAW 1.jpg`, 'terrace-raw.jpg', 'Hillside terrace residence — design model'],
+  // project-03 — Urban Vista Apartments (massing alt)
+  [`${LIB}/SchemaProjects/BIG SCHEMA RAW 2.jpg`, 'schema-massing-2.jpg', 'Urban apartment scheme — massing model (alt)'],
+  // project-04 — St. Andrew's / Ado (raw alt for RevealFrame + gallery)
+  [`${LIB}/Ado Hall of Worship/ADO CENTER RAW 2.jpg`, 'ado-raw-2.jpg', 'Ado church — structural model (alt)'],
+  // project-05 — Ogor Estate masterplan + landscape gallery
+  [`${LIB}/Landsacpe Projects/NEW HOTEL 2.jpg`, 'landscape-hotel-2.jpg', 'Estate landscape render'],
+  [`${LIB}/Landsacpe Projects/IJARE.jpg`, 'landscape-ijare.jpg', 'Estate masterplan — site context render'],
+  [`${LIB}/Landsacpe Projects/NCS 1.jpg`, 'landscape-ncs.jpg', 'Landscape — site & circulation render'],
 ];
 
 async function exists(p) {
