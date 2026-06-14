@@ -1,91 +1,74 @@
 /**
  * Project data configuration.
- * To add real images: drop photos into /assets/projects/<project-id>/
+ * To add images: drop photos into /assets/projects/<project-id>/
  * then update coverImage and gallery paths below.
- *
- * Image slots for future upload:
- *   /assets/projects/<id>/cover.jpg
- *   /assets/projects/<id>/gallery-01.jpg
- *   /assets/projects/<id>/gallery-02.jpg
- *   /assets/projects/<id>/gallery-03.jpg
  */
 
 const PROJECTS = [
   {
-    id: 'body-shop-ikeja',
-    title: 'The Body Shop Retail Fit-Out',
-    category: 'commercial',
-    location: 'Ikeja City Mall, Lagos',
-    coverImage: '/assets/projects/body-shop.jpg',
-    gallery: []
+    id: 'ado-hall',
+    title: 'Ado Hall of Worship',
+    category: 'civic',
+    location: 'Nigeria',
+    coverImage: '/assets/projects/ado-hall/after.png',
+    gallery: [
+      '/assets/projects/ado-hall/before.jpg',
+      '/assets/projects/ado-hall/after.png',
+      '/assets/projects/ado-hall/ado-hall-drawing-sheet.png'
+    ]
   },
   {
-    id: 'palm-oil-drainage',
-    title: 'Palm Oil Drainage Infrastructure',
-    category: 'infrastructure',
+    id: 'hillside',
+    title: 'Hillside Residence',
+    category: 'residential',
+    location: 'Nigeria',
+    coverImage: '/assets/projects/hillside/hillside-render-01.png',
+    gallery: [
+      '/assets/projects/hillside/hillside-render-01.png',
+      '/assets/projects/hillside/hillside-render-02.png',
+      '/assets/projects/hillside/hillside-render-details.png'
+    ]
+  },
+  {
+    id: 'civil-defence-hq',
+    title: 'Civil Defence Corps HQ Landscape',
+    category: 'civic',
     location: 'Akure, Ondo State',
-    coverImage: '/assets/projects/palm-oil-drainage.jpg',
-    gallery: []
+    coverImage: '/assets/projects/civil-defence-hq/civil-defence-hq-landscape-aerial.png',
+    gallery: [
+      '/assets/projects/civil-defence-hq/civil-defence-hq-landscape-aerial.png',
+      '/assets/projects/civil-defence-hq/civil-defence-hq-landscape-entrance.png'
+    ]
   },
   {
-    id: 'residential-duplex',
-    title: 'Residential Duplex Development',
+    id: 'ikotun-6flat',
+    title: '6-Flat Apartment Development',
     category: 'residential',
-    location: 'Lagos, Nigeria',
-    coverImage: '/assets/projects/residential-duplex.jpg',
+    location: 'Ikotun, Lagos',
+    description: 'Architectural design, structural design, and building CAAS development.',
+    coverImage: null,
     gallery: []
   },
   {
-    id: 'interior-renovation',
-    title: 'Interior Renovation Project',
+    id: 'uselu-apartment',
+    title: 'Residential Apartment',
+    category: 'residential',
+    location: 'Uselu, Benin City',
+    description: '3D visualisation.',
+    coverImage: null,
+    gallery: []
+  },
+  {
+    id: 'ikeja-gra-interior',
+    title: 'Interior Visualisation',
     category: 'interiors',
-    location: 'Ekiti & Lagos States',
-    coverImage: '/assets/projects/interior-renovation.jpg',
-    gallery: []
-  },
-  {
-    id: 'residential-estate',
-    title: 'Residential Estate Build',
-    category: 'residential',
-    location: 'Port Harcourt',
-    coverImage: '/assets/projects/residential-duplex.jpg',
-    gallery: []
-  },
-  {
-    id: 'commercial-fitout',
-    title: 'Commercial Fit-Out Program',
-    category: 'commercial',
-    location: 'Lagos Mainland',
-    coverImage: '/assets/projects/body-shop.jpg',
-    gallery: []
-  },
-  {
-    id: 'drainage-phase-2',
-    title: 'Drainage Upgrade Phase II',
-    category: 'infrastructure',
-    location: 'Southwest Nigeria',
-    coverImage: '/assets/projects/palm-oil-drainage.jpg',
-    gallery: []
-  },
-  {
-    id: 'premium-office-interiors',
-    title: 'Premium Office Interiors',
-    category: 'interiors',
-    location: 'Victoria Island, Lagos',
-    coverImage: '/assets/projects/interior-renovation.jpg',
-    gallery: []
-  },
-  {
-    id: 'multi-unit-residential',
-    title: 'Multi-Unit Residential Complex',
-    category: 'residential',
-    location: 'Lekki, Lagos',
-    coverImage: '/assets/projects/residential-duplex.jpg',
+    location: 'Ikeja GRA, Lagos',
+    coverImage: null,
     gallery: []
   }
 ];
 
-// Hero / About preview image pool — update when real project photos are added
+// Hero image pool — drawn from projects with real cover images
 const HERO_IMAGES = PROJECTS
   .filter(p => p.coverImage)
   .map(p => p.coverImage)

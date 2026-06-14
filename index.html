@@ -278,7 +278,16 @@
       transform: translateY(0);
       opacity: 1;
     }
-    
+
+    .project-card.no-image {
+      background: linear-gradient(135deg, #1e1e1e 0%, #111 100%);
+    }
+
+    .project-card.no-image .content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
     .process-step {
       position: relative;
     }
@@ -619,58 +628,57 @@
        <h2 class="font-display text-5xl md:text-6xl">Featured Projects</h2>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-       <!-- PROJECT: The Body Shop Retail Fit-Out -->
+       <!-- PROJECT: Ado Hall of Worship -->
        <div class="project-card">
-        <img src="/assets/projects/body-shop.jpg" alt="The Body Shop Retail Fit-Out - Ikeja City Mall" class="project-image">
+        <img src="/assets/projects/ado-hall/after.png" alt="Ado Hall of Worship - Architectural Render" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Commercial</p>
-         <h3 class="font-display text-2xl">The Body Shop Retail Fit-Out</h3>
-         <p class="text-gray-500 text-sm">Ikeja, Lagos</p>
+         <p class="text-gray-400 text-sm mb-1">Civic</p>
+         <h3 class="font-display text-2xl">Ado Hall of Worship</h3>
+         <p class="text-gray-500 text-sm">Nigeria</p>
         </div>
        </div>
-       <!-- PROJECT: Palm Oil Drainage Infrastructure -->
+       <!-- PROJECT: Hillside Residence -->
        <div class="project-card">
-        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Palm Oil Drainage Infrastructure Project" class="project-image">
+        <img src="/assets/projects/hillside/hillside-render-01.png" alt="Hillside Residence - 3D Render" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl">Palm Oil Drainage Infrastructure</h3>
+         <p class="text-gray-400 text-sm mb-1">Residential</p>
+         <h3 class="font-display text-2xl">Hillside Residence</h3>
+         <p class="text-gray-500 text-sm">Nigeria</p>
+        </div>
+       </div>
+       <!-- PROJECT: Civil Defence Corps HQ Landscape -->
+       <div class="project-card">
+        <img src="/assets/projects/civil-defence-hq/civil-defence-hq-landscape-aerial.png" alt="Civil Defence Corps HQ - Landscape Design" class="project-image">
+        <div class="content">
+         <p class="text-gray-400 text-sm mb-1">Civic</p>
+         <h3 class="font-display text-2xl">Civil Defence Corps HQ Landscape</h3>
          <p class="text-gray-500 text-sm">Akure, Ondo State</p>
         </div>
        </div>
-       <!-- PROJECT: Residential Duplex Development -->
-       <div class="project-card">
-        <img src="/assets/projects/residential-duplex.jpg" alt="Residential Duplex Development" class="project-image">
+       <!-- PROJECT: 6-Flat Apartment, Ikotun -->
+       <div class="project-card no-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl">Residential Duplex Development</h3>
-         <p class="text-gray-500 text-sm">Lagos, Nigeria</p>
+         <h3 class="font-display text-2xl">6-Flat Apartment Development</h3>
+         <p class="text-gray-500 text-sm">Ikotun, Lagos</p>
+         <p class="text-gray-600 text-xs mt-2">Architectural · Structural · CAAS</p>
         </div>
        </div>
-       <!-- PROJECT: Interior Renovation Project -->
-       <div class="project-card">
-        <img src="/assets/projects/interior-renovation.jpg" alt="Premium Interior Renovation Project" class="project-image">
+       <!-- PROJECT: Residential Apartment, Uselu -->
+       <div class="project-card no-image">
+        <div class="content">
+         <p class="text-gray-400 text-sm mb-1">Residential</p>
+         <h3 class="font-display text-2xl">Residential Apartment</h3>
+         <p class="text-gray-500 text-sm">Uselu, Benin City</p>
+         <p class="text-gray-600 text-xs mt-2">3D Visualisation</p>
+        </div>
+       </div>
+       <!-- PROJECT: Interior Visualisation, Ikeja GRA -->
+       <div class="project-card no-image">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Interiors</p>
-         <h3 class="font-display text-2xl">Interior Renovation Project</h3>
-         <p class="text-gray-500 text-sm">Ekiti &amp; Lagos States</p>
-        </div>
-       </div>
-       <!-- PROJECT: Market Infrastructure Development -->
-       <div class="project-card">
-        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Market Infrastructure Development" class="project-image">
-        <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Commercial</p>
-         <h3 class="font-display text-2xl">Market Infrastructure Development</h3>
-         <p class="text-gray-500 text-sm">Edo State</p>
-        </div>
-       </div>
-       <!-- PROJECT: Structural Construction Works -->
-       <div class="project-card">
-        <img src="/assets/projects/residential-duplex.jpg" alt="Structural Construction Works" class="project-image">
-        <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl">Structural Construction Works</h3>
-         <p class="text-gray-500 text-sm">Multi-State</p>
+         <h3 class="font-display text-2xl">Interior Visualisation</h3>
+         <p class="text-gray-500 text-sm">Ikeja GRA, Lagos</p>
         </div>
        </div>
       </div>
@@ -937,88 +945,60 @@
        <div class="w-24 h-1 bg-white"></div>
       </div><!-- Filter Tabs -->
       <div class="flex flex-wrap gap-4 mb-16">
-       <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter active" data-filter="all">All</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="residential">Residential</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="commercial">Commercial</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="infrastructure">Infrastructure</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="interiors">Interiors</button>
+       <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter active" data-filter="all">All</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="residential">Residential</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="civic">Civic</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="interiors">Interiors</button>
       </div><!-- Projects Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
-       <!-- PROJECT: The Body Shop Retail Fit-Out -->
-       <div class="project-card project-item" data-category="commercial">
-        <img src="/assets/projects/body-shop.jpg" alt="The Body Shop Retail Fit-Out - Ikeja City Mall" class="project-image">
+       <!-- PROJECT: Ado Hall of Worship -->
+       <div class="project-card project-item" data-category="civic">
+        <img src="/assets/projects/ado-hall/after.png" alt="Ado Hall of Worship - Architectural Render" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Commercial</p>
-         <h3 class="font-display text-2xl mb-2">The Body Shop Retail Fit-Out</h3>
-         <p class="text-gray-500 text-sm">Ikeja, Lagos</p>
+         <p class="text-gray-400 text-sm mb-1">Civic</p>
+         <h3 class="font-display text-2xl mb-2">Ado Hall of Worship</h3>
+         <p class="text-gray-500 text-sm">Nigeria</p>
         </div>
        </div>
-       <!-- PROJECT: Palm Oil Drainage Infrastructure -->
-       <div class="project-card project-item" data-category="infrastructure">
-        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Palm Oil Drainage Infrastructure Project" class="project-image">
+       <!-- PROJECT: Hillside Residence -->
+       <div class="project-card project-item" data-category="residential">
+        <img src="/assets/projects/hillside/hillside-render-01.png" alt="Hillside Residence - 3D Render" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl mb-2">Palm Oil Drainage Infrastructure</h3>
+         <p class="text-gray-400 text-sm mb-1">Residential</p>
+         <h3 class="font-display text-2xl mb-2">Hillside Residence</h3>
+         <p class="text-gray-500 text-sm">Nigeria</p>
+        </div>
+       </div>
+       <!-- PROJECT: Civil Defence Corps HQ Landscape -->
+       <div class="project-card project-item" data-category="civic">
+        <img src="/assets/projects/civil-defence-hq/civil-defence-hq-landscape-aerial.png" alt="Civil Defence Corps HQ - Landscape Design" class="project-image">
+        <div class="content">
+         <p class="text-gray-400 text-sm mb-1">Civic</p>
+         <h3 class="font-display text-2xl mb-2">Civil Defence Corps HQ Landscape</h3>
          <p class="text-gray-500 text-sm">Akure, Ondo State</p>
         </div>
        </div>
-       <!-- PROJECT: Residential Duplex Development -->
-       <div class="project-card project-item" data-category="residential">
-        <img src="/assets/projects/residential-duplex.jpg" alt="Residential Duplex Development" class="project-image">
+       <!-- PROJECT: 6-Flat Apartment, Ikotun -->
+       <div class="project-card no-image project-item" data-category="residential">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl mb-2">Residential Duplex Development</h3>
-         <p class="text-gray-500 text-sm">Lagos, Nigeria</p>
+         <h3 class="font-display text-2xl mb-2">6-Flat Apartment Development</h3>
+         <p class="text-gray-500 text-sm">Ikotun, Lagos</p>
+         <p class="text-gray-600 text-xs mt-2">Architectural · Structural · CAAS</p>
         </div>
        </div>
-       <!-- PROJECT: Interior Renovation Project -->
-       <div class="project-card project-item" data-category="interiors">
-        <img src="/assets/projects/interior-renovation.jpg" alt="Interior Renovation Project" class="project-image">
+       <!-- PROJECT: Residential Apartment, Uselu -->
+       <div class="project-card no-image project-item" data-category="residential">
+        <div class="content">
+         <p class="text-gray-400 text-sm mb-1">Residential</p>
+         <h3 class="font-display text-2xl mb-2">Residential Apartment</h3>
+         <p class="text-gray-500 text-sm">Uselu, Benin City</p>
+         <p class="text-gray-600 text-xs mt-2">3D Visualisation</p>
+        </div>
+       </div>
+       <!-- PROJECT: Interior Visualisation, Ikeja GRA -->
+       <div class="project-card no-image project-item" data-category="interiors">
         <div class="content">
          <p class="text-gray-400 text-sm mb-1">Interiors</p>
-         <h3 class="font-display text-2xl mb-2">Interior Renovation Project</h3>
-         <p class="text-gray-500 text-sm">Ekiti &amp; Lagos States</p>
-        </div>
-       </div>
-       <!-- PROJECT: Residential Estate Build -->
-       <div class="project-card project-item" data-category="residential">
-        <img src="/assets/projects/residential-duplex.jpg" alt="Residential Estate Build" class="project-image">
-        <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl mb-2">Residential Estate Build</h3>
-         <p class="text-gray-500 text-sm">Port Harcourt</p>
-        </div>
-       </div>
-       <!-- PROJECT: Commercial Fit-Out Program -->
-       <div class="project-card project-item" data-category="commercial">
-        <img src="/assets/projects/body-shop.jpg" alt="Commercial Fit-Out Program" class="project-image">
-        <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Commercial</p>
-         <h3 class="font-display text-2xl mb-2">Commercial Fit-Out Program</h3>
-         <p class="text-gray-500 text-sm">Lagos Mainland</p>
-        </div>
-       </div>
-       <!-- PROJECT: Drainage Upgrade Phase II -->
-       <div class="project-card project-item" data-category="infrastructure">
-        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Drainage Upgrade Phase II" class="project-image">
-        <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl mb-2">Drainage Upgrade Phase II</h3>
-         <p class="text-gray-500 text-sm">Southwest Nigeria</p>
-        </div>
-       </div>
-       <!-- PROJECT: Premium Office Interiors -->
-       <div class="project-card project-item" data-category="interiors">
-        <img src="/assets/projects/interior-renovation.jpg" alt="Premium Office Interiors" class="project-image">
-        <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Interiors</p>
-         <h3 class="font-display text-2xl mb-2">Premium Office Interiors</h3>
-         <p class="text-gray-500 text-sm">Victoria Island, Lagos</p>
-        </div>
-       </div>
-       <!-- PROJECT: Multi-Unit Residential Complex -->
-       <div class="project-card project-item" data-category="residential">
-        <img src="/assets/projects/residential-duplex.jpg" alt="Multi-Unit Residential Complex" class="project-image">
-        <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl mb-2">Multi-Unit Residential Complex</h3>
-         <p class="text-gray-500 text-sm">Lekki, Lagos</p>
+         <h3 class="font-display text-2xl mb-2">Interior Visualisation</h3>
+         <p class="text-gray-500 text-sm">Ikeja GRA, Lagos</p>
         </div>
        </div>
       </div>
