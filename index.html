@@ -1755,20 +1755,7 @@
       document.getElementById('contactEmail').textContent = email;
       document.getElementById('contactEmail').href = `mailto:${email}`;
 
-      // Update colors
-      const bgColor = config.background_color || defaultConfig.background_color;
-      const surfaceColor = config.surface_color || defaultConfig.surface_color;
-      const textColor = config.text_color || defaultConfig.text_color;
-      const accentColor = config.accent_color || defaultConfig.accent_color;
-      const mutedColor = config.muted_color || defaultConfig.muted_color;
-
-      document.documentElement.style.setProperty('--color-primary', bgColor);
-      document.documentElement.style.setProperty('--color-secondary', surfaceColor);
-      document.documentElement.style.setProperty('--color-accent', accentColor);
-      document.documentElement.style.setProperty('--color-text', textColor);
-      document.documentElement.style.setProperty('--color-muted', mutedColor);
-      document.body.style.backgroundColor = bgColor;
-      document.body.style.color = textColor;
+      // Colors are now driven by the design system tokens — no overrides needed
     }
 
     // Initialize Element SDK
