@@ -23,45 +23,204 @@
   <script src="/_sdk/element_sdk.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* ── Design System Tokens ─────────────────────────────────────── */
     :root {
-      --color-primary: #333333;
-      --color-secondary: #1f1f1f;
-      --color-accent: #4a4a4a;
-      --color-cream: #F5EFE8;
-      --color-text: #ffffff;
-      --color-muted: #999999;
+      /* Colors — Green scale */
+      --green-950: #0B221A;
+      --green-900: #102A20;
+      --green-800: #16382B;
+      --green-700: #1C4636;
+      --green-600: #265C46;
+      --green-500: #357A5B;
+      --green-400: #5AA17C;
+      --green-300: #8FC4A9;
+      --green-200: #BFDDCC;
+      --green-100: #DCEBE2;
+
+      /* Colors — Naturals */
+      --cream:     #F5EFE8;
+      --sand:      #E8E1D5;
+      --stone:     #D1CBC6;
+      --ash:       #B9B3AD;
+
+      /* Colors — Ink */
+      --ink-900:   #1A1A1A;
+      --ink-800:   #242424;
+      --ink-700:   #2C2C2C;
+      --slate:     #4A4F5C;
+      --slate-400: #6B7280;
+      --white:     #FFFFFF;
+
+      /* Colors — Clay accent */
+      --clay:      #B85C38;
+      --clay-dark: #9E4F30;
+      --clay-100:  #F0DDD8;
+
+      /* Colors — Semantic status */
+      --success:   #357A5B;
+      --warning:   #C8881F;
+      --danger:    #B23A2E;
+      --info:      #2F6B7D;
+
+      /* Semantic aliases — surfaces */
+      --surface-page:    var(--cream);
+      --surface-card:    var(--white);
+      --surface-sunken:  var(--sand);
+      --surface-tint:    var(--green-100);
+      --surface-dark:    var(--green-800);
+      --surface-darkest: var(--green-950);
+
+      /* Semantic aliases — text */
+      --text-strong:      var(--ink-900);
+      --text-body:        var(--slate);
+      --text-muted:       var(--slate-400);
+      --text-on-dark:     var(--cream);
+      --text-on-dark-mut: rgba(245,239,232,0.62);
+      --text-inverse:     var(--white);
+
+      /* Semantic aliases — brand/interactive */
+      --brand:        var(--green-700);
+      --brand-hover:  var(--green-800);
+      --brand-active: var(--green-900);
+      --brand-soft:   var(--green-100);
+      --accent:       var(--clay);
+      --accent-hover: var(--clay-dark);
+
+      /* Semantic aliases — borders */
+      --border-light: var(--stone);
+      --border-dark:  rgba(245,239,232,0.14);
+      --focus-ring:   var(--green-500);
+
+      /* Typography */
+      --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+      --font-body:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --fs-display-2xl: clamp(64px, 9vw, 128px);
+      --fs-display-xl:  clamp(48px, 6vw, 88px);
+      --fs-display-lg:  clamp(36px, 4.5vw, 60px);
+      --fs-display-md:  clamp(28px, 3vw, 40px);
+
+      --fs-2xl: 32px;
+      --fs-xl:  24px;
+      --fs-lg:  20px;
+      --fs-md:  17px;
+      --fs-sm:  15px;
+      --fs-xs:  13px;
+      --fs-2xs: 11px;
+
+      --fw-light:    300;
+      --fw-regular:  400;
+      --fw-medium:   500;
+      --fw-semibold: 600;
+      --fw-bold:     700;
+      --fw-black:    800;
+
+      --lh-tight:   1.12;
+      --lh-snug:    1.3;
+      --lh-normal:  1.6;
+      --lh-relaxed: 1.75;
+
+      --tracking-display: 0.02em;
+      --tracking-eyebrow: 0.28em;
+      --tracking-wide:    0.08em;
+      --tracking-normal:  0;
+      --tracking-tight:  -0.02em;
+
+      /* Spacing */
+      --space-0:  0;
+      --space-1:  4px;
+      --space-2:  8px;
+      --space-3:  12px;
+      --space-4:  16px;
+      --space-5:  24px;
+      --space-6:  32px;
+      --space-7:  48px;
+      --space-8:  64px;
+      --space-9:  96px;
+      --space-10: 120px;
+
+      --section-pad-y:    120px;
+      --section-pad-y-sm: 80px;
+      --container-max:    1280px;
+      --container-pad:    32px;
+
+      --radius-none: 0;
+      --radius-xs:   2px;
+      --radius-sm:   4px;
+      --radius-md:   8px;
+      --radius-lg:   12px;
+      --radius-pill: 999px;
+
+      --border-hair:  1px;
+      --border-thick: 2px;
+
+      /* Effects */
+      --shadow-xs:    0 1px 2px rgba(26,26,26,0.06);
+      --shadow-sm:    0 2px 8px rgba(26,26,26,0.06);
+      --shadow-md:    0 4px 24px rgba(26,26,26,0.08);
+      --shadow-lg:    0 12px 48px rgba(26,26,26,0.12);
+      --shadow-green: 0 10px 30px rgba(28,70,54,0.22);
+
+      --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+      --ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
+      --dur-fast:    0.18s;
+      --dur-base:    0.3s;
+      --dur-slow:    0.55s;
+      --transition:  0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+      --overlay-bottom: linear-gradient(to top, rgba(11,34,26,0.85) 0%, transparent 62%);
+      --overlay-hero:   linear-gradient(135deg, rgba(11,34,26,0.92), rgba(11,34,26,0.7) 55%, rgba(11,34,26,0.78));
+      --grid-line:      rgba(245,239,232,0.04);
+      --backdrop-blur:  blur(12px);
     }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html, body {
-      height: 100%;
-      width: 100%;
-    }
-    
+
+    /* ── Reset & Base ─────────────────────────────────────────────── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { height: 100%; width: 100%; }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--color-primary);
-      color: var(--color-text);
+      font-family: var(--font-body);
+      background-color: var(--green-900);
+      color: var(--text-on-dark);
       overflow-x: hidden;
     }
-    
-    .font-display {
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 0.02em;
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
     }
-    
+
+    /* ── Typography ───────────────────────────────────────────────── */
+    .font-display {
+      font-family: var(--font-display);
+      letter-spacing: var(--tracking-display);
+    }
+
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: var(--fs-2xs);
+      font-weight: var(--fw-semibold);
+      letter-spacing: var(--tracking-eyebrow);
+      text-transform: uppercase;
+      display: block;
+    }
+    .eyebrow-green { color: var(--green-300); }
+    .eyebrow-clay  { color: var(--clay); }
+    .eyebrow-muted { color: var(--slate-400); }
+
+    /* ── Navigation ───────────────────────────────────────────────── */
     .nav-link {
       position: relative;
-      transition: color 0.3s ease;
+      transition: color var(--transition);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--text-on-dark);
     }
-    
+    .nav-link.active-page { color: var(--green-300); font-weight: 600; }
     .nav-link::after {
       content: '';
       position: absolute;
@@ -69,345 +228,347 @@
       left: 0;
       width: 0;
       height: 1px;
-      background: #fff;
-      transition: width 0.3s ease;
+      background: var(--green-300);
+      transition: width var(--transition);
     }
-    
-    .nav-link:hover::after {
-      width: 100%;
+    .nav-link:hover { color: var(--green-300); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* ── Buttons ──────────────────────────────────────────────────── */
+    .btn-base {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-weight: var(--fw-semibold);
+      letter-spacing: 0.02em;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      padding: 17px 36px;
+      font-size: var(--fs-sm);
+      text-decoration: none;
     }
-    
+    .btn-base:focus-visible {
+      outline: 2px solid var(--focus-ring);
+      outline-offset: 3px;
+    }
+
     .btn-primary {
-      background: #fff;
-      color: #000;
-      padding: 16px 32px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      border: 2px solid #fff;
+      background: var(--brand);
+      color: var(--cream);
+      box-shadow: var(--shadow-green);
     }
-    
     .btn-primary:hover {
-      background: transparent;
-      color: #fff;
+      background: var(--brand-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(28,70,54,0.3);
     }
-    
+
     .btn-secondary {
-      background: transparent;
-      color: #fff;
-      padding: 16px 32px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      border: 2px solid #fff;
+      background: var(--ink-800);
+      color: var(--cream);
     }
-    
     .btn-secondary:hover {
-      background: #fff;
-      color: #000;
+      background: var(--ink-900);
+      transform: translateY(-2px);
     }
 
     .btn-cream {
-      background: #F5EFE8;
-      color: #333333;
-      padding: 16px 32px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      border: 2px solid #F5EFE8;
-      transition: all 0.3s ease;
-      border-radius: 4px;
+      background: var(--cream);
+      color: var(--green-800);
     }
-
     .btn-cream:hover {
-      background: transparent;
-      color: #F5EFE8;
+      background: var(--sand);
+      transform: translateY(-2px);
     }
 
-    .section-padding {
-      padding: 120px 0;
+    .btn-outline-light {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid var(--border-dark);
     }
-    
+    .btn-outline-light:hover {
+      background: var(--cream);
+      color: var(--green-800);
+      border-color: var(--cream);
+    }
+
+    .btn-sm { padding: 9px 18px; font-size: var(--fs-xs); }
+    .btn-lg { padding: 19px 42px; font-size: 15px; }
+
+    /* ── Layout helpers ───────────────────────────────────────────── */
+    .section-padding { padding: var(--section-pad-y) 0; }
+    .container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-pad); }
+
     .grid-pattern {
       background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
       background-size: 60px 60px;
     }
 
-    /* Hero Reveal Slider */
-    #heroReveal {
-      position: relative;
-    }
+    .sec-dark    { background: var(--green-900); }
+    .sec-darker  { background: var(--green-800); }
+    .sec-cream   { background: var(--cream); }
+    .sec-darkest { background: var(--green-950); }
+
+    /* ── Hero Reveal Slider ───────────────────────────────────────── */
+    #heroReveal { position: relative; }
 
     .reveal-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
       object-fit: cover;
     }
-
-    .reveal-after {
-      z-index: 1;
-    }
-
+    .reveal-after { z-index: 1; }
     .reveal-before-panel {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      overflow: hidden;
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      z-index: 2; overflow: hidden;
     }
-
-    .reveal-before {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .reveal-before { width: 100%; height: 100%; object-fit: cover; }
 
     .reveal-divider {
-      position: absolute;
-      top: 0;
-      bottom: 0;
+      position: absolute; top: 0; bottom: 0;
       width: 2px;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(245,239,232,0.8);
       z-index: 3;
       transform: translateX(-50%);
       cursor: ew-resize;
     }
-
     .reveal-line {
-      position: absolute;
-      width: 2px;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.8);
-      left: -1px;
+      position: absolute; width: 2px; height: 100%;
+      background: rgba(245,239,232,0.8); left: -1px;
     }
-
     .reveal-handle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 44px;
-      height: 44px;
-      background: rgba(255, 255, 255, 0.9);
-      color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 44px; height: 44px;
+      background: var(--cream);
+      color: var(--green-800);
+      display: flex; align-items: center; justify-content: center;
       border-radius: 50%;
-      font-size: 20px;
-      z-index: 4;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      font-size: 20px; z-index: 4;
+      box-shadow: var(--shadow-lg);
     }
-
     .reveal-label {
-      position: absolute;
-      top: 50%;
+      position: absolute; top: 50%;
       transform: translateY(-50%);
+      font-family: var(--font-body);
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       font-weight: 500;
-      color: rgba(255, 255, 255, 0.7);
-      pointer-events: none;
-      white-space: nowrap;
+      color: var(--text-on-dark-mut);
+      pointer-events: none; white-space: nowrap;
     }
+    .reveal-label-left  { right: calc(100% + 16px); }
+    .reveal-label-right { left:  calc(100% + 16px); }
 
-    .reveal-label-left {
-      right: calc(100% + 16px);
-    }
-
-    .reveal-label-right {
-      left: calc(100% + 16px);
-    }
-
+    /* ── Project Cards ────────────────────────────────────────────── */
     .project-card {
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
       aspect-ratio: 4/3;
-      background: #111;
+      background: var(--green-800);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
     }
-
     .project-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
       object-fit: cover;
+      transition: transform var(--transition);
     }
+    .project-card:hover .project-image { transform: scale(1.04); }
 
-    .brand-logo {
-      height: 44px;
-      width: auto;
-      max-width: 180px;
-      object-fit: contain;
-      display: block;
-    }
-
-    @media (max-width: 640px) {
-      .brand-logo {
-        height: 36px;
-        max-width: 150px;
-      }
-    }
-    
     .project-card::before {
       content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+      position: absolute; inset: 0;
+      background: var(--overlay-bottom);
       z-index: 1;
     }
-    
+    .project-tag {
+      position: absolute; top: 14px; left: 14px; z-index: 3;
+      background: var(--clay);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: var(--radius-sm);
+    }
     .project-card .content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 24px;
-      z-index: 2;
-      transform: translateY(20px);
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 24px; z-index: 2;
+      transform: translateY(14px);
       opacity: 0;
-      transition: all 0.4s ease;
+      transition: var(--transition);
     }
-    
-    .project-card:hover .content {
-      transform: translateY(0);
-      opacity: 1;
+    .project-card:hover .content { transform: translateY(0); opacity: 1; }
+
+    /* ── Brand logo ───────────────────────────────────────────────── */
+    .brand-logo {
+      height: 46px; width: auto;
+      max-width: 180px; object-fit: contain; display: block;
     }
-    
-    .process-step {
-      position: relative;
+    @media (max-width: 640px) {
+      .brand-logo { height: 36px; max-width: 150px; }
     }
-    
+
+    /* ── Service Cards ────────────────────────────────────────────── */
+    .service-card {
+      background: var(--green-800);
+      border: 1px solid var(--border-dark);
+      padding: 36px;
+      border-radius: var(--radius-lg);
+      transition: var(--transition);
+    }
+    .service-card:hover {
+      border-color: rgba(245,239,232,0.28);
+      transform: translateY(-4px);
+    }
+    .service-icon-box {
+      width: 60px; height: 60px;
+      border: 1px solid var(--border-dark);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+      color: var(--green-300);
+      transition: border-color var(--transition);
+    }
+    .service-card:hover .service-icon-box { border-color: rgba(245,239,232,0.28); }
+
+    /* ── Stats ────────────────────────────────────────────────────── */
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1;
+      color: var(--green-300);
+      letter-spacing: var(--tracking-display);
+    }
+    .stat-value-accent { color: var(--clay); }
+    .stat-label {
+      font-family: var(--font-body);
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-medium);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-on-dark-mut);
+      margin-top: 6px;
+    }
+
+    /* ── Process steps ────────────────────────────────────────────── */
+    .process-step { position: relative; }
     .process-step::after {
       content: '';
       position: absolute;
-      top: 24px;
-      right: -50%;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, #4a4a4a, transparent);
+      top: 24px; right: -50%;
+      width: 100%; height: 1px;
+      background: linear-gradient(to right, var(--border-dark), transparent);
     }
-    
-    .process-step:last-child::after {
-      display: none;
-    }
-    
-    .scroll-container {
-      height: 100%;
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-    
-    .page {
-      display: none;
-    }
-    
-    .page.active {
+    .process-step:last-child::after { display: none; }
+
+    /* ── Forms ────────────────────────────────────────────────────── */
+    .form-label {
+      font-family: var(--font-body);
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-semibold);
+      color: var(--ink-800);
       display: block;
+      margin-bottom: 7px;
     }
-    
-    .service-card {
-      background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
-      border: 1px solid #3a3a3a;
-      padding: 40px;
-      transition: all 0.4s ease;
-    }
-    
-    .service-card:hover {
-      border-color: #444;
-      transform: translateY(-4px);
-    }
-    
-    .stat-number {
-      font-size: 4rem;
-      line-height: 1;
-    }
-    
-    @media (max-width: 768px) {
-      .section-padding {
-        padding: 80px 0;
-      }
-      
-      .stat-number {
-        font-size: 3rem;
-      }
-    }
-    
     .form-input {
-      background: #F5EFE8;
-      color: #333333;
-      border: none;
-      border-radius: 8px;
-      box-shadow: inset 0 2px 6px rgba(0,0,0,0.08);
-      padding: 16px 20px;
+      background: var(--white);
+      color: var(--ink-900);
+      border: 1px solid var(--stone);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
       width: 100%;
-      transition: outline 0.3s ease;
+      font-family: var(--font-body);
+      font-size: var(--fs-sm);
+      line-height: var(--lh-normal);
+      transition: var(--transition);
+      appearance: none;
     }
-
     .form-input:focus {
-      outline: 2px solid #333333;
-      outline-offset: 2px;
+      outline: none;
+      border-color: var(--green-700);
+      box-shadow: 0 0 0 3px rgba(53,122,91,0.14);
     }
+    .form-input::placeholder { color: var(--slate-400); }
 
-    .form-input::placeholder {
-      color: #999999;
-    }
-    
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, #4a4a4a, transparent);
-    }
+    /* ── Divider ──────────────────────────────────────────────────── */
+    .divider { height: 1px; background: var(--border-dark); }
 
+    /* ── Mobile menu ──────────────────────────────────────────────── */
     .mobile-menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(51,51,51,0.98);
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--green-900);
       z-index: 100;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity var(--transition);
     }
+    .mobile-menu.active { opacity: 1; pointer-events: auto; }
 
-    .mobile-menu.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
+    /* ── Hamburger ────────────────────────────────────────────────── */
     .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      cursor: pointer;
-      z-index: 101;
+      display: none; flex-direction: column;
+      gap: 6px; cursor: pointer; z-index: 101;
     }
-
     .hamburger span {
-      width: 28px;
-      height: 2px;
-      background: #fff;
-      transition: all 0.3s ease;
+      width: 28px; height: 2px;
+      background: var(--cream);
+      transition: var(--transition);
     }
 
+    /* ── Project filter buttons ───────────────────────────────────── */
+    .project-filter {
+      font-family: var(--font-body);
+      font-size: var(--fs-xs);
+      letter-spacing: 0.04em;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      background: transparent;
+      color: var(--text-on-dark);
+      border: 1px solid var(--border-dark);
+    }
+    .project-filter:hover,
+    .project-filter.active {
+      background: var(--cream);
+      color: var(--green-800);
+      border-color: var(--cream);
+    }
+
+    /* ── Why-us icon boxes ────────────────────────────────────────── */
+    .why-icon-box {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      border: 1px solid var(--border-dark);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green-300);
+    }
+
+    /* ── Scroll container ─────────────────────────────────────────── */
+    .scroll-container { height: 100%; overflow-y: auto; overflow-x: hidden; }
+
+    /* ── SPA pages ────────────────────────────────────────────────── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ── Responsive ───────────────────────────────────────────────── */
     @media (max-width: 1024px) {
-      .hamburger {
-        display: flex;
-      }
-      
-      .desktop-nav {
-        display: none;
-      }
+      .hamburger { display: flex; }
+      .desktop-nav { display: none; }
+    }
+    @media (max-width: 768px) {
+      .section-padding { padding: var(--section-pad-y-sm) 0; }
+      :root { --container-pad: 20px; }
     }
   </style>
   <style>body { box-sizing: border-box; }</style>
@@ -416,38 +577,47 @@
  <body class="h-full">
   <div class="scroll-container" id="mainContainer">
    <!-- Navigation -->
-   <nav class="fixed top-0 left-0 right-0 z-50 bg-[#333]/90 backdrop-blur-sm border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-     <div class="flex items-center justify-between h-20">
+   <nav style="position:fixed;top:0;left:0;right:0;z-index:50;height:76px;display:flex;align-items:center;background:rgba(16,42,32,0.86);backdrop-filter:var(--backdrop-blur);-webkit-backdrop-filter:var(--backdrop-blur);border-bottom:1px solid var(--border-dark);">
+    <div style="max-width:var(--container-max);margin:0 auto;padding:0 var(--container-pad);width:100%;display:flex;align-items:center;justify-content:space-between;">
       <a href="/" id="navLogo" aria-label="Dova Futures Home" onclick="navigateTo('home'); return false;">
        <img src="/assets/logo/DOVA%20Logo%20-%20W.png" onerror="this.onerror=null;this.src='/assets/logo/DOVA%20Logo.png';" alt="Dova Futures Developers Logo" class="brand-logo">
       </a>
-      <div class="desktop-nav hidden lg:flex items-center gap-8">
-       <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('home'); return false;">Home</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('about'); return false;">About</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('services'); return false;">Services</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('projects'); return false;">Projects</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('process'); return false;">Process</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('why'); return false;">Why Us</a> <a href="/" class="nav-link text-sm tracking-wide" onclick="navigateTo('contact'); return false;">Contact</a>
+      <div class="desktop-nav" style="display:flex;align-items:center;gap:34px;">
+       <a href="/" class="nav-link" onclick="navigateTo('home'); return false;">Home</a>
+       <a href="/" class="nav-link" onclick="navigateTo('about'); return false;">About</a>
+       <a href="/" class="nav-link" onclick="navigateTo('services'); return false;">Services</a>
+       <a href="/" class="nav-link" onclick="navigateTo('projects'); return false;">Projects</a>
+       <a href="/" class="nav-link" onclick="navigateTo('process'); return false;">Process</a>
+       <a href="/" class="nav-link" onclick="navigateTo('why'); return false;">Why Us</a>
+       <a href="/" class="nav-link" onclick="navigateTo('contact'); return false;">Contact</a>
+       <button class="btn-base btn-cream btn-sm" onclick="navigateTo('contact')">Start a Project</button>
       </div>
       <div class="hamburger" onclick="toggleMobileMenu()">
-       <span></span> <span></span> <span></span>
+       <span></span><span></span><span></span>
       </div>
-     </div>
     </div>
-   </nav><!-- Mobile Menu -->
+   </nav>
+   <!-- Mobile Menu -->
    <div class="mobile-menu" id="mobileMenu">
-    <div class="flex flex-col items-center gap-8">
-     <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('home'); toggleMobileMenu(); return false;">Home</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('about'); toggleMobileMenu(); return false;">About</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('services'); toggleMobileMenu(); return false;">Services</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('projects'); toggleMobileMenu(); return false;">Projects</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('process'); toggleMobileMenu(); return false;">Process</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('why'); toggleMobileMenu(); return false;">Why Us</a> <a href="/" class="font-display text-3xl tracking-wider" onclick="navigateTo('contact'); toggleMobileMenu(); return false;">Contact</a>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:32px;">
+     <a href="/" class="font-display" style="font-size:32px;color:var(--cream);text-decoration:none;" onclick="navigateTo('home'); toggleMobileMenu(); return false;">Home</a>
+     <a href="/" class="font-display" style="font-size:32px;color:var(--cream);text-decoration:none;" onclick="navigateTo('about'); toggleMobileMenu(); return false;">About</a>
+     <a href="/" class="font-display" style="font-size:32px;color:var(--cream);text-decoration:none;" onclick="navigateTo('services'); toggleMobileMenu(); return false;">Services</a>
+     <a href="/" class="font-display" style="font-size:32px;color:var(--cream);text-decoration:none;" onclick="navigateTo('projects'); toggleMobileMenu(); return false;">Projects</a>
+     <a href="/" class="font-display" style="font-size:32px;color:var(--cream);text-decoration:none;" onclick="navigateTo('process'); toggleMobileMenu(); return false;">Process</a>
+     <a href="/" class="font-display" style="font-size:32px;color:var(--cream);text-decoration:none;" onclick="navigateTo('why'); toggleMobileMenu(); return false;">Why Us</a>
+     <a href="/" class="font-display" style="font-size:32px;color:var(--cream);text-decoration:none;" onclick="navigateTo('contact'); toggleMobileMenu(); return false;">Contact</a>
     </div>
    </div><!-- HOME PAGE -->
    <div id="page-home" class="page active">
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center relative grid-pattern">
+    <section style="min-height:100vh;display:flex;align-items:center;position:relative;background:var(--green-900);background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:60px 60px;">
      <!-- Before/After Hero Reveal -->
      <div id="heroReveal" class="absolute inset-0 overflow-hidden" style="--split: 50%">
-      <!-- After Image (full width, clipped to right of split) -->
-      <img class="reveal-img reveal-after" src="/assets/projects/ado-hall/after.png" alt="Dova Futures - Rendered" style="opacity: 0.65">
-      <!-- Before Image (full width, clipped to left of split) -->
+      <img class="reveal-img reveal-after" src="/assets/projects/ado-hall/after.png" alt="Dova Futures - Rendered" style="opacity:0.55;">
       <div class="reveal-before-panel" style="clip-path: inset(0 calc(100% - var(--split)) 0 0)">
-       <img class="reveal-img reveal-before" src="/assets/projects/ado-hall/before.jpg" alt="Dova Futures - Draft" style="opacity: 0.5">
+       <img class="reveal-img reveal-before" src="/assets/projects/ado-hall/before.jpg" alt="Dova Futures - Draft" style="opacity:0.45;filter:grayscale(0.4);">
       </div>
-      <!-- Divider line + handle + labels -->
       <div class="reveal-divider" style="left: var(--split)">
        <div class="reveal-line"></div>
        <div class="reveal-handle">⇔</div>
@@ -455,919 +625,879 @@
        <span class="reveal-label reveal-label-right">Render</span>
       </div>
      </div>
-     <div class="absolute inset-0 bg-gradient-to-br from-black via-black/75 to-black/80"></div>
-     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32">
-      <div class="max-w-3xl">
-       <p class="text-gray-400 tracking-[0.3em] text-sm mb-6 uppercase">Design–Build Excellence</p>
-       <h1 class="font-display text-6xl md:text-8xl lg:text-9xl leading-none mb-8" id="heroHeadline">Designed With Intent.<br>
-         Built With Precision.</h1>
-       <p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-12 max-w-xl" id="heroSubtext">Rethink the future — integrated design and construction excellence, engineered for precision.</p>
-       <div class="flex flex-col sm:flex-row gap-4">
-        <button class="btn-primary" onclick="navigateTo('contact')">Start Your Project</button> <button class="btn-secondary" onclick="navigateTo('projects')">View Portfolio</button>
+     <!-- Hero overlay -->
+     <div style="position:absolute;inset:0;background:var(--overlay-hero);"></div>
+     <!-- Hero content -->
+     <div style="position:relative;z-index:10;max-width:var(--container-max);margin:0 auto;padding:120px var(--container-pad) 80px;width:100%;">
+      <div style="max-width:760px;">
+       <span class="eyebrow eyebrow-green" style="margin-bottom:22px;">Design–Build Excellence</span>
+       <h1 class="font-display" style="font-size:var(--fs-display-2xl);line-height:0.92;color:var(--cream);margin:0 0 26px;" id="heroHeadline">Designed With Intent.<br>Built With Precision.</h1>
+       <p style="font-family:var(--font-body);font-size:var(--fs-lg);font-weight:300;line-height:1.6;color:var(--text-on-dark);max-width:520px;margin:0 0 38px;" id="heroSubtext">Rethink the future — integrated design and construction excellence, engineered for precision.</p>
+       <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <button class="btn-base btn-cream btn-lg" onclick="navigateTo('contact')">Start Your Project</button>
+        <button class="btn-base btn-outline-light btn-lg" onclick="navigateTo('projects')">View Portfolio</button>
        </div>
       </div>
-     </div><!-- Scroll indicator -->
-     <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-      <span class="text-xs tracking-widest text-gray-500">SCROLL</span>
-      <div class="w-px h-16 bg-gradient-to-b from-white/50 to-transparent"></div>
+     </div>
+     <!-- Scroll indicator -->
+     <div style="position:absolute;bottom:48px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;">
+      <span style="font-family:var(--font-body);font-size:11px;letter-spacing:0.2em;color:var(--text-on-dark-mut);text-transform:uppercase;">Scroll</span>
+      <div style="width:1px;height:56px;background:linear-gradient(to bottom,rgba(245,239,232,0.4),transparent);"></div>
      </div>
     </section><!-- About Preview -->
-    <section class="section-padding border-t border-white/10">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <section class="section-padding sec-darker grid-pattern">
+     <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
        <div>
-        <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">Who We Are</p>
-        <h2 class="font-display text-5xl md:text-6xl mb-8">Building Tomorrow's Landmarks</h2>
-        <p class="text-gray-400 text-lg leading-relaxed mb-6">Dova Futures Developers is a premier design–build construction company delivering exceptional architectural and construction services. We combine innovative design with superior craftsmanship to transform ambitious visions into remarkable structures.</p>
-        <p class="text-gray-400 text-lg leading-relaxed mb-10">From initial concept through final handover, we manage every detail with precision, ensuring quality, transparency, and excellence at every stage.</p><button class="btn-secondary" onclick="navigateTo('about')">Learn More About Us</button>
-       </div>
-       <div class="relative">
-        <div class="aspect-square bg-gradient-to-br from-gray-900 to-black border border-white/10 overflow-hidden">
-         <img id="aboutProjectImage" src="/assets/projects/body-shop.jpg" alt="Dova Futures Project Image" class="w-full h-full object-cover" loading="lazy">
+        <span class="eyebrow eyebrow-green" style="margin-bottom:18px;">Who We Are</span>
+        <h2 class="font-display" style="font-size:var(--fs-display-lg);color:var(--cream);line-height:1;margin-bottom:24px;">Building Tomorrow's Landmarks</h2>
+        <p style="font-family:var(--font-body);font-size:17px;line-height:1.75;color:var(--text-on-dark-mut);margin-bottom:18px;">Dova Futures Developers is a premier design–build construction company delivering exceptional architectural and construction services. We combine innovative design with superior craftsmanship to transform ambitious visions into remarkable structures.</p>
+        <p style="font-family:var(--font-body);font-size:17px;line-height:1.75;color:var(--text-on-dark-mut);margin-bottom:34px;">From initial concept through final handover, we manage every detail with precision, ensuring quality, transparency, and excellence at every stage.</p>
+        <div style="display:flex;gap:48px;margin-bottom:34px;">
+         <div><div class="stat-value">20+</div><div class="stat-label">Sites managed</div></div>
+         <div><div class="stat-value stat-value-accent">₦350M+</div><div class="stat-label">Project value</div></div>
+         <div><div class="stat-value">5+</div><div class="stat-label">Years delivering</div></div>
         </div>
-        <div class="absolute -bottom-8 -right-8 w-32 h-32 border border-white/20"></div>
+        <button class="btn-base btn-outline-light" onclick="navigateTo('about')">Learn More About Us</button>
+       </div>
+       <div style="position:relative;">
+        <div style="aspect-ratio:1/1;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-dark);">
+         <img id="aboutProjectImage" src="/assets/projects/body-shop.jpg" alt="Dova Futures Project Image" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+        </div>
+        <div style="position:absolute;bottom:-22px;right:-22px;width:120px;height:120px;border:1px solid var(--border-dark);"></div>
        </div>
       </div>
      </div>
     </section><!-- Services Snapshot -->
-    <section class="section-padding bg-gradient-to-b from-transparent via-white/5 to-transparent">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-20">
-       <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">What We Do</p>
-       <h2 class="font-display text-5xl md:text-6xl">Our Core Services</h2>
+    <section class="section-padding sec-dark grid-pattern">
+     <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+       <span class="eyebrow eyebrow-green" style="margin-bottom:14px;">What We Do</span>
+       <h2 class="font-display" style="font-size:var(--fs-display-lg);color:var(--cream);line-height:1;">Our Core Services</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-       <!-- Service 1 -->
-       <div class="service-card group">
-        <div class="w-16 h-16 border border-white/20 flex items-center justify-center mb-8 group-hover:border-white/40 transition-colors">
-         <svg class="w-8 h-8" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M3 21h18M3 7v14M21 7v14M6 7V3h12v4M9 11h6M9 15h6" />
-         </svg>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+       <div class="service-card">
+        <div class="service-icon-box">
+         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 7v14M21 7v14M6 7V3h12v4M9 11h6M9 15h6"/></svg>
         </div>
-        <h3 class="font-display text-3xl mb-4">Architectural Planning</h3>
-        <p class="text-gray-400 leading-relaxed">Comprehensive architectural design services from concept development through detailed construction documentation.</p>
-       </div><!-- Service 2 -->
-       <div class="service-card group">
-        <div class="w-16 h-16 border border-white/20 flex items-center justify-center mb-8 group-hover:border-white/40 transition-colors">
-         <svg class="w-8 h-8" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M2 20h20M4 20V8l8-6l8 6v12M9 20v-6h6v6" />
-         </svg>
+        <h3 class="font-display" style="font-size:28px;color:var(--cream);margin-bottom:12px;">Architectural Planning</h3>
+        <p style="font-family:var(--font-body);font-size:var(--fs-sm);line-height:1.65;color:var(--text-on-dark-mut);">Comprehensive architectural design services from concept development through detailed construction documentation.</p>
+       </div>
+       <div class="service-card">
+        <div class="service-icon-box">
+         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8l8-6l8 6v12M9 20v-6h6v6"/></svg>
         </div>
-        <h3 class="font-display text-3xl mb-4">Building Construction</h3>
-        <p class="text-gray-400 leading-relaxed">Full-scale construction services with rigorous quality control, timeline management, and transparent budgeting.</p>
-       </div><!-- Service 3 -->
-       <div class="service-card group">
-        <div class="w-16 h-16 border border-white/20 flex items-center justify-center mb-8 group-hover:border-white/40 transition-colors">
-         <svg class="w-8 h-8" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18M9 21V9" />
-         </svg>
+        <h3 class="font-display" style="font-size:28px;color:var(--cream);margin-bottom:12px;">Building Construction</h3>
+        <p style="font-family:var(--font-body);font-size:var(--fs-sm);line-height:1.65;color:var(--text-on-dark-mut);">Full-scale construction services with rigorous quality control, timeline management, and transparent budgeting.</p>
+       </div>
+       <div class="service-card">
+        <div class="service-icon-box">
+         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg>
         </div>
-        <h3 class="font-display text-3xl mb-4">Premium Interior Finishing</h3>
-        <p class="text-gray-400 leading-relaxed">High-end interior finishing and fit-out services that transform spaces into sophisticated, functional environments.</p>
+        <h3 class="font-display" style="font-size:28px;color:var(--cream);margin-bottom:12px;">Premium Interior Finishing</h3>
+        <p style="font-family:var(--font-body);font-size:var(--fs-sm);line-height:1.65;color:var(--text-on-dark-mut);">High-end interior finishing and fit-out services that transform spaces into sophisticated, functional environments.</p>
        </div>
       </div>
-      <div class="text-center mt-16">
-       <button class="btn-secondary" onclick="navigateTo('services')">Explore All Services</button>
+      <div style="text-align:center;margin-top:48px;">
+       <button class="btn-base btn-outline-light" onclick="navigateTo('services')">Explore All Services</button>
       </div>
      </div>
     </section><!-- Design–Build Difference Section -->
-    <section class="section-padding bg-[#F5EFE8] text-[#333]">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <section class="section-padding sec-cream">
+     <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
        <div>
-        <h2 class="font-display text-5xl md:text-6xl mb-8">The Dova Futures Difference</h2>
-        <p class="text-gray-700 text-lg leading-relaxed mb-6">We eliminate the disconnect between architectural drawings and on-site execution. Every design we produce is engineered to be built exactly as envisioned — without compromise, delay, or unnecessary cost escalation.</p>
-        <p class="text-gray-700 text-lg leading-relaxed mb-8">When design and construction operate under one roof, the result is seamless coordination, predictable budgets, and exceptional outcomes.</p>
-        <div class="space-y-4">
-         <div class="flex items-start gap-4">
-          <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0 text-sm font-bold">
-           ✓
-          </div><span class="text-gray-800 text-lg">Unified design-build methodology</span>
+        <span class="eyebrow eyebrow-clay" style="margin-bottom:18px;">The Difference</span>
+        <h2 class="font-display" style="font-size:var(--fs-display-lg);color:var(--ink-900);line-height:1;margin-bottom:24px;">Design &amp; Build Under One Roof</h2>
+        <p style="font-family:var(--font-body);font-size:17px;line-height:1.75;color:var(--text-body);margin-bottom:18px;">We eliminate the disconnect between architectural drawings and on-site execution. Every design we produce is engineered to be built exactly as envisioned — without compromise, delay, or unnecessary cost escalation.</p>
+        <p style="font-family:var(--font-body);font-size:17px;line-height:1.75;color:var(--text-body);margin-bottom:26px;">When design and construction operate under one roof, the result is seamless coordination, predictable budgets, and exceptional outcomes.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+         <div style="display:flex;align-items:center;gap:14px;">
+          <span style="width:26px;height:26px;border-radius:50%;background:var(--brand);color:var(--cream);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:600;">✓</span>
+          <span style="font-family:var(--font-body);font-size:16px;color:var(--ink-900);">Unified design-build methodology</span>
          </div>
-         <div class="flex items-start gap-4">
-          <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0 text-sm font-bold">
-           ✓
-          </div><span class="text-gray-800 text-lg">Streamlined approval processes</span>
+         <div style="display:flex;align-items:center;gap:14px;">
+          <span style="width:26px;height:26px;border-radius:50%;background:var(--brand);color:var(--cream);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:600;">✓</span>
+          <span style="font-family:var(--font-body);font-size:16px;color:var(--ink-900);">Streamlined approval processes</span>
          </div>
-         <div class="flex items-start gap-4">
-          <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0 text-sm font-bold">
-           ✓
-          </div><span class="text-gray-800 text-lg">Reduced timeline and cost overruns</span>
+         <div style="display:flex;align-items:center;gap:14px;">
+          <span style="width:26px;height:26px;border-radius:50%;background:var(--brand);color:var(--cream);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:600;">✓</span>
+          <span style="font-family:var(--font-body);font-size:16px;color:var(--ink-900);">Reduced timeline and cost overruns</span>
          </div>
-         <div class="flex items-start gap-4">
-          <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0 text-sm font-bold">
-           ✓
-          </div><span class="text-gray-800 text-lg">Direct accountability for outcomes</span>
+         <div style="display:flex;align-items:center;gap:14px;">
+          <span style="width:26px;height:26px;border-radius:50%;background:var(--brand);color:var(--cream);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:600;">✓</span>
+          <span style="font-family:var(--font-body);font-size:16px;color:var(--ink-900);">Direct accountability for outcomes</span>
          </div>
         </div>
        </div>
-       <div class="aspect-square bg-gradient-to-br from-gray-200 to-gray-100 border-2 border-black overflow-hidden">
-        <!-- project image placeholder: drop a real photo here -->
+       <div style="aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden;border:2px solid var(--ink-900);">
+        <img src="/assets/projects/ado-hall/after.png" alt="DOVA build quality" style="width:100%;height:100%;object-fit:cover;">
        </div>
       </div>
      </div>
     </section><!-- Process Section -->
-    <section class="section-padding border-t border-white/10 bg-black">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-20">
-       <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">How We Work</p>
-       <h2 class="font-display text-5xl md:text-6xl">Our 5-Step Process</h2>
+    <section class="section-padding sec-darker grid-pattern">
+     <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+       <span class="eyebrow eyebrow-green" style="margin-bottom:14px;">How We Work</span>
+       <h2 class="font-display" style="font-size:var(--fs-display-lg);color:var(--cream);line-height:1;">Our 5-Step Process</h2>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-4">
-       <div class="process-step text-center">
-        <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center mx-auto mb-6">
-         <span class="font-display text-xl">01</span>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;">
+       <div class="process-step" style="text-align:center;">
+        <div style="width:52px;height:52px;border-radius:50%;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+         <span class="font-display" style="font-size:20px;color:var(--green-300);">01</span>
         </div>
-        <h3 class="font-display text-2xl mb-2">Consultation</h3>
-        <p class="text-gray-500 text-sm">Understanding your vision and requirements</p>
+        <h3 class="font-display" style="font-size:24px;color:var(--cream);margin-bottom:6px;">Consultation</h3>
+        <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Understanding your vision and requirements</p>
        </div>
-       <div class="process-step text-center">
-        <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center mx-auto mb-6">
-         <span class="font-display text-xl">02</span>
+       <div class="process-step" style="text-align:center;">
+        <div style="width:52px;height:52px;border-radius:50%;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+         <span class="font-display" style="font-size:20px;color:var(--green-300);">02</span>
         </div>
-        <h3 class="font-display text-2xl mb-2">Design</h3>
-        <p class="text-gray-500 text-sm">Creating architectural concepts and plans</p>
+        <h3 class="font-display" style="font-size:24px;color:var(--cream);margin-bottom:6px;">Design</h3>
+        <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Creating architectural concepts and plans</p>
        </div>
-       <div class="process-step text-center">
-        <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center mx-auto mb-6">
-         <span class="font-display text-xl">03</span>
+       <div class="process-step" style="text-align:center;">
+        <div style="width:52px;height:52px;border-radius:50%;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+         <span class="font-display" style="font-size:20px;color:var(--green-300);">03</span>
         </div>
-        <h3 class="font-display text-2xl mb-2">Engineering</h3>
-        <p class="text-gray-500 text-sm">Technical planning and documentation</p>
+        <h3 class="font-display" style="font-size:24px;color:var(--cream);margin-bottom:6px;">Engineering</h3>
+        <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Technical planning and documentation</p>
        </div>
-       <div class="process-step text-center">
-        <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center mx-auto mb-6">
-         <span class="font-display text-xl">04</span>
+       <div class="process-step" style="text-align:center;">
+        <div style="width:52px;height:52px;border-radius:50%;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+         <span class="font-display" style="font-size:20px;color:var(--green-300);">04</span>
         </div>
-        <h3 class="font-display text-2xl mb-2">Construction</h3>
-        <p class="text-gray-500 text-sm">Building with precision and quality</p>
+        <h3 class="font-display" style="font-size:24px;color:var(--cream);margin-bottom:6px;">Construction</h3>
+        <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Building with precision and quality</p>
        </div>
-       <div class="process-step text-center col-span-2 md:col-span-1">
-        <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center mx-auto mb-6">
-         <span class="font-display text-xl">05</span>
+       <div class="process-step" style="text-align:center;">
+        <div style="width:52px;height:52px;border-radius:50%;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;">
+         <span class="font-display" style="font-size:20px;color:var(--green-300);">05</span>
         </div>
-        <h3 class="font-display text-2xl mb-2">Handover</h3>
-        <p class="text-gray-500 text-sm">Keys in hand, vision realized</p>
+        <h3 class="font-display" style="font-size:24px;color:var(--cream);margin-bottom:6px;">Handover</h3>
+        <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Keys in hand, vision realized</p>
        </div>
       </div>
      </div>
     </section><!-- Featured Projects -->
-    <section class="section-padding bg-gradient-to-b from-transparent via-white/5 to-transparent">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-20">
-       <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">Our Work</p>
-       <h2 class="font-display text-5xl md:text-6xl">Featured Projects</h2>
+    <section class="section-padding sec-dark">
+     <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+       <span class="eyebrow eyebrow-green" style="margin-bottom:14px;">Our Work</span>
+       <h2 class="font-display" style="font-size:var(--fs-display-lg);color:var(--cream);line-height:1;">Featured Projects</h2>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-       <!-- PROJECT: The Body Shop Retail Fit-Out -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
        <div class="project-card">
-        <img src="/assets/projects/body-shop.jpg" alt="The Body Shop Retail Fit-Out - Ikeja City Mall" class="project-image">
+        <img src="/assets/projects/body-shop.jpg" alt="The Body Shop Retail Fit-Out" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Commercial</p>
-         <h3 class="font-display text-2xl">The Body Shop Retail Fit-Out</h3>
-         <p class="text-gray-500 text-sm">Ikeja, Lagos</p>
+         <span class="project-tag">Commercial</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">The Body Shop Retail Fit-Out</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Ikeja, Lagos</p>
         </div>
        </div>
-       <!-- PROJECT: Palm Oil Drainage Infrastructure -->
        <div class="project-card">
-        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Palm Oil Drainage Infrastructure Project" class="project-image">
+        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Palm Oil Drainage Infrastructure" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl">Palm Oil Drainage Infrastructure</h3>
-         <p class="text-gray-500 text-sm">Akure, Ondo State</p>
+         <span class="project-tag">Infrastructure</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Palm Oil Drainage Infrastructure</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Akure, Ondo State</p>
         </div>
        </div>
-       <!-- PROJECT: Residential Duplex Development -->
        <div class="project-card">
         <img src="/assets/projects/residential-duplex.jpg" alt="Residential Duplex Development" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl">Residential Duplex Development</h3>
-         <p class="text-gray-500 text-sm">Lagos, Nigeria</p>
+         <span class="project-tag">Residential</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Residential Duplex Development</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Lagos, Nigeria</p>
         </div>
        </div>
-       <!-- PROJECT: Interior Renovation Project -->
        <div class="project-card">
-        <img src="/assets/projects/interior-renovation.jpg" alt="Premium Interior Renovation Project" class="project-image">
+        <img src="/assets/projects/interior-renovation.jpg" alt="Interior Renovation Project" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Interiors</p>
-         <h3 class="font-display text-2xl">Interior Renovation Project</h3>
-         <p class="text-gray-500 text-sm">Ekiti &amp; Lagos States</p>
+         <span class="project-tag">Interiors</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Interior Renovation Project</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Ekiti &amp; Lagos States</p>
         </div>
        </div>
-       <!-- PROJECT: Market Infrastructure Development -->
        <div class="project-card">
         <img src="/assets/projects/palm-oil-drainage.jpg" alt="Market Infrastructure Development" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Commercial</p>
-         <h3 class="font-display text-2xl">Market Infrastructure Development</h3>
-         <p class="text-gray-500 text-sm">Edo State</p>
+         <span class="project-tag">Commercial</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Market Infrastructure Development</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Edo State</p>
         </div>
        </div>
-       <!-- PROJECT: Structural Construction Works -->
        <div class="project-card">
         <img src="/assets/projects/residential-duplex.jpg" alt="Structural Construction Works" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl">Structural Construction Works</h3>
-         <p class="text-gray-500 text-sm">Multi-State</p>
+         <span class="project-tag">Infrastructure</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Structural Construction Works</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Multi-State</p>
         </div>
        </div>
       </div>
-      <div class="text-center mt-16">
-       <button class="btn-secondary" onclick="navigateTo('projects')">View All Projects</button>
+      <div style="text-align:center;margin-top:48px;">
+       <button class="btn-base btn-outline-light btn-lg" onclick="navigateTo('projects')">View All Projects</button>
       </div>
      </div>
     </section><!-- Why Choose Us -->
-    <section class="section-padding border-t border-white/10">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16">
+    <section class="section-padding sec-darker grid-pattern">
+     <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
        <div>
-        <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">Our Advantage</p>
-        <h2 class="font-display text-5xl md:text-6xl mb-8">Why Choose Dova Futures</h2>
-        <p class="text-gray-400 text-lg leading-relaxed">We deliver exceptional value through integrated services, transparent processes, and unwavering commitment to quality.</p>
+        <span class="eyebrow eyebrow-green" style="margin-bottom:14px;">Our Advantage</span>
+        <h2 class="font-display" style="font-size:var(--fs-display-lg);color:var(--cream);line-height:1;margin-bottom:24px;">Why Choose Dova Futures</h2>
+        <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);">We deliver exceptional value through integrated services, transparent processes, and unwavering commitment to quality.</p>
        </div>
-       <div class="space-y-8">
-        <div class="flex gap-6">
-         <div class="flex-shrink-0 w-12 h-12 border border-white/20 flex items-center justify-center">
-          <svg class="w-6 h-6" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-           <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" /> <path d="M12 22V12M2 7l10 5 10-5" />
-          </svg>
+       <div style="display:flex;flex-direction:column;gap:28px;">
+        <div class="why-advantage-row" style="display:flex;gap:20px;align-items:flex-start;">
+         <div class="why-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-300)" stroke-width="1.5"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/><path d="M12 22V12M2 7l10 5 10-5"/></svg>
          </div>
          <div>
-          <h3 class="font-display text-2xl mb-2">Design + Build Under One Roof</h3>
-          <p class="text-gray-400">Seamless integration of architectural design and construction for streamlined project delivery.</p>
+          <h3 class="font-display" style="font-size:22px;color:var(--cream);margin-bottom:4px;">Design + Build Under One Roof</h3>
+          <p style="font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">Seamless integration of architectural design and construction for streamlined project delivery.</p>
          </div>
         </div>
-        <div class="flex gap-6">
-         <div class="flex-shrink-0 w-12 h-12 border border-white/20 flex items-center justify-center">
-          <svg class="w-6 h-6" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-           <circle cx="12" cy="12" r="10" /> <path d="M12 6v6l4 2" />
-          </svg>
+        <div style="display:flex;gap:20px;align-items:flex-start;">
+         <div class="why-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-300)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
          </div>
          <div>
-          <h3 class="font-display text-2xl mb-2">Cost Transparency</h3>
-          <p class="text-gray-400">Clear, detailed budgeting with no hidden costs. Know exactly where your investment goes.</p>
+          <h3 class="font-display" style="font-size:22px;color:var(--cream);margin-bottom:4px;">Cost Transparency</h3>
+          <p style="font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">Clear, detailed budgeting with no hidden costs. Know exactly where your investment goes.</p>
          </div>
         </div>
-        <div class="flex gap-6">
-         <div class="flex-shrink-0 w-12 h-12 border border-white/20 flex items-center justify-center">
-          <svg class="w-6 h-6" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-           <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
-          </svg>
+        <div style="display:flex;gap:20px;align-items:flex-start;">
+         <div class="why-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-300)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
          </div>
          <div>
-          <h3 class="font-display text-2xl mb-2">Structured Supervision</h3>
-          <p class="text-gray-400">Dedicated project management ensuring quality control and timeline adherence.</p>
+          <h3 class="font-display" style="font-size:22px;color:var(--cream);margin-bottom:4px;">Structured Supervision</h3>
+          <p style="font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">Dedicated project management ensuring quality control and timeline adherence.</p>
          </div>
         </div>
-        <div class="flex gap-6">
-         <div class="flex-shrink-0 w-12 h-12 border border-white/20 flex items-center justify-center">
-          <svg class="w-6 h-6" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-           <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
-          </svg>
+        <div style="display:flex;gap:20px;align-items:flex-start;">
+         <div class="why-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-300)" stroke-width="1.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
          </div>
          <div>
-          <h3 class="font-display text-2xl mb-2">Premium Finishing</h3>
-          <p class="text-gray-400">Superior craftsmanship and attention to detail in every aspect of construction.</p>
+          <h3 class="font-display" style="font-size:22px;color:var(--cream);margin-bottom:4px;">Premium Finishing</h3>
+          <p style="font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">Superior craftsmanship and attention to detail in every aspect of construction.</p>
          </div>
         </div>
        </div>
       </div>
      </div>
     </section><!-- CTA Section -->
-    <section class="section-padding bg-[#F5EFE8] text-[#333]">
-     <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-      <h2 class="font-display text-5xl md:text-7xl mb-8">Let's Build It Properly.</h2>
-      <p class="text-gray-600 text-xl mb-12 max-w-2xl mx-auto">Ready to transform your vision into reality? Let's discuss your project and explore the possibilities.</p>
-      <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
-       <button class="btn-cream" onclick="navigateTo('contact')"> Start Your Project </button>
+    <section class="section-padding sec-cream">
+     <div class="container" style="text-align:center;max-width:720px;">
+      <span class="eyebrow eyebrow-clay" style="margin-bottom:14px;">Ready to Build?</span>
+      <h2 class="font-display" style="font-size:var(--fs-display-xl);color:var(--ink-900);line-height:1;margin-bottom:20px;">Let's Build It Properly.</h2>
+      <p style="font-family:var(--font-body);font-size:var(--fs-lg);color:var(--text-body);margin-bottom:40px;line-height:var(--lh-relaxed);">Ready to transform your vision into reality? Let's discuss your project and explore the possibilities.</p>
+      <div style="display:flex;justify-content:center;gap:16px;margin-bottom:40px;">
+       <button class="btn-base btn-primary btn-lg" onclick="navigateTo('contact')">Start Your Project</button>
       </div>
-      <div class="flex flex-col sm:flex-row justify-center gap-8 text-gray-600">
-       <a href="tel:+2348163675439" class="flex items-center justify-center gap-2 hover:text-black transition-colors" id="ctaPhone">
-        <svg class="w-5 h-5" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-         <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-        </svg><span>+234 816 367 5439</span> </a> <a href="mailto:info@dovafutures.com" class="flex items-center justify-center gap-2 hover:text-black transition-colors" id="ctaEmail">
-        <svg class="w-5 h-5" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /> <polyline points="22,6 12,13 2,6" />
-        </svg><span>info@dovafutures.com</span> </a>
+      <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;">
+       <a href="tel:+2348163675439" style="display:flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-body);text-decoration:none;" id="ctaPhone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        +234 816 367 5439
+       </a>
+       <a href="mailto:info@dovafutures.com" style="display:flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-body);text-decoration:none;" id="ctaEmail">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        info@dovafutures.com
+       </a>
       </div>
      </div>
     </section><!-- Footer -->
-    <footer class="py-12 border-t border-white/10">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-       <p class="font-display text-xl tracking-wider" id="footerLogo">DOVA FUTURES DEVELOPERS</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
+    <footer class="sec-darkest" style="padding:40px 0;border-top:1px solid var(--border-dark);">
+     <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+       <p class="font-display" style="font-size:18px;letter-spacing:0.08em;color:var(--cream);" id="footerLogo">DOVA FUTURES DEVELOPERS</p>
+       <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
    </div><!-- ABOUT PAGE -->
    <div id="page-about" class="page">
-    <section class="min-h-screen pt-32 pb-20">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mb-20">
-       <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">About Us</p>
-       <h1 class="font-display text-6xl md:text-8xl mb-8">Who We Are</h1>
-       <div class="w-24 h-1 bg-white"></div>
+    <section class="section-padding sec-dark" style="padding-top:140px;">
+     <div class="container">
+      <div style="max-width:680px;margin-bottom:80px;">
+       <span class="eyebrow eyebrow-green" style="margin-bottom:14px;">About Us</span>
+       <h1 class="font-display" style="font-size:var(--fs-display-xl);color:var(--cream);line-height:1;margin-bottom:24px;">Who We Are</h1>
+       <div style="width:80px;height:2px;background:var(--green-400);"></div>
       </div>
-      <div class="grid lg:grid-cols-2 gap-16 mb-24">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:80px;align-items:start;">
        <div>
-        <h2 class="font-display text-4xl mb-6">Company Introduction</h2>
-        <p class="text-gray-400 text-lg leading-relaxed mb-6">Dova Futures Developers stands at the forefront of integrated design–build construction, delivering exceptional architectural and construction services that transform visions into landmark structures.</p>
-        <p class="text-gray-400 text-lg leading-relaxed">Founded on principles of excellence, integrity, and innovation, we have established ourselves as a trusted partner for clients seeking premium construction services that exceed expectations.</p>
+        <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:20px;">Company Introduction</h2>
+        <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:18px;">Dova Futures Developers stands at the forefront of integrated design–build construction, delivering exceptional architectural and construction services that transform visions into landmark structures.</p>
+        <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);">Founded on principles of excellence, integrity, and innovation, we have established ourselves as a trusted partner for clients seeking premium construction services that exceed expectations.</p>
        </div>
-       <div class="relative">
-        <div class="aspect-video bg-gradient-to-br from-gray-900 to-black border border-white/10 overflow-hidden">
-         <!-- project image placeholder -->
-        </div>
+       <div style="aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-dark);">
+        <img src="/assets/projects/ado-hall/after.png" alt="DOVA build quality" style="width:100%;height:100%;object-fit:cover;">
        </div>
       </div>
-      <div class="divider mb-24"></div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-24">
+      <div style="border-top:1px solid var(--border-dark);margin-bottom:80px;"></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:80px;">
        <div>
-        <div class="w-16 h-16 border border-white/20 flex items-center justify-center mb-6">
-         <svg class="w-8 h-8" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="12" cy="12" r="10" /> <path d="M12 16v-4M12 8h.01" />
-         </svg>
+        <div style="width:64px;height:64px;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green-300)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
         </div>
-        <h3 class="font-display text-3xl mb-4">Our Philosophy</h3>
-        <p class="text-gray-400 leading-relaxed">We believe that exceptional construction begins with exceptional design. Our integrated approach ensures that every project benefits from seamless collaboration between architects, engineers, and builders.</p>
+        <h3 class="font-display" style="font-size:28px;color:var(--cream);margin-bottom:14px;">Our Philosophy</h3>
+        <p style="font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);">We believe that exceptional construction begins with exceptional design. Our integrated approach ensures every project benefits from seamless collaboration between architects, engineers, and builders.</p>
        </div>
        <div>
-        <div class="w-16 h-16 border border-white/20 flex items-center justify-center mb-6">
-         <svg class="w-8 h-8" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /> <circle cx="12" cy="12" r="3" />
-         </svg>
+        <div style="width:64px;height:64px;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green-300)" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
-        <h3 class="font-display text-3xl mb-4">Our Vision</h3>
-        <p class="text-gray-400 leading-relaxed">To be the premier design–build firm recognized for transforming ambitious architectural visions into remarkable structures that stand as testaments to quality and innovation.</p>
+        <h3 class="font-display" style="font-size:28px;color:var(--cream);margin-bottom:14px;">Our Vision</h3>
+        <p style="font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);">To be the premier design–build firm recognized for transforming ambitious architectural visions into remarkable structures that stand as testaments to quality and innovation.</p>
        </div>
        <div>
-        <div class="w-16 h-16 border border-white/20 flex items-center justify-center mb-6">
-         <svg class="w-8 h-8" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /> <polyline points="22 4 12 14.01 9 11.01" />
-         </svg>
+        <div style="width:64px;height:64px;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--green-300)" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
-        <h3 class="font-display text-3xl mb-4">Our Commitment</h3>
-        <p class="text-gray-400 leading-relaxed">Quality is non-negotiable. From material selection to final finishing, every decision is guided by our commitment to delivering structures that exceed expectations and stand the test of time.</p>
+        <h3 class="font-display" style="font-size:28px;color:var(--cream);margin-bottom:14px;">Our Commitment</h3>
+        <p style="font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);">Quality is non-negotiable. From material selection to final finishing, every decision is guided by our commitment to delivering structures that exceed expectations.</p>
        </div>
       </div>
-      <div class="bg-white/5 p-12 md:p-16">
-       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="font-display text-4xl mb-6">Building Trust, One Project at a Time</h2>
-        <p class="text-gray-400 text-lg leading-relaxed mb-8">Our reputation is built on successful project deliveries, satisfied clients, and structures that speak for themselves. We don't just build buildings — we build lasting relationships.</p><button class="btn-primary" onclick="navigateTo('contact')">Work With Us</button>
-       </div>
+      <div style="background:var(--green-800);border:1px solid var(--border-dark);border-radius:var(--radius-lg);padding:64px;text-align:center;">
+       <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:16px;">Building Trust, One Project at a Time</h2>
+       <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto;">Our reputation is built on successful project deliveries, satisfied clients, and structures that speak for themselves.</p>
+       <button class="btn-base btn-cream btn-lg" onclick="navigateTo('contact')">Work With Us</button>
       </div>
      </div>
     </section>
-    <footer class="py-12 border-t border-white/10">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-       <p class="font-display text-xl tracking-wider">DOVA FUTURES DEVELOPERS</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
+    <footer class="sec-darkest" style="padding:40px 0;border-top:1px solid var(--border-dark);">
+     <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+       <p class="font-display" style="font-size:18px;letter-spacing:0.08em;color:var(--cream);">DOVA FUTURES DEVELOPERS</p>
+       <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
    </div><!-- SERVICES PAGE -->
    <div id="page-services" class="page">
-    <section class="min-h-screen pt-32 pb-20">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mb-20">
-       <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">Our Services</p>
-       <h1 class="font-display text-6xl md:text-8xl mb-8">What We Build</h1>
-       <div class="w-24 h-1 bg-white"></div>
-      </div><!-- Service 1 -->
-      <div class="grid lg:grid-cols-2 gap-12 mb-24 items-center">
+    <section class="section-padding sec-dark" style="padding-top:140px;">
+     <div class="container">
+      <div style="max-width:680px;margin-bottom:80px;">
+       <span class="eyebrow eyebrow-green" style="margin-bottom:14px;">Our Services</span>
+       <h1 class="font-display" style="font-size:var(--fs-display-xl);color:var(--cream);line-height:1;margin-bottom:24px;">What We Build</h1>
+       <div style="width:80px;height:2px;background:var(--green-400);"></div>
+      </div>
+      <!-- Service 1 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:80px;align-items:center;">
        <div>
-        <h2 class="font-display text-5xl mb-6">Architectural Planning &amp; Design</h2>
-        <p class="text-gray-400 text-lg leading-relaxed mb-8">Our architectural team transforms concepts into comprehensive design solutions that balance aesthetics, functionality, and buildability.</p>
-        <ul class="space-y-4">
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Concept Development &amp; Master Planning</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Schematic Design &amp; 3D Visualization</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Construction Documentation</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Permit &amp; Approval Coordination</span></li>
+        <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:18px;">Architectural Planning &amp; Design</h2>
+        <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:28px;">Our architectural team transforms concepts into comprehensive design solutions that balance aesthetics, functionality, and buildability.</p>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:14px;">
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Concept Development &amp; Master Planning</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Schematic Design &amp; 3D Visualization</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Construction Documentation</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Permit &amp; Approval Coordination</li>
         </ul>
        </div>
-       <div class="aspect-square bg-gradient-to-br from-gray-900 to-black border border-white/10 overflow-hidden">
-        <!-- project image placeholder -->
+       <div style="aspect-ratio:1/1;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-dark);">
+        <img src="/assets/projects/ado-hall/after.png" alt="Architectural Design" style="width:100%;height:100%;object-fit:cover;">
        </div>
       </div>
-      <div class="divider mb-24"></div><!-- Service 2 -->
-      <div class="grid lg:grid-cols-2 gap-12 mb-24 items-center">
-       <div class="order-2 lg:order-1 aspect-square bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 overflow-hidden">
-        <!-- project image placeholder -->
+      <div style="border-top:1px solid var(--border-dark);margin-bottom:80px;"></div>
+      <!-- Service 2 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:80px;align-items:center;">
+       <div style="aspect-ratio:1/1;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-dark);">
+        <img src="/assets/projects/residential-duplex.jpg" alt="Full-Scale Construction" style="width:100%;height:100%;object-fit:cover;">
        </div>
-       <div class="order-1 lg:order-2">
-        <h2 class="font-display text-5xl mb-6">Full-Scale Construction</h2>
-        <p class="text-gray-400 text-lg leading-relaxed mb-8">From groundbreaking to ribbon-cutting, we manage every aspect of construction with precision, quality control, and unwavering attention to detail.</p>
-        <ul class="space-y-4">
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Residential &amp; Commercial Buildings</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Industrial Facilities</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Infrastructure Projects</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Renovations &amp; Expansions</span></li>
-        </ul>
-       </div>
-      </div>
-      <div class="divider mb-24"></div><!-- Service 3 -->
-      <div class="grid lg:grid-cols-2 gap-12 mb-24 items-center">
        <div>
-        <h2 class="font-display text-5xl mb-6">Premium Interior Finishing</h2>
-        <p class="text-gray-400 text-lg leading-relaxed mb-8">Transform spaces into sophisticated environments with our premium interior finishing services, where every detail reflects quality and craftsmanship.</p>
-        <ul class="space-y-4">
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Luxury Residential Interiors</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Corporate &amp; Office Fit-Outs</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Custom Millwork &amp; Joinery</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Premium Material Selection</span></li>
+        <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:18px;">Full-Scale Construction</h2>
+        <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:28px;">From groundbreaking to ribbon-cutting, we manage every aspect of construction with precision, quality control, and unwavering attention to detail.</p>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:14px;">
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Residential &amp; Commercial Buildings</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Industrial Facilities</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Infrastructure Projects</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Renovations &amp; Expansions</li>
         </ul>
        </div>
-       <div class="aspect-square bg-gradient-to-br from-gray-900 to-black border border-white/10 overflow-hidden">
-        <!-- project image placeholder -->
+      </div>
+      <div style="border-top:1px solid var(--border-dark);margin-bottom:80px;"></div>
+      <!-- Service 3 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:80px;align-items:center;">
+       <div>
+        <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:18px;">Premium Interior Finishing</h2>
+        <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:28px;">Transform spaces into sophisticated environments with our premium interior finishing services, where every detail reflects quality and craftsmanship.</p>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:14px;">
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Luxury Residential Interiors</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Corporate &amp; Office Fit-Outs</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Custom Millwork &amp; Joinery</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Premium Material Selection</li>
+        </ul>
+       </div>
+       <div style="aspect-ratio:1/1;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-dark);">
+        <img src="/assets/projects/interior-renovation.jpg" alt="Interior Finishing" style="width:100%;height:100%;object-fit:cover;">
        </div>
       </div>
-      <div class="divider mb-24"></div><!-- Service 4 -->
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-       <div class="order-2 lg:order-1 aspect-square bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 overflow-hidden">
-        <!-- project image placeholder -->
+      <div style="border-top:1px solid var(--border-dark);margin-bottom:80px;"></div>
+      <!-- Service 4 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+       <div style="aspect-ratio:1/1;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-dark);">
+        <img src="/assets/projects/body-shop.jpg" alt="Project Management" style="width:100%;height:100%;object-fit:cover;">
        </div>
-       <div class="order-1 lg:order-2">
-        <h2 class="font-display text-5xl mb-6">Project Management</h2>
-        <p class="text-gray-400 text-lg leading-relaxed mb-8">Expert project management ensuring your project is delivered on time, within budget, and to the highest quality standards.</p>
-        <ul class="space-y-4">
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Budget Planning &amp; Cost Control</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Schedule Management</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Quality Assurance</span></li>
-         <li class="flex items-start gap-4">
-          <div class="w-2 h-2 bg-white mt-2 flex-shrink-0"></div><span class="text-gray-300">Stakeholder Communication</span></li>
+       <div>
+        <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:18px;">Project Management</h2>
+        <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:28px;">Expert project management ensuring your project is delivered on time, within budget, and to the highest quality standards.</p>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:14px;">
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Budget Planning &amp; Cost Control</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Schedule Management</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Quality Assurance</li>
+         <li style="display:flex;align-items:center;gap:12px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);"><span style="width:6px;height:6px;background:var(--green-300);border-radius:50%;flex-shrink:0;"></span>Stakeholder Communication</li>
         </ul>
        </div>
       </div>
      </div>
     </section>
-    <footer class="py-12 border-t border-white/10">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-       <p class="font-display text-xl tracking-wider">DOVA FUTURES DEVELOPERS</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
+    <footer class="sec-darkest" style="padding:40px 0;border-top:1px solid var(--border-dark);">
+     <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+       <p class="font-display" style="font-size:18px;letter-spacing:0.08em;color:var(--cream);">DOVA FUTURES DEVELOPERS</p>
+       <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
    </div><!-- PROJECTS PAGE -->
    <div id="page-projects" class="page">
-    <section class="min-h-screen pt-32 pb-20">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mb-20">
-       <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">Portfolio</p>
-       <h1 class="font-display text-6xl md:text-8xl mb-8">Our Projects</h1>
-       <div class="w-24 h-1 bg-white"></div>
-      </div><!-- Filter Tabs -->
-      <div class="flex flex-wrap gap-4 mb-16">
-       <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter active" data-filter="all">All</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="residential">Residential</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="commercial">Commercial</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="infrastructure">Infrastructure</button> <button class="px-6 py-3 border border-white/20 text-sm tracking-wide hover:bg-white hover:text-black transition-colors project-filter" data-filter="interiors">Interiors</button>
-      </div><!-- Projects Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
-       <!-- PROJECT: The Body Shop Retail Fit-Out -->
+    <section class="section-padding sec-dark" style="padding-top:140px;">
+     <div class="container">
+      <div style="max-width:680px;margin-bottom:64px;">
+       <span class="eyebrow eyebrow-green" style="margin-bottom:14px;">Portfolio</span>
+       <h1 class="font-display" style="font-size:var(--fs-display-xl);color:var(--cream);line-height:1;margin-bottom:24px;">Our Projects</h1>
+       <div style="width:80px;height:2px;background:var(--green-400);"></div>
+      </div>
+      <!-- Filter Tabs -->
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:48px;">
+       <button class="project-filter active" data-filter="all">All</button>
+       <button class="project-filter" data-filter="residential">Residential</button>
+       <button class="project-filter" data-filter="commercial">Commercial</button>
+       <button class="project-filter" data-filter="infrastructure">Infrastructure</button>
+       <button class="project-filter" data-filter="interiors">Interiors</button>
+      </div>
+      <!-- Projects Grid -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" id="projectsGrid">
        <div class="project-card project-item" data-category="commercial">
-        <img src="/assets/projects/body-shop.jpg" alt="The Body Shop Retail Fit-Out - Ikeja City Mall" class="project-image">
+        <img src="/assets/projects/body-shop.jpg" alt="The Body Shop Retail Fit-Out" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Commercial</p>
-         <h3 class="font-display text-2xl mb-2">The Body Shop Retail Fit-Out</h3>
-         <p class="text-gray-500 text-sm">Ikeja, Lagos</p>
+         <span class="project-tag">Commercial</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">The Body Shop Retail Fit-Out</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Ikeja, Lagos</p>
         </div>
        </div>
-       <!-- PROJECT: Palm Oil Drainage Infrastructure -->
        <div class="project-card project-item" data-category="infrastructure">
-        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Palm Oil Drainage Infrastructure Project" class="project-image">
+        <img src="/assets/projects/palm-oil-drainage.jpg" alt="Palm Oil Drainage Infrastructure" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl mb-2">Palm Oil Drainage Infrastructure</h3>
-         <p class="text-gray-500 text-sm">Akure, Ondo State</p>
+         <span class="project-tag">Infrastructure</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Palm Oil Drainage Infrastructure</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Akure, Ondo State</p>
         </div>
        </div>
-       <!-- PROJECT: Residential Duplex Development -->
        <div class="project-card project-item" data-category="residential">
         <img src="/assets/projects/residential-duplex.jpg" alt="Residential Duplex Development" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl mb-2">Residential Duplex Development</h3>
-         <p class="text-gray-500 text-sm">Lagos, Nigeria</p>
+         <span class="project-tag">Residential</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Residential Duplex Development</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Lagos, Nigeria</p>
         </div>
        </div>
-       <!-- PROJECT: Interior Renovation Project -->
        <div class="project-card project-item" data-category="interiors">
         <img src="/assets/projects/interior-renovation.jpg" alt="Interior Renovation Project" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Interiors</p>
-         <h3 class="font-display text-2xl mb-2">Interior Renovation Project</h3>
-         <p class="text-gray-500 text-sm">Ekiti &amp; Lagos States</p>
+         <span class="project-tag">Interiors</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Interior Renovation Project</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Ekiti &amp; Lagos States</p>
         </div>
        </div>
-       <!-- PROJECT: Residential Estate Build -->
        <div class="project-card project-item" data-category="residential">
         <img src="/assets/projects/residential-duplex.jpg" alt="Residential Estate Build" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl mb-2">Residential Estate Build</h3>
-         <p class="text-gray-500 text-sm">Port Harcourt</p>
+         <span class="project-tag">Residential</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Residential Estate Build</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Port Harcourt</p>
         </div>
        </div>
-       <!-- PROJECT: Commercial Fit-Out Program -->
        <div class="project-card project-item" data-category="commercial">
         <img src="/assets/projects/body-shop.jpg" alt="Commercial Fit-Out Program" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Commercial</p>
-         <h3 class="font-display text-2xl mb-2">Commercial Fit-Out Program</h3>
-         <p class="text-gray-500 text-sm">Lagos Mainland</p>
+         <span class="project-tag">Commercial</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Commercial Fit-Out Program</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Lagos Mainland</p>
         </div>
        </div>
-       <!-- PROJECT: Drainage Upgrade Phase II -->
        <div class="project-card project-item" data-category="infrastructure">
         <img src="/assets/projects/palm-oil-drainage.jpg" alt="Drainage Upgrade Phase II" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Infrastructure</p>
-         <h3 class="font-display text-2xl mb-2">Drainage Upgrade Phase II</h3>
-         <p class="text-gray-500 text-sm">Southwest Nigeria</p>
+         <span class="project-tag">Infrastructure</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Drainage Upgrade Phase II</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Southwest Nigeria</p>
         </div>
        </div>
-       <!-- PROJECT: Premium Office Interiors -->
        <div class="project-card project-item" data-category="interiors">
         <img src="/assets/projects/interior-renovation.jpg" alt="Premium Office Interiors" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Interiors</p>
-         <h3 class="font-display text-2xl mb-2">Premium Office Interiors</h3>
-         <p class="text-gray-500 text-sm">Victoria Island, Lagos</p>
+         <span class="project-tag">Interiors</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Premium Office Interiors</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Victoria Island, Lagos</p>
         </div>
        </div>
-       <!-- PROJECT: Multi-Unit Residential Complex -->
        <div class="project-card project-item" data-category="residential">
         <img src="/assets/projects/residential-duplex.jpg" alt="Multi-Unit Residential Complex" class="project-image">
         <div class="content">
-         <p class="text-gray-400 text-sm mb-1">Residential</p>
-         <h3 class="font-display text-2xl mb-2">Multi-Unit Residential Complex</h3>
-         <p class="text-gray-500 text-sm">Lekki, Lagos</p>
+         <span class="project-tag">Residential</span>
+         <h3 class="font-display" style="font-size:22px;color:var(--cream);margin:8px 0 4px;">Multi-Unit Residential Complex</h3>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">Lekki, Lagos</p>
         </div>
        </div>
       </div>
      </div>
     </section>
-    <footer class="py-12 border-t border-white/10">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-       <p class="font-display text-xl tracking-wider">DOVA FUTURES DEVELOPERS</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
+    <footer class="sec-darkest" style="padding:40px 0;border-top:1px solid var(--border-dark);">
+     <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+       <p class="font-display" style="font-size:18px;letter-spacing:0.08em;color:var(--cream);">DOVA FUTURES DEVELOPERS</p>
+       <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
    </div><!-- PROCESS PAGE -->
    <div id="page-process" class="page">
-    <section class="min-h-screen pt-32 pb-20">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mb-20">
-       <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">Our Process</p>
-       <h1 class="font-display text-6xl md:text-8xl mb-8">How We Deliver</h1>
-       <div class="w-24 h-1 bg-white mb-8"></div>
-       <p class="text-gray-400 text-xl leading-relaxed">Our structured execution model ensures every project moves seamlessly from vision to completion with precision, transparency, and excellence.</p>
+    <section class="section-padding sec-dark" style="padding-top:140px;">
+     <div class="container">
+      <div style="max-width:680px;margin-bottom:80px;">
+       <span class="eyebrow eyebrow-green" style="margin-bottom:14px;">Our Process</span>
+       <h1 class="font-display" style="font-size:var(--fs-display-xl);color:var(--cream);line-height:1;margin-bottom:24px;">How We Deliver</h1>
+       <div style="width:80px;height:2px;background:var(--green-400);margin-bottom:24px;"></div>
+       <p style="font-family:var(--font-body);font-size:var(--fs-lg);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);">Our structured execution model ensures every project moves seamlessly from vision to completion with precision, transparency, and excellence.</p>
       </div><!-- Timeline -->
       <div class="space-y-0">
        <!-- Step 1 -->
        <div class="grid lg:grid-cols-12 gap-8 pb-16 relative">
         <div class="lg:col-span-1 flex lg:justify-center">
-         <div class="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center bg-black z-10">
-          <span class="font-display text-2xl">01</span>
+         <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;background:var(--green-900);z-index:10;flex-shrink:0;">
+          <span class="font-display" style="font-size:22px;color:var(--green-300);">01</span>
          </div>
         </div>
         <div class="hidden lg:block lg:col-span-1 relative">
          <div class="absolute top-16 left-1/2 w-px h-full bg-gradient-to-b from-white/50 to-white/10"></div>
         </div>
         <div class="lg:col-span-10">
-         <h2 class="font-display text-5xl mb-6">Consultation</h2>
-         <p class="text-gray-400 text-lg leading-relaxed mb-6">We begin with an in-depth consultation to understand your vision, requirements, budget, and timeline. This foundational phase establishes the parameters for a successful project.</p>
+         <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:18px;">Consultation</h2>
+         <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:24px;">We begin with an in-depth consultation to understand your vision, requirements, budget, and timeline. This foundational phase establishes the parameters for a successful project.</p>
          <ul class="grid md:grid-cols-2 gap-4">
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Requirements Analysis</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Site Assessment</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Budget Framework</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Timeline Planning</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Requirements Analysis</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Site Assessment</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Budget Framework</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Timeline Planning</li>
          </ul>
         </div>
        </div><!-- Step 2 -->
        <div class="grid lg:grid-cols-12 gap-8 pb-16 relative">
         <div class="lg:col-span-1 flex lg:justify-center">
-         <div class="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center bg-black z-10">
-          <span class="font-display text-2xl">02</span>
+         <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;background:var(--green-900);z-index:10;flex-shrink:0;">
+          <span class="font-display" style="font-size:22px;color:var(--green-300);">02</span>
          </div>
         </div>
         <div class="hidden lg:block lg:col-span-1 relative">
          <div class="absolute top-16 left-1/2 w-px h-full bg-gradient-to-b from-white/50 to-white/10"></div>
         </div>
         <div class="lg:col-span-10">
-         <h2 class="font-display text-5xl mb-6">Design</h2>
-         <p class="text-gray-400 text-lg leading-relaxed mb-6">Our architectural team develops comprehensive design solutions that transform your vision into detailed plans. We iterate closely with you until the design perfectly captures your aspirations.</p>
+         <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:18px;">Design</h2>
+         <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:24px;">Our architectural team develops comprehensive design solutions that transform your vision into detailed plans. We iterate closely with you until the design perfectly captures your aspirations.</p>
          <ul class="grid md:grid-cols-2 gap-4">
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Concept Development</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> 3D Visualization</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Material Selection</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Design Refinement</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Concept Development</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> 3D Visualization</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Material Selection</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Design Refinement</li>
          </ul>
         </div>
        </div><!-- Step 3 -->
        <div class="grid lg:grid-cols-12 gap-8 pb-16 relative">
         <div class="lg:col-span-1 flex lg:justify-center">
-         <div class="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center bg-black z-10">
-          <span class="font-display text-2xl">03</span>
+         <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;background:var(--green-900);z-index:10;flex-shrink:0;">
+          <span class="font-display" style="font-size:22px;color:var(--green-300);">03</span>
          </div>
         </div>
         <div class="hidden lg:block lg:col-span-1 relative">
          <div class="absolute top-16 left-1/2 w-px h-full bg-gradient-to-b from-white/50 to-white/10"></div>
         </div>
         <div class="lg:col-span-10">
-         <h2 class="font-display text-5xl mb-6">Engineering</h2>
-         <p class="text-gray-400 text-lg leading-relaxed mb-6">Technical planning transforms architectural vision into buildable reality. Our engineers develop detailed construction documentation, structural calculations, and MEP systems.</p>
+         <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:18px;">Engineering</h2>
+         <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:24px;">Technical planning transforms architectural vision into buildable reality. Our engineers develop detailed construction documentation, structural calculations, and MEP systems.</p>
          <ul class="grid md:grid-cols-2 gap-4">
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Structural Engineering</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> MEP Systems</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Permit Documentation</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Cost Engineering</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Structural Engineering</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> MEP Systems</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Permit Documentation</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Cost Engineering</li>
          </ul>
         </div>
        </div><!-- Step 4 -->
        <div class="grid lg:grid-cols-12 gap-8 pb-16 relative">
         <div class="lg:col-span-1 flex lg:justify-center">
-         <div class="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center bg-black z-10">
-          <span class="font-display text-2xl">04</span>
+         <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;background:var(--green-900);z-index:10;flex-shrink:0;">
+          <span class="font-display" style="font-size:22px;color:var(--green-300);">04</span>
          </div>
         </div>
         <div class="hidden lg:block lg:col-span-1 relative">
          <div class="absolute top-16 left-1/2 w-px h-full bg-gradient-to-b from-white/50 to-white/10"></div>
         </div>
         <div class="lg:col-span-10">
-         <h2 class="font-display text-5xl mb-6">Construction</h2>
-         <p class="text-gray-400 text-lg leading-relaxed mb-6">With precision and expertise, we bring designs to life. Our construction teams execute with rigorous quality control, safety protocols, and timeline management.</p>
+         <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:18px;">Construction</h2>
+         <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:24px;">With precision and expertise, we bring designs to life. Our construction teams execute with rigorous quality control, safety protocols, and timeline management.</p>
          <ul class="grid md:grid-cols-2 gap-4">
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Site Preparation</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Structural Works</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Systems Installation</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Quality Inspections</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Site Preparation</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Structural Works</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Systems Installation</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Quality Inspections</li>
          </ul>
         </div>
        </div><!-- Step 5 -->
        <div class="grid lg:grid-cols-12 gap-8">
         <div class="lg:col-span-1 flex lg:justify-center">
-         <div class="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center bg-black z-10">
-          <span class="font-display text-2xl">05</span>
+         <div style="width:64px;height:64px;border-radius:50%;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;background:var(--green-900);z-index:10;flex-shrink:0;">
+          <span class="font-display" style="font-size:22px;color:var(--green-300);">05</span>
          </div>
         </div>
         <div class="lg:col-span-1"></div>
         <div class="lg:col-span-10">
-         <h2 class="font-display text-5xl mb-6">Handover</h2>
-         <p class="text-gray-400 text-lg leading-relaxed mb-6">The moment of delivery: keys in hand. We conduct thorough final inspections, provide complete documentation, and ensure you're fully oriented to your new space.</p>
+         <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:18px;">Handover</h2>
+         <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:24px;">The moment of delivery: keys in hand. We conduct thorough final inspections, provide complete documentation, and ensure you're fully oriented to your new space.</p>
          <ul class="grid md:grid-cols-2 gap-4">
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Final Inspections</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Documentation Package</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Client Orientation</li>
-          <li class="flex items-center gap-3 text-gray-300">
-           <div class="w-1.5 h-1.5 bg-white"></div> Warranty Support</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Final Inspections</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Documentation Package</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Client Orientation</li>
+          <li style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+           <span style="width:5px;height:5px;background:var(--green-300);border-radius:50%;flex-shrink:0;display:inline-block;"></span> Warranty Support</li>
          </ul>
         </div>
        </div>
       </div>
      </div>
     </section>
-    <footer class="py-12 border-t border-white/10">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-       <p class="font-display text-xl tracking-wider">DOVA FUTURES DEVELOPERS</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
+    <footer class="sec-darkest" style="padding:40px 0;border-top:1px solid var(--border-dark);">
+     <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+       <p class="font-display" style="font-size:18px;letter-spacing:0.08em;color:var(--cream);">DOVA FUTURES DEVELOPERS</p>
+       <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
    </div><!-- WHY US PAGE -->
    <div id="page-why" class="page">
-    <section class="min-h-screen pt-32 pb-20">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mb-20">
-       <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">Why Choose Us</p>
-       <h1 class="font-display text-6xl md:text-8xl mb-8">Our Difference</h1>
-       <div class="w-24 h-1 bg-white"></div>
-      </div><!-- Stats Section -->
-      <div class="grid md:grid-cols-3 gap-8 mb-24">
-       <div class="text-center p-12 border border-white/10">
-        <div class="stat-number font-display mb-4">
-         Design–Build
-        </div>
-        <p class="text-gray-400 text-lg">Integrated Model</p>
+    <section class="section-padding sec-dark" style="padding-top:140px;">
+     <div class="container">
+      <div style="max-width:680px;margin-bottom:80px;">
+       <span class="eyebrow eyebrow-green" style="margin-bottom:14px;">Why Choose Us</span>
+       <h1 class="font-display" style="font-size:var(--fs-display-xl);color:var(--cream);line-height:1;margin-bottom:24px;">Our Difference</h1>
+       <div style="width:80px;height:2px;background:var(--green-400);"></div>
+      </div>
+      <!-- Stats -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:80px;">
+       <div style="text-align:center;padding:48px 24px;border:1px solid var(--border-dark);">
+        <div class="font-display stat-value" style="font-size:clamp(28px,3vw,40px);color:var(--green-300);margin-bottom:12px;">Design–Build</div>
+        <p class="stat-label">Integrated Model</p>
        </div>
-       <div class="text-center p-12 border border-white/10">
-        <div class="stat-number font-display mb-4">
-         Precision
-        </div>
-        <p class="text-gray-400 text-lg">Driven Execution</p>
+       <div style="text-align:center;padding:48px 24px;border:1px solid var(--border-dark);">
+        <div class="font-display stat-value" style="font-size:clamp(28px,3vw,40px);color:var(--green-300);margin-bottom:12px;">Precision</div>
+        <p class="stat-label">Driven Execution</p>
        </div>
-       <div class="text-center p-12 border border-white/10">
-        <div class="stat-number font-display mb-4">
-         Client
-        </div>
-        <p class="text-gray-400 text-lg">Centered Delivery</p>
+       <div style="text-align:center;padding:48px 24px;border:1px solid var(--border-dark);">
+        <div class="font-display stat-value" style="font-size:clamp(28px,3vw,40px);color:var(--green-300);margin-bottom:12px;">Client</div>
+        <p class="stat-label">Centered Delivery</p>
        </div>
       </div>
-      <div class="divider mb-24"></div><!-- Advantages -->
-      <div class="space-y-16">
-       <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div style="border-top:1px solid var(--border-dark);margin-bottom:80px;"></div>
+      <!-- Advantages -->
+      <div style="display:flex;flex-direction:column;gap:64px;">
+       <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
         <div>
-         <div class="w-20 h-20 border border-white/20 flex items-center justify-center mb-8">
-          <svg class="w-10 h-10" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-           <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" /> <path d="M12 22V12M2 7l10 5 10-5" />
-          </svg>
+         <div style="width:72px;height:72px;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin-bottom:28px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green-300)" stroke-width="1.5"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/><path d="M12 22V12M2 7l10 5 10-5"/></svg>
          </div>
-         <h2 class="font-display text-4xl mb-6">Design + Build Under One Roof</h2>
-         <p class="text-gray-400 text-lg leading-relaxed">Our integrated approach eliminates the traditional disconnect between architects and builders. When design and construction work together from day one, the result is seamless project delivery, reduced timelines, and superior outcomes.</p>
+         <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:16px;">Design + Build Under One Roof</h2>
+         <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);">Our integrated approach eliminates the traditional disconnect between architects and builders. When design and construction work together from day one, the result is seamless project delivery, reduced timelines, and superior outcomes.</p>
         </div>
-        <div class="aspect-video bg-gradient-to-br from-gray-900 to-black border border-white/10 overflow-hidden">
-         <!-- project image placeholder -->
+        <div style="aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-dark);">
+         <img src="/assets/projects/ado-hall/after.png" alt="Design Build" style="width:100%;height:100%;object-fit:cover;">
         </div>
        </div>
-       <div class="divider"></div>
-       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="order-2 lg:order-1 aspect-video bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 overflow-hidden">
-         <!-- project image placeholder -->
+       <div style="border-top:1px solid var(--border-dark);"></div>
+       <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+        <div style="aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-dark);">
+         <img src="/assets/projects/residential-duplex.jpg" alt="Cost Transparency" style="width:100%;height:100%;object-fit:cover;">
         </div>
-        <div class="order-1 lg:order-2">
-         <div class="w-20 h-20 border border-white/20 flex items-center justify-center mb-8">
-          <svg class="w-10 h-10" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-           <circle cx="12" cy="12" r="10" /> <path d="M12 6v6l4 2" />
-          </svg>
-         </div>
-         <h2 class="font-display text-4xl mb-6">Cost Transparency</h2>
-         <p class="text-gray-400 text-lg leading-relaxed">No hidden costs. No surprises. Our detailed budgeting process provides clear visibility into every aspect of your investment. You'll know exactly where your money goes and why, with regular financial reporting throughout the project.</p>
-        </div>
-       </div>
-       <div class="divider"></div>
-       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-         <div class="w-20 h-20 border border-white/20 flex items-center justify-center mb-8">
-          <svg class="w-10 h-10" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-           <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
-          </svg>
+         <div style="width:72px;height:72px;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin-bottom:28px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green-300)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
          </div>
-         <h2 class="font-display text-4xl mb-6">Structured Supervision</h2>
-         <p class="text-gray-400 text-lg leading-relaxed">Every project benefits from dedicated project management ensuring quality control, safety compliance, and timeline adherence. Our supervisors are your advocates on site, maintaining the highest standards from foundation to finishing.</p>
-        </div>
-        <div class="aspect-video bg-gradient-to-br from-gray-900 to-black border border-white/10 overflow-hidden">
-         <!-- project image placeholder -->
+         <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:16px;">Cost Transparency</h2>
+         <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);">No hidden costs. No surprises. Our detailed budgeting process provides clear visibility into every aspect of your investment. You'll know exactly where your money goes and why, with regular financial reporting throughout the project.</p>
         </div>
        </div>
-       <div class="divider"></div>
-       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="order-2 lg:order-1 aspect-video bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 overflow-hidden">
-         <!-- project image placeholder -->
-        </div>
-        <div class="order-1 lg:order-2">
-         <div class="w-20 h-20 border border-white/20 flex items-center justify-center mb-8">
-          <svg class="w-10 h-10" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-           <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
-          </svg>
+       <div style="border-top:1px solid var(--border-dark);"></div>
+       <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+        <div>
+         <div style="width:72px;height:72px;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin-bottom:28px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green-300)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
          </div>
-         <h2 class="font-display text-4xl mb-6">Premium Finishing</h2>
-         <p class="text-gray-400 text-lg leading-relaxed">Details matter. Our commitment to premium finishing means superior craftsmanship in every corner, from structural integrity to the finest fixtures. We source quality materials and employ skilled craftsmen who share our passion for excellence.</p>
+         <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:16px;">Structured Supervision</h2>
+         <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);">Every project benefits from dedicated project management ensuring quality control, safety compliance, and timeline adherence. Our supervisors are your advocates on site, maintaining the highest standards from foundation to finishing.</p>
+        </div>
+        <div style="aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-dark);">
+         <img src="/assets/projects/palm-oil-drainage.jpg" alt="Structured Supervision" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+       </div>
+       <div style="border-top:1px solid var(--border-dark);"></div>
+       <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+        <div style="aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-dark);">
+         <img src="/assets/projects/body-shop.jpg" alt="Premium Finishing" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div>
+         <div style="width:72px;height:72px;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;margin-bottom:28px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--green-300)" stroke-width="1.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+         </div>
+         <h2 class="font-display" style="font-size:var(--fs-display-md);color:var(--cream);margin-bottom:16px;">Premium Finishing</h2>
+         <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);">Details matter. Our commitment to premium finishing means superior craftsmanship in every corner, from structural integrity to the finest fixtures. We source quality materials and employ skilled craftsmen who share our passion for excellence.</p>
         </div>
        </div>
       </div>
      </div>
     </section>
-    <footer class="py-12 border-t border-white/10">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-       <p class="font-display text-xl tracking-wider">DOVA FUTURES DEVELOPERS</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
+    <footer class="sec-darkest" style="padding:40px 0;border-top:1px solid var(--border-dark);">
+     <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+       <p class="font-display" style="font-size:18px;letter-spacing:0.08em;color:var(--cream);">DOVA FUTURES DEVELOPERS</p>
+       <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
    </div><!-- CONTACT PAGE -->
    <div id="page-contact" class="page">
-    <section class="min-h-screen pt-32 pb-20">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16">
+    <section class="section-padding sec-cream" style="padding-top:140px;">
+     <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
        <div>
-        <p class="text-gray-500 tracking-[0.3em] text-sm mb-4 uppercase">Contact Us</p>
-        <h1 class="font-display text-6xl md:text-7xl mb-8">Let's Build Together</h1>
-        <div class="w-24 h-1 bg-white mb-8"></div>
-        <p class="text-gray-400 text-xl leading-relaxed mb-12">Ready to start your project? Get in touch with our team to discuss your vision and explore how we can bring it to life.</p>
-        <div class="space-y-8">
-         <div class="flex items-start gap-6">
-          <div class="w-14 h-14 border border-white/20 flex items-center justify-center flex-shrink-0">
-           <svg class="w-6 h-6" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-           </svg>
+        <span class="eyebrow eyebrow-clay" style="margin-bottom:14px;">Contact Us</span>
+        <h1 class="font-display" style="font-size:var(--fs-display-xl);color:var(--ink-900);line-height:1;margin-bottom:20px;">Let's Build Together</h1>
+        <div style="width:80px;height:2px;background:var(--brand);margin-bottom:28px;"></div>
+        <p style="font-family:var(--font-body);font-size:var(--fs-lg);color:var(--text-body);line-height:var(--lh-relaxed);margin-bottom:48px;">Ready to start your project? Get in touch with our team to discuss your vision and explore how we can bring it to life.</p>
+        <div style="display:flex;flex-direction:column;gap:28px;">
+         <div style="display:flex;align-items:flex-start;gap:20px;">
+          <div style="width:52px;height:52px;border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
           </div>
           <div>
-           <h3 class="font-display text-xl mb-2">Phone</h3><a href="tel:+2348163675439" class="text-gray-400 hover:text-white transition-colors" id="contactPhone">+234 816 367 5439</a>
+           <p style="font-family:var(--font-body);font-size:var(--fs-2xs);font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--clay);margin-bottom:4px;">Phone</p>
+           <a href="tel:+2348163675439" style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--ink-900);text-decoration:none;" id="contactPhone">+234 816 367 5439</a>
           </div>
          </div>
-         <div class="flex items-start gap-6">
-          <div class="w-14 h-14 border border-white/20 flex items-center justify-center flex-shrink-0">
-           <svg class="w-6 h-6" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /> <polyline points="22,6 12,13 2,6" />
-           </svg>
+         <div style="display:flex;align-items:flex-start;gap:20px;">
+          <div style="width:52px;height:52px;border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div>
-           <h3 class="font-display text-xl mb-2">Email</h3><a href="mailto:info@dovafutures.com" class="text-gray-400 hover:text-white transition-colors" id="contactEmail">info@dovafutures.com</a>
+           <p style="font-family:var(--font-body);font-size:var(--fs-2xs);font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--clay);margin-bottom:4px;">Email</p>
+           <a href="mailto:info@dovafutures.com" style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--ink-900);text-decoration:none;" id="contactEmail">info@dovafutures.com</a>
           </div>
          </div>
-         <div class="flex items-start gap-6">
-          <div class="w-14 h-14 border border-white/20 flex items-center justify-center flex-shrink-0">
-           <svg class="w-6 h-6" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /> <circle cx="12" cy="10" r="3" />
-           </svg>
+         <div style="display:flex;align-items:flex-start;gap:20px;">
+          <div style="width:52px;height:52px;border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div>
-           <h3 class="font-display text-xl mb-2">Office Location</h3>
-           <p class="text-gray-400">Victoria Island, Lagos<br>
-             Nigeria</p>
+           <p style="font-family:var(--font-body);font-size:var(--fs-2xs);font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--clay);margin-bottom:4px;">Office Location</p>
+           <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--ink-900);">Victoria Island, Lagos<br>Nigeria</p>
           </div>
-         </div>
-        </div><!-- Social Links -->
-        <div class="mt-12 pt-8 border-t border-white/10">
-         <p class="text-gray-500 text-sm mb-2">Leadership</p>
-         <p class="font-display text-xl mb-2" id="ceoName">Vollmann Akarakiri</p>
-         <p class="text-gray-400 text-sm">CEO &amp; Managing Director</p>
-        </div>
-        <div class="mt-8">
-         <p class="text-gray-500 text-sm mb-6">Connect With Us</p>
-         <div class="flex gap-4">
-          <a href="https://wa.me/2348163675439" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors" aria-label="WhatsApp">
-           <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
-            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-           </svg></a> <a href="https://www.instagram.com/dova_futures?igsh=MXF0djh4N2JzOTBtcA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors" aria-label="Instagram">
-           <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-           </svg></a> <a href="https://www.tiktok.com/@dovafutures?_r=1&_t=ZS-94C8QLyj9FJ" target="_blank" rel="noopener noreferrer" class="w-12 h-12 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors" aria-label="TikTok">
-           <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-           </svg></a>
          </div>
         </div>
-       </div><!-- Contact Form -->
-       <div>
-        <form id="contactForm" class="space-y-6">
-         <div class="grid md:grid-cols-2 gap-6">
+        <div style="margin-top:40px;padding-top:32px;border-top:1px solid var(--border-light);">
+         <p style="font-family:var(--font-body);font-size:var(--fs-2xs);font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--clay);margin-bottom:8px;">Leadership</p>
+         <p class="font-display" style="font-size:20px;color:var(--ink-900);margin-bottom:4px;" id="ceoName">Vollmann Akarakiri</p>
+         <p style="font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-body);">CEO &amp; Managing Director</p>
+        </div>
+        <div style="margin-top:32px;">
+         <p style="font-family:var(--font-body);font-size:var(--fs-2xs);font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--clay);margin-bottom:16px;">Connect With Us</p>
+         <div style="display:flex;gap:12px;">
+          <a href="https://wa.me/2348163675439" target="_blank" rel="noopener noreferrer" style="width:44px;height:44px;border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;color:var(--ink-900);text-decoration:none;" aria-label="WhatsApp">
+           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/dova_futures?igsh=MXF0djh4N2JzOTBtcA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" style="width:44px;height:44px;border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;color:var(--ink-900);text-decoration:none;" aria-label="Instagram">
+           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@dovafutures?_r=1&_t=ZS-94C8QLyj9FJ" target="_blank" rel="noopener noreferrer" style="width:44px;height:44px;border:1px solid var(--border-light);display:flex;align-items:center;justify-content:center;color:var(--ink-900);text-decoration:none;" aria-label="TikTok">
+           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+         </div>
+        </div>
+       </div>
+       <!-- Contact Form -->
+       <div style="background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:40px;">
+        <form id="contactForm" style="display:flex;flex-direction:column;gap:20px;">
+         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
           <div>
-           <label for="firstName" class="block text-sm text-gray-400 mb-2">First Name</label> <input type="text" id="firstName" name="firstName" class="form-input" placeholder="John" required>
+           <label for="firstName" class="form-label">First Name</label>
+           <input type="text" id="firstName" name="firstName" class="form-input" placeholder="John" required>
           </div>
           <div>
-           <label for="lastName" class="block text-sm text-gray-400 mb-2">Last Name</label> <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Doe" required>
+           <label for="lastName" class="form-label">Last Name</label>
+           <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Doe" required>
           </div>
          </div>
          <div>
-          <label for="email" class="block text-sm text-gray-400 mb-2">Email Address</label> <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
          </div>
          <div>
-          <label for="phone" class="block text-sm text-gray-400 mb-2">Phone Number</label> <input type="tel" id="phone" name="phone" class="form-input" placeholder="+234 816 367 5439">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="+234 816 367 5439">
          </div>
          <div>
-          <label for="projectType" class="block text-sm text-gray-400 mb-2">Project Type</label> <select id="projectType" name="projectType" class="form-input"> <option value="">Select project type</option> <option value="residential">Residential</option> <option value="commercial">Commercial</option> <option value="industrial">Industrial</option> <option value="infrastructure">Infrastructure</option> <option value="interior">Interior Finishing</option> <option value="other">Other</option> </select>
+          <label for="projectType" class="form-label">Project Type</label>
+          <select id="projectType" name="projectType" class="form-input">
+           <option value="">Select project type</option>
+           <option value="residential">Residential</option>
+           <option value="commercial">Commercial</option>
+           <option value="industrial">Industrial</option>
+           <option value="infrastructure">Infrastructure</option>
+           <option value="interior">Interior Finishing</option>
+           <option value="other">Other</option>
+          </select>
          </div>
          <div>
-          <label for="message" class="block text-sm text-gray-400 mb-2">Project Details</label> <textarea id="message" name="message" rows="5" class="form-input resize-none" placeholder="Tell us about your project..." required></textarea>
+          <label for="message" class="form-label">Project Details</label>
+          <textarea id="message" name="message" rows="5" class="form-input resize-none" placeholder="Tell us about your project..." required></textarea>
          </div>
          <div class="hidden" aria-hidden="true">
           <label for="website">Website</label>
           <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
          </div>
-         <div class="grid sm:grid-cols-2 gap-4">
-          <button type="submit" class="btn-cream w-full" id="sendEmailButton">Send Email</button>
-          <button type="button" class="btn-secondary w-full" id="sendWhatsAppButton">Send via WhatsApp</button>
+         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <button type="submit" class="btn-base btn-primary btn-lg" id="sendEmailButton">Send Email</button>
+          <button type="button" class="btn-base btn-secondary btn-lg" id="sendWhatsAppButton">Send via WhatsApp</button>
          </div>
          <p id="formStatus" class="text-center hidden"></p>
         </form>
@@ -1375,11 +1505,11 @@
       </div>
      </div>
     </section>
-    <footer class="py-12 border-t border-white/10">
-     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-       <p class="font-display text-xl tracking-wider">DOVA FUTURES DEVELOPERS</p>
-       <p class="text-gray-500 text-sm">© 2025 Dova Futures Developers. All Rights Reserved.</p>
+    <footer class="sec-darkest" style="padding:40px 0;border-top:1px solid var(--border-dark);">
+     <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+       <p class="font-display" style="font-size:18px;letter-spacing:0.08em;color:var(--cream);">DOVA FUTURES DEVELOPERS</p>
+       <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);">© 2025 Dova Futures Developers. All Rights Reserved.</p>
       </div>
      </div>
     </footer>
