@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { background: white !important; padding: 0 !important; }
+      [data-no-print] { display: none !important; }
+      [data-paper] { box-shadow: none !important; max-width: 100% !important; }
+    }
+    [contenteditable]:focus { outline: 2px solid #5AA17C; outline-offset: 2px; border-radius: 2px; font-style: normal !important; color: #1A1A1A !important; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh;background:#E8E1D5;padding:32px 24px;font-family:'Inter',sans-serif;box-sizing:border-box;">
+
+  <div data-no-print style="max-width:794px;margin:0 auto 16px;display:flex;justify-content:space-between;align-items:center;">
+    <a href="../index.dc.html" style="font-size:13px;color:#1C4636;text-decoration:none;font-weight:500;">← All Templates</a>
+    <div style="display:flex;gap:16px;align-items:center;">
+      <span style="font-size:11px;color:#6B7280;font-style:italic;">Click any field to edit · then print</span>
+      <button onClick="{{ print }}" style="background:#1C4636;color:#F5EFE8;border:none;padding:9px 20px;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:pointer;border-radius:2px;letter-spacing:0.06em;">PRINT / SAVE PDF</button>
+    </div>
+  </div>
+
+  <div data-paper style="background:#fff;max-width:794px;margin:0 auto;box-shadow:0 4px 40px rgba(26,26,26,.16);">
+
+    <div style="background:#1C4636;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;"><svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="16" width="7" height="19" stroke="#F5EFE8" stroke-width="1.5"/><rect x="10" y="5" width="8" height="30" stroke="#F5EFE8" stroke-width="1.5"/><rect x="20" y="11" width="7" height="24" stroke="#F5EFE8" stroke-width="1.5"/><line x1="0" y1="35.5" x2="28" y2="35.5" stroke="#F5EFE8" stroke-width="1" opacity="0.4"/></svg><div><div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#F5EFE8;letter-spacing:0.1em;line-height:1;">DOVA FUTURES</div><div style="font-size:8px;color:rgba(245,239,232,0.55);letter-spacing:0.28em;margin-top:4px;font-weight:500;">DESIGNERS · BUILDERS · DEVELOPERS</div></div></div>
+      </div>
+      <div style="text-align:right;color:rgba(245,239,232,0.75);font-size:10px;line-height:1.9;">
+        <div style="color:#F5EFE8;font-weight:600;font-size:11px;letter-spacing:0.06em;margin-bottom:2px;">DOVA FUTURES LIMITED</div>
+        info@dovafutures.com<br>+234 816 367 5439<br>dovafutures.com
+      </div>
+    </div>
+    <div style="height:3px;background:#B85C38;"></div>
+
+    <div style="padding:36px 48px 20px;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#B85C38;letter-spacing:0.35em;margin-bottom:8px;">CERTIFICATE</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:#1A1A1A;letter-spacing:0.02em;line-height:1;">PROJECT COMPLETION CERTIFICATE</div>
+      <div style="height:1px;background:linear-gradient(to right,#1C4636,#D1CBC6);margin-top:16px;"></div>
+    </div>
+
+    <div style="padding:0 48px 16px;">
+
+      <!-- Project Details -->
+      <div style="margin-bottom:28px;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;color:#1C4636;letter-spacing:0.2em;padding-bottom:8px;border-bottom:1px solid #D1CBC6;margin-bottom:12px;">PROJECT DETAILS</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;background:#F5EFE8;padding:16px 20px;border-left:3px solid #1C4636;">
+          <div>
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.2em;color:#6B7280;margin-bottom:3px;font-weight:600;">Project Name</div>
+            <div style="font-size:12px;color:#1A1A1A;font-weight:500;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Full Project Name]</span></div>
+          </div>
+          <div>
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.2em;color:#6B7280;margin-bottom:3px;font-weight:600;">Contract Number</div>
+            <div style="font-size:12px;color:#1A1A1A;font-weight:500;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[DOVA-CON-XXXX]</span></div>
+          </div>
+          <div>
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.2em;color:#6B7280;margin-bottom:3px;font-weight:600;">Site Location</div>
+            <div style="font-size:12px;color:#1A1A1A;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Address, City, State]</span></div>
+          </div>
+          <div>
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.2em;color:#6B7280;margin-bottom:3px;font-weight:600;">Client</div>
+            <div style="font-size:12px;color:#1A1A1A;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Client Name]</span></div>
+          </div>
+          <div>
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.2em;color:#6B7280;margin-bottom:3px;font-weight:600;">Contract Start Date</div>
+            <div style="font-size:12px;color:#1A1A1A;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[DD Month YYYY]</span></div>
+          </div>
+          <div>
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.2em;color:#6B7280;margin-bottom:3px;font-weight:600;">Completion Date</div>
+            <div style="font-size:12px;color:#1A1A1A;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[DD Month YYYY]</span></div>
+          </div>
+          <div>
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.2em;color:#6B7280;margin-bottom:3px;font-weight:600;">Contract Value</div>
+            <div style="font-size:12px;color:#1A1A1A;font-weight:600;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">₦ 0.00</span></div>
+          </div>
+          <div>
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.2em;color:#6B7280;margin-bottom:3px;font-weight:600;">Project Manager</div>
+            <div style="font-size:12px;color:#1A1A1A;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Name]</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scope Checklist -->
+      <div style="margin-bottom:24px;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;color:#1C4636;letter-spacing:0.2em;padding-bottom:8px;border-bottom:1px solid #D1CBC6;margin-bottom:12px;">SCOPE OF WORKS — COMPLETION CHECKLIST</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">
+          <div style="display:flex;gap:10px;align-items:center;padding:7px 10px;background:#F5EFE8;border-radius:2px;">
+            <div style="width:14px;height:14px;border:1.5px solid #1C4636;border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1C4636;font-weight:700;">✓</div>
+            <span style="font-size:12px;color:#4A4F5C;" contenteditable="true" style="outline:none;">Structural / civil works</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;padding:7px 10px;background:#F5EFE8;border-radius:2px;">
+            <div style="width:14px;height:14px;border:1.5px solid #1C4636;border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1C4636;font-weight:700;">✓</div>
+            <span style="font-size:12px;color:#4A4F5C;" contenteditable="true" style="outline:none;">Architectural / finishing works</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;padding:7px 10px;background:#F5EFE8;border-radius:2px;">
+            <div style="width:14px;height:14px;border:1.5px solid #1C4636;border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1C4636;font-weight:700;">✓</div>
+            <span style="font-size:12px;color:#4A4F5C;" contenteditable="true" style="outline:none;">Mechanical &amp; electrical installations</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;padding:7px 10px;background:#F5EFE8;border-radius:2px;">
+            <div style="width:14px;height:14px;border:1.5px solid #1C4636;border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1C4636;font-weight:700;">✓</div>
+            <span style="font-size:12px;color:#4A4F5C;" contenteditable="true" style="outline:none;">Plumbing &amp; sanitary works</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;padding:7px 10px;background:#F5EFE8;border-radius:2px;">
+            <div style="width:14px;height:14px;border:1.5px solid #1C4636;border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1C4636;font-weight:700;">✓</div>
+            <span style="font-size:12px;color:#4A4F5C;" contenteditable="true" style="outline:none;">Interior fit-out works</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;padding:7px 10px;background:#F5EFE8;border-radius:2px;">
+            <div style="width:14px;height:14px;border:1.5px solid #1C4636;border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1C4636;font-weight:700;">✓</div>
+            <span style="font-size:12px;color:#4A4F5C;" contenteditable="true" style="outline:none;">External works &amp; landscaping</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;padding:7px 10px;background:#F5EFE8;border-radius:2px;">
+            <div style="width:14px;height:14px;border:1.5px solid #1C4636;border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1C4636;font-weight:700;">✓</div>
+            <span style="font-size:12px;color:#4A4F5C;" contenteditable="true" style="outline:none;">Defects &amp; snagging items remedied</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;padding:7px 10px;background:#F5EFE8;border-radius:2px;">
+            <div style="width:14px;height:14px;border:1.5px solid #1C4636;border-radius:2px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#1C4636;font-weight:700;">✓</div>
+            <span style="font-size:12px;color:#4A4F5C;" contenteditable="true" style="outline:none;">Site cleaned and handed over</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certification Statement -->
+      <div style="background:#F5EFE8;border:1px solid #D1CBC6;border-left:3px solid #B85C38;padding:16px 20px;margin-bottom:24px;border-radius:2px;">
+        <div style="font-size:12px;color:#4A4F5C;line-height:1.75;" contenteditable="true" style="outline:none;">We, the undersigned, hereby certify that the works described above and detailed in Contract No. [DOVA-CON-XXXX] have been completed to the required standard, inspected, and are hereby accepted. The project site is officially handed over to the client on the date indicated below.</div>
+      </div>
+
+      <!-- Signature Blocks — 2×2 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div style="border:1px solid #D1CBC6;padding:16px;border-radius:2px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.14em;margin-bottom:12px;">CLIENT REPRESENTATIVE</div>
+          <div style="height:32px;border-bottom:1px solid #1A1A1A;margin-bottom:6px;"></div>
+          <div style="font-size:11px;color:#1A1A1A;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Name &amp; Title]</span></div>
+          <div style="margin-top:8px;font-size:10px;color:#6B7280;">Date: <span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Date]</span></div>
+          <div style="font-size:10px;color:#6B7280;">Stamp: ____________________</div>
+        </div>
+        <div style="border:1px solid #D1CBC6;padding:16px;border-radius:2px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.14em;margin-bottom:12px;">PROJECT MANAGER — DOVA FUTURES</div>
+          <div style="height:32px;border-bottom:1px solid #1A1A1A;margin-bottom:6px;"></div>
+          <div style="font-size:11px;color:#1A1A1A;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Name &amp; Title]</span></div>
+          <div style="margin-top:8px;font-size:10px;color:#6B7280;">Date: <span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Date]</span></div>
+          <div style="font-size:10px;color:#6B7280;">Stamp: ____________________</div>
+        </div>
+        <div style="border:1px solid #D1CBC6;padding:16px;border-radius:2px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.14em;margin-bottom:12px;">SITE SUPERVISOR</div>
+          <div style="height:32px;border-bottom:1px solid #1A1A1A;margin-bottom:6px;"></div>
+          <div style="font-size:11px;color:#1A1A1A;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Name &amp; Title]</span></div>
+          <div style="margin-top:8px;font-size:10px;color:#6B7280;">Date: <span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Date]</span></div>
+        </div>
+        <div style="border:1px solid #D1CBC6;padding:16px;border-radius:2px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.14em;margin-bottom:12px;">CONSULTANT / ARCHITECT</div>
+          <div style="height:32px;border-bottom:1px solid #1A1A1A;margin-bottom:6px;"></div>
+          <div style="font-size:11px;color:#1A1A1A;"><span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Name, Firm &amp; Reg. No.]</span></div>
+          <div style="margin-top:8px;font-size:10px;color:#6B7280;">Date: <span contenteditable="true" style="outline:none;color:#9E4F30;font-style:italic;">[Date]</span></div>
+          <div style="font-size:10px;color:#6B7280;">Stamp: ____________________</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin:16px 48px 0;border-top:1px solid #D1CBC6;padding:14px 0;display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-size:10px;color:#6B7280;">DOVA Futures Limited · RC No. [000000]</span>
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.12em;">DOVAFUTURES.COM</span>
+      <span style="font-size:10px;color:#6B7280;">Page 1 of 1</span>
+    </div>
+    <div style="height:24px;"></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { print: () => window.print() };
+  }
+}
+</script>
+</body>
+</html>
