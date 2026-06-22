@@ -1,21 +1,25 @@
 # status.md — Current Snapshot
 
-**Last updated:** 2026-06-14 — bootstrap run
+**Last updated:** 2026-06-22 — Session 3 (document templates)
 **Health:** 🟢 on track
 
 ## Now
-- Loop Engineering + Agent Team scaffold installed and pushed.
-- Planning hero before/after reveal feature.
+- 9 print-ready HTML document templates + gallery index deployed to `project/` directory.
+- Templates are standalone static files — not yet wired into Express routes.
+- Next decision: how to expose templates to staff (public static route, password-gated, or nav link).
 
 ## Recently done (last 3)
-- Bootstrapped loop-engineering-kit into repo (CLAUDE.md, TEAM.md, context/, memory/, agents/)
-- Filled context/01-build-steps.md and context/02-architecture.md for Dova Futures
-- Applied token-economy model tiers to all agents
+- Session 3 (2026-06-22): Created 9 branded HTML document templates from Claude Design export; committed and pushed to main.
+- Session 2 (2026-06-14): Added loop engineering scaffold (CLAUDE.md, agents, memory); built hero before/after reveal on homepage.
+- Session 1 (2026-06-07): Built core website SPA, Express backend, WhatsApp button, project data layer, UI/UX strategy.
 
 ## Open / blocked
-- Need before/after image pairs (raw Revit/sketch + final render) — using placeholders until user supplies real assets.
+- Templates not yet served via Express route — need client decision on public vs. staff-only access.
+- Contact form backend not deployed — SMTP env vars not configured on Render.
+- Real project photography and social media handles not supplied by client yet.
 
 ## Notes for the next run
-- Project is a Node/Express static site deployed on Render.
-- No test suite yet. Manual curl smoke-test for /api/contact.
-- Hero reveal is a pure frontend change: index.html only, no new deps.
+- Stack: Node/Express on Render; frontend is a single-page `index.html`; templates are standalone HTML files in `project/`.
+- No test suite. Manual smoke-test for /api/contact.
+- Templates use `contenteditable` + `window.print()` — no JS framework or build step.
+- Read `SESSION_HANDOFF.md` Section "SESSION 3" for full template integration options before acting.
