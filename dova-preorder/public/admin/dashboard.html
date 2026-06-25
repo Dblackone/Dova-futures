@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Dova Futures Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared.css">
+  <style>
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: var(--space-4); margin-bottom: var(--space-6); }
+    .stat-card { background: #fff; border-radius: var(--radius-md); padding: var(--space-5); box-shadow: var(--shadow-card); }
+    .stat-label { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-500); margin-bottom: var(--space-2); }
+    .stat-val { font-family: var(--font-display); font-size: 36px; color: var(--green-800); line-height: 1; }
+    .stat-val.red { color: var(--terracotta); }
+    .stat-val.amber { color: var(--amber); }
+    .quick-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-bottom: var(--space-6); }
+    .preorder-setup { background: #fff; border-radius: var(--radius-md); padding: var(--space-6); box-shadow: var(--shadow-card); }
+    .preorder-setup h3 { font-size: 18px; font-weight: 700; margin-bottom: var(--space-5); }
+    .form-inline { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: flex-end; }
+    .form-inline .form-group { flex: 1; min-width: 180px; }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="/admin" class="logo">DOVA FUTURES <span>Preorder Admin</span></a>
+      <a href="/admin" class="sidebar-link active">📊 Dashboard</a>
+      <a href="/admin/products" class="sidebar-link">📦 Products</a>
+      <a href="/admin/orders" class="sidebar-link">🧾 Orders</a>
+      <a href="/admin/calendar" class="sidebar-link">📅 Calendar</a>
+      <a href="/" class="sidebar-link" style="margin-top:auto">🌐 View Site</a>
+      <a href="#" class="sidebar-link" onclick="logout()">🚪 Log Out</a>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1>Dashboard</h1>
+        <div id="batch-badge" class="badge badge-grey">No active batch</div>
+      </div>
+
+      <div class="stats-grid" id="stats-grid">
+        <div class="stat-card"><div class="stat-label">Total Orders</div><div class="stat-val" id="s-total">—</div></div>
+        <div class="stat-card"><div class="stat-label">Paid Orders</div><div class="stat-val" id="s-paid">—</div></div>
+        <div class="stat-card"><div class="stat-label">Naira Collected</div><div class="stat-val" id="s-collected">—</div></div>
+        <div class="stat-card"><div class="stat-label">Awaiting Stage 2</div><div class="stat-val amber" id="s-stage2">—</div></div>
+        <div class="stat-card"><div class="stat-label">Forfeited</div><div class="stat-val red" id="s-forfeited">—</div></div>
+      </div>
+
+      <div class="quick-actions">
+        <a href="/admin/orders" class="btn btn-primary">View All Orders</a>
+        <a href="/admin/orders?status=stage2_invoiced" class="btn btn-secondary">Stage 2 Pending</a>
+        <button class="btn btn-secondary" onclick="exportCsv()">Export CSV</button>
+        <button class="btn btn-secondary" onclick="sendReminders()">Send Reminders</button>
+      </div>
+
+      <!-- Create Preorder Batch -->
+      <div class="preorder-setup">
+        <h3>Preorder Batches</h3>
+        <div id="batches-list" style="margin-bottom:var(--space-5)"></div>
+        <details>
+          <summary style="cursor:pointer;font-weight:600;font-size:15px;margin-bottom:var(--space-4)">+ Create New Batch</summary>
+          <div class="form-inline" style="margin-top:var(--space-4)">
+            <div class="form-group"><label>Batch Title</label><input type="text" id="b-title" placeholder="Batch 1 — July 2026"></div>
+            <div class="form-group"><label>Opens</label><input type="datetime-local" id="b-start"></div>
+            <div class="form-group"><label>Closes</label><input type="datetime-local" id="b-end"></div>
+            <button class="btn btn-primary" onclick="createBatch()">Create</button>
+          </div>
+        </details>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast"></div>
+  <script src="/js/admin/dashboard.js"></script>
+</body>
+</html>

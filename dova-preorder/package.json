@@ -1,0 +1,17 @@
+{
+  "name": "dova-preorder",
+  "version": "1.0.0",
+  "description": "Dova Futures preorder sale platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "busboy": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "nodemailer": "^9.0.1"
+  }
+}

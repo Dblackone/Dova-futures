@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — Dova Futures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared.css">
+  <style>
+    body { background: var(--green-950); display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .login-card { background: #fff; border-radius: var(--radius-lg); padding: var(--space-7); width: 100%; max-width: 380px; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+    .login-logo { font-family: var(--font-display); font-size: 28px; color: var(--green-800); margin-bottom: 4px; }
+    .login-logo span { font-family: var(--font-body); font-size: 12px; color: var(--ink-500); display: block; font-weight: 500; }
+    .login-card h2 { font-size: 20px; font-weight: 700; margin: var(--space-5) 0 var(--space-4); }
+    .error-msg { color: #dc2626; font-size: 13px; display: none; margin-bottom: var(--space-3); }
+    .error-msg.show { display: block; }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <div class="login-logo">DOVA FUTURES <span>Preorder Admin</span></div>
+    <h2>Sign In</h2>
+    <div class="error-msg" id="error-msg">Invalid password. Please try again.</div>
+    <form id="login-form" onsubmit="doLogin(event)">
+      <div class="form-group" style="margin-bottom:var(--space-4)">
+        <label>Password</label>
+        <input type="password" id="password" name="password" required autofocus placeholder="Admin password">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%" id="login-btn">Sign In</button>
+    </form>
+  </div>
+  <script>
+    async function doLogin(e) {
+      e.preventDefault();
+      const btn = document.getElementById('login-btn');
+      btn.disabled = true;
+      btn.textContent = 'Signing in...';
+      document.getElementById('error-msg').classList.remove('show');
+
+      const res = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: document.getElementById('password').value })
+      });
+
+      if (res.ok) {
+        window.location.href = '/admin';
+      } else {
+        document.getElementById('error-msg').classList.add('show');
+        btn.disabled = false;
+        btn.textContent = 'Sign In';
+      }
+    }
+  </script>
+</body>
+</html>

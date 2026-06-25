@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar — Dova Futures Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared.css">
+  <style>
+    .calendar-table { background:#fff; border-radius:var(--radius-md); padding:var(--space-6); box-shadow:var(--shadow-card); }
+    .calendar-table h3 { font-size:16px; font-weight:700; margin-bottom:var(--space-5); }
+    .milestone-row { display:flex; align-items:center; gap:var(--space-4); padding:var(--space-4) 0; border-bottom:1px solid var(--sand); }
+    .milestone-row:last-child { border-bottom:none; }
+    .milestone-icon { font-size:24px; width:40px; text-align:center; flex-shrink:0; }
+    .milestone-info { flex:1; }
+    .milestone-label { font-weight:600; font-size:15px; }
+    .milestone-date { font-size:13px; color:var(--ink-500); margin-top:2px; }
+    .milestone-input { padding:8px 12px; border:1.5px solid var(--stone); border-radius:var(--radius-sm); font-size:14px; }
+    .milestone-status { width:90px; text-align:right; }
+    .save-btn { margin-top:var(--space-5); }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="/admin" class="logo">DOVA FUTURES <span>Preorder Admin</span></a>
+      <a href="/admin" class="sidebar-link">📊 Dashboard</a>
+      <a href="/admin/products" class="sidebar-link">📦 Products</a>
+      <a href="/admin/orders" class="sidebar-link">🧾 Orders</a>
+      <a href="/admin/calendar" class="sidebar-link active">📅 Calendar</a>
+      <a href="/" class="sidebar-link">🌐 View Site</a>
+      <a href="#" class="sidebar-link" onclick="logout()">🚪 Log Out</a>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1>Preorder Calendar</h1>
+        <button class="btn btn-primary btn-sm" onclick="saveDates()">Save Dates</button>
+      </div>
+      <p style="font-size:14px;color:var(--ink-500);margin-bottom:var(--space-6)">Set milestone dates for the active preorder batch. These dates are shown to buyers on the tracking page.</p>
+      <div id="calendar-content">Loading...</div>
+    </main>
+  </div>
+
+  <div id="toast"></div>
+  <script src="/js/admin/calendar.js"></script>
+</body>
+</html>

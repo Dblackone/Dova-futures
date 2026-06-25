@@ -3,3 +3,7 @@ node_modules/
 .env.local
 *.log
 .DS_Store
+
+# Dova Preorder
+dova-preorder/preorder.db
+dova-preorder/public/uploads/
