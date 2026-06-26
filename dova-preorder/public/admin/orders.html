@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders — Dova Futures Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared.css">
+  <style>
+    .filter-bar { display:flex; gap:var(--space-3); flex-wrap:wrap; margin-bottom:var(--space-5); }
+    .filter-bar input, .filter-bar select { padding:8px 12px; border:1.5px solid var(--stone); border-radius:var(--radius-sm); font-size:14px; }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="/admin" class="logo">DOVA FUTURES <span>Preorder Admin</span></a>
+      <a href="/admin" class="sidebar-link">📊 Dashboard</a>
+      <a href="/admin/products" class="sidebar-link">📦 Products</a>
+      <a href="/admin/orders" class="sidebar-link active">🧾 Orders</a>
+      <a href="/admin/calendar" class="sidebar-link">📅 Calendar</a>
+      <a href="#" class="sidebar-link" onclick="logout()">🚪 Log Out</a>
+    </aside>
+    <main class="admin-main">
+      <nav class="mobile-admin-nav">
+        <a href="/admin">📊 Dashboard</a>
+        <a href="/admin/products">📦 Products</a>
+        <a href="/admin/orders" class="active">🧾 Orders</a>
+        <a href="/admin/calendar">📅 Calendar</a>
+      </nav>
+      <div class="admin-header">
+        <h1>Orders</h1>
+        <a href="/api/admin/export" class="btn btn-secondary btn-sm">Export CSV</a>
+      </div>
+
+      <div class="filter-bar">
+        <input type="search" id="search-input" placeholder="Search name, phone, ref..." style="flex:1;min-width:200px">
+        <select id="status-filter">
+          <option value="">All Statuses</option>
+          <option value="pending_payment">Pending Payment</option>
+          <option value="goods_paid">Goods Paid</option>
+          <option value="window_closed">Window Closed</option>
+          <option value="sourcing">Sourcing</option>
+          <option value="shipped_china">Shipped China</option>
+          <option value="customs_nigeria">At Customs</option>
+          <option value="arrived_akure">Arrived Akure</option>
+          <option value="stage2_invoiced">Stage 2 Invoiced</option>
+          <option value="stage2_paid">Stage 2 Paid</option>
+          <option value="waybilled">Waybilled</option>
+          <option value="delivered">Delivered</option>
+          <option value="forfeited">Forfeited</option>
+        </select>
+        <button class="btn btn-primary btn-sm" onclick="loadOrders()">Search</button>
+      </div>
+
+      <div id="orders-table">Loading...</div>
+    </main>
+  </div>
+
+  <div id="toast"></div>
+  <script src="/js/admin/orders.js"></script>
+</body>
+</html>

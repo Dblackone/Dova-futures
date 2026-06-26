@@ -569,6 +569,7 @@
     @media (max-width: 768px) {
       .section-padding { padding: var(--section-pad-y-sm) 0; }
       :root { --container-pad: 20px; }
+      .preorder-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
     }
   </style>
   <style>body { box-sizing: border-box; }</style>
@@ -590,6 +591,7 @@
        <a href="/" class="nav-link" onclick="navigateTo('process'); return false;">Process</a>
        <a href="/" class="nav-link" onclick="navigateTo('why'); return false;">Why Us</a>
        <a href="/" class="nav-link" onclick="navigateTo('contact'); return false;">Contact</a>
+       <a href="https://preorder.dovafutures.com" target="_blank" rel="noopener" class="btn-base btn-sm" style="background:var(--clay);color:#fff;border:none;font-family:var(--font-body);font-weight:600;letter-spacing:0.02em;">🛒 Preorder Store</a>
        <button class="btn-base btn-cream btn-sm" onclick="navigateTo('contact')">Start a Project</button>
       </div>
       <div class="hamburger" onclick="toggleMobileMenu()">
@@ -607,6 +609,7 @@
      <a href="/" class="font-display" style="font-size:32px;color:var(--cream);text-decoration:none;" onclick="navigateTo('process'); toggleMobileMenu(); return false;">Process</a>
      <a href="/" class="font-display" style="font-size:32px;color:var(--cream);text-decoration:none;" onclick="navigateTo('why'); toggleMobileMenu(); return false;">Why Us</a>
      <a href="/" class="font-display" style="font-size:32px;color:var(--cream);text-decoration:none;" onclick="navigateTo('contact'); toggleMobileMenu(); return false;">Contact</a>
+     <a href="https://preorder.dovafutures.com" target="_blank" rel="noopener" class="font-display" style="font-size:32px;color:var(--clay);text-decoration:none;" onclick="toggleMobileMenu()">🛒 Preorder Store</a>
     </div>
    </div><!-- HOME PAGE -->
    <div id="page-home" class="page active">
@@ -886,6 +889,67 @@
           <h3 class="font-display" style="font-size:22px;color:var(--cream);margin-bottom:4px;">Premium Finishing</h3>
           <p style="font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">Superior craftsmanship and attention to detail in every aspect of construction.</p>
          </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Preorder Store Section -->
+    <section class="section-padding sec-dark" style="background:var(--green-950);">
+     <div class="container">
+      <div class="preorder-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+       <!-- Left: copy -->
+       <div>
+        <span class="eyebrow eyebrow-clay" style="margin-bottom:14px;">Now Open</span>
+        <h2 class="font-display" style="font-size:var(--fs-display-lg);color:var(--cream);line-height:1;margin-bottom:20px;">Order From China.<br>Pay in Naira.</h2>
+        <p style="font-family:var(--font-body);font-size:var(--fs-md);color:var(--text-on-dark-mut);line-height:var(--lh-relaxed);margin-bottom:28px;">Dova Futures now runs curated preorder batches — sourcing quality goods directly from Chinese suppliers and delivering them to your door. Browse the current batch, pay in Naira, and track every step of your shipment in real time.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px;">
+         <div style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-400)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Browse hundreds of products — electronics, accessories, home goods &amp; more
+         </div>
+         <div style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-400)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Pay securely via Paystack — Naira cards, USSD &amp; bank transfer accepted
+         </div>
+         <div style="display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-on-dark-mut);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green-400)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Real-time shipment tracking from China to your city
+         </div>
+        </div>
+        <a href="https://preorder.dovafutures.com" target="_blank" rel="noopener" class="btn-base btn-primary btn-lg" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;">
+         Browse Current Batch
+         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+       </div>
+       <!-- Right: two cards -->
+       <div style="display:flex;flex-direction:column;gap:20px;">
+        <!-- Buyer card -->
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:28px 28px 24px;backdrop-filter:blur(8px);">
+         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:44px;height:44px;background:var(--green-700);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;">🛒</div>
+          <div>
+           <div class="font-display" style="font-size:20px;color:var(--cream);letter-spacing:0.02em;">Preorder Store</div>
+           <div style="font-family:var(--font-body);font-size:12px;color:var(--text-on-dark-mut);">For buyers</div>
+          </div>
+         </div>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);margin-bottom:18px;line-height:1.6;">Browse the live catalog, add items to cart, and pay securely. Track your goods all the way from China to Akure.</p>
+         <a href="https://preorder.dovafutures.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:13px;font-weight:600;color:var(--green-300);text-decoration:none;">
+          Open Store <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+         </a>
+        </div>
+        <!-- Admin card -->
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:28px 28px 24px;">
+         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:44px;height:44px;background:rgba(184,92,56,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;">📊</div>
+          <div>
+           <div class="font-display" style="font-size:20px;color:var(--cream);letter-spacing:0.02em;">Admin Dashboard</div>
+           <div style="font-family:var(--font-body);font-size:12px;color:var(--text-on-dark-mut);">Team access only</div>
+          </div>
+         </div>
+         <p style="font-family:var(--font-body);font-size:13px;color:var(--text-on-dark-mut);margin-bottom:18px;line-height:1.6;">Manage products, orders, milestones, and invoices. View real-time order stats and export data.</p>
+         <a href="https://preorder.dovafutures.com/admin" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body);font-size:13px;font-weight:600;color:var(--clay);text-decoration:none;">
+          Admin Login <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+         </a>
         </div>
        </div>
       </div>

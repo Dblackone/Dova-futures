@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — Dova Futures Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared.css">
+  <style>
+    .product-form { background:#fff; border-radius:var(--radius-md); padding:var(--space-6); box-shadow:var(--shadow-card); margin-bottom:var(--space-6); }
+    .product-form h3 { font-size:16px; font-weight:700; margin-bottom:var(--space-5); }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-4); }
+    @media (max-width:640px) { .form-grid { grid-template-columns:1fr; } }
+    .product-thumb { width:48px; height:48px; object-fit:cover; border-radius:4px; background:var(--sand); }
+  </style>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a href="/admin" class="logo">DOVA FUTURES <span>Preorder Admin</span></a>
+      <a href="/admin" class="sidebar-link">📊 Dashboard</a>
+      <a href="/admin/products" class="sidebar-link active">📦 Products</a>
+      <a href="/admin/orders" class="sidebar-link">🧾 Orders</a>
+      <a href="/admin/calendar" class="sidebar-link">📅 Calendar</a>
+      <a href="#" class="sidebar-link" onclick="logout()">🚪 Log Out</a>
+    </aside>
+    <main class="admin-main">
+      <nav class="mobile-admin-nav">
+        <a href="/admin">📊 Dashboard</a>
+        <a href="/admin/products" class="active">📦 Products</a>
+        <a href="/admin/orders">🧾 Orders</a>
+        <a href="/admin/calendar">📅 Calendar</a>
+      </nav>
+      <div class="admin-header"><h1>Products</h1></div>
+
+      <!-- Add Product Form -->
+      <div class="product-form">
+        <h3>Add New Product</h3>
+        <form id="add-form" onsubmit="addProduct(event)" enctype="multipart/form-data">
+          <div class="form-group" style="margin-bottom:var(--space-4)">
+            <label>Preorder Batch *</label>
+            <select name="preorder_id" id="preorder-select" required>
+              <option value="">Loading batches...</option>
+            </select>
+          </div>
+          <div class="form-grid" style="margin-bottom:var(--space-4)">
+            <div class="form-group"><label>Product Name *</label><input type="text" name="name" required placeholder="iPhone 15 Case"></div>
+            <div class="form-group"><label>Category</label><input type="text" name="category" placeholder="Electronics"></div>
+            <div class="form-group"><label>Price (₦) *</label><input type="number" name="price_naira" required placeholder="5000.00" step="0.01"></div>
+            <div class="form-group"><label>Stock Limit</label><input type="number" name="stock_limit" placeholder="Leave blank for unlimited"></div>
+            <div class="form-group"><label>Supplier Ref</label><input type="text" name="supplier_ref" placeholder="SUP-001"></div>
+          </div>
+          <div class="form-group" style="margin-bottom:var(--space-4)">
+            <label>Description</label>
+            <textarea name="description" placeholder="Product description..." style="resize:vertical;min-height:80px"></textarea>
+          </div>
+          <div class="form-group" style="margin-bottom:var(--space-5)">
+            <label>Product Images (max 5, 5MB each)</label>
+            <input type="file" name="images" accept="image/*" multiple>
+          </div>
+          <button type="submit" class="btn btn-primary" id="add-btn">Add Product</button>
+        </form>
+      </div>
+
+      <!-- Products Table -->
+      <div id="products-table">Loading products...</div>
+    </main>
+  </div>
+
+  <div id="toast"></div>
+  <script src="/js/admin/products.js"></script>
+</body>
+</html>
