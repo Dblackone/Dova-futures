@@ -247,10 +247,70 @@ h1, h2, h3 { line-height: 1.15; }
 .data-table tr:hover td { background: #fafaf8; }
 .data-table a { color: var(--green-800); text-decoration: underline; }
 
+/* ── Mobile admin nav (visible only on small screens) ──────────────────────── */
+.mobile-admin-nav { display: none; }
+
 /* ── Responsive helpers ────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .hide-mobile { display: none !important; }
   .admin-sidebar { display: none; }
   .admin-layout { flex-direction: column; }
+  .admin-main { padding: var(--space-4); }
+  .admin-header h1 { font-size: 20px; }
+
+  /* Mobile admin nav bar */
+  .mobile-admin-nav {
+    display: flex; overflow-x: auto; gap: var(--space-2); padding: 10px var(--space-4);
+    background: var(--green-950); -webkit-overflow-scrolling: touch;
+    position: sticky; top: 0; z-index: 80; scrollbar-width: none;
+  }
+  .mobile-admin-nav::-webkit-scrollbar { display: none; }
+  .mobile-admin-nav a {
+    white-space: nowrap; padding: 8px 14px;
+    background: rgba(255,255,255,.12); color: var(--green-100);
+    text-decoration: none; border-radius: 99px; font-size: 13px;
+    min-height: 36px; display: flex; align-items: center; gap: 5px;
+  }
+  .mobile-admin-nav a.active { background: var(--terracotta); color: #fff; }
+
+  /* Data tables scroll horizontally */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Timeline compact */
+  .timeline { padding-left: 24px; }
+  .timeline::before { left: 6px; }
+  .timeline-dot { width: 16px; height: 16px; left: -22px; }
+  .timeline-item.done .timeline-dot::after { font-size: 9px; }
+  .timeline-label { font-size: 14px; }
 }
 @media (min-width: 769px) { .hide-desktop { display: none !important; } }
+
+/* ── Mobile-first buyer pages ──────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  /* Prevent iOS input zoom — ALL inputs/selects/textareas must be 16px */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
+  }
+  .form-group label { font-size: 14px; }
+
+  /* Larger tap targets */
+  .btn-sm { min-height: 44px; padding: 10px 18px; font-size: 13px; }
+  .filter-chip { min-height: 40px; padding: 8px 14px; }
+
+  /* Nav wraps below logo on mobile */
+  .site-nav { flex-wrap: wrap; gap: 8px; padding: var(--space-3) var(--space-4); }
+  .nav-links { gap: var(--space-4); }
+  .nav-links a { font-size: 13px; }
+
+  /* Container tighter padding */
+  .container, .container-sm { padding: 0 var(--space-4); }
+
+  /* Toast avoids home indicator */
+  #toast {
+    bottom: max(16px, env(safe-area-inset-bottom, 16px));
+    right: 16px; left: 16px;
+    text-align: center;
+  }
+}

@@ -8,11 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/shared.css">
   <style>
-    body { background: var(--green-950); display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-    .login-card { background: #fff; border-radius: var(--radius-lg); padding: var(--space-7); width: 100%; max-width: 380px; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+    body { background: var(--green-950); display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: var(--space-4); }
+    .login-card { background: #fff; border-radius: var(--radius-lg); padding: var(--space-6); width: 100%; max-width: 380px; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
     .login-logo { font-family: var(--font-display); font-size: 28px; color: var(--green-800); margin-bottom: 4px; }
     .login-logo span { font-family: var(--font-body); font-size: 12px; color: var(--ink-500); display: block; font-weight: 500; }
     .login-card h2 { font-size: 20px; font-weight: 700; margin: var(--space-5) 0 var(--space-4); }
+    .login-card input { font-size: 16px !important; } /* prevent iOS zoom */
+    .login-card .btn { min-height: 52px; font-size: 16px; }
     .error-msg { color: #dc2626; font-size: 13px; display: none; margin-bottom: var(--space-3); }
     .error-msg.show { display: block; }
   </style>

@@ -30,7 +30,7 @@ async function loadProducts(preorderId) {
   }
 
   document.getElementById('products-table').innerHTML = `
-    <table class="data-table">
+    <div class="table-wrap"><table class="data-table">
       <thead><tr><th>Image</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Active</th><th>Actions</th></tr></thead>
       <tbody>${products.map((p) => {
         const imgs = JSON.parse(p.image_urls || '[]');
@@ -45,7 +45,7 @@ async function loadProducts(preorderId) {
         </tr>`;
       }).join('')}
       </tbody>
-    </table>`;
+    </table></div>`;
 }
 
 async function addProduct(e) {

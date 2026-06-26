@@ -35,7 +35,7 @@ async function loadOrders() {
   }
 
   document.getElementById('orders-table').innerHTML = `
-    <table class="data-table">
+    <div class="table-wrap"><table class="data-table">
       <thead><tr>
         <th>Ref</th><th>Buyer</th><th>Phone</th>
         <th>Total</th><th>Status</th><th>Stage 2</th><th>Action</th>
@@ -51,7 +51,7 @@ async function loadOrders() {
           <td><a href="/admin/orders/${o.id}" class="btn btn-sm btn-secondary">View</a></td>
         </tr>`).join('')}
       </tbody>
-    </table>`;
+    </table></div>`;
 }
 
 function logout() {
