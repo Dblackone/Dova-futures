@@ -11,14 +11,14 @@
   @media print {
     body { background: white !important; padding: 0 !important; margin: 0 !important; }
     [data-no-print] { display: none !important; }
-    .outer-wrap { padding: 0 !important; background: white !important; }
-    .page { max-width: 100% !important; margin: 0 !important; page-break-after: always; }
-    .page:last-of-type { page-break-after: avoid; }
+    .outer-wrap { padding: 0 !important; background: white !important; min-height: unset !important; }
+    .doc-paper { max-width: 100% !important; box-shadow: none !important; }
+    .page-2-start { page-break-before: always; }
   }
 </style>
 </head>
 <body>
-<div class="outer-wrap" style="background:#E8E1D5;padding:32px 24px;font-family:'Inter',sans-serif;box-sizing:border-box;">
+<div class="outer-wrap" style="min-height:100vh;background:#E8E1D5;padding:32px 24px;font-family:'Inter',sans-serif;box-sizing:border-box;">
 
   <div data-no-print style="max-width:794px;margin:0 auto 16px;display:flex;justify-content:space-between;align-items:center;">
     <a href="../../.." style="font-size:13px;color:#1C4636;text-decoration:none;font-weight:500;">← Jobs</a>
@@ -28,329 +28,291 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════ PAGE 1 ══════════════════════════ -->
-  <div class="page" style="background:#fff;max-width:794px;margin:0 auto 24px;display:flex;flex-direction:column;min-height:297mm;">
+  <div class="doc-paper" style="background:#fff;max-width:794px;margin:0 auto;box-shadow:0 4px 40px rgba(26,26,26,.12);">
 
-    <div style="flex:1;">
+    <!-- ════════════════════ PAGE 1 ════════════════════ -->
 
-      <!-- Letterhead -->
-      <div style="background:#1C4636;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;">
-        <div style="display:flex;align-items:center;gap:14px;">
-          <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="16" width="7" height="19" stroke="#F5EFE8" stroke-width="1.5"/><rect x="10" y="5" width="8" height="30" stroke="#F5EFE8" stroke-width="1.5"/><rect x="20" y="11" width="7" height="24" stroke="#F5EFE8" stroke-width="1.5"/><line x1="0" y1="35.5" x2="28" y2="35.5" stroke="#F5EFE8" stroke-width="1" opacity="0.4"/></svg>
-          <div>
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#F5EFE8;letter-spacing:0.1em;line-height:1;">DOVA FUTURES</div>
-            <div style="font-size:8px;color:rgba(245,239,232,0.55);letter-spacing:0.28em;margin-top:4px;font-weight:500;">DESIGNERS · BUILDERS · DEVELOPERS</div>
-          </div>
-        </div>
-        <div style="text-align:right;color:rgba(245,239,232,0.75);font-size:10px;line-height:1.9;">
-          <div style="color:#F5EFE8;font-weight:600;font-size:11px;letter-spacing:0.06em;margin-bottom:2px;">DOVA FUTURES LIMITED</div>
-          info@dovafutures.com<br>+234 816 367 5439<br>dovafutures.com
-        </div>
-      </div>
-      <div style="height:3px;background:#B85C38;"></div>
-
-      <!-- Document title -->
-      <div style="padding:32px 48px 18px;display:flex;justify-content:space-between;align-items:flex-end;">
+    <!-- Letterhead -->
+    <div style="background:#1C4636;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="16" width="7" height="19" stroke="#F5EFE8" stroke-width="1.5"/><rect x="10" y="5" width="8" height="30" stroke="#F5EFE8" stroke-width="1.5"/><rect x="20" y="11" width="7" height="24" stroke="#F5EFE8" stroke-width="1.5"/><line x1="0" y1="35.5" x2="28" y2="35.5" stroke="#F5EFE8" stroke-width="1" opacity="0.4"/></svg>
         <div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#B85C38;letter-spacing:0.35em;margin-bottom:8px;">VARIATION QUOTATION</div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:30px;color:#1A1A1A;letter-spacing:0.02em;line-height:1;">VQ-<span style="color:#9E4F30;">2026-POOL-001</span></div>
-          <div style="font-size:11px;color:#6B7280;margin-top:6px;">Addendum to Contract DFL/QT/2026/POOL-001</div>
-        </div>
-        <div style="background:#F5EFE8;padding:10px 16px;text-align:right;">
-          <div style="font-size:9px;letter-spacing:0.18em;color:#6B7280;margin-bottom:3px;font-weight:600;text-transform:uppercase;">Date Issued</div>
-          <div style="font-size:13px;color:#1A1A1A;font-weight:600;">30 June 2026</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#F5EFE8;letter-spacing:0.1em;line-height:1;">DOVA FUTURES</div>
+          <div style="font-size:8px;color:rgba(245,239,232,0.55);letter-spacing:0.28em;margin-top:4px;font-weight:500;">DESIGNERS · BUILDERS · DEVELOPERS</div>
         </div>
       </div>
-      <div style="height:1px;background:linear-gradient(to right,#1C4636,#D1CBC6);margin:0 48px 20px;"></div>
+      <div style="text-align:right;color:rgba(245,239,232,0.75);font-size:10px;line-height:1.9;">
+        <div style="color:#F5EFE8;font-weight:600;font-size:11px;letter-spacing:0.06em;margin-bottom:2px;">DOVA FUTURES LIMITED</div>
+        info@dovafutures.com<br>+234 816 367 5439<br>dovafutures.com
+      </div>
+    </div>
+    <div style="height:3px;background:#B85C38;"></div>
 
-      <div style="padding:0 48px 16px;">
+    <!-- Document title -->
+    <div style="padding:28px 48px 16px;display:flex;justify-content:space-between;align-items:flex-end;">
+      <div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#B85C38;letter-spacing:0.35em;margin-bottom:6px;">VARIATION QUOTATION</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:#1A1A1A;letter-spacing:0.02em;line-height:1;">VQ-<span style="color:#9E4F30;">2026-POOL-001</span></div>
+        <div style="font-size:11px;color:#6B7280;margin-top:5px;">Addendum to Contract · DFL/QT/2026/POOL-001</div>
+      </div>
+      <div style="background:#F5EFE8;padding:9px 16px;text-align:right;">
+        <div style="font-size:9px;letter-spacing:0.18em;color:#6B7280;margin-bottom:2px;font-weight:600;text-transform:uppercase;">Date Issued</div>
+        <div style="font-size:13px;color:#1A1A1A;font-weight:600;">30 June 2026</div>
+      </div>
+    </div>
+    <div style="height:1px;background:linear-gradient(to right,#1C4636,#D1CBC6);margin:0 48px 18px;"></div>
 
-        <!-- Project Details + Bill To -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:22px;background:#F5EFE8;">
-          <div style="padding:16px 20px;border-right:1px solid #D1CBC6;">
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.2em;margin-bottom:10px;">VARIATION DETAILS</div>
-            <div style="display:flex;flex-direction:column;gap:6px;font-size:12px;">
-              <div style="display:flex;gap:8px;"><span style="color:#6B7280;min-width:90px;">VQ Reference:</span><span style="color:#1A1A1A;font-weight:500;">VQ-2026-POOL-001</span></div>
-              <div style="display:flex;gap:8px;"><span style="color:#6B7280;min-width:90px;">Original Ref:</span><span style="color:#1A1A1A;">DFL/QT/2026/POOL-001</span></div>
-              <div style="display:flex;gap:8px;"><span style="color:#6B7280;min-width:90px;">Scope:</span><span style="color:#1A1A1A;">Pool Waterfall Feature Addition</span></div>
-              <div style="display:flex;gap:8px;"><span style="color:#6B7280;min-width:90px;">Valid For:</span><span style="color:#1A1A1A;">30 days from date of issue</span></div>
-            </div>
-          </div>
-          <div style="padding:16px 20px;background:#fff;">
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.2em;margin-bottom:10px;">CLIENT</div>
-            <div style="display:flex;flex-direction:column;gap:5px;font-size:12px;">
-              <div style="font-weight:700;font-size:13px;color:#1A1A1A;">FHS Hotel</div>
-              <div style="color:#4A4F5C;">Ibafo, Ogun State, Nigeria</div>
-              <div style="height:6px;"></div>
-              <div style="color:#1A1A1A;font-weight:500;">Swimming Pool Construction</div>
-              <div style="color:#4A4F5C;">Ibafo Site — FHS Hotel</div>
-            </div>
-          </div>
+    <!-- Project Details + Bill To -->
+    <div style="margin:0 48px 18px;display:grid;grid-template-columns:1fr 1fr;">
+      <div style="padding:14px 18px;background:#F5EFE8;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:10px;color:#1C4636;letter-spacing:0.2em;margin-bottom:8px;">VARIATION DETAILS</div>
+        <div style="display:flex;flex-direction:column;gap:5px;font-size:11.5px;">
+          <div style="display:flex;gap:8px;"><span style="color:#6B7280;min-width:86px;">VQ Reference:</span><span style="color:#1A1A1A;font-weight:500;">VQ-2026-POOL-001</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#6B7280;min-width:86px;">Original Ref:</span><span style="color:#1A1A1A;">DFL/QT/2026/POOL-001</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#6B7280;min-width:86px;">Scope:</span><span style="color:#1A1A1A;">Pool Waterfall Feature Addition</span></div>
+          <div style="display:flex;gap:8px;"><span style="color:#6B7280;min-width:86px;">Valid For:</span><span style="color:#1A1A1A;">30 days from date of issue</span></div>
         </div>
-
-        <!-- Scope note -->
-        <div style="background:#F5EFE8;border-left:3px solid #1C4636;padding:12px 16px;margin-bottom:20px;font-size:12px;color:#4A4F5C;line-height:1.7;">
-          <strong style="color:#1A1A1A;">Scope of Variation:</strong> The client has requested the addition of a decorative waterfall feature to the swimming pool at FHS Hotel, Ibafo. This quotation presents two waterfall types, each available with or without integrated LED lighting. Fixed ancillary costs (pump, labour, accessories, and transportation) apply to all options. <strong style="color:#1C4636;">DOVA Futures recommends Option C — the 2ft Wall Waterfall with Light.</strong>
+      </div>
+      <div style="padding:14px 18px;background:#fff;border-left:1px solid #E8E1D5;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:10px;color:#1C4636;letter-spacing:0.2em;margin-bottom:8px;">CLIENT</div>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:11.5px;">
+          <div style="font-weight:700;font-size:13px;color:#1A1A1A;">FHS Hotel</div>
+          <div style="color:#4A4F5C;">Ibafo, Ogun State, Nigeria</div>
+          <div style="height:4px;"></div>
+          <div style="color:#1A1A1A;font-weight:500;">Swimming Pool Construction — Ibafo Site</div>
         </div>
-
-        <!-- ── SECTION 1: Waterfall Options ── -->
-        <div style="margin-bottom:20px;">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#1C4636;letter-spacing:0.2em;padding-bottom:6px;border-bottom:1px solid #D1CBC6;margin-bottom:10px;">01. WATERFALL OPTIONS — SELECT ONE</div>
-          <table style="width:100%;border-collapse:collapse;font-size:12px;">
-            <thead>
-              <tr style="background:#1C4636;">
-                <th style="padding:8px 10px;text-align:center;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;width:36px;">OPT</th>
-                <th style="padding:8px 10px;text-align:left;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;">Description</th>
-                <th style="padding:8px 10px;text-align:center;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;width:60px;">Light</th>
-                <th style="padding:8px 10px;text-align:right;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;width:120px;">Amount (₦)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="background:#fff;">
-                <td style="padding:10px;text-align:center;color:#6B7280;border-bottom:1px solid #E8E1D5;font-weight:600;">A</td>
-                <td style="padding:10px;border-bottom:1px solid #E8E1D5;">
-                  <div style="font-weight:600;color:#1A1A1A;">Waterfall Curve</div>
-                  <div style="color:#6B7280;font-size:11px;margin-top:2px;">Curved-blade waterfall feature; supply &amp; installation</div>
-                </td>
-                <td style="padding:10px;text-align:center;border-bottom:1px solid #E8E1D5;"><span style="background:#357A5B;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;">YES</span></td>
-                <td style="padding:10px;text-align:right;border-bottom:1px solid #E8E1D5;font-weight:500;">350,000.00</td>
-              </tr>
-              <tr style="background:#F5EFE8;">
-                <td style="padding:10px;text-align:center;color:#6B7280;border-bottom:1px solid #E8E1D5;font-weight:600;">B</td>
-                <td style="padding:10px;border-bottom:1px solid #E8E1D5;">
-                  <div style="font-weight:600;color:#1A1A1A;">Waterfall Curve</div>
-                  <div style="color:#6B7280;font-size:11px;margin-top:2px;">Curved-blade waterfall feature; supply &amp; installation</div>
-                </td>
-                <td style="padding:10px;text-align:center;border-bottom:1px solid #E8E1D5;"><span style="background:#D1CBC6;color:#6B7280;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;">NO</span></td>
-                <td style="padding:10px;text-align:right;border-bottom:1px solid #E8E1D5;font-weight:500;">330,000.00</td>
-              </tr>
-              <!-- Option C — Recommended: green background, no outline -->
-              <tr style="background:#D6EDE1;">
-                <td style="padding:10px;text-align:center;color:#1C4636;border-bottom:1px solid #B8D8C8;font-weight:700;">C</td>
-                <td style="padding:10px;border-bottom:1px solid #B8D8C8;">
-                  <div style="display:flex;align-items:center;gap:8px;">
-                    <span style="font-weight:700;color:#1A1A1A;">2ft Wall Waterfall</span>
-                    <span style="background:#1C4636;color:#F5EFE8;font-size:8px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:0.06em;">RECOMMENDED</span>
-                  </div>
-                  <div style="color:#3A5C45;font-size:11px;margin-top:2px;">2-foot wall-mounted waterfall blade; supply &amp; installation</div>
-                </td>
-                <td style="padding:10px;text-align:center;border-bottom:1px solid #B8D8C8;"><span style="background:#357A5B;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;">YES</span></td>
-                <td style="padding:10px;text-align:right;border-bottom:1px solid #B8D8C8;font-weight:700;color:#1C4636;font-size:13px;">175,000.00</td>
-              </tr>
-              <tr style="background:#fff;">
-                <td style="padding:10px;text-align:center;color:#6B7280;border-bottom:1px solid #D1CBC6;font-weight:600;">D</td>
-                <td style="padding:10px;border-bottom:1px solid #D1CBC6;">
-                  <div style="font-weight:600;color:#1A1A1A;">2ft Wall Waterfall</div>
-                  <div style="color:#6B7280;font-size:11px;margin-top:2px;">2-foot wall-mounted waterfall blade; supply &amp; installation</div>
-                </td>
-                <td style="padding:10px;text-align:center;border-bottom:1px solid #D1CBC6;"><span style="background:#D1CBC6;color:#6B7280;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;">NO</span></td>
-                <td style="padding:10px;text-align:right;border-bottom:1px solid #D1CBC6;font-weight:500;">150,000.00</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- ── SECTION 2: Ancillary Items ── -->
-        <div style="margin-bottom:16px;">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#1C4636;letter-spacing:0.2em;padding-bottom:6px;border-bottom:1px solid #D1CBC6;margin-bottom:10px;">02. ANCILLARY ITEMS — ALL OPTIONS</div>
-          <table style="width:100%;border-collapse:collapse;font-size:12px;">
-            <thead>
-              <tr style="background:#4A4F5C;">
-                <th style="padding:8px 10px;text-align:center;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;width:36px;">#</th>
-                <th style="padding:8px 10px;text-align:left;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;">Description</th>
-                <th style="padding:8px 10px;text-align:right;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;width:120px;">Amount (₦)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="background:#fff;">
-                <td style="padding:9px 10px;text-align:center;color:#6B7280;border-bottom:1px solid #E8E1D5;">1</td>
-                <td style="padding:9px 10px;border-bottom:1px solid #E8E1D5;">
-                  <div style="font-weight:600;color:#1A1A1A;">Circulation Pump — 1HP</div>
-                  <div style="color:#6B7280;font-size:11px;margin-top:2px;">Dedicated pump for waterfall recirculation; supply &amp; installation</div>
-                </td>
-                <td style="padding:9px 10px;text-align:right;border-bottom:1px solid #E8E1D5;font-weight:500;">235,000.00</td>
-              </tr>
-              <tr style="background:#F5EFE8;">
-                <td style="padding:9px 10px;text-align:center;color:#6B7280;border-bottom:1px solid #E8E1D5;">2</td>
-                <td style="padding:9px 10px;border-bottom:1px solid #E8E1D5;">
-                  <div style="font-weight:600;color:#1A1A1A;">Accessories</div>
-                  <div style="color:#6B7280;font-size:11px;margin-top:2px;">Pipework fittings, connectors, sealants &amp; installation sundries</div>
-                </td>
-                <td style="padding:9px 10px;text-align:right;border-bottom:1px solid #E8E1D5;font-weight:500;">48,000.00</td>
-              </tr>
-              <tr style="background:#fff;">
-                <td style="padding:9px 10px;text-align:center;color:#6B7280;border-bottom:1px solid #E8E1D5;">3</td>
-                <td style="padding:9px 10px;border-bottom:1px solid #E8E1D5;">
-                  <div style="font-weight:600;color:#1A1A1A;">Labour</div>
-                  <div style="color:#6B7280;font-size:11px;margin-top:2px;">Installation labour for waterfall unit, pump, pipework &amp; fittings</div>
-                </td>
-                <td style="padding:9px 10px;text-align:right;border-bottom:1px solid #E8E1D5;font-weight:500;">120,000.00</td>
-              </tr>
-              <tr style="background:#F5EFE8;">
-                <td style="padding:9px 10px;text-align:center;color:#6B7280;border-bottom:1px solid #D1CBC6;">4</td>
-                <td style="padding:9px 10px;border-bottom:1px solid #D1CBC6;">
-                  <div style="font-weight:600;color:#1A1A1A;">Transportation</div>
-                  <div style="color:#6B7280;font-size:11px;margin-top:2px;">Delivery of waterfall unit &amp; materials to site — Ibafo</div>
-                </td>
-                <td style="padding:9px 10px;text-align:right;border-bottom:1px solid #D1CBC6;font-weight:500;">45,000.00</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="2" style="padding:9px 10px;text-align:right;font-size:11px;color:#6B7280;font-weight:600;background:#F5EFE8;">Ancillary Sub-total</td>
-                <td style="padding:9px 10px;text-align:right;font-weight:700;color:#1A1A1A;background:#F5EFE8;">₦ 448,000.00</td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-
       </div>
     </div>
 
-    <!-- Page 1 Footer -->
-    <div style="margin:0 48px;border-top:1px solid #D1CBC6;padding:12px 0;display:flex;justify-content:space-between;align-items:center;">
-      <span style="font-size:10px;color:#6B7280;">DOVA Futures Limited · RC No. 8219604</span>
-      <span style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.12em;">DOVAFUTURES.COM</span>
-      <span style="font-size:10px;color:#6B7280;">Page 1 of 2</span>
+    <!-- Scope note -->
+    <div style="margin:0 48px 18px;background:#F5EFE8;border-left:3px solid #1C4636;padding:10px 14px;font-size:11.5px;color:#4A4F5C;line-height:1.65;">
+      <strong style="color:#1A1A1A;">Scope of Variation:</strong> The client has requested the addition of a decorative waterfall feature to the swimming pool at FHS Hotel, Ibafo. This quotation presents two waterfall types, each available with or without integrated LED lighting. Fixed ancillary costs apply to all options. <strong style="color:#1C4636;">DOVA Futures recommends Option C — the 2ft Wall Waterfall with Light.</strong>
     </div>
-    <div style="height:20px;"></div>
 
-  </div><!-- end page 1 -->
+    <!-- ── Section 01: Waterfall Options ── -->
+    <div style="margin:0 48px 18px;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.2em;padding-bottom:5px;border-bottom:1px solid #D1CBC6;margin-bottom:10px;">01. WATERFALL OPTIONS — SELECT ONE</div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <thead>
+          <tr style="background:#1C4636;">
+            <th style="padding:8px 10px;text-align:center;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;width:36px;">OPT</th>
+            <th style="padding:8px 10px;text-align:left;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;">Description</th>
+            <th style="padding:8px 10px;text-align:center;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;width:60px;">Light</th>
+            <th style="padding:8px 10px;text-align:right;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;width:115px;">Amount (₦)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#fff;">
+            <td style="padding:9px 10px;text-align:center;color:#6B7280;border-bottom:1px solid #E8E1D5;font-weight:600;">A</td>
+            <td style="padding:9px 10px;border-bottom:1px solid #E8E1D5;">
+              <div style="font-weight:600;color:#1A1A1A;">Waterfall Curve</div>
+              <div style="color:#6B7280;font-size:10.5px;margin-top:1px;">Curved-blade waterfall feature; supply &amp; installation</div>
+            </td>
+            <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #E8E1D5;"><span style="background:#357A5B;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;">YES</span></td>
+            <td style="padding:9px 10px;text-align:right;border-bottom:1px solid #E8E1D5;font-weight:500;">350,000.00</td>
+          </tr>
+          <tr style="background:#F5EFE8;">
+            <td style="padding:9px 10px;text-align:center;color:#6B7280;border-bottom:1px solid #E8E1D5;font-weight:600;">B</td>
+            <td style="padding:9px 10px;border-bottom:1px solid #E8E1D5;">
+              <div style="font-weight:600;color:#1A1A1A;">Waterfall Curve</div>
+              <div style="color:#6B7280;font-size:10.5px;margin-top:1px;">Curved-blade waterfall feature; supply &amp; installation</div>
+            </td>
+            <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #E8E1D5;"><span style="background:#C8C0BB;color:#6B7280;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;">NO</span></td>
+            <td style="padding:9px 10px;text-align:right;border-bottom:1px solid #E8E1D5;font-weight:500;">330,000.00</td>
+          </tr>
+          <tr style="background:#D6EDE1;">
+            <td style="padding:9px 10px;text-align:center;color:#1C4636;border-bottom:1px solid #B8D8C8;font-weight:700;">C</td>
+            <td style="padding:9px 10px;border-bottom:1px solid #B8D8C8;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <span style="font-weight:700;color:#1A1A1A;">2ft Wall Waterfall</span>
+                <span style="background:#1C4636;color:#F5EFE8;font-size:8px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:0.05em;">RECOMMENDED</span>
+              </div>
+              <div style="color:#3A5C45;font-size:10.5px;margin-top:1px;">2-foot wall-mounted waterfall blade; supply &amp; installation</div>
+            </td>
+            <td style="padding:9px 10px;text-align:center;border-bottom:1px solid #B8D8C8;"><span style="background:#357A5B;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;">YES</span></td>
+            <td style="padding:9px 10px;text-align:right;border-bottom:1px solid #B8D8C8;font-weight:700;color:#1C4636;font-size:13px;">175,000.00</td>
+          </tr>
+          <tr style="background:#fff;">
+            <td style="padding:9px 10px;text-align:center;color:#6B7280;font-weight:600;">D</td>
+            <td style="padding:9px 10px;">
+              <div style="font-weight:600;color:#1A1A1A;">2ft Wall Waterfall</div>
+              <div style="color:#6B7280;font-size:10.5px;margin-top:1px;">2-foot wall-mounted waterfall blade; supply &amp; installation</div>
+            </td>
+            <td style="padding:9px 10px;text-align:center;"><span style="background:#C8C0BB;color:#6B7280;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;">NO</span></td>
+            <td style="padding:9px 10px;text-align:right;font-weight:500;">150,000.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  <!-- ══════════════════════════ PAGE 2 ══════════════════════════ -->
-  <div class="page" style="background:#fff;max-width:794px;margin:0 auto;display:flex;flex-direction:column;min-height:297mm;">
-
-    <div style="flex:1;">
+    <!-- ════════════════════ PAGE 2 ════════════════════ -->
+    <div class="page-2-start">
 
       <!-- Continuation header -->
-      <div style="background:#1C4636;padding:14px 48px;display:flex;justify-content:space-between;align-items:center;">
+      <div style="background:#1C4636;padding:12px 48px;display:flex;justify-content:space-between;align-items:center;">
         <div style="display:flex;align-items:center;gap:10px;">
-          <span style="font-family:'Bebas Neue',sans-serif;font-size:14px;color:#F5EFE8;letter-spacing:0.15em;">VQ-2026-POOL-001</span>
-          <span style="width:1px;height:14px;background:rgba(245,239,232,0.3);display:inline-block;"></span>
-          <span style="font-size:10px;color:rgba(245,239,232,0.7);letter-spacing:0.05em;">WATERFALL ADDITION — FHS HOTEL POOL, IBAFO</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:13px;color:#F5EFE8;letter-spacing:0.14em;">VQ-2026-POOL-001</span>
+          <span style="color:rgba(245,239,232,0.3);">|</span>
+          <span style="font-size:10px;color:rgba(245,239,232,0.65);">WATERFALL ADDITION · FHS HOTEL POOL, IBAFO</span>
         </div>
-        <span style="font-size:10px;color:rgba(245,239,232,0.5);">Continued — Page 2 of 2</span>
+        <span style="font-size:9.5px;color:rgba(245,239,232,0.45);">Continued</span>
       </div>
       <div style="height:3px;background:#B85C38;"></div>
 
-      <div style="padding:24px 48px 16px;">
-
-        <!-- ── SECTION 3: Option Totals ── -->
-        <div style="margin-bottom:22px;">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#1C4636;letter-spacing:0.2em;padding-bottom:6px;border-bottom:1px solid #D1CBC6;margin-bottom:12px;">03. TOTAL COST PER OPTION</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-
-            <!-- Option A -->
-            <div style="background:#F5EFE8;overflow:hidden;">
-              <div style="background:#4A4F5C;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;">
-                <span style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#F5EFE8;letter-spacing:0.15em;">OPTION A</span>
-                <span style="font-size:10px;color:rgba(245,239,232,0.7);">Curve + Light</span>
-              </div>
-              <div style="padding:12px 14px;font-size:12px;">
-                <div style="display:flex;justify-content:space-between;margin-bottom:4px;color:#4A4F5C;"><span>Waterfall Curve (with light)</span><span>350,000</span></div>
-                <div style="display:flex;justify-content:space-between;margin-bottom:4px;color:#4A4F5C;"><span>Pump + Accessories + Labour + Transport</span><span>448,000</span></div>
-                <div style="border-top:1px solid #D1CBC6;margin-top:8px;padding-top:8px;display:flex;justify-content:space-between;font-weight:700;color:#1A1A1A;font-size:13px;">
-                  <span>TOTAL</span><span>₦ 798,000</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Option B -->
-            <div style="background:#F5EFE8;overflow:hidden;">
-              <div style="background:#4A4F5C;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;">
-                <span style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#F5EFE8;letter-spacing:0.15em;">OPTION B</span>
-                <span style="font-size:10px;color:rgba(245,239,232,0.7);">Curve, No Light</span>
-              </div>
-              <div style="padding:12px 14px;font-size:12px;">
-                <div style="display:flex;justify-content:space-between;margin-bottom:4px;color:#4A4F5C;"><span>Waterfall Curve (no light)</span><span>330,000</span></div>
-                <div style="display:flex;justify-content:space-between;margin-bottom:4px;color:#4A4F5C;"><span>Pump + Accessories + Labour + Transport</span><span>448,000</span></div>
-                <div style="border-top:1px solid #D1CBC6;margin-top:8px;padding-top:8px;display:flex;justify-content:space-between;font-weight:700;color:#1A1A1A;font-size:13px;">
-                  <span>TOTAL</span><span>₦ 778,000</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Option C — RECOMMENDED -->
-            <div style="background:#D6EDE1;overflow:hidden;">
-              <div style="background:#1C4636;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;">
-                <span style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#F5EFE8;letter-spacing:0.15em;">OPTION C — RECOMMENDED</span>
-                <span style="font-size:10px;color:rgba(245,239,232,0.7);">2ft Wall + Light</span>
-              </div>
-              <div style="padding:12px 14px;font-size:12px;">
-                <div style="display:flex;justify-content:space-between;margin-bottom:4px;color:#3A5C45;"><span>2ft Wall Waterfall (with light)</span><span>175,000</span></div>
-                <div style="display:flex;justify-content:space-between;margin-bottom:4px;color:#3A5C45;"><span>Pump + Accessories + Labour + Transport</span><span>448,000</span></div>
-                <div style="border-top:1px solid #A8CBBA;margin-top:8px;padding-top:8px;display:flex;justify-content:space-between;font-weight:700;color:#1C4636;font-size:15px;">
-                  <span>TOTAL</span><span>₦ 623,000</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Option D -->
-            <div style="background:#F5EFE8;overflow:hidden;">
-              <div style="background:#4A4F5C;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;">
-                <span style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#F5EFE8;letter-spacing:0.15em;">OPTION D</span>
-                <span style="font-size:10px;color:rgba(245,239,232,0.7);">2ft Wall, No Light</span>
-              </div>
-              <div style="padding:12px 14px;font-size:12px;">
-                <div style="display:flex;justify-content:space-between;margin-bottom:4px;color:#4A4F5C;"><span>2ft Wall Waterfall (no light)</span><span>150,000</span></div>
-                <div style="display:flex;justify-content:space-between;margin-bottom:4px;color:#4A4F5C;"><span>Pump + Accessories + Labour + Transport</span><span>448,000</span></div>
-                <div style="border-top:1px solid #D1CBC6;margin-top:8px;padding-top:8px;display:flex;justify-content:space-between;font-weight:700;color:#1A1A1A;font-size:13px;">
-                  <span>TOTAL</span><span>₦ 598,000</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Terms note -->
-        <div style="background:#FFF8F5;padding:12px 16px;margin-bottom:24px;font-size:11px;color:#6B7280;line-height:1.7;">
-          <strong style="color:#9E4F30;">Notes:</strong> This variation is subject to the terms and conditions of the original contract (DFL/QT/2026/POOL-001).
-          Prices are inclusive of supply, installation, and the ancillary items listed above. LED lighting where selected is integrated within the waterfall unit.
-          Works will be carried out concurrently with ongoing pool construction. Payment for the approved option to be agreed upon acceptance.
-          This quotation is valid for <strong>30 days</strong> from the date of issue.
-        </div>
-
-        <!-- Acceptance -->
-        <div style="margin-bottom:24px;">
-          <div style="font-size:11px;color:#4A4F5C;margin-bottom:14px;">To proceed, please indicate the selected option below, sign and return this document. Works will commence upon written acceptance and payment confirmation.</div>
-          <div style="background:#F5EFE8;padding:12px 16px;margin-bottom:18px;font-size:12px;">
-            <span style="font-weight:600;color:#1A1A1A;">Selected Option: </span>
-            <span style="display:inline-block;border-bottom:1px solid #1A1A1A;min-width:80px;margin-left:8px;"></span>
-            <span style="margin-left:32px;font-weight:600;color:#1A1A1A;">Total Amount: ₦</span>
-            <span style="display:inline-block;border-bottom:1px solid #1A1A1A;min-width:100px;margin-left:8px;"></span>
-          </div>
-        </div>
-
-        <!-- Signature -->
-        <div style="border-top:1px solid #D1CBC6;padding-top:20px;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
-            <div>
-              <div style="height:36px;border-bottom:1px solid #1A1A1A;margin-bottom:6px;"></div>
-              <div style="font-size:9px;color:#6B7280;letter-spacing:0.14em;text-transform:uppercase;">Prepared By — DOVA Futures Limited</div>
-              <div style="font-size:11px;color:#1A1A1A;margin-top:3px;">Authorised Signatory</div>
-            </div>
-            <div>
-              <div style="height:36px;border-bottom:1px solid #D1CBC6;margin-bottom:6px;"></div>
-              <div style="font-size:9px;color:#6B7280;letter-spacing:0.14em;text-transform:uppercase;">Accepted By — FHS Hotel</div>
-              <div style="font-size:11px;color:#4A4F5C;margin-top:3px;">Name, Title &amp; Date</div>
-            </div>
-          </div>
-        </div>
-
+      <!-- ── Section 02: Ancillary Items ── -->
+      <div style="margin:20px 48px 18px;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.2em;padding-bottom:5px;border-bottom:1px solid #D1CBC6;margin-bottom:10px;">02. ANCILLARY ITEMS — APPLICABLE TO ALL OPTIONS</div>
+        <table style="width:100%;border-collapse:collapse;font-size:12px;">
+          <thead>
+            <tr style="background:#4A4F5C;">
+              <th style="padding:8px 10px;text-align:center;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;width:36px;">#</th>
+              <th style="padding:8px 10px;text-align:left;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;">Description</th>
+              <th style="padding:8px 10px;text-align:right;color:#F5EFE8;font-weight:600;font-size:9px;letter-spacing:0.06em;text-transform:uppercase;width:115px;">Amount (₦)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#fff;">
+              <td style="padding:9px 10px;text-align:center;color:#6B7280;border-bottom:1px solid #E8E1D5;">1</td>
+              <td style="padding:9px 10px;border-bottom:1px solid #E8E1D5;">
+                <div style="font-weight:600;color:#1A1A1A;">Circulation Pump — 1HP</div>
+                <div style="color:#6B7280;font-size:10.5px;margin-top:1px;">Dedicated pump for waterfall recirculation; supply &amp; installation</div>
+              </td>
+              <td style="padding:9px 10px;text-align:right;border-bottom:1px solid #E8E1D5;font-weight:500;">235,000.00</td>
+            </tr>
+            <tr style="background:#F5EFE8;">
+              <td style="padding:9px 10px;text-align:center;color:#6B7280;border-bottom:1px solid #E8E1D5;">2</td>
+              <td style="padding:9px 10px;border-bottom:1px solid #E8E1D5;">
+                <div style="font-weight:600;color:#1A1A1A;">Accessories</div>
+                <div style="color:#6B7280;font-size:10.5px;margin-top:1px;">Pipework fittings, connectors, sealants &amp; installation sundries</div>
+              </td>
+              <td style="padding:9px 10px;text-align:right;border-bottom:1px solid #E8E1D5;font-weight:500;">48,000.00</td>
+            </tr>
+            <tr style="background:#fff;">
+              <td style="padding:9px 10px;text-align:center;color:#6B7280;border-bottom:1px solid #E8E1D5;">3</td>
+              <td style="padding:9px 10px;border-bottom:1px solid #E8E1D5;">
+                <div style="font-weight:600;color:#1A1A1A;">Labour</div>
+                <div style="color:#6B7280;font-size:10.5px;margin-top:1px;">Installation labour for waterfall unit, pump, pipework &amp; fittings</div>
+              </td>
+              <td style="padding:9px 10px;text-align:right;border-bottom:1px solid #E8E1D5;font-weight:500;">120,000.00</td>
+            </tr>
+            <tr style="background:#F5EFE8;">
+              <td style="padding:9px 10px;text-align:center;color:#6B7280;">4</td>
+              <td style="padding:9px 10px;">
+                <div style="font-weight:600;color:#1A1A1A;">Transportation</div>
+                <div style="color:#6B7280;font-size:10.5px;margin-top:1px;">Delivery of waterfall unit &amp; materials to site — Ibafo</div>
+              </td>
+              <td style="padding:9px 10px;text-align:right;font-weight:500;">45,000.00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr style="background:#1C4636;">
+              <td colspan="2" style="padding:9px 10px;text-align:right;font-size:11px;color:#BFDDCC;font-weight:600;letter-spacing:0.04em;">ANCILLARY SUB-TOTAL</td>
+              <td style="padding:9px 10px;text-align:right;font-weight:700;color:#F5EFE8;font-size:13px;">₦ 448,000.00</td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
-    </div>
 
-    <!-- Page 2 Footer -->
-    <div style="margin:0 48px;border-top:1px solid #D1CBC6;padding:12px 0;display:flex;justify-content:space-between;align-items:center;">
-      <span style="font-size:10px;color:#6B7280;">DOVA Futures Limited · RC No. 8219604</span>
-      <span style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.12em;">DOVAFUTURES.COM</span>
-      <span style="font-size:10px;color:#6B7280;">Page 2 of 2</span>
-    </div>
-    <div style="height:20px;"></div>
+      <!-- ── Section 03: Option Totals ── -->
+      <div style="margin:0 48px 18px;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.2em;padding-bottom:5px;border-bottom:1px solid #D1CBC6;margin-bottom:10px;">03. TOTAL COST SUMMARY — PER OPTION</div>
+        <table style="width:100%;border-collapse:collapse;font-size:12px;">
+          <thead>
+            <tr style="background:#F5EFE8;">
+              <th style="padding:8px 12px;text-align:left;color:#1C4636;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;width:36px;">OPT</th>
+              <th style="padding:8px 12px;text-align:left;color:#1C4636;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;">Type</th>
+              <th style="padding:8px 12px;text-align:center;color:#1C4636;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;width:60px;">Light</th>
+              <th style="padding:8px 12px;text-align:right;color:#1C4636;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;width:110px;">Waterfall</th>
+              <th style="padding:8px 12px;text-align:right;color:#1C4636;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;width:110px;">Ancillaries</th>
+              <th style="padding:8px 12px;text-align:right;color:#1C4636;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;width:120px;">Total (₦)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#fff;">
+              <td style="padding:10px 12px;color:#6B7280;font-weight:600;border-bottom:1px solid #E8E1D5;">A</td>
+              <td style="padding:10px 12px;color:#1A1A1A;border-bottom:1px solid #E8E1D5;">Waterfall Curve</td>
+              <td style="padding:10px 12px;text-align:center;border-bottom:1px solid #E8E1D5;"><span style="background:#357A5B;color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;">YES</span></td>
+              <td style="padding:10px 12px;text-align:right;color:#4A4F5C;border-bottom:1px solid #E8E1D5;">350,000</td>
+              <td style="padding:10px 12px;text-align:right;color:#4A4F5C;border-bottom:1px solid #E8E1D5;">448,000</td>
+              <td style="padding:10px 12px;text-align:right;font-weight:700;color:#1A1A1A;border-bottom:1px solid #E8E1D5;">798,000.00</td>
+            </tr>
+            <tr style="background:#F5EFE8;">
+              <td style="padding:10px 12px;color:#6B7280;font-weight:600;border-bottom:1px solid #E8E1D5;">B</td>
+              <td style="padding:10px 12px;color:#1A1A1A;border-bottom:1px solid #E8E1D5;">Waterfall Curve</td>
+              <td style="padding:10px 12px;text-align:center;border-bottom:1px solid #E8E1D5;"><span style="background:#C8C0BB;color:#6B7280;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;">NO</span></td>
+              <td style="padding:10px 12px;text-align:right;color:#4A4F5C;border-bottom:1px solid #E8E1D5;">330,000</td>
+              <td style="padding:10px 12px;text-align:right;color:#4A4F5C;border-bottom:1px solid #E8E1D5;">448,000</td>
+              <td style="padding:10px 12px;text-align:right;font-weight:700;color:#1A1A1A;border-bottom:1px solid #E8E1D5;">778,000.00</td>
+            </tr>
+            <tr style="background:#D6EDE1;">
+              <td style="padding:10px 12px;color:#1C4636;font-weight:700;border-bottom:1px solid #B8D8C8;">C</td>
+              <td style="padding:10px 12px;border-bottom:1px solid #B8D8C8;">
+                <span style="font-weight:700;color:#1A1A1A;">2ft Wall Waterfall</span>
+                <span style="background:#1C4636;color:#F5EFE8;font-size:8px;font-weight:700;padding:1px 6px;border-radius:10px;margin-left:6px;">REC.</span>
+              </td>
+              <td style="padding:10px 12px;text-align:center;border-bottom:1px solid #B8D8C8;"><span style="background:#357A5B;color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;">YES</span></td>
+              <td style="padding:10px 12px;text-align:right;color:#3A5C45;border-bottom:1px solid #B8D8C8;">175,000</td>
+              <td style="padding:10px 12px;text-align:right;color:#3A5C45;border-bottom:1px solid #B8D8C8;">448,000</td>
+              <td style="padding:10px 12px;text-align:right;font-weight:700;color:#1C4636;font-size:14px;border-bottom:1px solid #B8D8C8;">623,000.00</td>
+            </tr>
+            <tr style="background:#fff;">
+              <td style="padding:10px 12px;color:#6B7280;font-weight:600;">D</td>
+              <td style="padding:10px 12px;color:#1A1A1A;">2ft Wall Waterfall</td>
+              <td style="padding:10px 12px;text-align:center;"><span style="background:#C8C0BB;color:#6B7280;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;">NO</span></td>
+              <td style="padding:10px 12px;text-align:right;color:#4A4F5C;">150,000</td>
+              <td style="padding:10px 12px;text-align:right;color:#4A4F5C;">448,000</td>
+              <td style="padding:10px 12px;text-align:right;font-weight:700;color:#1A1A1A;">598,000.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-  </div><!-- end page 2 -->
+      <!-- Terms note -->
+      <div style="margin:0 48px 20px;background:#FFF8F5;padding:11px 14px;font-size:11px;color:#6B7280;line-height:1.7;">
+        <strong style="color:#9E4F30;">Notes:</strong> This variation is subject to the terms and conditions of the original contract (DFL/QT/2026/POOL-001).
+        Prices are inclusive of supply, installation, and the ancillary items listed above. LED lighting where selected is integrated within the waterfall unit.
+        Works will be carried out concurrently with ongoing pool construction. Payment for the approved option to be agreed upon acceptance.
+        This quotation is valid for <strong>30 days</strong> from the date of issue.
+      </div>
 
+      <!-- Acceptance -->
+      <div style="margin:0 48px 20px;">
+        <div style="font-size:11px;color:#4A4F5C;margin-bottom:12px;">To proceed, please indicate the selected option below, sign and return this document. Works commence upon written acceptance and payment confirmation.</div>
+        <div style="background:#F5EFE8;padding:11px 14px;margin-bottom:18px;font-size:12px;">
+          <span style="font-weight:600;color:#1A1A1A;">Selected Option: </span>
+          <span style="display:inline-block;border-bottom:1px solid #1A1A1A;min-width:70px;margin-left:8px;"></span>
+          <span style="margin-left:28px;font-weight:600;color:#1A1A1A;">Total Amount: ₦</span>
+          <span style="display:inline-block;border-bottom:1px solid #1A1A1A;min-width:100px;margin-left:8px;"></span>
+        </div>
+      </div>
+
+      <!-- Signature -->
+      <div style="margin:0 48px 20px;border-top:1px solid #D1CBC6;padding-top:18px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+          <div>
+            <div style="height:36px;border-bottom:1px solid #1A1A1A;margin-bottom:6px;"></div>
+            <div style="font-size:9px;color:#6B7280;letter-spacing:0.14em;text-transform:uppercase;">Prepared By — DOVA Futures Limited</div>
+            <div style="font-size:11px;color:#1A1A1A;margin-top:3px;">Authorised Signatory</div>
+          </div>
+          <div>
+            <div style="height:36px;border-bottom:1px solid #D1CBC6;margin-bottom:6px;"></div>
+            <div style="font-size:9px;color:#6B7280;letter-spacing:0.14em;text-transform:uppercase;">Accepted By — FHS Hotel</div>
+            <div style="font-size:11px;color:#4A4F5C;margin-top:3px;">Name, Title &amp; Date</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen-only footer (hidden in print; Puppeteer footer template handles PDF) -->
+      <div data-no-print style="margin:0 48px;border-top:1px solid #D1CBC6;padding:12px 0;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:10px;color:#6B7280;">DOVA Futures Limited · RC No. 8219604</span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.12em;">DOVAFUTURES.COM</span>
+        <span style="font-size:10px;color:#6B7280;">VQ-2026-POOL-001</span>
+      </div>
+      <div data-no-print style="height:20px;"></div>
+
+    </div><!-- end page-2-start -->
+
+  </div><!-- end doc-paper -->
 </div>
 </body>
 </html>
