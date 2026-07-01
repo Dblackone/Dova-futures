@@ -15,6 +15,12 @@ app.use(express.urlencoded({ extended: false }));
 // Static files (shared.css, page JS, uploads)
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Uploaded product images — served from UPLOAD_DIR if set to a location
+// outside public/ (e.g. a mounted persistent disk), falling back to public/uploads
+if (process.env.UPLOAD_DIR) {
+  app.use('/uploads', express.static(process.env.UPLOAD_DIR));
+}
+
 // API routes
 app.use('/api', require('./routes/catalog'));
 app.use('/api/orders', require('./routes/orders'));

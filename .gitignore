@@ -10,3 +10,4 @@ dova-preorder/public/uploads/
 dova-preorder/*.db
 dova-preorder/*.db-shm
 dova-preorder/*.db-wal
+dova-preorder/data/
