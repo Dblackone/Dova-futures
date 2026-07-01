@@ -83,7 +83,7 @@ router.post('/products', (req, res) => {
   const bb = busboy({ headers: req.headers, limits: { files: 5, fileSize: 5 * 1024 * 1024 } });
   const fields = {};
   const imageUrls = [];
-  const uploadDir = path.join(__dirname, '..', 'public', 'uploads');
+  const uploadDir = process.env.UPLOAD_DIR || path.join(__dirname, '..', 'public', 'uploads');
   if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 
   bb.on('field', (name, val) => { fields[name] = val; });
