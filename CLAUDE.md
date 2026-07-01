@@ -33,6 +33,7 @@ You operate as a loop, not a chatbot. Every run:
 - `context/02-architecture.md` — system overview, boundaries, data flow
 - `context/03-team-rules.md` — code style, PR checklist, review flow
 - `context/04-dont-do-this.md` — anti-patterns, blocked libs, known traps
+- `context/05-document-templates.md` — **mandatory** template rules for all company documents (quotes, invoices, letters, reports, certificates)
 
 ## 3. Memory (pillar 6 — the Vault)
 
