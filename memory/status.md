@@ -1,17 +1,18 @@
 # status.md — Current Snapshot
 
-**Last updated:** 2026-06-22 — Session 3 (document templates)
+**Last updated:** 2026-07-04 — Session 4 (AVS payment ledger)
 **Health:** 🟢 on track
 
 ## Now
+- AVS project payment ledger created at `memory/payments-avs.md`: ₦4.0M received, ₦1.962M paid out, ₦2.038M in hand, ₦100k still owed to missing-work subcontractor.
 - 9 print-ready HTML document templates + gallery index deployed to `project/` directory.
 - Templates are standalone static files — not yet wired into Express routes.
 - Next decision: how to expose templates to staff (public static route, password-gated, or nav link).
 
 ## Recently done (last 3)
+- Session 4 (2026-07-04): Created AVS payment ledger from owner's dictated figures; flagged 4 items for owner confirmation.
 - Session 3 (2026-06-22): Created 9 branded HTML document templates from Claude Design export; committed and pushed to main.
 - Session 2 (2026-06-14): Added loop engineering scaffold (CLAUDE.md, agents, memory); built hero before/after reveal on homepage.
-- Session 1 (2026-06-07): Built core website SPA, Express backend, WhatsApp button, project data layer, UI/UX strategy.
 
 ## Open / blocked
 - Templates not yet served via Express route — need client decision on public vs. staff-only access.

@@ -7,3 +7,4 @@
 - <date> — <what was done> — <outcome / result> — verified by <checker / tests>
 - 2026-06-14 — HERO-01 QA verification — all 10 acceptance criteria passed; no anti-patterns, no new deps, no debug logging, setRandomHeroImage absent, assets confirmed present — verified by @qa/vera
 - 2026-06-22 — TEMPLATES-01 — 9 standalone print-ready HTML document templates + gallery index created from Claude Design export; committed and pushed to main (commits ff64f00, 20af29a); all templates use contenteditable fields, window.print(), A4 @page CSS, DOVA brand tokens — verified by manual file review
+- 2026-07-04 — PAYMENTS-AVS-01 — Created `memory/payments-avs.md` ledger from owner's dictated summary: ₦4,000,000 received from client, ₦1,962,000 paid out, ₦2,038,000 in hand, ₦100,000 still owed on missing work — verified arithmetically; client payments and 3 line items flagged for owner confirmation
