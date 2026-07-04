@@ -4,7 +4,7 @@
 **Health:** 🟢 on track
 
 ## Now
-- AVS project payment ledger created at `memory/payments-avs.md`: ₦4.0M received, ₦1.962M paid out, ₦2.038M in hand, ₦100k still owed to missing-work subcontractor.
+- AVS project payment ledger created at `memory/payments-avs.md`: ₦4.0M received, ₦2.84M out (₦2.24M costs + ₦0.6M profit take-off), ₦1.16M in hand, ₦100k still owed to missing-work subcontractor.
 - 9 print-ready HTML document templates + gallery index deployed to `project/` directory.
 - Templates are standalone static files — not yet wired into Express routes.
 - Next decision: how to expose templates to staff (public static route, password-gated, or nav link).
