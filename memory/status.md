@@ -25,23 +25,25 @@
   be drafted until the client has seen the quote, picked a pavement
   alternate, and the principal has confirmed the payment stage — needs
   principal approval before sending. Print/PDF output spans 3 pages (added
-  content pushed it past one page). Fixed the DOVA header and RC-No./
-  website/QTE-ref footer to repeat correctly on every page using
-  `@page { margin: 0; }` + `position: fixed; top:0/bottom:0` (works for
-  both the template's own `window.print()` button and automated PDF
-  generation); also fixed the page-shell's cream background bleeding
-  through as a border on every printed page. An earlier iteration used a
-  reserved `@page` margin, which left an unwanted blank gap before the
-  header on every page — removed. While chasing that, found and fixed a
-  more serious bug: the scope table could split mid-row across a page
-  break, and the fixed footer then painted over the stranded cells,
-  genuinely hiding pricing data (Item 2's Trip/₦240,000/₦720,000 values
-  were invisible in one iteration). Fixed by giving `.scope-table` (and
-  its rows) `break-inside: avoid`, so the whole table now moves to the
-  next page as one block rather than splitting — no cells can ever end up
-  hidden behind the footer. Verified by rendering to PDF with
-  Playwright/Chromium and visually checking every page for gaps, overlap,
-  and completeness of all pricing figures.
+  content pushed it past one page). Repeating header/footer went through
+  three iterations before landing on the correct pattern, now in place:
+  `@page { margin: 0; }`, `.doc-header`/`.doc-footer` as
+  `position: fixed; top:0/bottom:0`, and the flowing content wrapped in a
+  `.layout-table` whose `thead`/`tfoot` contain print-only spacer divs
+  (`.header-space` 152px / `.footer-space` 66px). Chromium repeats
+  thead/tfoot on every printed page, so the spacers reserve real flow
+  space under the fixed header and above the fixed footer on ALL pages —
+  content can never start behind the header (the flaw of the previous
+  attempt, which only padded page 1) and there's a small clearance margin
+  after the header/before the footer as requested. Also retained from
+  earlier iterations: `.scope-table` + rows have `break-inside: avoid`
+  (a mid-row split once left Item 2's ₦240,000/₦720,000 figures hidden
+  behind the fixed footer), and the page-shell's cream background is
+  reset for print so it doesn't render as a border. Works for both the
+  template's own `window.print()` button and automated PDF generation.
+  Verified by rendering to PDF with Playwright/Chromium and visually
+  checking every page for gaps, overlap, and completeness of all pricing
+  figures.
 - New `bim-standards/` folder: firm-wide Revit naming system (Projects, Sheets,
   Levels, Materials, Families, View Templates), a project-template build
   manifest, a loadable shared-parameter file, and a working pyRevit extension

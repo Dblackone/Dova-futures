@@ -8,6 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   @page { size: A4; margin: 0; }
+  .layout-table { width: 100%; border-collapse: collapse; }
+  .layout-table > thead > tr > td, .layout-table > tbody > tr > td, .layout-table > tfoot > tr > td { padding: 0; }
+  .header-space, .footer-space { display: none; }
   @media print {
     body { background: white !important; padding: 0 !important; }
     [data-no-print] { display: none !important; }
@@ -15,7 +18,10 @@
     .page-shell { background: #fff !important; padding: 0 !important; min-height: 0 !important; }
     .doc-header { position: fixed; top: 0; left: 0; right: 0; width: 794px; margin: 0 auto; }
     .doc-footer { position: fixed; bottom: 0; left: 0; right: 0; width: 794px; margin: 0 auto; background: #fff; }
-    .quote-title-block { padding-top: 130px !important; }
+    /* thead/tfoot repeat on every printed page, reserving room in the flow for
+       the fixed header/footer plus a small clearance margin */
+    .header-space { display: block; height: 152px; }
+    .footer-space { display: block; height: 66px; }
     .footer-spacer { display: none !important; }
     .scope-table { break-inside: avoid; page-break-inside: avoid; }
     .scope-table tr { break-inside: avoid; page-break-inside: avoid; }
@@ -49,7 +55,11 @@
       <div style="height:3px;background:#B85C38;"></div>
     </div>
 
-    <div class="quote-title-block" style="padding:36px 48px 20px;">
+    <table class="layout-table">
+      <thead><tr><td><div class="header-space"></div></td></tr></thead>
+      <tbody><tr><td>
+
+    <div style="padding:36px 48px 20px;">
       <div style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#B85C38;letter-spacing:0.35em;margin-bottom:8px;">PROJECT QUOTATION</div>
       <div style="display:flex;justify-content:space-between;align-items:flex-end;">
         <div style="font-family:'Bebas Neue',sans-serif;font-size:30px;color:#1A1A1A;letter-spacing:0.02em;line-height:1;">Access Road Erosion Repair</div>
@@ -258,6 +268,10 @@
       </div>
 
     </div>
+
+      </td></tr></tbody>
+      <tfoot><tr><td><div class="footer-space"></div></td></tr></tfoot>
+    </table>
 
     <div class="doc-footer">
       <div style="background:#fff;margin:0 48px;border-top:1px solid #D1CBC6;padding:14px 0;display:flex;justify-content:space-between;align-items:center;">
