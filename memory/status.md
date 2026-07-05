@@ -1,6 +1,6 @@
 # status.md — Current Snapshot
 
-**Last updated:** 2026-07-05 — Session 5 (Access Road Erosion Repair quote — C. K. Musa)
+**Last updated:** 2026-07-05 — Session 5 (Access Road Erosion Repair quote — C. K. Musa; final PDF approved by principal, awaiting client)
 **Health:** 🟢 on track
 
 ## Now
