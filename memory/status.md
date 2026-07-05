@@ -7,11 +7,13 @@
 - New job folder `jobs/DFL-2026-ROAD-001_C-K-Musa_Access-Road-Afuze/` with a
   draft Project Quote (`01-Documents/QTE-2026-001.html`) for erosion repair of
   the access road serving Mr. C. K. Musa's residence, Afuze, Edo State.
-  Scope: cut-to-fill balancing, imported filling sand, sandcrete blockwork
-  erosion-control head structure, earth drain to the expressway drain, and a
-  concrete-vs-interlocking paved surface over filled sections (priced as
-  alternates). All quantities/rates are `[TBC]` pending a topographic/site
-  survey — draft only, not yet sent to client.
+  Items 1–4 now firm with client-supplied rates: cutting & levelling ₦200,000
+  (LS); filling sand 3 trips @ ₦240,000 (₦720,000); blockwork-lined drain 50m
+  @ ₦25,000/m (₦1,250,000); earth drain 50m @ ₦2,500/m (₦125,000) — subtotal
+  ₦2,295,000. Items 5/6 (concrete @ ₦16,500/m² vs. interlocking @ ₦13,500/m²,
+  priced as alternates) have confirmed rates but quantity is still `[TBC]`
+  pending pavement-area survey; Grand Total pending that + client's alternate
+  choice. Draft only, not yet sent to client.
 - New `bim-standards/` folder: firm-wide Revit naming system (Projects, Sheets,
   Levels, Materials, Families, View Templates), a project-template build
   manifest, a loadable shared-parameter file, and a working pyRevit extension
