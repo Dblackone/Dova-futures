@@ -10,10 +10,12 @@
   Items 1–4 now firm with client-supplied rates: cutting & levelling ₦200,000
   (LS); filling sand 3 trips @ ₦240,000 (₦720,000); blockwork-lined drain 50m
   @ ₦25,000/m (₦1,250,000); earth drain 50m @ ₦2,500/m (₦125,000) — subtotal
-  ₦2,295,000. Items 5/6 (concrete @ ₦16,500/m² vs. interlocking @ ₦13,500/m²,
-  priced as alternates) have confirmed rates but quantity is still `[TBC]`
-  pending pavement-area survey; Grand Total pending that + client's alternate
-  choice. Draft only, not yet sent to client.
+  ₦2,295,000. Pavement area confirmed at 200m² (proposed, to be verified by
+  site measurement before mobilisation); both alternates fully priced —
+  Alternate A (concrete, ₦16,500/m²) Grand Total ₦6,014,625; Alternate B
+  (interlocking, ₦13,500/m², recommended) Grand Total ₦5,369,625. Only the
+  client's final choice of alternate remains open. Draft only, not yet sent
+  to client — needs principal approval before sending.
 - New `bim-standards/` folder: firm-wide Revit naming system (Projects, Sheets,
   Levels, Materials, Families, View Templates), a project-template build
   manifest, a loadable shared-parameter file, and a working pyRevit extension
