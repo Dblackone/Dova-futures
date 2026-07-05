@@ -19,7 +19,11 @@
   drainage design (cross-road blockwork channel with a perforated metal
   cover at the head of the works, transitioning to an earth drain tying
   into the existing roadside drain toward the expressway); Items 3/4
-  descriptions updated to match. Draft only, not yet sent to client — needs
+  descriptions updated to match. QTE-2026-001 is complete and ready to
+  present — this will be the *first* document shown to Mr. Musa on this
+  job (confirmed nothing has been sent yet). No invoice exists or should
+  be drafted until the client has seen the quote, picked a pavement
+  alternate, and the principal has confirmed the payment stage — needs
   principal approval before sending.
 - New `bim-standards/` folder: firm-wide Revit naming system (Projects, Sheets,
   Levels, Materials, Families, View Templates), a project-template build
