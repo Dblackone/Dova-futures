@@ -24,26 +24,27 @@
   job (confirmed nothing has been sent yet). No invoice exists or should
   be drafted until the client has seen the quote, picked a pavement
   alternate, and the principal has confirmed the payment stage — needs
-  principal approval before sending. Print/PDF output spans 3 pages (added
-  content pushed it past one page). Repeating header/footer went through
-  three iterations before landing on the correct pattern, now in place:
-  `@page { margin: 0; }`, `.doc-header`/`.doc-footer` as
+  principal approval before sending. Print/PDF output spans 4 pages
+  (description / drainage rationale / pricing table / terms+totals+
+  signatures). Repeating header/footer pattern, now stable after several
+  iterations: `@page { margin: 0; }`, `.doc-header`/`.doc-footer` as
   `position: fixed; top:0/bottom:0`, and the flowing content wrapped in a
   `.layout-table` whose `thead`/`tfoot` contain print-only spacer divs
   (`.header-space` 152px / `.footer-space` 66px). Chromium repeats
   thead/tfoot on every printed page, so the spacers reserve real flow
   space under the fixed header and above the fixed footer on ALL pages —
-  content can never start behind the header (the flaw of the previous
-  attempt, which only padded page 1) and there's a small clearance margin
-  after the header/before the footer as requested. Also retained from
-  earlier iterations: `.scope-table` + rows have `break-inside: avoid`
-  (a mid-row split once left Item 2's ₦240,000/₦720,000 figures hidden
-  behind the fixed footer), and the page-shell's cream background is
-  reset for print so it doesn't render as a border. Works for both the
-  template's own `window.print()` button and automated PDF generation.
-  Verified by rendering to PDF with Playwright/Chromium and visually
-  checking every page for gaps, overlap, and completeness of all pricing
-  figures.
+  content can never start behind the header and there's a small clearance
+  margin after the header/before the footer. Body fonts enlarged for
+  readability (description 14px, scope table 13px, terms 12.5px, Grand
+  Totals 18px). Print-only `.avoid-break` on the drainage box, scope
+  section, totals boxes, and acceptance block keeps every section whole
+  across page breaks (a mid-row table split once left Item 2's
+  ₦240,000/₦720,000 figures hidden behind the fixed footer — that class
+  of bug is closed). Page-shell's cream background is reset for print so
+  it doesn't render as a border. Works for both the template's own
+  `window.print()` button and automated PDF generation. Verified by
+  rendering to PDF with Playwright/Chromium and visually checking every
+  page.
 - New `bim-standards/` folder: firm-wide Revit naming system (Projects, Sheets,
   Levels, Materials, Families, View Templates), a project-template build
   manifest, a loadable shared-parameter file, and a working pyRevit extension
