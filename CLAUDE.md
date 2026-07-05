@@ -5,10 +5,10 @@
 
 ## 0. Project
 
-- **Name:** <project name>
-- **Owner:** <you>
-- **One-line purpose:** <what this project is for>
-- **Current focus:** <the one thing that matters most right now>
+- **Name:** Dova Futures Website
+- **Owner:** Dblackone (Dova Futures Limited)
+- **One-line purpose:** Marketing website (lead generation + brand credibility) plus a print-ready business document system (quotes, invoices, letters, reports, certificates) for Dova Futures Limited, a Lagos-based design-build construction firm.
+- **Current focus:** Get the site launch-ready — wire the document templates into the Express server (`project/`) with the right access level, and deploy the contact-form backend (SMTP env vars on Render) so inquiries actually arrive.
 
 ## 1. How every run works (the loop)
 
