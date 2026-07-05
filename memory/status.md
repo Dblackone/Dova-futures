@@ -24,7 +24,14 @@
   job (confirmed nothing has been sent yet). No invoice exists or should
   be drafted until the client has seen the quote, picked a pavement
   alternate, and the principal has confirmed the payment stage — needs
-  principal approval before sending.
+  principal approval before sending. Print/PDF output now spans 3 pages
+  (added content pushed it past one page); fixed the DOVA header and
+  RC-No./website/QTE-ref footer to repeat correctly on every page via
+  `@page` margin reservation + `position:fixed` header/footer (standard
+  Chromium print technique — works both for the template's own
+  `window.print()` button and for automated PDF generation); also fixed
+  the page-shell's cream background bleeding through as a border on every
+  printed page. Verified by rendering to PDF with Playwright/Chromium.
 - New `bim-standards/` folder: firm-wide Revit naming system (Projects, Sheets,
   Levels, Materials, Families, View Templates), a project-template build
   manifest, a loadable shared-parameter file, and a working pyRevit extension
