@@ -14,8 +14,13 @@
   site measurement before mobilisation); both alternates fully priced —
   Alternate A (concrete, ₦16,500/m²) Grand Total ₦6,014,625; Alternate B
   (interlocking, ₦13,500/m², recommended) Grand Total ₦5,369,625. Only the
-  client's final choice of alternate remains open. Draft only, not yet sent
-  to client — needs principal approval before sending.
+  client's final choice of alternate remains open. Added a client-facing
+  "Why the Drainage System Is Needed" section explaining the two-stage
+  drainage design (cross-road blockwork channel with a perforated metal
+  cover at the head of the works, transitioning to an earth drain tying
+  into the existing roadside drain toward the expressway); Items 3/4
+  descriptions updated to match. Draft only, not yet sent to client — needs
+  principal approval before sending.
 - New `bim-standards/` folder: firm-wide Revit naming system (Projects, Sheets,
   Levels, Materials, Families, View Templates), a project-template build
   manifest, a loadable shared-parameter file, and a working pyRevit extension
