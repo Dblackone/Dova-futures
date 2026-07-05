@@ -24,14 +24,24 @@
   job (confirmed nothing has been sent yet). No invoice exists or should
   be drafted until the client has seen the quote, picked a pavement
   alternate, and the principal has confirmed the payment stage — needs
-  principal approval before sending. Print/PDF output now spans 3 pages
-  (added content pushed it past one page); fixed the DOVA header and
-  RC-No./website/QTE-ref footer to repeat correctly on every page via
-  `@page` margin reservation + `position:fixed` header/footer (standard
-  Chromium print technique — works both for the template's own
-  `window.print()` button and for automated PDF generation); also fixed
-  the page-shell's cream background bleeding through as a border on every
-  printed page. Verified by rendering to PDF with Playwright/Chromium.
+  principal approval before sending. Print/PDF output spans 3 pages (added
+  content pushed it past one page). Fixed the DOVA header and RC-No./
+  website/QTE-ref footer to repeat correctly on every page using
+  `@page { margin: 0; }` + `position: fixed; top:0/bottom:0` (works for
+  both the template's own `window.print()` button and automated PDF
+  generation); also fixed the page-shell's cream background bleeding
+  through as a border on every printed page. An earlier iteration used a
+  reserved `@page` margin, which left an unwanted blank gap before the
+  header on every page — removed. While chasing that, found and fixed a
+  more serious bug: the scope table could split mid-row across a page
+  break, and the fixed footer then painted over the stranded cells,
+  genuinely hiding pricing data (Item 2's Trip/₦240,000/₦720,000 values
+  were invisible in one iteration). Fixed by giving `.scope-table` (and
+  its rows) `break-inside: avoid`, so the whole table now moves to the
+  next page as one block rather than splitting — no cells can ever end up
+  hidden behind the footer. Verified by rendering to PDF with
+  Playwright/Chromium and visually checking every page for gaps, overlap,
+  and completeness of all pricing figures.
 - New `bim-standards/` folder: firm-wide Revit naming system (Projects, Sheets,
   Levels, Materials, Families, View Templates), a project-template build
   manifest, a loadable shared-parameter file, and a working pyRevit extension
