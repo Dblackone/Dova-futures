@@ -24,13 +24,15 @@
   job (confirmed nothing has been sent yet). No invoice exists or should
   be drafted until the client has seen the quote, picked a pavement
   alternate, and the principal has confirmed the payment stage — needs
-  principal approval before sending. Print/PDF output spans 4 pages
-  (description / drainage rationale / pricing table / terms+totals+
-  signatures). Repeating header/footer pattern, now stable after several
-  iterations: `@page { margin: 0; }`, `.doc-header`/`.doc-footer` as
-  `position: fixed; top:0/bottom:0`, and the flowing content wrapped in a
-  `.layout-table` whose `thead`/`tfoot` contain print-only spacer divs
-  (`.header-space` 152px / `.footer-space` 66px). Chromium repeats
+  principal approval before sending. Print/PDF output spans 3 pages
+  (description + drainage rationale / pricing table / terms+totals+
+  signatures — the drainage box fits on page 1 per user request, achieved
+  by trimming paddings/clearances, not fonts). Repeating header/footer
+  pattern, now stable after several iterations: `@page { margin: 0; }`,
+  `.doc-header`/`.doc-footer` as `position: fixed; top:0/bottom:0`, and
+  the flowing content wrapped in a `.layout-table` whose `thead`/`tfoot`
+  contain print-only spacer divs
+  (`.header-space` 140px / `.footer-space` 58px). Chromium repeats
   thead/tfoot on every printed page, so the spacers reserve real flow
   space under the fixed header and above the fixed footer on ALL pages —
   content can never start behind the header and there's a small clearance
