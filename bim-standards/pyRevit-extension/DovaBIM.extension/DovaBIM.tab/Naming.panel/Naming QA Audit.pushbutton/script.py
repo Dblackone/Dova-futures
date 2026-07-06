@@ -24,7 +24,7 @@ LEVEL_NAME_RE = re.compile(
 )
 VIEW_NAME_RE = re.compile(r"^" + DISC + r" - .+ - .+$")
 VIEW_TEMPLATE_NAME_RE = re.compile(r"^" + DISC + r" - .+ - .+$")
-MATERIAL_NAME_RE = re.compile(r"^[A-Z][A-Za-z]*(_[A-Za-z0-9\-]+){1,3}$")
+MATERIAL_NAME_RE = re.compile(r"^[A-Z][A-Za-z]*(-[A-Za-z]+)*(_[A-Za-z0-9\-]+){1,3}$")
 
 
 def audit_sheets():
@@ -57,7 +57,11 @@ def audit_views():
             continue
         if isinstance(view, (DB.ViewSheet, DB.ViewSchedule)):
             continue
-        if view.ViewType in (DB.ViewType.Internal, DB.ViewType.SystemBrowser):
+        if view.ViewType in (
+            DB.ViewType.Internal,
+            DB.ViewType.SystemBrowser,
+            DB.ViewType.ProjectBrowser,
+        ):
             continue
         if not VIEW_NAME_RE.match(view.Name):
             violations.append((view.Id, view.Name, str(view.ViewType)))

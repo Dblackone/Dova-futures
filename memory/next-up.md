@@ -3,7 +3,9 @@
 > What to do next, in order. The loop pulls the top item when no goal is given.
 > Keep it ranked. Move finished items to done-log.md.
 
-1. [ ] **Verify BIM standards with a checker run** — Have a separate run (e.g. `@qa/vera`) load `bim-standards/pyRevit-extension/` in an actual Revit + pyRevit environment, run each of the 5 tools against a test model, and confirm the naming regexes in `Naming QA Audit` actually match the examples in files 02–06. _Acceptance: all 5 tools run without error on a real model; at least one intentional naming violation per category is correctly flagged._
+1. [x] **Verify BIM standards with a checker run** — Done 2026-07-06: ran the 5 tools' core logic live against an open Revit 2026 document via `Revit_Connector`, inside rolled-back transactions. Confirmed collectors/Transaction/BuiltInParameter usage all work against the real API, and confirmed the audit correctly flags every non-compliant view/material on an unmigrated stock template. Found + fixed 2 bugs (material-name regex missing hyphenated categories; `ProjectBrowser` view-type false positive) — see `memory/done-log.md` 2026-07-06 BIM-02. Follow-up still open, see below.
+
+1a. [ ] **`@qa/vera` pass on a real firm project** — This session's live test used Revit's stock out-of-box template (no real project content, no `DF_ProjectCode` shared parameter bound). Run the 5 tools again against an actual firm `.rte`/project once one exists, to catch anything specific to real project structure that the stock template couldn't surface.
 
 2. [ ] **Wire templates into Express** — Decide with client: public static route, password-gated route, or nav link from main site. Implement chosen option in `server.js`. Test full browse → edit → print-to-PDF workflow in Chrome and Safari. _Acceptance: templates accessible from the live site URL; no broken links; print produces clean PDF with UI chrome hidden._
 

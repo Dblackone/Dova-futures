@@ -36,7 +36,11 @@ def get_target_views():
             continue
         if isinstance(v, (DB.ViewSheet, DB.ViewSchedule)):
             continue
-        if v.ViewType in (DB.ViewType.Internal, DB.ViewType.SystemBrowser):
+        if v.ViewType in (
+            DB.ViewType.Internal,
+            DB.ViewType.SystemBrowser,
+            DB.ViewType.ProjectBrowser,
+        ):
             continue
         targets.append(v)
     return targets
