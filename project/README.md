@@ -25,18 +25,9 @@
 
 ## Brand Identity (do not alter)
 
-| Token | Value |
-|-------|-------|
-| Primary (dark green) | `#1C4636` |
-| Accent (terracotta) | `#B85C38` |
-| Surface (warm cream) | `#F5EFE8` |
-| Background | `#E8E1D5` |
-| Body text | `#1A1A1A` |
-| Display font | Bebas Neue |
-| Body font | Inter |
-| Contact line | info@dovafutures.com · +234 816 367 5439 · dovafutures.com |
-| Legal name | DOVA FUTURES LIMITED |
-| Tagline | DESIGNERS · BUILDERS · DEVELOPERS |
+All brand tokens — colours, fonts, legal name, tagline, contact line — are
+defined once in **[`company/brand.md`](../company/brand.md)**, the single source
+of truth. Never re-declare or override those values here or in any template.
 
 All templates embed the DOVA logo as an inline SVG — do not replace it with a raster image or remove it.
 

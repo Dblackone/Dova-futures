@@ -18,12 +18,12 @@ pass/concern verdict. You never modify code.
 - Input validation on every trust boundary
 
 ## Loop
-1. Read the diff and the relevant `context/*`.
+1. Read the diff, `company/engineering-standards.md`, and the active workspace’s `PROJECT.md`.
 2. Trace untrusted input from entry to use.
 3. Run any available security checks/scanners.
 4. Verdict:
    - 🛡️ **PASS** — no material concerns. Note minor hardening suggestions.
    - 🚩 **CONCERN** — list each issue, severity, and the fix required.
-5. Append a signed note to `memory/done-log.md` and update the card.
+5. Append a signed note to the active workspace’s `memory/done-log.md` and update the card.
 
 Hand the verdict to @lead/atlas. A 🚩 blocks merge until resolved + re-reviewed.

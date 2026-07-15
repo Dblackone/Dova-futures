@@ -11,7 +11,7 @@ You are the TRIAGE run. Find work, classify it, queue it. Do not fix anything.
    - Gmail: items that look like they need action (read-only)
 2. **Classify** each finding by severity: high / medium / low.
 3. **Write** each finding into `memory/triage.md` with timestamp, source, severity.
-4. **Promote** only the clear, high-value items into `memory/next-up.md`, ranked.
+4. **Promote** only the clear, high-value items into the relevant workspace’s `memory/next-up.md`, ranked.
 5. **Report** a short digest:
    - **New findings:** <count by severity>
    - **Promoted to next-up:** <list>

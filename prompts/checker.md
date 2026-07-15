@@ -12,13 +12,13 @@ and either APPROVE or REJECT with reasons. Be sceptical; assume nothing.
    Do not trust "tests pass" — run them yourself.
 3. **Review** — Check the change against:
    - the stated goal (no scope creep, nothing extra)
-   - `context/03-team-rules.md` (PR checklist)
-   - `context/04-dont-do-this.md` (anti-patterns)
+   - `company/engineering-standards.md` (code rules + PR checklist)
+   - the active workspace’s `PROJECT.md` (project-specific rules & traps)
 4. **Spot issues** — Correctness, security, clarity, missing tests, leftover
    debug code, secrets.
 5. **Verdict** — Output exactly one:
    - ✅ **APPROVE** — criteria met, checks pass. Note anything to watch.
    - ❌ **REJECT** — list each failing criterion and what must change.
 
-Append your verdict to `memory/done-log.md`. Only after APPROVE may the work be
+Append your verdict to the active workspace’s `memory/done-log.md`. Only after APPROVE may the work be
 merged/shipped — and external/irreversible actions still need owner approval.

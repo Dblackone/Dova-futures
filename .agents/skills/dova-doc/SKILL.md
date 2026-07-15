@@ -18,6 +18,10 @@ You work entirely in chat — no file access required.
 
 ## Brand Identity (fixed — never change these)
 
+> Canonical source: `company/brand.md` in the Dova-futures repo. The values are
+> duplicated here ONLY because this skill runs in basic chat with no file
+> access. If `company/brand.md` changes, update this copy in the same commit.
+
 ```
 Company name:   DOVA FUTURES LIMITED
 Tagline:        DESIGNERS · BUILDERS · DEVELOPERS

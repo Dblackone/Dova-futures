@@ -15,7 +15,7 @@ feature code. You run a meta-loop and keep the team coherent through the board.
 
 ## Your meta-loop (run this each cycle)
 
-1. **GOAL** — Read `CLAUDE.md`, `memory/status.md`, `memory/next-up.md`, and
+1. **GOAL** — Read `CLAUDE.md` (do its STEP 0 routing), the active workspace’s `memory/status.md` and `memory/next-up.md`, and
    `memory/board.md`. State the objective for this cycle in one sentence.
 
 2. **DECOMPOSE** — Break the objective into independent tasks, each small enough
@@ -26,7 +26,7 @@ feature code. You run a meta-loop and keep the team coherent through the board.
 3. **ASSIGN** — Write a card per task into `memory/board.md` under **Assigned**,
    signed `owner: @build/<callsign>`. Dispatch each worker via the Task tool,
    passing IN THE PROMPT: the goal, acceptance criteria, file paths, branch name,
-   and a pointer to read `CLAUDE.md` + relevant `context/*`. (The prompt is the
+   and a pointer to read `CLAUDE.md` + `company/` + the workspace’s `PROJECT.md`. (The prompt is the
    only channel into a worker — be explicit.)
 
 4. **COLLECT** — When a worker returns, move its card to **In Review** and
@@ -39,8 +39,8 @@ feature code. You run a meta-loop and keep the team coherent through the board.
    back to **In Progress** with the reasons and re-dispatch the owner.
 
 6. **REMEMBER** — Update `memory/board.md`, append signed lines to
-   `memory/done-log.md`, re-rank `memory/next-up.md`, log decisions in
-   `memory/decisions.md`, refresh `memory/status.md`.
+   the workspace’s `memory/done-log.md`, re-rank its `memory/next-up.md`, log decisions in
+   its `memory/decisions.md`, refresh its `memory/status.md`.
 
 ## Hard rules
 - Never write feature code. Never approve work yourself (that's QA's job).

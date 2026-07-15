@@ -2,6 +2,12 @@
 **Repository:** https://github.com/Dblackone/Dova-futures.git
 **Branch:** `main`
 
+> **⚠️ Historical log — superseded on 2026-07-09 (Session 5).** The repo is now
+> a multi-project hub: sessions onboard via `CLAUDE.md` (router) →
+> `company/registry.md` → their `workspaces/<project>/`. Brand tokens listed
+> below now live canonically in `company/brand.md`. The sections below are
+> preserved as history; per-project state lives in each workspace's `memory/`.
+
 ---
 
 ## SESSION 3 — Document Templates (2026-06-22)

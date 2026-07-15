@@ -1,8 +1,11 @@
-# 05 — Document Template Guidelines
+# document-policy.md — Company Document Rules (Binding)
 
-> **Binding rule for every agent run.** Any session or inquiry that involves
-> creating, drafting, editing, or referencing a company document MUST use the
-> templates in `project/templates/`. Read `project/README.md` first.
+> **Binding rule for every agent run, in every workspace.** Any session or
+> inquiry that involves creating, drafting, editing, or referencing a company
+> document MUST use the templates in `project/templates/`. Read
+> `project/README.md` first.
+> (Migrated from `context/05-document-templates.md`. Brand tokens now live in
+> `company/brand.md` — the single source of truth.)
 
 ---
 
@@ -39,12 +42,15 @@ DOVA Futures output consistent.
 2. **Populate only editable fields.** Fields are marked `contenteditable` in the
    HTML (shown as orange placeholders). The letterhead, logo, colours, and
    contact block are fixed — never modify them.
-3. **Apply the correct reference number.** See `project/README.md` for the
-   numbering convention (e.g. `INV-2025-001`, `EL-2025-003`).
+3. **Apply the correct reference number.** Numbering convention (full detail in
+   `project/README.md`): `RPT-` / `QTE-` / `INV-` / `CC-` / `SAL-` / `IL-` /
+   `EL-` / `PR-` / `MPR-` + `YYYY-NNN`.
 4. **Do not send or publish.** Draft only. All outbound documents require
-   explicit approval from the principal before delivery. See `governance/guardrails.md`.
-5. **Log the document** in `memory/done-log.md` when the draft is complete
-   (document type, reference number, recipient, date drafted).
+   explicit approval from the principal before delivery. See
+   `governance/guardrails.md` and `company/ethics.md`.
+5. **Log the document** in the relevant workspace's `memory/done-log.md` when
+   the draft is complete (document type, reference number, recipient, date
+   drafted). Client-job documents also live in that job's folder under `jobs/`.
 
 ---
 
@@ -57,32 +63,22 @@ DOVA Futures output consistent.
 
 ## What this rule does NOT cover
 
-- Code files, config files, README files — use normal code conventions
-- Website copy or UI text — governed by `context/03-team-rules.md`
-- Raw design assets (Figma, renders) — governed by the design system in
-  `project/_ds/`
+- Code files, config files, README files — `company/engineering-standards.md`
+- Website copy or UI text — `company/voice-and-tone.md`
+- Raw design assets (Figma, renders) — the design system in `project/_ds/`
 
 ---
 
-## Brand constants (never override these in any template)
+## Brand constants
 
-```
-Primary colour:  #1C4636  (dark forest green — headers, letterhead)
-Accent colour:   #B85C38  (terracotta — dividers, document type label)
-Surface:         #F5EFE8  (warm cream — meta blocks, highlights)
-Display font:    Bebas Neue
-Body font:       Inter
-Legal name:      DOVA FUTURES LIMITED
-Tagline:         DESIGNERS · BUILDERS · DEVELOPERS
-Phone:           +234 816 367 5439
-Email:           info@dovafutures.com
-Website:         dovafutures.com
-```
+All colours, fonts, legal name, tagline, and contact details are defined once in
+**`company/brand.md`** — never override them in any template, and never
+re-declare the values elsewhere.
 
 ---
 
 ## Reference
 
-Full template documentation: `project/README.md`
-Brand & design tokens: `project/_ds/dova-futures-design-system-*/`
-Guardrails: `governance/guardrails.md`
+- Full template documentation: `project/README.md`
+- Brand & design tokens: `company/brand.md` → `project/_ds/`
+- Guardrails: `governance/guardrails.md`
