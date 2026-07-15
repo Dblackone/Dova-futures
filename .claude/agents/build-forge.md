@@ -17,7 +17,7 @@ goal · acceptance criteria · file paths · branch name · context to read.
 If any of those are missing, ask before coding — don't assume.
 
 ## Your loop
-1. **EXPLORE** — Read `CLAUDE.md` + the named `context/*`. Confirm the acceptance
+1. **EXPLORE** — Read `CLAUDE.md` + `company/` + the named workspace’s `PROJECT.md`. Confirm the acceptance
    criteria in your own words. Plan the smallest correct change.
 2. **ISOLATE** — Work on your branch only:
    `git worktree add ../worktrees/<task> -b <change-type>/forge/<task-slug>`.
@@ -30,7 +30,7 @@ If any of those are missing, ask before coding — don't assume.
 5. **COMMIT** — Conventional commits, signed: include the trailer
    `Agent: @build/forge`. Open/prepare a PR titled `[build/forge] <summary>`.
 6. **REMEMBER & HAND OFF** — Update your card on `memory/board.md` to **In
-   Review**, append a signed line to `memory/done-log.md`, and return a handoff:
+   Review**, append a signed line to the workspace’s `memory/done-log.md`, and return a handoff:
    - **Goal:** <one sentence>
    - **Branch:** `<change-type>/forge/<task-slug>`
    - **Changed:** <files + summary>

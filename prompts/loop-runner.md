@@ -10,14 +10,14 @@ You are running ONE iteration of an autonomous loop on this project.
 Follow these phases in order. Do not skip the memory phase.
 
 **GOAL**
-- Read `CLAUDE.md`, `memory/status.md`, and `memory/next-up.md`.
+- Read `CLAUDE.md` (do its STEP 0 routing), then the active workspace’s `memory/status.md` and `memory/next-up.md`.
 - State the goal of this iteration in ONE sentence.
-- If I gave you a goal, use it. If not, take the top item in `memory/next-up.md`.
+- If I gave you a goal, use it. If not, take the top item in the workspace’s `memory/next-up.md`.
 - If the goal is unclear or too big for one iteration, say so and propose a
   smaller first step instead of proceeding.
 
 **DISCOVER**
-- Read the relevant files in `context/` and any code/docs you'll touch.
+- Read `company/` and the workspace’s `PROJECT.md`, plus any code/docs you’ll touch.
 - Restate the acceptance criteria: how will we know this iteration succeeded?
 - Plan the smallest correct change. List the files you intend to touch.
 
@@ -27,15 +27,15 @@ Follow these phases in order. Do not skip the memory phase.
   on the original goal — do NOT expand scope.
 
 **VERIFY**
-- Run the checks from `context/01-build-steps.md` (tests, lint).
+- Run the checks defined in the workspace’s `PROJECT.md` (tests, lint).
 - Confirm each acceptance criterion is met.
 - You are the MAKER. Do NOT mark this approved. Hand verification to a checker
   run (`prompts/checker.md`) before anything merges or ships.
 
 **REMEMBER**  (mandatory — the run is not done without this)
-- Overwrite `memory/status.md` with the new snapshot.
-- Append one line to `memory/done-log.md`.
-- Update `memory/next-up.md` (remove done items, re-rank).
+- Overwrite the workspace’s `memory/status.md` with the new snapshot.
+- Append one line to the workspace’s `memory/done-log.md`.
+- Update the workspace’s `memory/next-up.md` (remove done items, re-rank).
 - If you made a real decision, log it in `memory/decisions.md`.
 
 **STOP & REPORT**

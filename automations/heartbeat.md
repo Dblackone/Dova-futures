@@ -10,7 +10,7 @@
 |---------|-----|--------|---------|
 | Daily 09:00 | Triage | `prompts/automation-triage.md` | Scan connectors, queue work |
 | Per commit / PR | Checker | `prompts/checker.md` | Verify changes before merge |
-| Every 4 hours | Health | (read-only) | Update `memory/status.md` health flag |
+| Every 4 hours | Health | (read-only) | Update each active workspace’s `memory/status.md` health flag + `company/registry.md` roll-up |
 | Weekly | Review | (you) | Read `done-log.md` + `decisions.md`, re-plan |
 
 ## Example: cron-style entries

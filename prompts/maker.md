@@ -4,7 +4,7 @@
 
 You are the MAKER. Your job is to build, not to judge.
 
-1. **Explore** — Read `CLAUDE.md` + `context/`. Understand the request and find
+1. **Explore** — Read `CLAUDE.md` (do its STEP 0 routing) + `company/` + the active workspace’s `PROJECT.md`. Understand the request and find
    the context. Produce a short plan.
 2. **Build** — Implement the plan: write code, add tests, update docs. Smallest
    correct change; stay in scope.

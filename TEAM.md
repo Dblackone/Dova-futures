@@ -28,7 +28,7 @@
 - board cards: `owner: @build/forge`
 - commits: trailer `Agent: @build/forge`
 - PR titles: `[build/forge] Add OAuth login`
-- `memory/done-log.md`: `… — by @build/forge — verified by @qa/vera`
+- workspace `memory/done-log.md`: `… — by @build/forge — verified by @qa/vera`
 
 ## Role-tag taxonomy
 
