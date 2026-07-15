@@ -24,7 +24,8 @@ that policy governs everyone who uses it.**
 |------|---------|
 | `project/README.md` | Full template documentation: index, numbering, how-to (human + AI) |
 | `project/index.html` | Template gallery — card grid linking all 9 templates |
-| `project/templates/NN-*.html` | The 9 production templates (pure HTML/CSS, print-ready) |
+| `project/templates/NN-*.html` | The production templates (pure HTML/CSS, print-ready): 00-Letterhead + the 9 document types |
+| `scripts/gen-letterhead-docx.mjs` | Generator for the letterhead `.docx` (deps `docx` + `sharp` live in the root package.json) |
 | `project/templates/*.dc.html` + `project/index.dc.html` | Claude Design source files — need the CD runtime; do NOT open in a browser |
 | `project/docx/*.docx` | Word-compatible versions |
 | `project/_ds/dova-futures-design-system-*/` | Design system: token CSS files, bundle, manifest |

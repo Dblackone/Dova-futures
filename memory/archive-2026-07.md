@@ -40,6 +40,17 @@ limiting on /api/contact; sitemap/robots; analytics; UI/UX redesign phase.
 - 2026-06-22 — TEMPLATES-01 — 9 standalone print-ready HTML document templates + gallery index created from Claude Design export; committed and pushed to main (commits ff64f00, 20af29a); all templates use contenteditable fields, window.print(), A4 @page CSS, DOVA brand tokens — verified by manual file review
 - 2026-07-05 — BIM-01 — Created `bim-standards/` firm-wide Revit standard: naming conventions (files 01–06), project-template build manifest (07), loadable shared-parameter file, project register CSV, and working pyRevit extension (DovaBIM.extension, 5 tools) — all `.py` scripts pass `py_compile` — verified by manual review + syntax check (maker run, not yet independently checked)
 
+## Merge note (2026-07-15)
+
+Between the hub-reorg branch being cut and its merge, the global memory files
+continued to evolve on `main` (sessions of 2026-07-05 → 07-08: ROAD-01..10 on
+the C.K. Musa quote, BIM-02/BIM-03 live-Revit verification + Architecture
+template, Pool invoices 002–005, the Osogbo job, and the 00-Letterhead
+template). At merge time that content was redistributed verbatim into the
+matching `workspaces/*/memory/` files — nothing was dropped. (`main`'s copy of
+`status.md` also contained committed, unresolved conflict markers from a bad
+stash merge; it was superseded by the per-workspace status files.)
+
 ## Where these items live now
 
 | Topic | New home |

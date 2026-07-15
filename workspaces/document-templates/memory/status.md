@@ -4,9 +4,11 @@
 **Health:** 🟢 on track
 
 ## Now
-- 9 print-ready branded HTML templates + gallery index live in `project/`
-  (built Session 3, 2026-06-22), plus `.docx` versions and the Claude Design
-  sources.
+- **10** print-ready branded templates in `project/` — the original 9 (Session
+  3, 2026-06-22) plus `00-Letterhead` (html/pdf/docx, added 2026-07-10 via
+  `scripts/gen-letterhead-docx.mjs`, which pulls `docx` + `sharp` from the root
+  package.json) — plus a gallery index, `.docx` versions, and the Claude
+  Design sources.
 - Design system tokens in `project/_ds/dova-futures-design-system-*/`.
 - Company-wide usage rule is now `company/document-policy.md` (was
   `context/05-document-templates.md`).

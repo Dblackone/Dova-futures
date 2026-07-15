@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hall of Worship, Osogbo — Altar and Structure Remodification</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#1C4636; --green-deep:#102A20; --cream:#F5EFE8; --sand:#E8E1D5;
+    --rust:#B85C38; --rust-deep:#9E4F30; --ink:#1A1A1A; --gray:#4A4F5C;
+    --sage:#AECFC0; --line:#D1CBC6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,'Segoe UI',Arial,sans-serif;color:var(--ink);
+       background:#DDD8D0;font-size:16px;line-height:1.55}
+  .page{max-width:880px;margin:24px auto;background:#fff;box-shadow:0 2px 18px rgba(0,0,0,.18);padding:0 0 30px}
+  /* header band */
+  .band{background:var(--green);color:var(--cream);padding:34px 48px 26px;border-bottom:6px solid var(--rust);
+        display:flex;justify-content:space-between;align-items:flex-start}
+  .brand h1{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:44px;letter-spacing:6px;line-height:.95}
+  .brand .tag{color:var(--sage);letter-spacing:4px;font-size:10.5px;margin-top:8px;text-transform:uppercase}
+  .contact{text-align:right;font-size:12px;color:var(--sand);line-height:1.7}
+  .contact strong{color:var(--cream);font-size:13px;letter-spacing:1px}
+  .inner{padding:34px 48px 0}
+  .kicker{color:var(--rust);font-weight:700;letter-spacing:5px;font-size:11px;text-transform:uppercase}
+  .title{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;font-size:46px;line-height:1.02;
+         letter-spacing:1.5px;margin:10px 0 26px;color:var(--ink)}
+  /* meta grid */
+  .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+        border:1px solid var(--line);margin-bottom:34px}
+  .meta div{background:var(--cream);padding:12px 16px}
+  .meta .k{font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-bottom:3px}
+  .meta .v{color:var(--rust-deep);font-size:13px}
+  /* sections */
+  h2.sec{font-size:13px;letter-spacing:4px;color:var(--green);text-transform:uppercase;
+         border-bottom:1px solid var(--line);padding-bottom:7px;margin:30px 0 14px}
+  p.body{margin-bottom:12px;color:#333}
+  /* findings */
+  .finding{display:flex;gap:16px;background:var(--cream);padding:13px 16px;border-bottom:1px solid var(--line)}
+  .finding .num{color:var(--rust);font-weight:700;font-size:15px;min-width:26px}
+  /* sequence */
+  .seq{display:flex;gap:12px;margin-bottom:11px}
+  .seq .n{color:var(--rust);font-weight:700;min-width:20px}
+  h3.tbl-title{font-size:13.5px;color:var(--rust-deep);letter-spacing:1px;text-transform:uppercase;
+               margin:20px 0 2px;break-after:avoid}
+  /* cost table */
+  table.cost{width:100%;border-collapse:collapse;margin:14px 0 10px;font-size:14px}
+  table.cost th{background:var(--green);color:#fff;text-align:left;padding:9px 12px;letter-spacing:.5px}
+  table.cost td{padding:9px 12px;border:1px solid var(--line);vertical-align:top;background:var(--cream)}
+  table.cost th:last-child, table.cost td:last-child{text-align:right;white-space:nowrap}
+  table.cost tr.sub td{background:var(--sage);font-weight:700}
+  table.cost tr.total td{background:var(--green);color:#fff;font-weight:700;font-size:14px}
+  .note{color:var(--rust-deep);font-weight:600;font-size:14px;border-left:3px solid var(--rust);
+        padding:8px 14px;background:var(--cream);margin:12px 0 4px}
+  /* recommendations */
+  ol.recs{margin:4px 0 0 20px}
+  ol.recs li{margin-bottom:9px;color:#333}
+  /* authorisation */
+  .auth{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:40px}
+  .auth .slot{border-top:1.5px solid var(--ink);padding-top:8px}
+  .auth .k{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--gray);text-transform:uppercase}
+  .auth .v{color:var(--rust-deep);font-size:12.5px;font-style:italic;margin-top:2px}
+  /* footer */
+  .foot{display:flex;justify-content:space-between;align-items:center;margin-top:44px;
+        padding:14px 48px 0;border-top:1px solid var(--line);font-size:11px;color:var(--gray)}
+  .foot .mid{font-family:'Bebas Neue','Arial Narrow',Arial,sans-serif;letter-spacing:3px;color:var(--green);font-size:13px}
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0;max-width:none}
+    h2.sec{break-after:avoid}
+    .finding,.seq,table.cost tr{break-inside:avoid}
+    @page{size:A4;margin:12mm 0}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="band">
+    <div class="brand">
+      <h1>GRAIL<br>MOVEMENT</h1>
+      <div class="tag">Hall of Worship · Osogbo</div>
+    </div>
+    <div class="contact">
+      <strong>GRAIL MOVEMENT</strong><br>
+      Osogbo, Osun State<br>
+      Nigeria
+    </div>
+  </div>
+
+  <div class="inner">
+    <div class="kicker">Project Report</div>
+    <div class="title">Hall of Worship, Osogbo —<br>Altar and Structure Remodification</div>
+
+    <div class="meta">
+      <div><div class="k">Report Reference</div><div class="v">RPT-2026-OSG-001</div></div>
+      <div><div class="k">Date</div><div class="v">02 July 2026</div></div>
+      <div><div class="k">Classification</div><div class="v">Rough Estimate — For Planning Only</div></div>
+      <div><div class="k">Prepared By</div><div class="v">Vollmann Akarakiri</div></div>
+      <div><div class="k">Reviewed By</div><div class="v">Jenyo Akarakiri</div></div>
+      <div><div class="k">Department</div><div class="v">Projects</div></div>
+    </div>
+
+    <h2 class="sec">01. Executive Summary</h2>
+    <p class="body">This report presents the scope of work and an approximate cost estimate for the modification of
+    the altar and the side of the structure at the Hall of Worship, Osogbo. Five work items are covered: correction
+    of the altar steps (with associated door and window relocation), structural changes to the side walls at the
+    Ante-Room and Flower Room, ceiling installation, a new dividing partition between the Fore Hall and Main Hall,
+    and the curved altar wall. The estimated project total is <strong>₦16,137,000</strong>, inclusive of allowances
+    and a 10% contingency. All figures are prepared for planning purposes only and do not constitute a tender or
+    contract sum.</p>
+
+    <h2 class="sec">02. Background</h2>
+    <p class="body">The works are based on the project drawings (Ground Floor Plan, Longitudinal Section SO-1 and
+    Altar Elevation S-02) read together with on-site measurement and take-offs. Site re-measurement found the building
+    approximately 0.6&nbsp;m shorter than drawn along the Lobby–Altar axis, which directly affects the altar zone and
+    triggered the decision to relocate the altar-side doors. On site, the Fore Hall and Main Hall have not yet been
+    demarcated; the dividing wall will be built as drywall throughout in place of the blockwork proposed in the plan.
+    Rates used in the estimate are installed rates (material and labour, measured on one-side surface area) obtained
+    for this project, with cement taken at ₦12,500 per bag.</p>
+
+    <h2 class="sec">03. Findings</h2>
+    <div class="finding"><div class="num">01</div><div>The building is approximately 0.6&nbsp;metres shorter on site
+      than what is shown on the plan (15.246&nbsp;m measured versus 15.840&nbsp;m on plan, measured from the altar
+      wall to the lobby wall). The existing altar measures 3.00&nbsp;m, compared to 3.45&nbsp;m on the approved
+      plan.</div></div>
+    <div class="finding"><div class="num">02</div><div>The corrected altar step layout requires the altar side doors
+      to be relocated approximately 0.9&nbsp;m toward the lobby wall. One window section will be removed, and the
+      door relocated into the former window position. In total, the altar step modification will affect two (2) doors
+      and two (2) windows. Additionally, due to the structural modifications on both the left and right sides of the
+      building, two (2) additional doors and six (6) additional windows will be removed, bringing the overall total
+      to four (4) doors and eight (8) windows affected.</div></div>
+    <div class="finding"><div class="num">03</div><div>The Fore Hall / Main Hall dividing partition does not exist on
+      site. It will be constructed as full-height drywall (10&nbsp;mm cement board on stud and track) in place of the
+      blockwork shown on the plan.</div></div>
+    <div class="finding"><div class="num">04</div><div>The existing structural columns in the side wall carry the roof
+      and roof slab. They must not be cut until temporary beam support is in place; this is provided for under
+      Allowance A1.</div></div>
+
+    <h2 class="sec">04. Scope of Works and Construction Sequence</h2>
+    <div class="seq"><div class="n">1.</div><div><strong>Altar steps</strong> — demolish the existing five steps, mark
+      out and cast new corrected steps (DPC membrane, formwork, concrete and finishing). Relocate the affected doors
+      and windows: the altar-side door moves approximately 0.9&nbsp;m into the window position.</div></div>
+    <div class="seq"><div class="n">2.</div><div><strong>Side wall foundation and structure (Ante-Room + Flower
+      Room)</strong> — excavate and blind, foundation blockwork, reinforcement from foundation to superstructure,
+      formwork and concrete to columns, beams and lintels. Existing structural columns are supported temporarily
+      before removal (Allowance A1); mason dresses, plasters and reinstalls doors and windows.</div></div>
+    <div class="seq"><div class="n">3.</div><div><strong>Ceiling installation</strong> — 10&nbsp;mm plasterboard on
+      stud and track: first the Main Hall + Fore Hall (117&nbsp;sqm), then the Altar section (39&nbsp;sqm), raised
+      approximately 600&nbsp;mm above the Main Hall ceiling.</div></div>
+    <div class="seq"><div class="n">4.</div><div><strong>New partition wall (Fore Hall / Main Hall)</strong> —
+      full-height drywall, 10&nbsp;mm cement board on 75&nbsp;mm stud and track, 60&nbsp;sqm one-side surface area,
+      built up to the new ceiling.</div></div>
+    <div class="seq"><div class="n">5.</div><div><strong>Altar curve wall</strong> — single-board curved wall,
+      10&nbsp;mm plasterboard on 60&nbsp;mm stud and track, 65&nbsp;sqm, following the curved apse geometry from the
+      Ante-Room corner to the Flower Room corner.</div></div>
+
+    <h2 class="sec">05. Cost Estimate</h2>
+    <p class="body">All rates are installed rates (material and labour) measured on one-side surface area. Cement is
+    taken at ₦12,500 per bag. Sand and granite under Item&nbsp;2 serve all concrete works including the altar steps.</p>
+    <h3 class="tbl-title">Table 1 — Altar Works (steps correction, door and window relocation)</h3>
+    <table class="cost">
+      <tr><th style="width:44px">#</th><th>Description</th><th style="width:140px">Basis</th><th style="width:110px">Amount (₦)</th></tr>
+      <tr><td>1.1</td><td>Demolition of the existing five altar steps, then casting, filling, rendering and finishing
+        of the new corrected steps — labour</td><td>Lump sum</td><td>150,000</td></tr>
+      <tr><td>1.2</td><td>DPC membrane (black nylon) laid under the new steps before casting</td><td>Lump sum</td><td>25,000</td></tr>
+      <tr><td>1.3</td><td>Cement for the new steps</td><td>20 bags @ ₦12,500</td><td>250,000</td></tr>
+      <tr><td>1.4</td><td>Formwork — boards, bracing and carpenter workmanship for casting the steps</td><td>Lump sum</td><td>100,000</td></tr>
+      <tr><td>1.5</td><td>Removal and relocation of doors and windows: the altar-side door moves approximately
+        0.9&nbsp;m — one window cell is removed and the door relocates into the window position. Covers all
+        4 affected doors and 8 windows</td><td>Lump sum</td><td>200,000</td></tr>
+      <tr class="sub"><td></td><td colspan="2">Subtotal — Altar works</td><td>725,000</td></tr>
+    </table>
+    <p class="body" style="font-size:13.5px;color:var(--gray)">Concrete aggregate (sand and granite) for the steps is
+    not repeated here — it is carried once under Table&nbsp;2 (items 2.10–2.11) and serves all concrete works on the
+    project.</p>
+
+    <h3 class="tbl-title">Table 2 — Side Wall Jobs (outer wall expansion, Ante-Room + Flower Room)</h3>
+    <table class="cost">
+      <tr><th style="width:44px">#</th><th>Description</th><th style="width:140px">Basis</th><th style="width:110px">Amount (₦)</th></tr>
+      <tr><td>2.1</td><td>Excavation and blinding for the new foundation of the expanded outer wall</td><td>Lump sum</td><td>100,000</td></tr>
+      <tr><td>2.2</td><td>Blockwork in foundation</td><td>300 blocks</td><td>600,000</td></tr>
+      <tr><td>2.3</td><td>Reinforcement from foundation to superstructure — rebar and labour for the two new columns
+        (with pad footings at the building edge), beams and lintels</td><td>Lump sum</td><td>2,500,000</td></tr>
+      <tr><td>2.4</td><td>Backfilling of the new foundation space — the excavated foundation area will be backfilled
+        using rubble obtained from the demolished existing walls together with sharp sand. Sharp sand is preferred to
+        laterite because it compacts more effectively and reduces the likelihood of voids or settlement; excess sharp
+        sand will already be available from the materials supplied to site, making it the most practical and
+        economical option</td><td>Lump sum</td><td>100,000</td></tr>
+      <tr><td>2.5</td><td>Demolition of existing walls and columns — to be carried out professionally to prevent
+        damage to the remaining structure during the alteration works</td><td>Lump sum</td><td>150,000</td></tr>
+      <tr><td>2.6</td><td>Formwork for columns and beams</td><td>Lump sum</td><td>1,000,000</td></tr>
+      <tr><td>2.7</td><td>Concrete works in beams, columns and lintels — cement</td><td>60 bags @ ₦12,500</td><td>750,000</td></tr>
+      <tr><td>2.8</td><td>Cement for plastering, dressing and block laying</td><td>40 bags @ ₦12,500</td><td>500,000</td></tr>
+      <tr><td>2.9</td><td>Mason — dressing, plastering, rendering and reinstalling all doors and windows in the new
+        wall</td><td>Lump sum</td><td>200,000</td></tr>
+      <tr><td>2.10</td><td>General materials — sharp sand (serves all concrete works on the project, including the
+        altar steps)</td><td>1 trip of a 30-ton truck, or 2 trips of 20-ton trucks</td><td>350,000</td></tr>
+      <tr><td>2.11</td><td>General materials — granite</td><td>30 tons</td><td>860,000</td></tr>
+      <tr class="sub"><td></td><td colspan="2">Subtotal — Side wall jobs</td><td>7,110,000</td></tr>
+    </table>
+    <p class="body" style="font-size:13.5px;color:var(--gray)">Sequence note: the new foundation is cast and cured
+    first; the existing wall is then broken out, and the existing structural columns are not cut until temporary beam
+    support is in place (carried under Allowance A1 in the summary).</p>
+
+    <h3 class="tbl-title">Table 3 — Ceiling, Dry Wall and Curve Wall</h3>
+    <table class="cost">
+      <tr><th style="width:44px">#</th><th>Description</th><th style="width:140px">Basis</th><th style="width:110px">Amount (₦)</th></tr>
+      <tr><td>3.1</td><td>Ceiling — Main Hall + Fore Hall: 10&nbsp;mm plasterboard on 60&nbsp;mm stud and track with
+        wall angles and profiles; installed first, before the partition</td><td>117&nbsp;sqm @ ₦15,000</td><td>1,755,000</td></tr>
+      <tr><td>3.2</td><td>Ceiling — Altar section: same build-up, raised approximately 600&nbsp;mm above the Main
+        Hall ceiling level</td><td>39&nbsp;sqm @ ₦15,000</td><td>585,000</td></tr>
+      <tr><td>3.3</td><td>New partition wall, Fore Hall / Main Hall: full-height drywall, 10&nbsp;mm cement board on
+        75&nbsp;mm stud and track, boarded both faces; rate measured on one-side surface area; built up to the new
+        ceiling</td><td>60&nbsp;sqm @ ₦31,500</td><td>1,890,000</td></tr>
+      <tr><td>3.4</td><td>Altar curve wall: single-board curved wall, 10&nbsp;mm plasterboard on 60&nbsp;mm stud and
+        track, following the curved apse geometry from the Ante-Room corner to the Flower Room corner</td><td>65&nbsp;sqm @ ₦17,000</td><td>1,105,000</td></tr>
+      <tr class="sub"><td></td><td colspan="2">Subtotal — Ceiling, dry wall and curve wall</td><td>5,335,000</td></tr>
+    </table>
+    <p class="body" style="font-size:13.5px;color:var(--gray)">All rates in Table&nbsp;3 are installed rates — material
+    and labour combined, measured on one-side surface area. Board alternatives for the partition (3.3): 8&nbsp;mm
+    cement board @ ₦25,000/sqm (saves ₦390,000) or 6&nbsp;mm @ ₦20,000/sqm (saves ₦690,000).</p>
+
+    <h3 class="tbl-title">Summary</h3>
+    <table class="cost">
+      <tr><th style="width:44px"></th><th>Section</th><th style="width:110px">Amount (₦)</th></tr>
+      <tr><td>1</td><td>Altar works (Table 1)</td><td>725,000</td></tr>
+      <tr><td>2</td><td>Side wall jobs (Table 2)</td><td>7,110,000</td></tr>
+      <tr><td>3</td><td>Ceiling, dry wall and curve wall (Table 3)</td><td>5,335,000</td></tr>
+      <tr class="sub"><td></td><td>Subtotal — measured works</td><td>13,170,000</td></tr>
+      <tr><td>A1</td><td>Allowance — scaffolding and beam support (incl. temporary support to existing columns during
+        demolition)</td><td>1,000,000</td></tr>
+      <tr><td>A2</td><td>Allowance — electrical reruns (rerouting services disturbed by wall, ceiling and partition
+        works)</td><td>500,000</td></tr>
+      <tr class="sub"><td></td><td>Subtotal including allowances</td><td>14,670,000</td></tr>
+      <tr><td></td><td>Contingency (10%)</td><td>1,467,000</td></tr>
+      <tr class="total"><td></td><td>ESTIMATED PROJECT TOTAL</td><td>₦16,137,000</td></tr>
+    </table>
+    <div class="note">NOTE: This is a rough estimate prepared for planning purposes only. It excludes VAT and
+    professional fees and is not a tender or contract sum. Figures should be confirmed against the contractor's firm
+    quotation before commitment.</div>
+
+    <h2 class="sec">06. Recommendations</h2>
+    <ol class="recs">
+      <li>Before demolition of any column, ensure that the temporary beam supports are ready and in place — this is
+        safety-critical.</li>
+      <li>A re-survey of the altar zone should be carried out before any work commences, due to the 0.6&nbsp;m
+        discrepancy between the plan and on-site measurements.</li>
+      <li>The rates for the drywall and ceiling works are general contractor rates. The best approach to save cost is
+        to purchase the materials directly and invite the contractor to install only — from experience this saves
+        15–20% of the cost.</li>
+      <li>Before commencement of any work, this estimate should be converted to a Bill of Quantities with actual
+        costs from all vendors and the contractor.</li>
+    </ol>
+
+    <h2 class="sec">07. Conclusion</h2>
+    <p class="body">The scope is well defined and sequenced, and the estimate is built from project-specific installed
+    rates and measured areas. At this level of definition, the recommended planning budget is
+    <strong>₦16,137,000</strong> including the 10% contingency, excluding VAT and professional fees. The next step is
+    to complete the site confirmations listed under Recommendations and obtain the contractor's firm quotation against
+    this scope.</p>
+
+    <h2 class="sec">Authorisation</h2>
+    <div class="auth">
+      <div class="slot"><div class="k">Prepared By</div><div class="v">Vollmann Akarakiri</div></div>
+      <div class="slot"><div class="k">Reviewed By</div><div class="v">Jenyo Akarakiri</div></div>
+      <div class="slot"><div class="k">Approved By</div><div class="v">[Name &amp; Title]</div></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Grail Movement · Hall of Worship, Osogbo</span>
+    <span class="mid">GRAIL MOVEMENT</span>
+    <span>RPT-2026-OSG-001</span>
+  </div>
+</div>
+</body>
+</html>
