@@ -1,5 +1,6 @@
 # status.md — Current Snapshot
 
+<<<<<<< Updated upstream
 **Last updated:** 2026-07-05 — Session 4 (BIM naming & automation standard)
 **Health:** 🟢 on track
 
@@ -48,6 +49,14 @@
   rendering to PDF with Playwright/Chromium and visually checking every
   page.
 - New `bim-standards/` folder: firm-wide Revit naming system (Projects, Sheets,
+=======
+**Last updated:** 2026-07-06 — Session 5 (BIM standards verified + first real template built in Revit 2027)
+**Health:** 🟢 on track
+
+## Now
+- `bim-standards/templates/DovaFutures_Architecture_Template.rte` now exists (built live in Revit 2027 via `Revit_Connector`): correct level numbering, `DF_ProjectCode` shared param bound, 15 firm view templates (file 06) built and 12 assigned to their views, stock Revit view templates deleted, default 3D view + sheet-list/room schedules + cover/drawing-index sheets added. Naming QA Audit run against it: 0 sheet/level/view violations. Still needs Phases (CO-AB, blocked — Revit API won't rename/create Phase objects, needs manual Phasing dialog work) and Worksets (blocked — `.rte` documents refuse `EnableWorksharing()`; belongs in a per-project setup step instead) and firm assets not yet created (titleblock family, keynote file, tag families, material library — used stock Revit "A1 metric" titleblock as placeholder).
+- `bim-standards/` firm-wide Revit naming system (Projects, Sheets,
+>>>>>>> Stashed changes
   Levels, Materials, Families, View Templates), a project-template build
   manifest, a loadable shared-parameter file, and a working pyRevit extension
   (5 tools) — see `bim-standards/README.md`.
