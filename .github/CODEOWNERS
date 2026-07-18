@@ -1,0 +1,24 @@
+# CODEOWNERS — changes to the stable structure require the principal's review.
+# Later entries take precedence. Docs: https://docs.github.com/articles/about-code-owners
+
+# Control layer — read by every session; changes affect everyone
+/company/            @Dblackone
+/governance/         @Dblackone
+/prompts/            @Dblackone
+/.claude/            @Dblackone
+/.agents/            @Dblackone
+/CLAUDE.md           @Dblackone
+/README.md           @Dblackone
+/.github/            @Dblackone
+
+# Deploy-critical — never moved or edited as a side effect of other work
+/index.html          @Dblackone
+/server.js           @Dblackone
+/package.json        @Dblackone
+/render.yaml         @Dblackone
+/CNAME               @Dblackone
+/dova-preorder/      @Dblackone
+
+# Financial / client records — append-only, principal-gated
+/projects/           @Dblackone
+/bim-standards/registers/  @Dblackone

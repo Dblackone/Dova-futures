@@ -28,7 +28,7 @@ and Fire Protection (FP).
 Supporting assets:
 - `registers/project-register.csv` — master log of every project code ever issued (append-only, never re-use or delete a row)
 - `shared-parameters/DovaFutures_SharedParameters.txt` — the one shared parameter file every family and project must use (load once in Revit, never fork it)
-- `pyRevit-extension/DovaBIM.extension/` — the working automation toolkit (see file 08)
+- `pyrevit-plugin/DovaBIM.extension/` — the working automation toolkit (see file 08)
 
 ## The one rule that makes all of this work
 

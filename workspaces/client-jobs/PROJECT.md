@@ -11,15 +11,15 @@
 ## Why this project exists
 
 This is the revenue: delivering client jobs profitably and professionally
-(`company/goals.md` goal 4). **Everything in `jobs/` is client-confidential**
+(`company/goals.md` goal 4). **Everything in `projects/` is client-confidential**
 — `company/ethics.md` confidentiality rules apply in full.
 
 ## Where the files live
 
-**`jobs/`** — one folder per job, named `<JOB-CODE>_<Client>_<Project-Name>`:
+**`projects/`** — one folder per job, named `<JOB-CODE>_<Client>_<Project-Name>`:
 
 ```
-jobs/DFL-2026-POOL-001_FHS-Hotel_Swimming-Pool-Ibafo/
+projects/DFL-2026-POOL-001_FHS-Hotel_Swimming-Pool-Ibafo/
 ├── 01-Documents/       ← quotes, invoices, contracts (from the template library)
 ├── 02-Drawings/
 ├── 03-Models/
@@ -41,7 +41,7 @@ jobs/DFL-2026-POOL-001_FHS-Hotel_Swimming-Pool-Ibafo/
 1. Issue the next job code and **append it to
    `bim-standards/registers/project-register.csv`** (append-only; never reuse a
    code). Follow `bim-standards/01-naming-projects.md`.
-2. Create `jobs/<JOB-CODE>_<Client>_<Project-Name>/` with the six numbered
+2. Create `projects/<JOB-CODE>_<Client>_<Project-Name>/` with the six numbered
    subfolders above (`.gitkeep` in empty ones).
 3. Add the job to the Active jobs table above and note it in this workspace's
    `memory/status.md`.

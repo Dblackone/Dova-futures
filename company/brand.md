@@ -1,8 +1,8 @@
 # brand.md — Brand Identity (Single Source of Truth)
 
 > **These values are canonical. Never re-declare them elsewhere — link here.**
-> The tokens below were previously copy-pasted across `project/README.md`,
-> `SESSION_HANDOFF.md`, and the old `context/05`. This file is now the one place
+> The tokens below were previously copy-pasted across `documents/README.md`,
+> `SESSION_HANDOFF.md` (now `memory/archive/session-handoff-2026-06.md`), and the old `context/05`. This file is now the one place
 > they live. If a value changes, it changes here, once.
 
 ## Legal + contact
@@ -53,7 +53,7 @@ The full, tokenised design system (CSS custom properties for colours, typography
 spacing, effects, fonts) lives in:
 
 ```
-project/_ds/dova-futures-design-system-*/
+documents/_ds/dova-futures-design-system-*/
 ├── tokens/colors.css  typography.css  spacing.css  effects.css  fonts.css
 ├── styles.css   _ds_bundle.js   _ds_manifest.json
 └── README.md

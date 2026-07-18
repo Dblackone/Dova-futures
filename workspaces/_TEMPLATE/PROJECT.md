@@ -48,3 +48,11 @@ repeat them.>
 2. `company/` (registry, goals, ethics, voice-and-tone, brand, standards, doc policy)
 3. This file
 4. `workspaces/<slug>/memory/status.md` + `next-up.md`
+
+## Workspace folders
+
+- `memory/` — this project's state (status, next-up, done-log, decisions).
+- `drafts/` — unapproved client documents awaiting the principal's sign-off;
+  promoted to `projects/<JOB>/01-Documents/` on approval
+  (`company/document-policy.md` §5).
+- Scratch/experiments go in the repo-root `sandbox/` (gitignored), never here.

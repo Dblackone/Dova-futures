@@ -37,7 +37,7 @@ agent follows regardless of which project it is working on.
 
 - `governance/guardrails.md` — the safety/approval rules. Still applies to all.
 - `prompts/` — maker, checker, loop-runner, triage prompts.
-- `TEAM.md` + `.claude/agents/` — the agent roster and definitions.
+- `governance/team.md` + `.claude/agents/` — the agent roster and definitions.
 - `memory/board.md` + `memory/triage.md` — cross-project coordination surfaces.
 
 ## Rule for changing anything in `company/`

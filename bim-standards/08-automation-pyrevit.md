@@ -1,11 +1,11 @@
 # 08 — Automation (pyRevit)
 
 The naming standard only holds if applying it isn't tedious. This is the
-automation layer: a real pyRevit extension (`pyRevit-extension/`) with tools
+automation layer: a real pyRevit extension (`pyrevit-plugin/`) with tools
 that do the repetitive, error-prone parts of the standard so nobody has to
 retype a sheet number 40 times or eyeball a naming convention by hand.
 
-Full install instructions and tool list: `pyRevit-extension/README.md`.
+Full install instructions and tool list: `pyrevit-plugin/README.md`.
 
 ## Why pyRevit
 
@@ -38,7 +38,7 @@ following the same pattern as the existing tools.
 1. Pick the repetitive task. If you've done it more than twice by hand,
    it belongs here.
 2. Write it as a `script.py` under the right panel in
-   `pyRevit-extension/DovaBIM.extension/`, following the existing tools'
+   `pyrevit-plugin/DovaBIM.extension/`, following the existing tools'
    structure (`revit.Transaction`, `forms` for input, `script.get_output()`
    for reporting).
 3. Reference the specific naming file (01–06) it enforces in the script's

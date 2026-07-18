@@ -78,7 +78,7 @@ When a session or AI inquiry involves creating or drafting any company document:
 ## File Map
 
 ```
-project/
+documents/
 ├── README.md                          ← this file (template rules)
 ├── DOVA Futures - Document Templates.html  ← bundled viewer (all templates)
 ├── index.html                         ← template gallery index

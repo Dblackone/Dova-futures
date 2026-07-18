@@ -26,7 +26,7 @@ work that keeps the hub and the firm functioning (`company/goals.md` goal 3).
   BIM-specific. (The project register itself lives with
   `workspaces/bim-standards`.)
 - **Hub maintenance** — keeping `company/registry.md` current, pruning stale
-  branches, archiving finished workspaces, maintaining `SESSION_HANDOFF.md`.
+  branches, archiving finished workspaces, maintaining `memory/archive/` history.
 - **Connector administration** — deciding which connectors (GitHub, Notion,
   Todoist, Calendar, Gmail, Drive) are enabled; the live list is in root
   `CLAUDE.md` §4.
