@@ -18,18 +18,18 @@ that policy governs everyone who uses it.**
 
 ## Where the files live
 
-**`templates/`** — the document-template library (renamed from `project/` in the
+**`documents/`** — the document-template library (renamed from `project/` in the
 2026-07 reorg):
 
 | Path | Purpose |
 |------|---------|
-| `templates/README.md` | Full template documentation: index, numbering, how-to (human + AI) |
-| `templates/index.html` | Template gallery — card grid linking all 9 templates |
-| `templates/templates/NN-*.html` | The production templates (pure HTML/CSS, print-ready): 00-Letterhead + the 9 document types |
+| `documents/README.md` | Full template documentation: index, numbering, how-to (human + AI) |
+| `documents/index.html` | Template gallery — card grid linking all 9 templates |
+| `documents/templates/NN-*.html` | The production templates (pure HTML/CSS, print-ready): 00-Letterhead + the 9 document types |
 | `scripts/gen-letterhead-docx.mjs` | Generator for the letterhead `.docx` (deps `docx` + `sharp` live in the root package.json) |
-| `templates/templates/*.dc.html` + `templates/index.dc.html` | Claude Design source files — need the CD runtime; do NOT open in a browser |
-| `templates/docx/*.docx` | Word-compatible versions |
-| `templates/_ds/dova-futures-design-system-*/` | Design system: token CSS files, bundle, manifest |
+| `documents/templates/*.dc.html` + `documents/index.dc.html` | Claude Design source files — need the CD runtime; do NOT open in a browser |
+| `documents/docx/*.docx` | Word-compatible versions |
+| `documents/_ds/dova-futures-design-system-*/` | Design system: token CSS files, bundle, manifest |
 | `memory/archive/chats/chat1.md`, `chat2.md` | Design session transcripts (rationale) |
 
 Note: generated documents for a specific client job live in that job's folder
@@ -53,15 +53,15 @@ single-page A4 PDF with no UI chrome. Test in Chrome and Safari.
 ## Project-specific rules & traps
 
 - **Adding a template:** design in the brand system, save as
-  `templates/NN-Name.html` (next sequence number), export a `.docx`, add a row
-  to `templates/README.md`, log the decision in this workspace's
+  `documents/templates/NN-Name.html` (next sequence number), export a `.docx`,
+  add a row to `documents/README.md`, log the decision in this workspace's
   `memory/decisions.md`.
-- Reference-number conventions are documented in `templates/README.md` and
+- Reference-number conventions are documented in `documents/README.md` and
   summarised in `company/document-policy.md`.
 - The `.dc.html` files are design sources, not production files.
 
 ## Read-order for a session working here
 
 1. Root `CLAUDE.md` → 2. `company/` (especially `document-policy.md` +
-   `brand.md`) → 3. this file + `templates/README.md` →
+   `brand.md`) → 3. this file + `documents/README.md` →
 4. `workspaces/document-templates/memory/status.md` + `next-up.md`

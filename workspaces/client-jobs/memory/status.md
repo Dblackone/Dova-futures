@@ -30,7 +30,7 @@
 - OSG: estimate/report await principal review before any client presentation.
 
 ## Notes for the next run
-- Job docs start from `templates/templates/` per `company/document-policy.md`.
+- Job docs start from `documents/templates/` per `company/document-policy.md`.
 - QTE-2026-001 print/PDF layout uses the thead/tfoot spacer pattern
   (fixed header/footer + `.header-space`/`.footer-space` + `.avoid-break`) —
   see ROAD-05..09 in done-log before touching its pagination.

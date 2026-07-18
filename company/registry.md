@@ -13,7 +13,7 @@
 |-----------|-----------------------|----------------------|----------|-----------------|
 | [`website`](../workspaces/website/PROJECT.md) | it touches the public marketing site `dovafutures.com` | repo **root**: `index.html`, `server.js`, `data/`, `public/`, `assets/` | GitHub Pages | Live; backend SMTP + social links still pending |
 | [`preorder-store`](../workspaces/preorder-store/PROJECT.md) | it touches the preorder/e-commerce sale platform | `dova-preorder/` | Render | Built; needs live env vars + persistence decision |
-| [`document-templates`](../workspaces/document-templates/PROJECT.md) | it creates/edits company document templates or the design system | `templates/` (+ `templates/_ds/`, `scripts/`) | — (static) | 10 templates (incl. 00-Letterhead) + design system; Express wiring pending |
+| [`document-templates`](../workspaces/document-templates/PROJECT.md) | it creates/edits company document templates or the design system | `documents/` (+ `documents/_ds/`, `scripts/`) | — (static) | 10 templates (incl. 00-Letterhead) + design system; Express wiring pending |
 | [`bim-standards`](../workspaces/bim-standards/PROJECT.md) | it touches Revit naming standards or the pyRevit toolkit | `bim-standards/` | — | Tools verified live in Revit (2 bugs fixed); Architecture .rte built; QA on real firm project pending |
 | [`client-jobs`](../workspaces/client-jobs/PROJECT.md) | it is a specific paid client project or job | `projects/` | — | 3 active: FHS Pool (Ibafo), C.K. Musa road (Afuze), Hall of Worship (Osogbo) |
 | [`company-ops`](../workspaces/company-ops/PROJECT.md) | internal/admin work not tied to one client (registers, payroll, automations, heartbeat) | `automations/`, registers, admin docs | — | Baseline scaffold |

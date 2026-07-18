@@ -2,8 +2,8 @@
 
 > **Binding rule for every agent run, in every workspace.** Any session or
 > inquiry that involves creating, drafting, editing, or referencing a company
-> document MUST use the templates in `templates/templates/`. Read
-> `templates/README.md` first.
+> document MUST use the templates in `documents/templates/`. Read
+> `documents/README.md` first.
 > (Migrated from `context/05-document-templates.md`. Brand tokens now live in
 > `company/brand.md` — the single source of truth.)
 
@@ -23,15 +23,15 @@ DOVA Futures output consistent.
 
 | Document needed | Template to load |
 |-----------------|-----------------|
-| Formal report / assessment / memo | `templates/templates/01-Report.html` |
-| Pricing proposal / scope of work | `templates/templates/02-Project-Quote.html` |
-| Payment request for work done | `templates/templates/03-Payment-Invoice.html` |
-| Project sign-off / handover | `templates/templates/04-Completion-Form.html` |
-| Staff payroll record | `templates/templates/05-Salary-Slip.html` |
-| Internal memo / staff letter | `templates/templates/06-Internal-Letter.html` |
-| Letter to client / contractor / agency | `templates/templates/07-External-Letter.html` |
-| Periodic project status update | `templates/templates/08-Project-Report.html` |
-| Milestone-linked payment claim | `templates/templates/09-Milestone-Payment-Request.html` |
+| Formal report / assessment / memo | `documents/templates/01-Report.html` |
+| Pricing proposal / scope of work | `documents/templates/02-Project-Quote.html` |
+| Payment request for work done | `documents/templates/03-Payment-Invoice.html` |
+| Project sign-off / handover | `documents/templates/04-Completion-Form.html` |
+| Staff payroll record | `documents/templates/05-Salary-Slip.html` |
+| Internal memo / staff letter | `documents/templates/06-Internal-Letter.html` |
+| Letter to client / contractor / agency | `documents/templates/07-External-Letter.html` |
+| Periodic project status update | `documents/templates/08-Project-Report.html` |
+| Milestone-linked payment claim | `documents/templates/09-Milestone-Payment-Request.html` |
 
 ---
 
@@ -43,7 +43,7 @@ DOVA Futures output consistent.
    HTML (shown as orange placeholders). The letterhead, logo, colours, and
    contact block are fixed — never modify them.
 3. **Apply the correct reference number.** Numbering convention (full detail in
-   `templates/README.md`): `RPT-` / `QTE-` / `INV-` / `CC-` / `SAL-` / `IL-` /
+   `documents/README.md`): `RPT-` / `QTE-` / `INV-` / `CC-` / `SAL-` / `IL-` /
    `EL-` / `PR-` / `MPR-` + `YYYY-NNN`.
 4. **Do not send or publish.** Draft only. All outbound documents require
    explicit approval from the principal before delivery. See
@@ -70,7 +70,7 @@ DOVA Futures output consistent.
 
 - Code files, config files, README files — `company/engineering-standards.md`
 - Website copy or UI text — `company/voice-and-tone.md`
-- Raw design assets (Figma, renders) — the design system in `templates/_ds/`
+- Raw design assets (Figma, renders) — the design system in `documents/_ds/`
 
 ---
 
@@ -84,6 +84,6 @@ re-declare the values elsewhere.
 
 ## Reference
 
-- Full template documentation: `templates/README.md`
-- Brand & design tokens: `company/brand.md` → `templates/_ds/`
+- Full template documentation: `documents/README.md`
+- Brand & design tokens: `company/brand.md` → `documents/_ds/`
 - Guardrails: `governance/guardrails.md`

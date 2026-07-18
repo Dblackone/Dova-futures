@@ -10,7 +10,7 @@
   (branch-per-session, write-scope, sandbox/drafts promotion), `.github/`
   CODEOWNERS + PR template, gitignored `sandbox/`, per-workspace `drafts/`,
   scope READMEs for assets/public/data/scripts.
-- Folder renames done: `project/`→`templates/`, `jobs/`→`projects/`,
+- Folder renames done: `project/`→`documents/`, `jobs/`→`projects/`,
   `pyRevit-extension/`→`pyrevit-plugin/`; `TEAM.md`→`governance/team.md`;
   `SESSION_HANDOFF.md`+`chats/`→`memory/archive/`.
 - Heartbeat schedule documented (`automations/heartbeat.md`) but no scheduled

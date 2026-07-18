@@ -14,7 +14,7 @@ in its own workspace.
 | `workspaces/<project>/` | Per-project context (`PROJECT.md`) + memory — read only yours |
 
 **Projects:** marketing website (repo root, GitHub Pages), preorder store
-(`dova-preorder/`, Render), document templates (`templates/`), BIM standards
+(`dova-preorder/`, Render), document templates (`documents/`), BIM standards
 (`bim-standards/`), client jobs (`projects/`), and internal ops.
 
 > Deploy note: website files intentionally live at the repo root (GitHub Pages
