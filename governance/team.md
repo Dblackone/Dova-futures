@@ -1,4 +1,4 @@
-# TEAM.md — The Agent Team (Org + Naming)
+# team.md — The Agent Team (Org + Naming)
 
 > Layers a managed team onto the loop. Real life: jobs go to team members on
 > branches, a lead manages the repo, QA checks the work. Here: named agents do

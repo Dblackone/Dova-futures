@@ -11,3 +11,7 @@ dova-preorder/*.db
 dova-preorder/*.db-shm
 dova-preorder/*.db-wal
 dova-preorder/data/
+
+# Session scratch space — never committed (see governance/collaboration.md)
+sandbox/*
+!sandbox/README.md

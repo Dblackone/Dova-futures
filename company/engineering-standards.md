@@ -19,7 +19,7 @@
 - One logical change per commit. No "misc fixes."
 - Never commit `.env`, secrets, credentials, or large binaries.
 - Agents sign commits with their callsign trailer: `Agent: @build/forge`
-  (see `TEAM.md`).
+  (see `governance/team.md`).
 
 ## PR checklist (the checker enforces this)
 
@@ -56,6 +56,6 @@
 ## Where the rest lives
 
 - Safety/approval rules: `governance/guardrails.md`
-- Agent roles + branch naming: `TEAM.md`
+- Agent roles + branch naming: `governance/team.md`
 - Brand tokens for anything user-facing: `company/brand.md`
 - Writing style for user-facing text: `company/voice-and-tone.md`

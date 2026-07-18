@@ -9,7 +9,7 @@ folder structure alone.
    the machine.
 2. In Revit: **pyRevit tab → Settings → Custom Extension Directories → Add
    Folder** → point it at this folder
-   (`bim-standards/pyRevit-extension/`, the parent of `DovaBIM.extension/`).
+   (`bim-standards/pyrevit-plugin/`, the parent of `DovaBIM.extension/`).
 3. **pyRevit tab → Reload.**
 4. A new **DovaBIM** tab appears in the Revit ribbon with **Naming** and
    **Setup** panels.

@@ -260,7 +260,7 @@ A clean reference card the user can use to fill the HTML template manually:
 
 ```
 DOCUMENT: [Type] — [Reference]
-TEMPLATE: project/templates/[NN-name.html]
+TEMPLATE: templates/templates/[NN-name.html]
 
 FIELD VALUES
 ─────────────────────────────────────────

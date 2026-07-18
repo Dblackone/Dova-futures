@@ -24,7 +24,7 @@ DOVA-[YY]-[SEQ]-[SHORT-NAME]
 4. Use the resulting code everywhere: folder name, model file names, sheet
    title block "Project Number" field, invoices, and correspondence.
 
-This code is the single join key between the website's `project/` document
+This code is the single join key between the company's `templates/` document
 templates (quotes, invoices, completion forms) and the BIM deliverables — the
 same `DOVA-YY-SEQ` appears on both.
 

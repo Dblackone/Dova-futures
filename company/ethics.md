@@ -11,7 +11,7 @@
    credentials, prices, or completion claims. If an asset or fact is a
    placeholder, label it as one.
 2. **Client confidentiality.** Client names, budgets, drawings, and
-   correspondence in `jobs/` are confidential. Never reuse one client's material
+   correspondence in `projects/` are confidential. Never reuse one client's material
    in another client's deliverable or in public marketing without explicit
    approval.
 3. **Financial integrity.** Invoices, quotes, and milestone claims state only

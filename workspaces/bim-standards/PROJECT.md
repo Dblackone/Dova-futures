@@ -26,7 +26,7 @@ fast to open, coordinate, hand over, and reuse.
 | `bim-standards/08-automation-pyrevit.md` | Extension install + tool docs |
 | `bim-standards/registers/project-register.csv` | Master log of every project code issued — **append-only, never reuse/delete a row** |
 | `bim-standards/shared-parameters/DovaFutures_SharedParameters.txt` | The ONE shared-parameter file — load once, never fork |
-| `bim-standards/pyRevit-extension/DovaBIM.extension/` | 5 tools: Sheet Renumberer, Naming QA Audit, New Project Setup, Level Builder, Apply View Templates |
+| `bim-standards/pyrevit-plugin/DovaBIM.extension/` | 5 tools: Sheet Renumberer, Naming QA Audit, New Project Setup, Level Builder, Apply View Templates |
 
 ## How to run / verify
 

@@ -5,7 +5,14 @@
 
 ## Now
 - Hub reorganized into `company/` (shared control point) + `workspaces/`
-  (per-project isolation) this session; root `CLAUDE.md` is now a router.
+  (per-project isolation); root `CLAUDE.md` is a router.
+- Collaboration layer added (2026-07-18): `governance/collaboration.md`
+  (branch-per-session, write-scope, sandbox/drafts promotion), `.github/`
+  CODEOWNERS + PR template, gitignored `sandbox/`, per-workspace `drafts/`,
+  scope READMEs for assets/public/data/scripts.
+- Folder renames done: `project/`→`templates/`, `jobs/`→`projects/`,
+  `pyRevit-extension/`→`pyrevit-plugin/`; `TEAM.md`→`governance/team.md`;
+  `SESSION_HANDOFF.md`+`chats/`→`memory/archive/`.
 - Heartbeat schedule documented (`automations/heartbeat.md`) but no scheduled
   runs are actually wired up yet.
 

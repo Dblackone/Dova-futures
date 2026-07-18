@@ -26,6 +26,13 @@ most context in it is NOT about your task.
 5. If your task fits no workspace: for a new project, copy
    `workspaces/_TEMPLATE/` and register it; for an undecided item, park it in
    `memory/triage.md`. Don't wedge work into the wrong workspace.
+6. **Stay in your write-scope.** You may modify only: your workspace (its
+   `PROJECT.md`, `memory/`, `drafts/`), the code paths your workspace's
+   `PROJECT.md` declares, the gitignored `sandbox/` (scratch), the shared
+   board/triage, and your row in the registry. Everything else — `company/`,
+   `governance/`, other workspaces, deploy files — is read-only; changes there
+   go through a dedicated principal-reviewed PR. Full contract:
+   `governance/collaboration.md`.
 
 ## 1. How every run works (the loop)
 
@@ -91,7 +98,7 @@ Only use the connectors listed here. Adding one is a deliberate decision.
 - A **maker** run builds. It never marks its own work approved.
 - A **checker** run verifies independently against acceptance criteria, then
   approves or rejects with reasons. Use `prompts/maker.md` and
-  `prompts/checker.md`. Team roster + branch naming: `TEAM.md`.
+  `prompts/checker.md`. Team roster + branch naming: `governance/team.md`.
 
 ## 6. Guardrails (you stay the engineer)
 
