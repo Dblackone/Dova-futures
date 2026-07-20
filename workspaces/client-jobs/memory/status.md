@@ -18,9 +18,11 @@
     and RPT-2026-OSG-001 project report drafted.
 
 ## Recently done (last 3)
+- HW-01: drafted RPT/QTE-2026-POOL-002 for new client **Homework** — 5.4×3.2m
+  pool, FHS Ibafo rates +~14% location, Grand Total **₦7,180,000** (supervision
+  + 7.5% VAT incl.). Drafts only in `drafts/`; awaiting principal approval.
 - ROAD-10: principal approved final 3-page QTE-2026-001 PDF (2026-07-05).
 - Osogbo job created with scope + estimate + report (PR #20, commit 06719e2).
-- Pool: INV-002..005, VQ-001, progress report + correspondence filed (f0a538f).
 
 ## Open / blocked
 - ROAD: blocked on client feedback — pavement alternate choice + quote
