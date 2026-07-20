@@ -33,6 +33,7 @@ projects/DFL-2026-POOL-001_FHS-Hotel_Swimming-Pool-Ibafo/
 | Job code | Client / project | Status |
 |----------|------------------|--------|
 | `DFL-2026-POOL-001` | FHS Hotel — Swimming Pool, Ibafo | active; INV-001..005 issued, VQ-001 waterfall variation, progress report June 2026 |
+| `DFL-2026-POOL-002` | Homework — Swimming Pool (5.4×3.2m) | active; RPT-2026-POOL-002 Report & Quotation filed (Contract Sum ₦7,567,893); client contact/signatures pending |
 | `DFL-2026-ROAD-001` | C. K. Musa — Access road erosion repair, Afuze, Edo | active; QTE-2026-001 approved by principal, awaiting client alternate choice |
 | `GM-2026-OSG-001` | Grail Movement — Hall of Worship, Osogbo (altar + structure remodification) | active; scope + estimate + RPT-001 drafted, principal review pending |
 

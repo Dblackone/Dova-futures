@@ -15,6 +15,12 @@
 4. [ ] **Populate FHS Pool job folders** — remaining drawings and site photos
    into `02-Drawings/`, `04-Photos/`.
 
+5. [ ] **HW: complete the client-specific fields before presentation** — job
+   DFL-2026-POOL-002 is opened, filed (`01-Documents/`) and merged. Before it
+   goes to the client, fill the "Prepared For" contact person/address and the
+   Reviewed/Client-Acceptance signature blocks in `RPT-2026-POOL-002`. _Nothing
+   sent to the client by an agent — presenting is the principal's action._
+
 ## Someday / backlog
 - Backfill older completed projects (see `assets/Project Pictures/`) as
   archived job folders if useful for records.

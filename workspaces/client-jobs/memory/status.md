@@ -4,7 +4,7 @@
 **Health:** 🟢 on track
 
 ## Now
-- **3 active jobs:**
+- **4 active jobs:**
   - **DFL-2026-POOL-001** (FHS Hotel Swimming Pool, Ibafo) — invoices
     INV-001..005 issued, VQ-2026-POOL-001 waterfall variation quoted,
     PROGRESS-REPORT-001 (June 2026) filed, HNM July correspondence on file.
@@ -18,9 +18,14 @@
     and RPT-2026-OSG-001 project report drafted.
 
 ## Recently done (last 3)
+- HW: job **DFL-2026-POOL-002** (Homework — Swimming Pool, 5.4×3.2m) opened and
+  filed. Combined **Report & Quotation** `RPT-2026-POOL-002` (Contract Sum
+  **₦7,567,893**, 7.5% VAT incl.; running header/footer + page numbers) now
+  lives in `projects/DFL-2026-POOL-002_Homework_Swimming-Pool/01-Documents/`.
+  Registered (Seq 002), added to PROJECT.md. Only client contact/address +
+  Reviewed/Client-Acceptance signatures remain to complete before presentation.
 - ROAD-10: principal approved final 3-page QTE-2026-001 PDF (2026-07-05).
 - Osogbo job created with scope + estimate + report (PR #20, commit 06719e2).
-- Pool: INV-002..005, VQ-001, progress report + correspondence filed (f0a538f).
 
 ## Open / blocked
 - ROAD: blocked on client feedback — pavement alternate choice + quote
