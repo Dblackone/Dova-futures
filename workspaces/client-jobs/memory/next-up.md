@@ -15,14 +15,15 @@
 4. [ ] **Populate FHS Pool job folders** — remaining drawings and site photos
    into `02-Drawings/`, `04-Photos/`.
 
-5. [ ] **HW: principal review of Homework pool quote** — review drafts
-   `RPT-2026-POOL-002` + `QTE-2026-POOL-002` in `drafts/` (Grand Total
-   ₦7,180,000, supervision + VAT incl.). Confirm the ≈14% location uplift and
-   the ₦639,220 supervision fee, and fill client contact/address. On approval:
-   issue a new job code (append to `bim-standards/registers/project-register.csv`),
-   open the `projects/<code>_Homework_Swimming-Pool/` job folder, and move the
-   files from `drafts/` into its `01-Documents/` / `06-Reports/`. _Nothing sent
-   to the client by an agent — presenting is the principal's action._
+5. [ ] **HW: principal review of Homework pool Report & Quotation** — review
+   the single combined draft `RPT-2026-POOL-002` in `drafts/` (Contract Sum
+   ₦7,180,000, supervision + 7.5% VAT incl.). Confirm the ≈14% location uplift
+   and the ₦639,220 supervision fee, and fill client contact/address (+ contact
+   person in the meta grid). On approval: issue a new job code (append to
+   `bim-standards/registers/project-register.csv`), open the
+   `projects/<code>_Homework_Swimming-Pool/` job folder, and move the file from
+   `drafts/` into its `06-Reports/` (combined report+quote). _Nothing sent to
+   the client by an agent — presenting is the principal's action._
 
 ## Someday / backlog
 - Backfill older completed projects (see `assets/Project Pictures/`) as
