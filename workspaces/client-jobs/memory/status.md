@@ -18,12 +18,13 @@
     and RPT-2026-OSG-001 project report drafted.
 
 ## Recently done (last 3)
-- HW: drafted a single combined **Report & Quotation** (`RPT-2026-POOL-002`)
-  for new client **Homework** — 5.4×3.2m pool, mirrors the FHS Ibafo report
-  format (Sections A–E BOQ), FHS rates +~14% location, Contract Sum
-  **₦7,180,000** (supervision + 7.5% VAT incl.). Separate one-page quote
-  removed at principal's request; drawings/3D omitted. Draft only in `drafts/`;
-  awaiting principal approval.
+- HW: final client-ready combined **Report & Quotation** (`RPT-2026-POOL-002`)
+  for new client **Homework** — 5.4×3.2m pool, Sections A–E BOQ. Principal
+  signed off then issued corrections (now applied): all pricing-basis/FHS/
+  comparison refs removed, client-supply + water/power-to-powerhouse callout
+  added, figures revised, warranty 6mo, borderless. **Contract Sum ₦8,374,143**
+  (supervision + 7.5% VAT incl.). PDF rendered + delivered. Draft in `drafts/`;
+  ready to file into `projects/` on the principal's go-ahead.
 - ROAD-10: principal approved final 3-page QTE-2026-001 PDF (2026-07-05).
 - Osogbo job created with scope + estimate + report (PR #20, commit 06719e2).
 

@@ -11,7 +11,6 @@
   @media print {
     body { background: white !important; padding: 0 !important; }
     [data-no-print] { display: none !important; }
-    [data-paper] { box-shadow: none !important; max-width: 100% !important; }
     .avoid-break { break-inside: avoid; }
   }
   [contenteditable]:focus { outline: 2px solid #5AA17C; outline-offset: 2px; border-radius: 2px; font-style: normal !important; color: #1A1A1A !important; }
@@ -26,17 +25,17 @@
 </style>
 </head>
 <body>
-<div style="min-height:100vh;background:#E8E1D5;padding:32px 24px;font-family:'Inter',sans-serif;box-sizing:border-box;">
+<div style="min-height:100vh;background:#fff;padding:0;font-family:'Inter',sans-serif;box-sizing:border-box;">
 
-  <div data-no-print style="max-width:794px;margin:0 auto 16px;display:flex;justify-content:space-between;align-items:center;">
+  <div data-no-print style="max-width:794px;margin:0 auto;padding:20px 0 12px;display:flex;justify-content:space-between;align-items:center;">
     <a href="../index.html" style="font-size:13px;color:#1C4636;text-decoration:none;font-weight:500;letter-spacing:0.02em;">← All Templates</a>
     <div style="display:flex;gap:16px;align-items:center;">
-      <span style="font-size:11px;color:#6B7280;font-style:italic;">DRAFT · Homework · Swimming Pool · pending principal approval</span>
+      <span style="font-size:11px;color:#6B7280;font-style:italic;">Homework · Swimming Pool · Report &amp; Quotation</span>
       <button onclick="window.print()" style="background:#1C4636;color:#F5EFE8;border:none;padding:9px 20px;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:pointer;border-radius:2px;letter-spacing:0.06em;">PRINT / SAVE PDF</button>
     </div>
   </div>
 
-  <div data-paper style="background:#fff;max-width:794px;margin:0 auto;box-shadow:0 4px 40px rgba(26,26,26,.16);">
+  <div data-paper style="background:#fff;max-width:794px;margin:0 auto;">
 
     <!-- Letterhead -->
     <div style="background:#1C4636;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;">
@@ -89,9 +88,19 @@
       </div>
 
       <!-- 1.0 -->
-      <div class="avoid-break" style="margin-bottom:26px;">
+      <div class="avoid-break" style="margin-bottom:24px;">
         <div class="sec-h">1.0 &nbsp; PROJECT OVERVIEW</div>
-        <div class="p"><span contenteditable="true" style="outline:none;display:block;">This report presents the design description, scope of works, preliminary Bill of Quantities (BOQ) and quotation for the construction of a reinforced-concrete swimming pool for Homework. The pool measures 5.4&nbsp;m &times; 3.2&nbsp;m on plan with a graduated floor from 1.0&nbsp;m at the shallow end to 1.6&nbsp;m at the deep end, finished in glass mosaic tiles and serviced by a sand-filter circulation system with underwater lighting. The pool is closely comparable in size and specification to the pool DOVA Futures recently completed at Ibafo (Ref: DFL/QT/2026/POOL-001); the same proven build-up rates have therefore been used as the basis of this quotation, with a modest location adjustment applied to reflect this site.</span></div>
+        <div class="p"><span contenteditable="true" style="outline:none;display:block;">This report presents the design description, scope of works, preliminary Bill of Quantities (BOQ) and quotation for the construction of a reinforced-concrete swimming pool for Homework. The pool measures 5.4&nbsp;m &times; 3.2&nbsp;m on plan, with a graduated floor from 1.0&nbsp;m at the shallow end to 1.6&nbsp;m at the deep end. It is finished in glass mosaic tiles over waterproofed render and serviced by a sand-filter circulation system with underwater lighting. The design incorporates corner entry steps for safe, gradual access, a concrete coping band wrapping the water body with an adjoining paved deck, and a recessed plant niche (powerhouse) housing the filtration and circulation equipment.</span></div>
+      </div>
+
+      <!-- Client responsibilities callout -->
+      <div class="avoid-break" style="margin-bottom:28px;border:2px solid #B85C38;border-radius:3px;background:#FFF8F5;padding:18px 22px;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:14px;color:#B85C38;letter-spacing:0.16em;margin-bottom:12px;">IMPORTANT — ITEMS TO BE PROVIDED BY THE CLIENT</div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-size:13.5px;color:#1A1A1A;line-height:1.55;font-weight:600;">
+          <div style="display:flex;gap:10px;"><span style="color:#B85C38;">&#10003;</span><span>All materials for civil works and tiling shall be provided by the Client.</span></div>
+          <div style="display:flex;gap:10px;"><span style="color:#B85C38;">&#10003;</span><span>The Client shall provide water supply up to the powerhouse.</span></div>
+          <div style="display:flex;gap:10px;"><span style="color:#B85C38;">&#10003;</span><span>The Client shall provide electrical power connection up to the powerhouse.</span></div>
+        </div>
       </div>
 
       <!-- 1.1 -->
@@ -101,8 +110,8 @@
           <div>· Reinforced-concrete pool with corner entry steps for safe, gradual access into the pool.</div>
           <div>· Graduated floor sloping from 1.0&nbsp;m (shallow end) to 1.6&nbsp;m (deep end).</div>
           <div>· Concrete coping band wrapping the water body, with an adjoining paved deck / seating area.</div>
-          <div>· Recessed plant niche housing the sand filter and circulation pump, screened within the boundary wall zone.</div>
-          <div>· Finish: glass mosaic pool tiles (Client supply) over waterproofed render; matt coping and external walkway tiles.</div>
+          <div>· Recessed plant niche (powerhouse) housing the sand filter and circulation pump, screened within the boundary wall zone.</div>
+          <div>· Finish: glass mosaic pool tiles over waterproofed render; matt coping and external walkway tiles.</div>
         </div>
       </div>
 
@@ -131,9 +140,9 @@
         <div class="p" style="display:flex;flex-direction:column;gap:6px;">
           <div>· <strong>Civil works:</strong> setting out, excavation, blinding, reinforced-concrete pool base and walls, 9″ blockwork, rendering and waterproofing.</div>
           <div>· <strong>Mechanical works:</strong> supply and installation of sand filter, circulation pump, suction/return pipework, skimmer and main-drain fittings.</div>
-          <div>· <strong>Electrical works:</strong> underwater pool lights, wiring, conduits and control-panel installation.</div>
+          <div>· <strong>Electrical works:</strong> underwater pool lights, wiring, conduits, connection to the powerhouse and control-panel installation.</div>
           <div>· <strong>Tiling works:</strong> laying of Client-supplied mosaic tiles to pool floor, walls and steps (labour only).</div>
-          <div style="margin-top:4px;color:#6B7280;">Civil materials and tiles are supplied by the Client (Section A). All labour, and the mechanical and electrical packages, are executed by Dova Futures Limited.</div>
+          <div style="margin-top:4px;color:#6B7280;">All civil-works materials and tiles are supplied by the Client (Section A). All labour, and the mechanical and electrical packages, are executed by Dova Futures Limited.</div>
         </div>
       </div>
 
@@ -144,14 +153,13 @@
           <thead><tr><th>Description</th><th style="text-align:right;">Quantity</th></tr></thead>
           <tbody>
             <tr><td>9″ Blocks</td><td class="num">350 – 500 Nos</td></tr>
-            <tr><td>Cement</td><td class="num">130 – 160 Bags</td></tr>
-            <tr><td>Marine Boards</td><td class="num">20 Nos</td></tr>
-            <tr><td>2″ × 3″ Timber (incl. 50% bracing)</td><td class="num">90 Lengths</td></tr>
+            <tr><td>Cement</td><td class="num">100 – 150 Bags</td></tr>
+            <tr><td>Marine Boards</td><td class="num">25 Sheets</td></tr>
+            <tr><td>2″ × 3″ Timber</td><td class="num">100 Pieces</td></tr>
+            <tr><td>Binding Wire</td><td class="num">1 Roll</td></tr>
             <tr><td>Nails</td><td class="num">3 Bags</td></tr>
-            <tr><td>Waterproofing Powder</td><td class="num">1 Bag</td></tr>
-            <tr><td>Waterproofing Liquid</td><td class="num">1 Keg</td></tr>
-            <tr><td>10mm Reinforcement Bars</td><td class="num">50 Lengths</td></tr>
-            <tr><td>12mm Reinforcement Bars</td><td class="num">50 Lengths</td></tr>
+            <tr><td>Waterproofing Liquid (Aquaseal)</td><td class="num">2 Kegs</td></tr>
+            <tr><td>12mm Reinforcement Bars</td><td class="num">Approx. 2 Tons</td></tr>
             <tr><td>Sharp Sand · Granite · Plaster Sand · Tiles</td><td class="num">As Required</td></tr>
           </tbody>
         </table>
@@ -164,14 +172,12 @@
         <table class="boq">
           <thead><tr><th>Description</th><th style="text-align:right;">Amount (₦)</th></tr></thead>
           <tbody>
-            <tr><td>Formwork Labour</td><td class="num">114,000</td></tr>
-            <tr><td>Reinforcement Works</td><td class="num">137,000</td></tr>
-            <tr><td>Masonry Works — Excavation, Blinding, Casting of Base &amp; Walls, Blockwork (Lump Sum)</td><td class="num">739,000</td></tr>
-            <tr class="sub"><td>Civil Works Labour Subtotal</td><td class="num">990,000</td></tr>
-            <tr><td style="color:#6B7280;"><em>OPTIONAL:</em> Felting of Pool Walls (waterproof membrane) — Lump Sum</td><td class="num" style="color:#6B7280;">313,000</td></tr>
+            <tr><td>Formwork</td><td class="num">200,000</td></tr>
+            <tr><td>Reinforcement Work</td><td class="num">200,000</td></tr>
+            <tr><td>Masonry Work &amp; Excavation — Blinding, Casting of Base &amp; Walls, Blockwork (Lump Sum)</td><td class="num">1,000,000</td></tr>
+            <tr class="sub"><td>Civil Works Labour Subtotal</td><td class="num">1,400,000</td></tr>
           </tbody>
         </table>
-        <div style="font-size:10.5px;color:#6B7280;margin-top:6px;font-style:italic;">The optional wall felting adds a waterproof membrane barrier behind the structural walls — recommended where the water table is high or soil moisture is significant. It is priced separately for the Client's decision and is <strong>not</strong> included in the Contract Sum.</div>
       </div>
 
       <!-- 5.0 Section C -->
@@ -180,9 +186,9 @@
         <table class="boq">
           <thead><tr><th>Description</th><th style="text-align:right;">Amount (₦)</th></tr></thead>
           <tbody>
-            <tr><td>Mechanical Materials (sand filter, circulation pump, pipework &amp; fittings)</td><td class="num">2,214,000</td></tr>
-            <tr><td>Mechanical Installation Labour</td><td class="num">456,000</td></tr>
-            <tr class="sub"><td>Mechanical Works Subtotal</td><td class="num">2,670,000</td></tr>
+            <tr><td>Mechanical Materials (sand filter, circulation pump, pipework &amp; fittings)</td><td class="num">2,300,000</td></tr>
+            <tr><td>Labour Installation</td><td class="num">550,000</td></tr>
+            <tr class="sub"><td>Mechanical Works Subtotal</td><td class="num">2,850,000</td></tr>
           </tbody>
         </table>
       </div>
@@ -193,11 +199,11 @@
         <table class="boq">
           <thead><tr><th>Description</th><th style="text-align:right;">Amount (₦)</th></tr></thead>
           <tbody>
-            <tr><td>Underwater Pool Lights</td><td class="num">400,000</td></tr>
-            <tr><td>Electrical Wiring &amp; Conduits</td><td class="num">228,000</td></tr>
-            <tr><td>Control Panel</td><td class="num">342,000</td></tr>
-            <tr><td>Installation &amp; Labour</td><td class="num">315,000</td></tr>
-            <tr class="sub"><td>Electrical Works Subtotal</td><td class="num">1,285,000</td></tr>
+            <tr><td>Lighting (underwater pool lights)</td><td class="num">400,000</td></tr>
+            <tr><td>Wiring &amp; Connection to Powerhouse</td><td class="num">350,000</td></tr>
+            <tr><td>Control Panel Connections</td><td class="num">350,000</td></tr>
+            <tr><td>Labour Installation</td><td class="num">380,000</td></tr>
+            <tr class="sub"><td>Electrical Works Subtotal</td><td class="num">1,480,000</td></tr>
           </tbody>
         </table>
       </div>
@@ -220,8 +226,8 @@
         <table class="boq">
           <thead><tr><th>Description</th><th style="text-align:right;">Amount (₦)</th></tr></thead>
           <tbody>
-            <tr><td>Pool Tiling Labour (floor, walls &amp; steps) — Lump Sum</td><td class="num">400,000</td></tr>
-            <tr class="sub"><td>Tiling Works Subtotal</td><td class="num">400,000</td></tr>
+            <tr><td>Labour for Tiling (floor, walls &amp; steps) — Lump Sum</td><td class="num">500,000</td></tr>
+            <tr class="sub"><td>Tiling Works Subtotal</td><td class="num">500,000</td></tr>
           </tbody>
         </table>
         <div style="font-size:10.5px;color:#6B7280;margin-top:6px;font-style:italic;">Covers installation of mosaic tiles inside the pool, matt grey coping tiles around the pool edge, and matt tiles with wood finishes to the external walkway.</div>
@@ -233,25 +239,25 @@
         <table class="boq">
           <thead><tr><th>Description</th><th style="text-align:right;">Amount (₦)</th></tr></thead>
           <tbody>
-            <tr><td>B — Civil Works Labour</td><td class="num">990,000</td></tr>
-            <tr><td>C — Mechanical Works</td><td class="num">2,670,000</td></tr>
-            <tr><td>D — Electrical Works</td><td class="num">1,285,000</td></tr>
-            <tr><td>E — Tiling Labour (Lump Sum)</td><td class="num">400,000</td></tr>
-            <tr class="sub"><td>Works Subtotal</td><td class="num">5,345,000</td></tr>
-            <tr><td>Contingency Allowance (3%)</td><td class="num">160,350</td></tr>
-            <tr><td>Contractor's Overheads &amp; Profit (10%)</td><td class="num">534,500</td></tr>
-            <tr><td>Site Supervision &amp; Project Management</td><td class="num">639,220</td></tr>
-            <tr class="sub"><td>Subtotal (before VAT)</td><td class="num">6,679,070</td></tr>
-            <tr><td>VAT (7.5%)</td><td class="num">500,930</td></tr>
+            <tr><td>B — Civil Works Labour</td><td class="num">1,400,000</td></tr>
+            <tr><td>C — Mechanical Works</td><td class="num">2,850,000</td></tr>
+            <tr><td>D — Electrical Works</td><td class="num">1,480,000</td></tr>
+            <tr><td>E — Tiling Labour (Lump Sum)</td><td class="num">500,000</td></tr>
+            <tr class="sub"><td>Works Subtotal</td><td class="num">6,230,000</td></tr>
+            <tr><td>Contingency Allowance (3%)</td><td class="num">186,900</td></tr>
+            <tr><td>Contractor's Overheads &amp; Profit (10%)</td><td class="num">623,000</td></tr>
+            <tr><td>Site Supervision &amp; Project Management</td><td class="num">750,000</td></tr>
+            <tr class="sub"><td>Subtotal (before VAT)</td><td class="num">7,789,900</td></tr>
+            <tr><td>VAT (7.5%)</td><td class="num">584,243</td></tr>
           </tbody>
         </table>
         <div style="background:#1C4636;color:#F5EFE8;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;border-radius:2px;margin-top:10px;">
           <span style="font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.1em;">CONTRACT SUM</span>
-          <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;">₦ <span style="color:#BFDDCC;">7,180,000</span></span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;">₦ <span style="color:#BFDDCC;">8,374,143</span></span>
         </div>
         <div style="background:#FFF8F5;border:1px solid #E8D5CC;border-radius:2px;padding:10px 12px;margin-top:10px;font-size:11px;color:#6B7280;line-height:1.7;">
-          <strong style="color:#9E4F30;">Amount in words:</strong> Seven Million, One Hundred and Eighty Thousand Naira Only.<br>
-          <strong style="color:#9E4F30;">Basis of pricing:</strong> Section B–E rates are carried from the completed FHS Ibafo pool (comparable size) with a location adjustment of approximately 14%. The Contract Sum is inclusive of site supervision and VAT at 7.5%. Optional wall felting (₦313,000) and all Client-supply materials (Section A) and tiles are excluded from the Contract Sum.
+          <strong style="color:#9E4F30;">Amount in words:</strong> Eight Million, Three Hundred and Seventy-Four Thousand, One Hundred and Forty-Three Naira Only.<br>
+          The Contract Sum is inclusive of site supervision and VAT at 7.5%. All Client-supply materials (Section A) and tiles are excluded from the Contract Sum.
         </div>
       </div>
 
@@ -261,8 +267,8 @@
         <div class="p" style="display:flex;flex-direction:column;gap:6px;">
           <div>· Depth profile taken as 1.0 m → 1.6 m; tiled areas and quantities will be adjusted once depths are confirmed on site.</div>
           <div>· All dimensions are from the client brief and are subject to on-site verification before setting out.</div>
-          <div>· Client supplies all Section A civil materials and all pool tiles; the Contractor will issue call-off schedules ahead of each stage.</div>
-          <div>· Water supply for filling/testing, site security and unobstructed site access are provided by the Client.</div>
+          <div>· The Client supplies all Section A civil materials and all pool tiles; the Contractor will issue call-off schedules ahead of each stage.</div>
+          <div>· Water supply up to the powerhouse and electrical power connection up to the powerhouse are provided by the Client, together with site security and unobstructed site access.</div>
           <div>· Deck paving/finishes beyond the pool coping band, landscaping and boundary-wall finishes are excluded unless separately instructed.</div>
           <div>· Dewatering beyond normal conditions, rock excavation and statutory permit fees (if any) are excluded.</div>
         </div>
@@ -275,14 +281,14 @@
           <div>· <strong>Payment schedule:</strong> 60% mobilisation · 30% on completion of casting &amp; waterproofing · 10% on completion, testing and handover.</div>
           <div>· <strong>Programme:</strong> approximately 6 – 8 weeks from mobilisation, subject to weather and timely material supply.</div>
           <div>· <strong>Quotation validity:</strong> 30 days from the date of this document.</div>
-          <div>· <strong>Workmanship warranty:</strong> 12 months on waterproofing works from the date of handover.</div>
+          <div>· <strong>Workmanship warranty:</strong> 6 months on waterproofing works from the date of handover.</div>
         </div>
       </div>
 
       <!-- Signatures -->
       <div class="avoid-break" style="border-top:1px solid #D1CBC6;padding-top:24px;margin-bottom:8px;">
         <div style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#1C4636;letter-spacing:0.2em;margin-bottom:14px;">AUTHORISATION &amp; ACCEPTANCE</div>
-        <div style="font-size:11.5px;color:#4A4F5C;margin-bottom:20px;line-height:1.6;">By signing below, the Client confirms acceptance of this Report &amp; Quotation and authorises DOVA Futures Limited to proceed with the works described, at the Contract Sum of ₦7,180,000 (inclusive of site supervision and VAT at 7.5%; optional wall felting and all Client-supply materials excluded).</div>
+        <div style="font-size:11.5px;color:#4A4F5C;margin-bottom:20px;line-height:1.6;">By signing below, the Client confirms acceptance of this Report &amp; Quotation and authorises DOVA Futures Limited to proceed with the works described, at the Contract Sum of ₦8,374,143 (inclusive of site supervision and VAT at 7.5%; all Client-supply materials excluded).</div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
           <div>
             <div style="height:36px;border-bottom:1px solid #1A1A1A;margin-bottom:6px;"></div>
