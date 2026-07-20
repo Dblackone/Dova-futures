@@ -15,14 +15,11 @@
 4. [ ] **Populate FHS Pool job folders** — remaining drawings and site photos
    into `02-Drawings/`, `04-Photos/`.
 
-5. [ ] **HW: file the Homework pool Report & Quotation into `projects/`** —
-   final combined draft `RPT-2026-POOL-002` (Contract Sum **₦7,567,893**,
-   7.5% VAT incl.) is signed off and corrected; PDF delivered.
-   On the principal's go-ahead: fill client "Prepared For" contact/address,
-   issue a new job code (append to `bim-standards/registers/project-register.csv`),
-   open `projects/<code>_Homework_Swimming-Pool/`, and move the HTML+PDF from
-   `drafts/` into its `06-Reports/`. _Nothing sent to the client by an agent —
-   presenting is the principal's action._
+5. [ ] **HW: complete the client-specific fields before presentation** — job
+   DFL-2026-POOL-002 is opened, filed (`01-Documents/`) and merged. Before it
+   goes to the client, fill the "Prepared For" contact person/address and the
+   Reviewed/Client-Acceptance signature blocks in `RPT-2026-POOL-002`. _Nothing
+   sent to the client by an agent — presenting is the principal's action._
 
 ## Someday / backlog
 - Backfill older completed projects (see `assets/Project Pictures/`) as
