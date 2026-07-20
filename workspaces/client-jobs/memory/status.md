@@ -22,9 +22,10 @@
   for new client **Homework** — 5.4×3.2m pool, Sections A–E BOQ. Principal
   signed off then issued corrections (now applied): all pricing-basis/FHS/
   comparison refs removed, client-supply + water/power-to-powerhouse callout
-  added, figures revised, warranty 6mo, borderless. **Contract Sum ₦8,374,143**
-  (supervision + 7.5% VAT incl.). PDF rendered + delivered. Draft in `drafts/`;
-  ready to file into `projects/` on the principal's go-ahead.
+  added, figures revised, warranty 6mo, borderless, waterfall-provision note
+  added, site supervision removed. **Contract Sum ₦7,567,893** (7.5% VAT incl.).
+  PDF rendered + delivered. Draft in `drafts/`; ready to file into `projects/`
+  on the principal's go-ahead.
 - ROAD-10: principal approved final 3-page QTE-2026-001 PDF (2026-07-05).
 - Osogbo job created with scope + estimate + report (PR #20, commit 06719e2).
 

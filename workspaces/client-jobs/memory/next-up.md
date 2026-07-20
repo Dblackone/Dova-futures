@@ -16,8 +16,8 @@
    into `02-Drawings/`, `04-Photos/`.
 
 5. [ ] **HW: file the Homework pool Report & Quotation into `projects/`** —
-   final combined draft `RPT-2026-POOL-002` (Contract Sum **₦8,374,143**,
-   supervision + 7.5% VAT incl.) is signed off and corrected; PDF delivered.
+   final combined draft `RPT-2026-POOL-002` (Contract Sum **₦7,567,893**,
+   7.5% VAT incl.) is signed off and corrected; PDF delivered.
    On the principal's go-ahead: fill client "Prepared For" contact/address,
    issue a new job code (append to `bim-standards/registers/project-register.csv`),
    open `projects/<code>_Homework_Swimming-Pool/`, and move the HTML+PDF from
