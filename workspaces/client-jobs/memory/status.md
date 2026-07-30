@@ -1,6 +1,6 @@
 # status.md — Current Snapshot (client-jobs)
 
-**Last updated:** 2026-07-15 — merge of main-side job work (2026-07-05→08) into the hub structure
+**Last updated:** 2026-07-31 — Broll Properties (Ikeja City Mall) Report & Quotation drafted
 **Health:** 🟢 on track
 
 ## Now
@@ -17,7 +17,17 @@
     structure remodification) — scope of works, cost-estimate working notes,
     and RPT-2026-OSG-001 project report drafted.
 
+## Pipeline (prospective — no job code issued yet)
+- **Broll Properties — Ikeja City Mall, Alausa, Ikeja, Lagos.** Tile demolition
+  to expose the structural ground slab (≈5,000 m²) + carting away.
+  `RPT-2026-DEMO-001` combined Report & Quotation drafted in `drafts/`:
+  Section A demolition ₦9,000,000 (firm) + Section B carting away ₦7,000,000
+  (**provisional 25 trips**) = works ₦16,000,000 + 7.5% VAT = **Contract Sum
+  ₦17,200,000**; final account banded ₦15,695,000–₦18,705,000 on 20–30 trips.
+  **Draft only, not sent.** Job code opens on acceptance.
+
 ## Recently done (last 3)
+- BROLL-01: `RPT-2026-DEMO-001` Report & Quotation drafted (see Pipeline above).
 - HW: job **DFL-2026-POOL-002** (Homework — Swimming Pool, 5.4×3.2m) opened and
   filed. Combined **Report & Quotation** `RPT-2026-POOL-002` (Contract Sum
   **₦7,567,893**, 7.5% VAT incl.; running header/footer + page numbers) now
@@ -33,6 +43,11 @@
   payment stage (do NOT invoice before acceptance).
 - POOL: confirm payment status of INV-001..005 with principal.
 - OSG: estimate/report await principal review before any client presentation.
+- BROLL: `RPT-2026-DEMO-001` awaits principal review. Two commercial points need
+  the principal's confirmation before it goes out — (1) whether ₦1,800/m² and
+  ₦280,000/trip are all-inclusive selling rates (assumed yes; no O&P or
+  contingency added on top), and (2) whether VAT at 7.5% is to be shown (assumed
+  yes, per POOL-002). Client contact name/title still `[ ]`.
 
 ## Notes for the next run
 - Job docs start from `documents/templates/` per `company/document-policy.md`.

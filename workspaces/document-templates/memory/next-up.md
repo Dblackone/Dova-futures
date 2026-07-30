@@ -7,6 +7,14 @@
    broken links; print produces a clean PDF with UI chrome hidden._
 2. [ ] **Safari print verification** — run the full print workflow for all 9
    templates in Safari; log fixes.
+3. [ ] **Resolve reference-prefix drift** — `documents/README.md` and the
+   template HTML disagree on 4 documents: 02 quote is `QUO-` in HTML vs `QTE-`
+   in docs; 09 is `MPA-` vs `MPR-`; 06 and 07 use `DOVA/MEMO/YYYY/XXX` and
+   `DOVA/LTR/YYYY/XXX` rather than `IL-`/`EL-YYYY-NNN`. Principal decides which
+   side is canonical, then align the other. Also decide whether the job-scoped
+   form actually in use (`INV-2026-POOL-001`) becomes the documented standard.
+   Templates also ship with `2025` baked into sample refs. _Acceptance: one
+   convention, stated in `documents/README.md` and matching every template._
 
 ## Someday / backlog
 - Password protection (`express-basic-auth`) if client wants staff-only access.
