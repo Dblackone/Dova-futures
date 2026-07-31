@@ -33,9 +33,10 @@
   **₦6,405,000–₦7,140,000** on 25–32 trips. Payment **60/30/10** (₦4,158,000 / ₦2,079,000 / ₦693,000),
   second milestone = completion of all tile demolition and scraping back to slab (Section A complete), independent of carting progress. **INV-2026-DEMO-001** drafted for the **full Contract Sum ₦6,930,000**, payable in the three stages. "Reviewed By" removed from the
   authorisation block — Prepared By + Client Acceptance only.
-  Shortened (1.1, 6.0 and the trial-strip stage removed; sections renumbered)
-  and body type raised to 12pt. 8-page A4 PDF re-rendered; header/footer + page
-  numbering verified on pages 2–8, page 1 letterhead clean.
+  Shortened (1.1, 6.0/7.0 merged, trial-strip stage removed; sections
+  renumbered 1.0–7.0) and body type raised to 12pt. **7-page** A4 PDF
+  re-rendered; header/footer + page numbering verified on pages 2–7, page 1
+  letterhead clean.
   **Draft only, not sent.** Job code opens on acceptance.
 
 ## Recently done (last 3)
@@ -73,9 +74,10 @@
      the ~₦165,000 difference, since the contract states 5% and the Client will
      have accepted at that rate. Needs the principal's confirmation (or a
      specific exemption/scheme) before this goes to the client.
-  2. **Page count is now 8, not 7.** Body type went to 12pt on the principal's
-     instruction, which outweighed the three section deletions. Dropping to
-     11pt (14.5px) or cutting more content would bring it back to 7.
+  2. **Invoice bills the full Contract Sum**, with a payment-schedule panel
+     carrying the 60/30/10 stages. That keeps it consistent with Section 6.0
+     of the quote. If the intent is payment in full on presentation, Section
+     6.0 must change and both documents be reissued.
   3. **Whether ₦3,600,000 lump sum carries overheads and profit.** The old note
      claimed ₦1,800/m² was all-inclusive of O&P; that claim was dropped rather
      than carried forward unverified. No cost build-up exists in the repo.
