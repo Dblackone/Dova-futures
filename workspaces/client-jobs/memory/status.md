@@ -81,8 +81,13 @@
   3. **Whether ₦3,600,000 lump sum carries overheads and profit.** The old note
      claimed ₦1,800/m² was all-inclusive of O&P; that claim was dropped rather
      than carried forward unverified. No cost build-up exists in the repo.
-  4. Client contact name/title still `[ ]`, and the Client Acceptance block is
-     unfilled. ("Reviewed By" was removed on the principal's instruction.)
+  4. Client Acceptance signature block still unfilled. (The contact-name
+     placeholder was removed on the principal's instruction, as was
+     "Reviewed By".)
+  5. **POOL, not BROLL:** the remittance account moved to Providus Bank
+     1306839309. `INV-2026-POOL-001..005` in `projects/` still show the old
+     Globus account — if any are unpaid and that account is closed, they need
+     reissuing.
 
 ## Notes for the next run
 - Job docs start from `documents/templates/` per `company/document-policy.md`.

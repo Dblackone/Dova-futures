@@ -319,3 +319,88 @@ confirmed absent. Page visually checked.
 amount on presentation — the payment schedule panel is what keeps it consistent
 with the quote. If the intent is payment in full up front, Section 6.0 of
 RPT-2026-DEMO-001 has to change too, and both documents reissued.
+
+## 2026-07-31 — BROLL-11: bank details changed; contact placeholder removed
+
+- **Remittance account updated** on `INV-2026-DEMO-001`:
+  Globus Bank 1000489264 → **Providus Bank 1306839309**, account name
+  Dova Futures Limited (unchanged).
+- **`[Contact Name & Title]` placeholder removed** from both documents — the
+  "Bill To" block on the invoice and the "Prepared For" cell on
+  `RPT-2026-DEMO-001`. Both now show "Broll Properties" alone. This clears one
+  of the outstanding pre-issue items; only the Client Acceptance signature
+  block remains unfilled.
+
+**Not changed — flagged.** The five issued FHS Pool invoices
+(`INV-2026-POOL-001..005` in `projects/`) still carry the old Globus account.
+They are issued historical records and were deliberately left alone; if the
+Globus account is closed rather than merely superseded, any of those still
+awaiting payment need reissuing with the new account. That is a POOL question,
+not a BROLL one — raised for the principal.
+
+**Verified.** Report re-renders at 7 pages with header/footer intact; invoice
+re-renders at 1 page with 59px headroom. Grep confirms no "Contact Name"
+placeholder in either document and no Globus/1000489264 reference in the
+invoice. Payment panel visually checked.
+
+## 2026-07-31 — BROLL-12: page 1 letterhead now sits flush, like the invoice
+
+**Symptom.** Page 1 of `RPT-2026-DEMO-001` had a white band above the green
+letterhead — 33.3 mm from the paper edge to the first letterhead text, against
+8.7 mm on the invoice.
+
+**Cause, two parts.**
+1. `render-pdf.js` applies `MARGIN.top = 20mm` to *every* page, page 1 included,
+   because both render passes must use identical margins or pagination drifts
+   and the splice breaks (existing trap #4). So the letterhead was pushed 20 mm
+   down the paper.
+2. The document's print block zeroed `body { padding }` but not `margin`, so the
+   browser's default 8 px body margin added ~2 mm more.
+
+**Fix — in the document, not the renderer.**
+- `@page :first { margin-top: 0; }` — seen identically by both passes, so
+  pagination and the splice stay valid. Pages 2..N keep the 20 mm band the
+  running header lives in.
+- `html, body { margin: 0 !important }` added to the print block.
+
+Top gap **33.3 mm → 11.1 mm**. The invoice measures 8.7 mm; the remaining
+2.4 mm is the report letterhead's deeper internal padding (28 px vs 20 px), a
+design difference, not page margin. The green band itself is flush on both.
+
+Both traps are now recorded in the `render-pdf.js` header comment, next to the
+four that were already there — this is the fifth and sixth.
+
+**Verified.** Still 7 pages, so `@page :first` did not repaginate. Margin-band
+extraction confirms page 1 carries the letterhead and no running header/footer,
+and pages 2–7 each carry the branded header and `Page X of 7`. Pass counts
+matched, so the splice guard did not trip.
+
+## 2026-07-31 — BROLL-13: covering email drafted
+
+Composed the covering email for presenting `RPT-2026-DEMO-001` and
+`INV-2026-DEMO-001` to Broll Properties. Saved to
+`drafts/EMAIL-2026-DEMO-001_Broll-Properties_Covering-Note.md`.
+
+**Draft only — not sent, and not placed in any mail client.** Per
+`governance/guardrails.md` and CLAUDE.md §4, no external message goes out
+without the principal's explicit approval; presenting is the principal's action.
+
+Written to `company/voice-and-tone.md`: restrained, no exclamation marks,
+British spellings, ₦ with separators, formal sign-off. Summarises the lump sum,
+the remeasurable carting section, the ₦6,930,000 Contract Sum, the 5–7 week
+programme and the 60/30/10 schedule; restates what the Client must provide;
+closes on the signed acceptance page as the next step.
+
+**Four notes appended for the principal, one of which is a genuine objection:**
+
+1. **The invoice precedes acceptance.** It is attached as instructed, but the
+   quotation is not accepted, no job code exists, and the workspace rule (also
+   recorded against ROAD) is not to invoice before acceptance. Sending a
+   ₦6,930,000 invoice with the quotation asks the client to pay against an
+   unsigned contract. The draft includes the exact edit to make if the principal
+   prefers the conventional quotation → acceptance → invoice sequence.
+2. **No recipient on file** — no contact name, title or email address for Broll
+   anywhere in the repo, hence "Dear Sir/Madam" and an empty To: line.
+3. VAT at 5% still unconfirmed, and it now appears in both attachments.
+4. The on-acceptance checklist (job code, register Seq 003, job folder, move
+   both documents out of `drafts/`).
