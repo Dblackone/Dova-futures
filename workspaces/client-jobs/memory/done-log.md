@@ -374,3 +374,33 @@ four that were already there — this is the fifth and sixth.
 extraction confirms page 1 carries the letterhead and no running header/footer,
 and pages 2–7 each carry the branded header and `Page X of 7`. Pass counts
 matched, so the splice guard did not trip.
+
+## 2026-07-31 — BROLL-13: covering email drafted
+
+Composed the covering email for presenting `RPT-2026-DEMO-001` and
+`INV-2026-DEMO-001` to Broll Properties. Saved to
+`drafts/EMAIL-2026-DEMO-001_Broll-Properties_Covering-Note.md`.
+
+**Draft only — not sent, and not placed in any mail client.** Per
+`governance/guardrails.md` and CLAUDE.md §4, no external message goes out
+without the principal's explicit approval; presenting is the principal's action.
+
+Written to `company/voice-and-tone.md`: restrained, no exclamation marks,
+British spellings, ₦ with separators, formal sign-off. Summarises the lump sum,
+the remeasurable carting section, the ₦6,930,000 Contract Sum, the 5–7 week
+programme and the 60/30/10 schedule; restates what the Client must provide;
+closes on the signed acceptance page as the next step.
+
+**Four notes appended for the principal, one of which is a genuine objection:**
+
+1. **The invoice precedes acceptance.** It is attached as instructed, but the
+   quotation is not accepted, no job code exists, and the workspace rule (also
+   recorded against ROAD) is not to invoice before acceptance. Sending a
+   ₦6,930,000 invoice with the quotation asks the client to pay against an
+   unsigned contract. The draft includes the exact edit to make if the principal
+   prefers the conventional quotation → acceptance → invoice sequence.
+2. **No recipient on file** — no contact name, title or email address for Broll
+   anywhere in the repo, hence "Dear Sir/Madam" and an empty To: line.
+3. VAT at 5% still unconfirmed, and it now appears in both attachments.
+4. The on-acceptance checklist (job code, register Seq 003, job folder, move
+   both documents out of `drafts/`).
