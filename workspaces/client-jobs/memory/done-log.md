@@ -319,3 +319,26 @@ confirmed absent. Page visually checked.
 amount on presentation — the payment schedule panel is what keeps it consistent
 with the quote. If the intent is payment in full up front, Section 6.0 of
 RPT-2026-DEMO-001 has to change too, and both documents reissued.
+
+## 2026-07-31 — BROLL-11: bank details changed; contact placeholder removed
+
+- **Remittance account updated** on `INV-2026-DEMO-001`:
+  Globus Bank 1000489264 → **Providus Bank 1306839309**, account name
+  Dova Futures Limited (unchanged).
+- **`[Contact Name & Title]` placeholder removed** from both documents — the
+  "Bill To" block on the invoice and the "Prepared For" cell on
+  `RPT-2026-DEMO-001`. Both now show "Broll Properties" alone. This clears one
+  of the outstanding pre-issue items; only the Client Acceptance signature
+  block remains unfilled.
+
+**Not changed — flagged.** The five issued FHS Pool invoices
+(`INV-2026-POOL-001..005` in `projects/`) still carry the old Globus account.
+They are issued historical records and were deliberately left alone; if the
+Globus account is closed rather than merely superseded, any of those still
+awaiting payment need reissuing with the new account. That is a POOL question,
+not a BROLL one — raised for the principal.
+
+**Verified.** Report re-renders at 7 pages with header/footer intact; invoice
+re-renders at 1 page with 59px headroom. Grep confirms no "Contact Name"
+placeholder in either document and no Globus/1000489264 reference in the
+invoice. Payment panel visually checked.

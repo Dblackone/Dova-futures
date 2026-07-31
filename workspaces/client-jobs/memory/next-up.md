@@ -39,8 +39,8 @@
    tile demolition and scraping back to slab, 10% on completion of the whole of
    the works — and the 5–7 week programme, which assumes confirmed permitted
    working hours at the mall.
-   Then fill the client contact name/title and the Client Acceptance block
-   ("Reviewed By" was removed on the principal's instruction).
+   Then fill the Client Acceptance block (the contact-name placeholder and
+   "Reviewed By" were both removed on the principal's instruction).
    _On acceptance:_ issue job code
    `DFL-2026-DEMO-001`, append Seq 003 to
    `bim-standards/registers/project-register.csv`, create
