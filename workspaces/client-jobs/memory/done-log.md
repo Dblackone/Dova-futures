@@ -170,3 +170,18 @@ other way:
   arisings and final clean-down are picked up by the closing 10%."
 
 No figures change. Section 8.0 only; PDF re-rendered at 7 pages and checked.
+
+## 2026-07-31 — BROLL-07: drop the 30% milestone note from Commercial Terms
+
+On the principal's instruction, the second bullet in Section 8.0 — the
+explanatory note defining the 30% milestone and stating that carting away is
+not a condition of that payment — was removed. Section 8.0 now runs: payment
+schedule, refunds, programme, validity, measurement, insurance.
+
+The schedule line itself still carries the trigger ("30% on completion of the
+demolition — all tile and bedding broken out and scraped off the ground"), so
+the milestone remains defined; what is gone is the explicit statement that the
+arisings may still be stockpiled on site when the 30% falls due. Flagged to the
+principal.
+
+No figures change. PDF re-rendered at 7 pages and checked.
