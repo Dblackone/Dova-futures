@@ -35,9 +35,12 @@
    `DFL-2026-DEMO-001`, append Seq 003 to
    `bim-standards/registers/project-register.csv`, create
    `projects/DFL-2026-DEMO-001_Broll-Properties_Ikeja-City-Mall-Tile-Demolition/`
-   with the six numbered subfolders, and move the document from `drafts/` into
-   its `01-Documents/`. _Nothing sent to the client by an agent — presenting is
-   the principal's action._
+   with the six numbered subfolders, and move both the HTML and the rendered
+   PDF from `drafts/` into its `01-Documents/`. The PDF is rendered and
+   verified; re-render it with
+   `workspaces/client-jobs/tools/render-pdf.js` after any content edit.
+   _Nothing sent to the client by an agent — presenting is the principal's
+   action._
 
 ## Someday / backlog
 - Backfill older completed projects (see `assets/Project Pictures/`) as

@@ -1,6 +1,6 @@
 # status.md — Current Snapshot (client-jobs)
 
-**Last updated:** 2026-07-31 — Broll Properties (Ikeja City Mall) Report & Quotation drafted
+**Last updated:** 2026-07-31 — Broll Properties (Ikeja City Mall) Report & Quotation drafted + PDF rendered and verified
 **Health:** 🟢 on track
 
 ## Now
@@ -24,9 +24,13 @@
   Section A demolition ₦9,000,000 (firm) + Section B carting away ₦7,000,000
   (**provisional 25 trips**) = works ₦16,000,000 + 7.5% VAT = **Contract Sum
   ₦17,200,000**; final account banded ₦15,695,000–₦18,705,000 on 20–30 trips.
-  **Draft only, not sent.** Job code opens on acceptance.
+  7-page A4 PDF rendered and visually verified (letterhead on page 1, running
+  header/footer + page numbers on 2–7). **Draft only, not sent.** Job code opens
+  on acceptance.
 
 ## Recently done (last 3)
+- BROLL-02: `RPT-2026-DEMO-001` PDF rendered + verified; render script promoted
+  into the repo at `workspaces/client-jobs/tools/render-pdf.js`.
 - BROLL-01: `RPT-2026-DEMO-001` Report & Quotation drafted (see Pipeline above).
 - HW: job **DFL-2026-POOL-002** (Homework — Swimming Pool, 5.4×3.2m) opened and
   filed. Combined **Report & Quotation** `RPT-2026-POOL-002` (Contract Sum
@@ -54,4 +58,9 @@
 - QTE-2026-001 print/PDF layout uses the thead/tfoot spacer pattern
   (fixed header/footer + `.header-space`/`.footer-space` + `.avoid-break`) —
   see ROAD-05..09 in done-log before touching its pagination.
+- Report PDFs (POOL-002, DEMO-001) instead use the render-pipeline treatment:
+  `workspaces/client-jobs/tools/render-pdf.js`. Read its header comment before
+  touching the header/footer templates — it records four Chrome traps that have
+  each silently produced a header-less PDF. `gh` is not installed on this
+  machine and the shell sandbox blocks Chrome (run the renderer unsandboxed).
 - New job codes are appended to `bim-standards/registers/project-register.csv`.
