@@ -31,7 +31,7 @@
   **both directions** at ₦105,000/trip incl. VAT — refunded below 30, **charged
   above 30** (principal's correction, BROLL-08). Final account band
   **₦6,405,000–₦7,140,000** on 25–32 trips. Payment **60/30/10** (₦4,158,000 / ₦2,079,000 / ₦693,000),
-  second milestone = completion of all tile demolition and scraping back to slab (Section A complete), independent of carting progress. "Reviewed By" removed from the
+  second milestone = completion of all tile demolition and scraping back to slab (Section A complete), independent of carting progress. **INV-2026-DEMO-001** drafted for the **full Contract Sum ₦6,930,000**, payable in the three stages. "Reviewed By" removed from the
   authorisation block — Prepared By + Client Acceptance only.
   Shortened (1.1, 6.0 and the trial-strip stage removed; sections renumbered)
   and body type raised to 12pt. 8-page A4 PDF re-rendered; header/footer + page

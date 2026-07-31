@@ -292,3 +292,30 @@ re-rendered at 7 pages.
 **Not done / flagged.** No job code exists and the quote is not accepted, so
 this invoice must not be issued yet — `governance/guardrails.md` and the
 workspace rule against invoicing before acceptance both apply. It is a draft.
+
+## 2026-07-31 — BROLL-10: invoice rewritten to the full contract sum
+
+The principal directed that the invoice cover the whole contract cost rather
+than the 60% mobilisation stage. `INV-2026-DEMO-001` now bills the **full
+Contract Sum ₦6,930,000** (works ₦6,600,000 + VAT 5% ₦330,000).
+
+- Line items carry full Section A (₦3,600,000) and Section B (₦3,000,000)
+  values; the two-column Contract/This-Claim layout collapses to a single
+  Amount column.
+- Header changed *Mobilisation Payment — 60%* → **Contract Invoice**, chip
+  *Stage 1 of 3* → **Payable in 3 stages**, Amount Due → ₦6,930,000.
+- The Contract Position panel is replaced by a **Payment Schedule** panel
+  (60% ₦4,158,000 · 30% ₦2,079,000 · 10% ₦693,000 · Contract Sum ₦6,930,000),
+  so the staged terms at Section 6.0 of RPT-2026-DEMO-001 still govern *when*
+  each tranche falls due. Invoicing the full sum does not override them.
+- Files renamed `..._Mobilisation.*` → `..._Contract-Sum.*` via `git mv`.
+
+**Verified.** Renders at exactly 1 page (39px of headroom). All eight current
+figures confirmed present in the extracted PDF text, and the four superseded
+figures (₦4,158,000.00 as a total, ₦198,000.00 VAT, ₦2,160,000.00, ₦1,800,000.00)
+confirmed absent. Page visually checked.
+
+**Flagged.** A single full-sum invoice is not the same as demanding the whole
+amount on presentation — the payment schedule panel is what keeps it consistent
+with the quote. If the intent is payment in full up front, Section 6.0 of
+RPT-2026-DEMO-001 has to change too, and both documents reissued.
