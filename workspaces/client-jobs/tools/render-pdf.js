@@ -20,6 +20,15 @@
  *    use Arial. Page bodies still get the real brand fonts.
  *  - Both passes must use identical margins, or pagination drifts between them
  *    and the splice puts the wrong content on page 1.
+ *  - The MARGIN.top below applies to EVERY page, including page 1, so a document
+ *    whose page 1 carries a full-bleed letterhead will render it 20mm down the
+ *    paper with a white gap above it. Fix it in the document, not here: add
+ *      @page :first { margin-top: 0; }
+ *    which both passes see identically, so pagination — and the splice — hold.
+ *    Do NOT special-case one pass's margin; that is the drift trap above.
+ *  - `@media print { body { padding: 0 } }` is not enough. The browser's default
+ *    8px body MARGIN survives and shows up as ~2mm of stray white at the paper
+ *    edge. Zero `html, body { margin: 0 }` in the document's print block too.
  */
 const puppeteer = require('puppeteer-core');
 const { PDFDocument } = require('pdf-lib');

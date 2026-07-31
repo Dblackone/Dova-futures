@@ -8,8 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   @page { size: A4; margin: 20mm 0 16mm 0; }
+  /* Page 1 carries the full letterhead, which must sit flush to the paper edge
+     like the invoice. Pages 2..N keep the 20mm band for the running header.
+     This applies to BOTH render passes, so pagination stays identical and the
+     splice in tools/render-pdf.js remains valid. */
+  @page :first { margin-top: 0; }
   @media print {
-    body { background: white !important; padding: 0 !important; }
+    html, body { background: white !important; padding: 0 !important; margin: 0 !important; }
     [data-no-print] { display: none !important; }
     .avoid-break { break-inside: avoid; }
   }

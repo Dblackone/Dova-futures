@@ -342,3 +342,35 @@ not a BROLL one — raised for the principal.
 re-renders at 1 page with 59px headroom. Grep confirms no "Contact Name"
 placeholder in either document and no Globus/1000489264 reference in the
 invoice. Payment panel visually checked.
+
+## 2026-07-31 — BROLL-12: page 1 letterhead now sits flush, like the invoice
+
+**Symptom.** Page 1 of `RPT-2026-DEMO-001` had a white band above the green
+letterhead — 33.3 mm from the paper edge to the first letterhead text, against
+8.7 mm on the invoice.
+
+**Cause, two parts.**
+1. `render-pdf.js` applies `MARGIN.top = 20mm` to *every* page, page 1 included,
+   because both render passes must use identical margins or pagination drifts
+   and the splice breaks (existing trap #4). So the letterhead was pushed 20 mm
+   down the paper.
+2. The document's print block zeroed `body { padding }` but not `margin`, so the
+   browser's default 8 px body margin added ~2 mm more.
+
+**Fix — in the document, not the renderer.**
+- `@page :first { margin-top: 0; }` — seen identically by both passes, so
+  pagination and the splice stay valid. Pages 2..N keep the 20 mm band the
+  running header lives in.
+- `html, body { margin: 0 !important }` added to the print block.
+
+Top gap **33.3 mm → 11.1 mm**. The invoice measures 8.7 mm; the remaining
+2.4 mm is the report letterhead's deeper internal padding (28 px vs 20 px), a
+design difference, not page margin. The green band itself is flush on both.
+
+Both traps are now recorded in the `render-pdf.js` header comment, next to the
+four that were already there — this is the fifth and sixth.
+
+**Verified.** Still 7 pages, so `@page :first` did not repaginate. Margin-band
+extraction confirms page 1 carries the letterhead and no running header/footer,
+and pages 2–7 each carry the branded header and `Page X of 7`. Pass counts
+matched, so the splice guard did not trip.
