@@ -152,3 +152,21 @@ refund at 25 trips is ₦525,000 against a final payment of ₦693,000.
 
 Section 8.0 only. PDF re-rendered at 7 pages and the section visually checked;
 no other figure in the document changes.
+
+## 2026-07-31 — BROLL-06: 30% milestone wording sharpened
+
+The principal restated the second payment stage, emphasising that the arisings
+are **not carted off** at that point — the tiles are broken out and scraped off
+the ground, but the debris is still on site. BROLL-05 already carried that
+meaning ("whether or not carting away under Section B has finished"), but the
+point was stated twice, so the wording was tightened so it cannot be read the
+other way:
+
+- Schedule line now reads "30% on completion of the demolition — all tile and
+  bedding broken out and **scraped off the ground**".
+- Definition now states explicitly: "**Carting away is expressly not a condition
+  of this payment** — the arisings may still be stockpiled on site awaiting
+  removal under Section B, and the 30% falls due regardless. Removal of the
+  arisings and final clean-down are picked up by the closing 10%."
+
+No figures change. Section 8.0 only; PDF re-rendered at 7 pages and checked.
