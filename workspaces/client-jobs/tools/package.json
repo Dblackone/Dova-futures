@@ -1,0 +1,10 @@
+{
+  "name": "dova-client-jobs-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Document rendering tools for client-jobs deliverables",
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "puppeteer-core": "^24.0.0"
+  }
+}

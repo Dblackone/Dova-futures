@@ -28,6 +28,12 @@ projects/DFL-2026-POOL-001_FHS-Hotel_Swimming-Pool-Ibafo/
 └── 06-Reports/
 ```
 
+**`drafts/`** — documents in preparation, before a job code exists.
+
+**`tools/`** — `render-pdf.js`, which renders a document's HTML to the branded
+A4 PDF we deliver (letterhead on page 1, running header/footer + page numbers on
+the rest). See `tools/README.md`.
+
 ## Active jobs
 
 | Job code | Client / project | Status |
