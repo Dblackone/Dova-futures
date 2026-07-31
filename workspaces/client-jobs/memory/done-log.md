@@ -128,3 +128,27 @@ screenshotted and visually checked.
 
 **Not done.** Still a draft: not sent, no job code, client contact and
 acceptance block remain placeholders.
+
+## 2026-07-31 — BROLL-05: payment milestone redefined
+
+The principal redefined the second payment stage. Percentages and amounts are
+unchanged (60/30/10 = ₦4,158,000 / ₦2,079,000 / ₦693,000); only the trigger
+moved.
+
+- **Was:** 30% when 70% of the measured floor area had been stripped —
+  3,500 m² at 5,000 m², 3,850 m² at 5,500 m², by joint site measurement.
+- **Now:** 30% on completion of **all tile demolition and scraping back to
+  slab** — i.e. the whole of Section A — expressly **independent of whether
+  carting away under Section B has finished**. 10% on completion of the whole
+  of the works, clean-down and joint sign-off.
+
+Better trigger: it is a binary state jointly inspected rather than a
+part-measurement of area, so it cannot be argued over on site, and it no longer
+has to be restated for each end of the 5,000 – 5,500 m² band.
+
+Cash position at the milestone: 90% received (₦6,237,000) against Section A
+complete and carting partly done. The refund set-off still fits — maximum
+refund at 25 trips is ₦525,000 against a final payment of ₦693,000.
+
+Section 8.0 only. PDF re-rendered at 7 pages and the section visually checked;
+no other figure in the document changes.

@@ -31,7 +31,7 @@
   a ceiling, every trip below 30 is refunded at ₦105,000 incl. VAT, and trips
   beyond 30 are to DOVA's account. Final account band **₦6,405,000–₦6,930,000**
   on 25–30 trips. Payment **60/30/10** (₦4,158,000 / ₦2,079,000 / ₦693,000),
-  70% milestone = 70% of the measured area. "Reviewed By" removed from the
+  second milestone = completion of all tile demolition and scraping back to slab (Section A complete), independent of carting progress. "Reviewed By" removed from the
   authorisation block — Prepared By + Client Acceptance only.
   7-page A4 PDF re-rendered; header/footer + page numbering verified on pages
   2–7, page 1 letterhead clean.

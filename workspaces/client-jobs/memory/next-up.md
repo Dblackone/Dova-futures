@@ -35,8 +35,9 @@
    (c) whether the **₦3,600,000 lump sum carries overheads and profit** — the
    all-inclusive-of-O&P wording was dropped because no cost build-up exists in
    the repo to verify it; restore it at Section 3.0 if it holds;
-   (d) the 60/30/10 payment split with the 70% milestone set at 70% of the
-   measured area, and the 5–7 week programme, which assumes confirmed permitted
+   (d) the 60/30/10 payment split — 60% mobilisation, 30% on completion of all
+   tile demolition and scraping back to slab, 10% on completion of the whole of
+   the works — and the 5–7 week programme, which assumes confirmed permitted
    working hours at the mall.
    Then fill the client contact name/title and the Client Acceptance block
    ("Reviewed By" was removed on the principal's instruction).
