@@ -1,6 +1,6 @@
 # status.md — Current Snapshot (client-jobs)
 
-**Last updated:** 2026-07-31 — Broll Properties (Ikeja City Mall) Report & Quotation drafted + PDF rendered and verified
+**Last updated:** 2026-07-31 — Broll Properties (Ikeja City Mall) Report & Quotation repriced by the principal; rebuilt + re-rendered
 **Health:** 🟢 on track
 
 ## Now
@@ -20,15 +20,25 @@
 ## Pipeline (prospective — no job code issued yet)
 - **Broll Properties — Ikeja City Mall, Alausa, Ikeja, Lagos.** Tile demolition
   to expose the structural ground slab (≈5,000 m²) + carting away.
-  `RPT-2026-DEMO-001` combined Report & Quotation drafted in `drafts/`:
-  Section A demolition ₦9,000,000 (firm) + Section B carting away ₦7,000,000
-  (**provisional 25 trips**) = works ₦16,000,000 + 7.5% VAT = **Contract Sum
-  ₦17,200,000**; final account banded ₦15,695,000–₦18,705,000 on 20–30 trips.
-  7-page A4 PDF rendered and visually verified (letterhead on page 1, running
-  header/footer + page numbers on 2–7). **Draft only, not sent.** Job code opens
-  on acceptance.
+  `RPT-2026-DEMO-001` combined Report & Quotation drafted in `drafts/`.
+  **Repriced by the principal 2026-07-31** (BROLL-03): Section A demolition
+  5,000 m² @ **₦750/m²** = ₦3,750,000 (firm) + Section B carting away
+  **30 trips @ ₦100,000** = ₦3,000,000 = works ₦6,750,000 + 7.5% VAT =
+  **Contract Sum ₦7,256,250** — down 57.8% from the original ₦17,200,000.
+  Section B is now a **capped maximum, not a provisional sum**: the Contract Sum
+  is a ceiling, every trip below 30 is refunded at ₦107,500 incl. VAT, and trips
+  beyond 30 are to DOVA's account. Final account band **₦6,718,750–₦7,256,250**
+  on 25–30 trips. Payment **60/30/10** (₦4,353,750 / ₦2,176,875 / ₦725,625),
+  70% milestone defined as 3,500 m² stripped. 7-page A4 PDF re-rendered;
+  header/footer + page numbering verified on pages 2–7, page 1 letterhead clean.
+  **Draft only, not sent.** Job code opens on acceptance.
 
 ## Recently done (last 3)
+- BROLL-03: `RPT-2026-DEMO-001` repriced and rebuilt on the principal's rates
+  (₦750/m², ₦100,000/trip × 30), converted from provisional-quantity to
+  capped-ceiling-with-refund, payment terms changed to 60/30/10. PDF
+  re-rendered. `tools/render-pdf.js` gained a `CHROME_ARGS` env hook so it runs
+  on Linux/root (needs `--no-sandbox`); default behaviour unchanged.
 - BROLL-02: `RPT-2026-DEMO-001` PDF rendered + verified; render script promoted
   into the repo at `workspaces/client-jobs/tools/render-pdf.js`.
 - BROLL-01: `RPT-2026-DEMO-001` Report & Quotation drafted (see Pipeline above).
@@ -47,11 +57,16 @@
   payment stage (do NOT invoice before acceptance).
 - POOL: confirm payment status of INV-001..005 with principal.
 - OSG: estimate/report await principal review before any client presentation.
-- BROLL: `RPT-2026-DEMO-001` awaits principal review. Two commercial points need
-  the principal's confirmation before it goes out — (1) whether ₦1,800/m² and
-  ₦280,000/trip are all-inclusive selling rates (assumed yes; no O&P or
-  contingency added on top), and (2) whether VAT at 7.5% is to be shown (assumed
-  yes, per POOL-002). Client contact name/title still `[ ]`.
+- BROLL: `RPT-2026-DEMO-001` repriced by the principal and rebuilt. Two points
+  still open before it goes out — (1) **whether ₦750/m² still carries overheads
+  and profit.** The old note claimed ₦1,800/m² was all-inclusive of O&P; at
+  ₦750 that claim was removed from the document rather than left unverified, so
+  if ₦750 does carry O&P the wording at Section 3.0 should be put back. There is
+  no cost build-up in the repo to check this against. (2) Client contact
+  name/title still `[ ]`, and Reviewed / Client-Acceptance signature blocks
+  unfilled. Also note the capped structure means trips beyond 30 are DOVA's
+  cost — exposure is ₦537,500 if the bedding runs to 60 mm rather than the
+  43–50 mm assumed.
 
 ## Notes for the next run
 - Job docs start from `documents/templates/` per `company/document-policy.md`.

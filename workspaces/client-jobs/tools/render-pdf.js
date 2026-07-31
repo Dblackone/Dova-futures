@@ -78,7 +78,11 @@ async function renderPasses(opts, tmpDir) {
   const browser = await puppeteer.launch({
     executablePath: CHROME,
     headless: 'new',
-    args: ['--disable-gpu', '--no-first-run', '--no-default-browser-check'],
+    // CHROME_ARGS appends space-separated launch flags for environments that
+    // need them — e.g. a Linux container running as root requires --no-sandbox,
+    // which we deliberately do NOT enable by default.
+    args: ['--disable-gpu', '--no-first-run', '--no-default-browser-check']
+      .concat((process.env.CHROME_ARGS || '').split(' ').filter(Boolean)),
   });
   try {
     const page = await browser.newPage();

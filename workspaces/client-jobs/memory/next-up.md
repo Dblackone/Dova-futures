@@ -22,16 +22,20 @@
    sent to the client by an agent — presenting is the principal's action._
 
 6. [ ] **BROLL: principal review of `RPT-2026-DEMO-001`** — the Ikeja City Mall
-   tile-demolition Report & Quotation is drafted in `drafts/` (Contract Sum
-   ₦17,200,000 incl. VAT). Before anything is presented to Broll Properties,
-   the principal must confirm: (a) that ₦1,800/m² and ₦280,000/trip are
-   all-inclusive selling rates — nothing for overheads, profit or contingency
-   has been added on top; (b) that VAT at 7.5% should be shown; (c) the
-   provisional 25-trip basis for carting away (band 20–30 trips) and the
-   remeasure-against-trip-tickets mechanism; (d) the 50/40/10 payment split and
-   5–7 week programme, which assume confirmed permitted working hours at the
-   mall. Then fill the client contact name/title and the Reviewed /
-   Client-Acceptance signature blocks. _On acceptance:_ issue job code
+   tile-demolition Report & Quotation is drafted in `drafts/`, repriced
+   2026-07-31 (Contract Sum **₦7,256,250** incl. VAT — 5,000 m² @ ₦750 plus
+   30 trips @ ₦100,000). Before anything is presented to Broll Properties,
+   the principal must confirm: (a) **whether ₦750/m² still carries overheads
+   and profit** — the all-inclusive-of-O&P wording was removed from Section 3.0
+   because there is no cost build-up in the repo to verify it at the new rate;
+   restore it if it holds; (b) the **capped-ceiling structure** — Section B is a
+   maximum, refunded at ₦107,500/trip below 30, with trips beyond 30 to DOVA's
+   account (₦537,500 exposure if the bedding runs to 60 mm rather than the
+   43–50 mm assumed); (c) the 60/30/10 payment split with the 70% milestone
+   defined as 3,500 m² stripped, and the 5–7 week programme, which assumes
+   confirmed permitted working hours at the mall. Then fill the client contact
+   name/title and the Reviewed / Client-Acceptance signature blocks.
+   _On acceptance:_ issue job code
    `DFL-2026-DEMO-001`, append Seq 003 to
    `bim-standards/registers/project-register.csv`, create
    `projects/DFL-2026-DEMO-001_Broll-Properties_Ikeja-City-Mall-Tile-Demolition/`

@@ -25,3 +25,60 @@
 - 2026-07-18 — POOL-03 — Fixed a dead "← Back" nav link in PROGRESS-REPORT-001_June-2026.html (job DFL-2026-POOL-001): `../../../project/templates/index.html` (a path that never existed) → `../../../documents/index.html` (the template gallery). Link is inside a data-no-print block, so it never appeared in the printed/client-delivered PDF — cosmetic browser-view fix only. Flagged by @qa/vera during the reorg review — verified target exists; no other stale links remain in projects/*.html
 - 2026-07-31 — BROLL-01 — Drafted a combined **Report & Quotation** (`RPT-2026-DEMO-001`, quotation ref `DFL/QT/2026/DEMO-001`) for a new prospective client, **Broll Properties**, covering demolition/removal of existing floor tiles to expose the structural ground slab over ≈5,000 m² at **Ikeja City Mall, Alausa, Ikeja, Lagos**, plus carting away of tiles and rubble. Built from `documents/templates/01-Report.html` and structured on the `RPT-2026-POOL-002` combined Report & Quotation precedent (same letterhead, meta grid, `.sec-h`/`.boq` styling, contract-sum box, signature block). Priced from the principal's supplied rates: Section A demolition 5,000 m² @ ₦1,800/m² = **₦9,000,000** (firm, remeasurable); Section B carting away in 20-ton tippers @ ₦280,000/trip carried as a **provisional 25 trips = ₦7,000,000**. Works subtotal ₦16,000,000 + 7.5% VAT ₦1,200,000 = **Contract Sum ₦17,200,000**. Justified the brief's 20–30 trip band with a debris-volume derivation (removal depth 40/45/50 mm → 200/225/250 m³ solid × 1.4 bulking ÷ ≈12 m³ per 20-ton tipper ≈ 23/26/29 trips) and added a cost-sensitivity table (20 trips ₦15,695,000 / 25 trips ₦17,200,000 / 30 trips ₦18,705,000 incl. VAT) plus a §9.0 provisional-quantities/remeasurement note tied to signed trip tickets. Added a 6-stage method statement (set-up & protection → trial strip → mechanical breaking → manual scraping to slab → loading & haulage → clean-down & inspection) and a §6.0 "Working in an Operating Mall" section (permitted working hours, dust/silica control, vibration to adjoining tenancies, buried services in screed, egress routes, safety). **No margin or contingency added on top** — the supplied rates are treated as all-inclusive selling rates (stated explicitly under Section A); only VAT is added, per the POOL-002 precedent. **No job code issued and nothing written to `projects/` or the project register — job opens on acceptance** (HW-01 precedent). File is `workspaces/client-jobs/drafts/RPT-2026-DEMO-001_Broll-Properties_Ikeja-City-Mall-Tile-Demolition.html` — **draft only, not sent**. Client contact name/title and the Reviewed/Client-Acceptance signature blocks left as `[ ]` placeholders — verified by scripted arithmetic re-computation (all 3 scenarios + trip derivation reconcile) and full rendered-text extraction in the browser pane (no stale figures, brand block intact) (maker run, no checker)
 - 2026-07-31 — BROLL-02 — Rendered `RPT-2026-DEMO-001` to its delivered 7-page A4 PDF with the HW-05 running header/footer treatment, and **visually verified it** (the previous run produced the file but never confirmed it). Page 1 keeps the full green letterhead with no running header; pages 2–7 carry the slim header (DOVA FUTURES LIMITED + "Tile Demolition — Report & Quotation", orange rule) and the footer (RC No. 8219604 · DOVAFUTURES.COM · RPT-2026-DEMO-001 · Page X of Y). Promoted the throwaway render script into the repo as `workspaces/client-jobs/tools/render-pdf.js` (+ `package.json`, `README.md`) so no future session re-derives it — parameterised as `--title` / `--ref` / `--out`, and its header comment records the four traps that cost the previous session: Chrome collapses a header/footer template to zero height unless the ROOT element carries an explicit `font-size`; flexbox does not lay out in the margin box (use tables); webfonts do not load in the isolated header/footer context (those strips use Arial); and both PDF passes must share identical margins or the page-1 splice lands on the wrong content. Re-ran the committed tool end-to-end — it reproduces the identical 7-page result. Document content, pricing and `[ ]` placeholders unchanged; **still a draft, still not sent** — verified by rasterising pages 1/2/7 to PNG via `pdfjs-dist` + `@napi-rs/canvas` and inspecting them, plus margin-band text extraction confirming header text at y=801.4 and footer text at y=33.4 on pages 2–7 and neither band populated on page 1 (maker run, no checker)
+
+## 2026-07-31 — BROLL-03: RPT-2026-DEMO-001 repriced and rebuilt
+
+**Goal.** Reprice the Broll Properties (Ikeja City Mall) tile-demolition Report
+& Quotation on the principal's revised rates and rebuild it as a single
+document.
+
+**Rates settled by the principal over the course of the review** — demolition
+walked 1,800 → 950 → 900 → 850 → **750/m²**; carting 280,000 → 110,000 →
+**100,000/trip**, quantity 25 → 35 → **30 trips**. A mid-review instruction to
+split into two separate quotes (demolition / carting) was superseded by
+"build a single quote", so the combined document was kept.
+
+**Result.**
+- Section A: 5,000 m² @ ₦750 = ₦3,750,000 (firm, remeasurable)
+- Section B: 30 trips @ ₦100,000 = ₦3,000,000 (**capped maximum**)
+- Works ₦6,750,000 + VAT 7.5% ₦506,250 = **Contract Sum ₦7,256,250**
+- Down 57.8% from ₦17,200,000.
+
+**Structural change — provisional → capped.** Section B was a provisional 25
+trips remeasurable in both directions. It is now priced at the top of the
+25–30 range so the Contract Sum is a ceiling: every trip not executed is
+refunded at ₦107,500 incl. VAT, and trips beyond 30 are to DOVA's account.
+Sections 4.1, 5.0, 8.0, 9.0, 2.1, 7.0 and the acceptance block were all rewritten
+to match — "provisional/remeasure" language removed throughout.
+
+**Trip-count derivation reconciled.** The principal confirmed a 20-ton tipper.
+At ≈1.5 t/m³ loose rubble a 12 m³ body loads ≈18 t, so volume binds before
+weight and the existing ≈12 m³/trip figure stands. The stated removal depth was
+widened 40–50 mm → **43–50 mm**, which is what actually yields the 25–30 trip
+range (43 mm → 25.1 trips; 50 mm → 29.2). The earlier 35-trip figure was
+dropped with the rate change; it would have required a 60 mm depth.
+
+**Payment terms** changed 50/40/10 → **60/30/10** (₦4,353,750 / ₦2,176,875 /
+₦725,625). The "70% complete" trigger was given an objective test — 3,500 m² of
+5,000 m² stripped to exposed slab, confirmed by joint site measurement — and a
+refund set-off route against the final 10%.
+
+**Rate note narrowed.** The old Section 3.0 note stated ₦1,800/m² was
+all-inclusive of plant, labour, supervision *and the Contractor's overheads and
+profit*. At ₦750 that O&P claim is unverified — there is no cost build-up in the
+repo — so it was removed rather than carried forward as an unchecked assertion.
+Flagged for the principal to restore if ₦750 does carry O&P.
+
+**Verified.** Arithmetic recomputed independently in Node (contract sum, payment
+split, refund ladder, depth→trip derivation) — all match the document. PDF
+re-rendered at 7 pages; margin-band text extraction confirms running header and
+`Page X of 7` footer on pages 2–7 with page 1 letterhead clean. Sections 4.0,
+5.0 and 8.0 screenshotted and visually checked.
+
+**Tooling.** `tools/render-pdf.js` hardcoded its Chrome launch args, and Chrome
+refuses to run as root without `--no-sandbox`, so the renderer could not run in
+this container. Added a `CHROME_ARGS` env hook that appends flags; default
+behaviour is unchanged and `--no-sandbox` is not enabled by default.
+
+**Not done.** Still a draft in `drafts/`, not sent, no job code issued. Client
+contact and signature blocks remain placeholders.
