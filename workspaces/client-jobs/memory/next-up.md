@@ -22,16 +22,26 @@
    sent to the client by an agent — presenting is the principal's action._
 
 6. [ ] **BROLL: principal review of `RPT-2026-DEMO-001`** — the Ikeja City Mall
-   tile-demolition Report & Quotation is drafted in `drafts/` (Contract Sum
-   ₦17,200,000 incl. VAT). Before anything is presented to Broll Properties,
-   the principal must confirm: (a) that ₦1,800/m² and ₦280,000/trip are
-   all-inclusive selling rates — nothing for overheads, profit or contingency
-   has been added on top; (b) that VAT at 7.5% should be shown; (c) the
-   provisional 25-trip basis for carting away (band 20–30 trips) and the
-   remeasure-against-trip-tickets mechanism; (d) the 50/40/10 payment split and
-   5–7 week programme, which assume confirmed permitted working hours at the
-   mall. Then fill the client contact name/title and the Reviewed /
-   Client-Acceptance signature blocks. _On acceptance:_ issue job code
+   tile-demolition Report & Quotation is drafted in `drafts/`, repriced
+   2026-07-31 (Contract Sum **₦6,930,000** incl. VAT at 5% — Section A lump sum
+   ₦3,600,000 over 5,000–5,500 m², plus 30 trips @ ₦100,000, remeasurable).
+   Before anything is presented to Broll Properties, the principal must confirm:
+   (a) **VAT at 5%** — Nigeria's standard rate has been 7.5% since the Finance
+   Act 2019; if FIRS assesses at 7.5% the ~₦165,000 difference falls to DOVA,
+   because the contract states 5% and the Client will have accepted at that rate;
+   (b) the **carting remeasurement** — priced on 30 trips, adjusted both ways at
+   ₦105,000/trip incl. VAT, so the final account runs ₦6,405,000–₦7,140,000 on
+   the derived 25–32 trip range;
+   (c) whether the **₦3,600,000 lump sum carries overheads and profit** — the
+   all-inclusive-of-O&P wording was dropped because no cost build-up exists in
+   the repo to verify it; restore it at Section 3.0 if it holds;
+   (d) the 60/30/10 payment split — 60% mobilisation, 30% on completion of all
+   tile demolition and scraping back to slab, 10% on completion of the whole of
+   the works — and the 5–7 week programme, which assumes confirmed permitted
+   working hours at the mall.
+   Then fill the client contact name/title and the Client Acceptance block
+   ("Reviewed By" was removed on the principal's instruction).
+   _On acceptance:_ issue job code
    `DFL-2026-DEMO-001`, append Seq 003 to
    `bim-standards/registers/project-register.csv`, create
    `projects/DFL-2026-DEMO-001_Broll-Properties_Ikeja-City-Mall-Tile-Demolition/`

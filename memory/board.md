@@ -28,3 +28,16 @@ _(empty)_
 
 ## Merged ✅
 _(empty)_
+
+## 2026-07-31 — cross-workspace request: template font sizes (client-jobs → document-templates)
+
+The principal asked for a **general change across the template library**: body /
+context text at **12pt**, other sizes increased accordingly. This was applied to
+`workspaces/client-jobs/drafts/RPT-2026-DEMO-001` only (body 12.5px → 16px, all
+other sizes × 1.28, letterhead untouched).
+
+`documents/templates/` is owned by the **document-templates** workspace and is
+read-only from client-jobs, so the library itself was NOT changed. A run in that
+workspace should apply the same scaling across all ten templates plus
+`documents/_ds/`, and check page counts — on RPT-2026-DEMO-001 the increase added
+a page (7 → 8).
