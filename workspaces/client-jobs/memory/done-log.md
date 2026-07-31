@@ -240,3 +240,55 @@ matches the table including the two new upward rows. Section headings audited:
 No "ceiling", "capped", "Contractor's account" or trial-strip text remains.
 PDF re-rendered at 8 pages; footer page numbering confirmed `Page X of 8` on
 pages 2–8, page 1 letterhead clean. Sections 1.1, 4.1 and 8.0 screenshotted.
+
+## 2026-07-31 — BROLL-09: further trims to RPT-2026-DEMO-001, plus INV-2026-DEMO-001
+
+### Report edits
+- Section A BOQ description simplified; the Section A note cut from four
+  sentences to two.
+- **"Jack hammer" replaced with "heavy duty floor scraper" throughout** (3
+  occurrences: 1.0 overview, 2.0 scope, 2.1 method row). No "jack" text remains.
+- **Sections 6.0 (Assumptions & Exclusions) and 7.0 (Commercial Terms) merged**
+  into a single **6.0 Commercial Terms & Exclusions**; the note becomes 7.0.
+- Bullets removed as instructed: hazardous materials, statutory permits,
+  disposal/tipping levies, the floor-area assumption, the tile-thickness
+  assumption, the working-hours assumption, the "trip count cannot be fixed"
+  bullet and the final-account-range bullet.
+- The three surviving exclusions were relabelled (buried services / making good
+  / structural & fit-out elements) so they read as exclusions inside the merged
+  commercial section rather than as orphaned assumptions.
+- All 8.0 cross-references retargeted to 7.0. Headings audited: 1.0, 1.1, 2.0,
+  2.1, 3.0, 4.0, 4.1, 5.0, 6.0, 7.0 — contiguous.
+- **Back to 7 pages** from 8.
+
+### INV-2026-DEMO-001 (new)
+First of the three payments — **60% mobilisation**, drafted in `drafts/`:
+
+| | ₦ |
+|---|---|
+| Section A (lump sum ₦3,600,000) @ 60% | 2,160,000 |
+| Section B (30 trips, ₦3,000,000) @ 60% | 1,800,000 |
+| Subtotal | 3,960,000 |
+| VAT 5% | 198,000 |
+| **Total due** | **4,158,000** |
+
+Carries a Contract Position panel (Contract Sum ₦6,930,000 · this invoice
+₦4,158,000 · to follow ₦2,079,000 + ₦693,000) and the Section B remeasurement
+caveat. Built in the house invoice style (matches INV-2026-POOL-005) at the new
+12pt-body scale.
+
+**Fitting it to one page took work** — at the larger type the content ran 481px
+past A4. Resolved by removing the standalone note block (its content duplicated
+the Contract Position panel), moving Contract Position into the dead space under
+Payment Details in the left column, tightening paddings, and stepping the
+metadata label/value rows down to 14px while keeping line items and totals at
+full size. Final trap: `@media print` zeroed body *padding* but not *margin*,
+and the default 8px body margin alone spilled a second page — now `margin: 0`.
+
+**Verified.** Invoice arithmetic recomputed in Node; all seven key figures
+confirmed present in the rendered PDF text; renders at exactly 1 page. Report
+re-rendered at 7 pages.
+
+**Not done / flagged.** No job code exists and the quote is not accepted, so
+this invoice must not be issued yet — `governance/guardrails.md` and the
+workspace rule against invoicing before acceptance both apply. It is a draft.
