@@ -82,3 +82,49 @@ behaviour is unchanged and `--no-sandbox` is not enabled by default.
 
 **Not done.** Still a draft in `drafts/`, not sent, no job code issued. Client
 contact and signature blocks remain placeholders.
+
+## 2026-07-31 — BROLL-04: RPT-2026-DEMO-001 lump-sum conversion, VAT 5%, area band
+
+Four changes instructed by the principal, applied to the draft in `drafts/`.
+
+**1. Section A → lump sum ₦3,600,000.** Was 5,000 m² @ ₦750/m² = ₦3,750,000.
+Now a single lump-sum item (Qty 1 / Unit "Lump Sum") that is **not remeasured**
+within the area band — it does not reduce if the floor measures at the low end.
+Effective rate ₦720/m² at 5,000 m², ₦654.55/m² at 5,500 m².
+
+**2. VAT 7.5% → 5%.** Applied throughout: cost summary, refund ladder,
+per-trip refund (₦107,500 → ₦105,000), payment schedule, Sections 5.0/9.0 and
+the acceptance block. **Flagged to the principal:** Nigeria's standard VAT rate
+has been 7.5% since the Finance Act 2019 (effective Feb 2020). Built at 5% as
+instructed; the exposure is recorded in status.md under Open/blocked.
+
+**3. Area assumption 5,000 m² → 5,000 – 5,500 m²**, with excess over 5,500 m²
+treated as a **variation** priced and agreed in writing before that work
+proceeds. Propagated to Sections 1.0, 1.1, 1.2, 2.0, 3.0, 4.0, 5.0, 7.0, 8.0
+and 9.0.
+
+Consequence for carting, flagged: the trip derivation is area-dependent, so the
+Section 4.0 table was rebuilt as trips-by-depth **at both 5,000 and 5,500 m²**.
+The honest range is now **25 – 32 trips** (5,500 m² @ 50 mm → 32.1), against a
+cap still set at 30. Up to 2 trips (₦210,000) therefore fall to DOVA at the top
+of both bands. Section 9.0 states this explicitly rather than hiding it.
+
+**4. "Reviewed By" removed** from the authorisation block; signature grid
+rebalanced 3 columns → 2 (Prepared By, Client Acceptance) with wider gap.
+
+**Result.** Section A ₦3,600,000 (LS) + Section B ₦3,000,000 (30 trips capped)
+= works ₦6,600,000 + VAT 5% ₦330,000 = **Contract Sum ₦6,930,000**. Payment
+60/30/10 = ₦4,158,000 / ₦2,079,000 / ₦693,000. Refund ladder ₦6,405,000 –
+₦6,930,000 on 25–30 trips. 70% milestone restated as 70% of the *measured*
+area (3,500 m² at 5,000 m²; 3,850 m² at 5,500 m²) since the area is now a band.
+
+**Verified.** Arithmetic recomputed independently in Node — contract sum,
+payment split, refund ladder, trips across both area bounds and the effective
+lump-sum rate all match the document. Grep confirms no stale figures, no 7.5%
+reference and no "Reviewed By" remain. PDF re-rendered at 7 pages; margin-band
+extraction confirms running header and `Page X of 7` footer on pages 2–7 with
+page 1 letterhead clean. Sections 3.0, 4.0, 5.0 and the signature block
+screenshotted and visually checked.
+
+**Not done.** Still a draft: not sent, no job code, client contact and
+acceptance block remain placeholders.
