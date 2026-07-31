@@ -24,14 +24,14 @@
 6. [ ] **BROLL: principal review of `RPT-2026-DEMO-001`** — the Ikeja City Mall
    tile-demolition Report & Quotation is drafted in `drafts/`, repriced
    2026-07-31 (Contract Sum **₦6,930,000** incl. VAT at 5% — Section A lump sum
-   ₦3,600,000 over 5,000–5,500 m², plus 30 trips @ ₦100,000 capped).
+   ₦3,600,000 over 5,000–5,500 m², plus 30 trips @ ₦100,000, remeasurable).
    Before anything is presented to Broll Properties, the principal must confirm:
    (a) **VAT at 5%** — Nigeria's standard rate has been 7.5% since the Finance
    Act 2019; if FIRS assesses at 7.5% the ~₦165,000 difference falls to DOVA,
-   because the Contract Sum is a ceiling and cannot be adjusted upward;
-   (b) the **carting cap of 30 trips** against a derived range of 25–32 — at
-   5,500 m² and 50 mm the requirement is ~32 trips, so up to ₦210,000 is to
-   DOVA's account; raising the cap to 32 closes it for ₦200,000 + VAT;
+   because the contract states 5% and the Client will have accepted at that rate;
+   (b) the **carting remeasurement** — priced on 30 trips, adjusted both ways at
+   ₦105,000/trip incl. VAT, so the final account runs ₦6,405,000–₦7,140,000 on
+   the derived 25–32 trip range;
    (c) whether the **₦3,600,000 lump sum carries overheads and profit** — the
    all-inclusive-of-O&P wording was dropped because no cost build-up exists in
    the repo to verify it; restore it at Section 3.0 if it holds;

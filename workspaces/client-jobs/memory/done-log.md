@@ -185,3 +185,58 @@ arisings may still be stockpiled on site when the 30% falls due. Flagged to the
 principal.
 
 No figures change. PDF re-rendered at 7 pages and checked.
+
+## 2026-07-31 — BROLL-08: shorten, resize, and correct the carting remeasurement
+
+### Commercial correction (the important one)
+The principal corrected two statements as **wrong**: trips above 30 were said to
+be to the Contractor's account and not chargeable. **The Client is billed for
+any trip outside the 30 quoted.** Section B is therefore no longer a capped
+ceiling — it is a **remeasurable quantity adjusted in both directions** at
+₦105,000 per trip incl. VAT.
+
+Every place the ceiling structure had been written in was reversed:
+- 4.0 note, 4.1 (retitled *Refund Schedule* → **Adjustment Schedule**, with
+  rows for 31 and 32 trips and a signed Adjustment column), Section B BOQ
+  description and subtotal label, 5.0 cost summary + amount-in-words note,
+  6.0 assumptions, 7.0 measurement + adjustments bullets, 8.0 note (retitled
+  *Capped Carting Quantity & Refund* → **Carting Quantity & Remeasurement**),
+  and the acceptance block.
+- Final-account range is now **₦6,405,000 – ₦7,140,000** on 25–32 trips
+  (was "cannot exceed ₦6,930,000").
+- The ₦210,000 exposure previously flagged as DOVA's is now the Client's.
+
+### Removals (shorten)
+- Section **1.1 Existing Condition & Extent** deleted.
+- Section **6.0 Working in an Operating Mall** deleted.
+- **2.1 method table row 2 (Trial strip)** deleted; rows renumbered 1–5.
+- **All trial-strip references removed**, including the 8.0 bullet about the
+  confirmed trip forecast.
+- The 8.0 ceiling sentence deleted as instructed.
+
+Sections renumbered to stay contiguous — 1.2→1.1, 7.0→6.0, 8.0→7.0, 9.0→8.0 —
+and every cross-reference retargeted. The 1.0 overview sentence that pointed at
+the deleted Section 6.0 was rewritten to carry the operating-mall point inline.
+
+### Font
+Body `.p` 12.5px → **16px (12pt)**; all other sizes in the CSS block and the
+document body scaled by the same 1.28 factor (headings 15→19, tables 12→15.5,
+table headers 9→11.5, notes 10.5→13.5). The letterhead block was left untouched
+so page 1 branding does not shift.
+
+**Page count 7 → 8.** The +28% type outweighs the three deletions. Flagged to
+the principal: dropping the body to 11pt (14.5px), or cutting further content,
+would bring it back to 7.
+
+### Scope note
+The principal asked for the font change "across template". `documents/templates/`
+belongs to the **document-templates** workspace and is read-only from here
+(CLAUDE.md write-scope), so only this document was changed. The template-library
+change needs its own run in that workspace — logged to `memory/board.md`.
+
+**Verified.** Adjustment ladder recomputed in Node for 25/26/28/30/31/32 —
+matches the table including the two new upward rows. Section headings audited:
+1.0, 1.1, 2.0, 2.1, 3.0, 4.0, 4.1, 5.0, 6.0, 7.0, 8.0 — contiguous, no gaps.
+No "ceiling", "capped", "Contractor's account" or trial-strip text remains.
+PDF re-rendered at 8 pages; footer page numbering confirmed `Page X of 8` on
+pages 2–8, page 1 letterhead clean. Sections 1.1, 4.1 and 8.0 screenshotted.
