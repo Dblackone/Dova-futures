@@ -2,6 +2,11 @@
 
 > This file is read at the start of EVERY run. It is the single source of truth
 > for how agents behave in this repository. Keep it short, current, and honest.
+>
+> **Every AI assistant follows this file, not just Claude Code.** The
+> cross-model layer — agent identity, model tags, and attribution — lives in
+> `governance/agents/SHARED-RULES.md`; root `AGENTS.md` is the pointer for tools that
+> look for that filename.
 
 ## 0. What this repository is — and STEP 0 of every run
 
