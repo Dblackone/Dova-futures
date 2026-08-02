@@ -2,32 +2,242 @@
 name: dova-doc
 description: >
   Generates any DOVA Futures company document — quote, invoice, letter,
-  report, certificate, salary slip, or milestone request — using the
-  9-template brand system. Works in basic Claude chat with no file access
-  needed. Outputs a ready-to-use HTML document plus a plain-text fill sheet.
-allowed-tools: []
+  report, certificate, salary slip, progress report, or milestone request —
+  from the canonical 10-template brand library in documents/templates/.
+  Use whenever a company document is to be drafted, for any project.
+  Falls back to an embedded spec when running in chat with no file access.
+allowed-tools: [Read, Glob, Grep, Write, Edit]
 ---
 
 # DOVA Futures Document Generator
 
-You are the DOVA Futures document assistant. You generate professional,
-brand-consistent company documents using the 9-template system described below.
-You work entirely in chat — no file access required.
+You generate DOVA Futures company documents. Read this whole file before you
+produce anything.
 
 ---
 
-## Brand Identity (fixed — never change these)
+## 0. The one binding rule
 
-> Canonical source: `company/brand.md` in the Dova-futures repo. The values are
-> duplicated here ONLY because this skill runs in basic chat with no file
-> access. If `company/brand.md` changes, update this copy in the same commit.
+> **No company document is ever created from scratch.**
+> Every document starts from the canonical template for its type in
+> `documents/templates/`. — [`company/document-policy.md`](../../../company/document-policy.md)
+
+This governs the two modes below. **Mode A is the default. Mode B is a
+fallback and its output is not a finished company document.**
+
+### Mode A — file access (the normal case)
+
+You are running in the repository. Do this, in order:
+
+1. **Read the template file in full.** Not the field list in this skill — the
+   actual HTML. The field list here is a summary and goes stale; the template
+   is the source of truth for which fields exist.
+2. **Copy it** to the output path (§5) under its new name.
+3. **Fill every `[Bracketed Placeholder]`** inside a `contenteditable` span with
+   real content.
+4. **Strip the placeholder styling** as you fill: remove
+   `color:#9E4F30; font-style:italic` so filled text renders as normal body
+   text. Clay italic means "not filled in" — leaving it on a filled field makes
+   a finished document look unfinished.
+5. **Add table rows** where the real document has more line items, findings or
+   work packages than the template ships. Delete rows you do not need.
+6. **Never touch** the letterhead, the inline-SVG logo, the terracotta rule, the
+   footer contact block, or `RC No. 8219604`.
+7. **Never modify the template itself.** If a template has a defect, log it in
+   `memory/triage.md` and say so in your handoff.
+
+### Mode B — chat only, no file access
+
+Say so explicitly, then either:
+
+- **Preferred:** ask the user to paste the relevant template or sample file.
+  The filled samples in `workspaces/document-templates/drafts/samples/` are
+  real, complete worked examples in the correct idiom — `SAMPLE-03` for an
+  invoice, `SAMPLE-02` for a quote, and so on.
+- **Last resort:** use the embedded patterns in §"HTML Template Spec" below.
+  **Those patterns are a parallel design system that does not match the real
+  templates** — different CSS architecture, different footer, no `RC No.` line.
+  Output produced that way must be labelled as a draft for wording only and
+  reconciled against the real template before anyone uses it.
+
+---
+
+## 1. Which template
+
+| The user asks for | Template file | Ref. in the HTML |
+|---|---|---|
+| blank letterhead, one-off correspondence | `documents/templates/00-Letterhead.html` | — (no fields) |
+| report, assessment, inspection, site memo | `01-Report.html` | `RPT-YYYY-NNN` |
+| quote, proposal, estimate, pricing | `02-Project-Quote.html` | `QUO-YYYY-NNN` |
+| invoice, bill, payment request for work done | `03-Payment-Invoice.html` | `INV-YYYY-NNN` |
+| completion certificate, handover, sign-off | `04-Completion-Form.html` | **none — see §6** |
+| salary slip, payslip | `05-Salary-Slip.html` | **none — see §6** |
+| internal memo, letter to staff | `06-Internal-Letter.html` | `DOVA/MEMO/YYYY/XXX` |
+| letter to client, contractor, agency | `07-External-Letter.html` | `DOVA/LTR/YYYY/XXX` |
+| progress report, monthly status, site update | `08-Project-Report.html` | **none — see §6** |
+| milestone claim, stage payment, interim application | `09-Milestone-Payment-Request.html` | `MPA-NNN` |
+
+If the type is ambiguous, ask **one** clarifying question. The most common
+confusion is invoice vs milestone request: the milestone request is the
+*application* for certification; the invoice bills the amount once certified.
+
+> ⚠ **Reference formats are unresolved.** The prefixes above are what the
+> template HTML actually contains. `documents/README.md` specifies different
+> ones (`QTE-`, `MPR-`, `IL-`, `EL-`, plus `CC-`/`SAL-`/`PR-` for the three
+> templates that have no field at all), and live client jobs use a third,
+> job-scoped form (`INV-2026-POOL-001`). **Three conventions, no ruling yet.**
+> Follow the template HTML, and tell the user which convention you used.
+
+---
+
+## 2. Money rules
+
+Get these wrong and the document is worse than useless.
+
+| Rule | Value | Note |
+|---|---|---|
+| Currency | **₦ (NGN)**, thousands separators | `₦2,500,000` — never `NGN 2500000` |
+| VAT | **7.5%** default | Hardcoded in templates 02 and 03. **Live documents have shipped at both 7.5% and 5%** — confirm with the user rather than assuming, and state the rate you used. |
+| Retention | **5%** default | Hardcoded in template 09 and in 08's panel label. Contracts vary — confirm. |
+| Payment terms | 30 days from invoice date | Template 03 default |
+| Quote validity | 30 days from issue | Template 02 default |
+
+**Always reconcile before you output.** A document family that does not add up
+is the single most damaging thing this skill can produce:
+
+- Line items **sum exactly** to the subtotal. Compute it; do not eyeball it.
+- Subtotal × VAT rate = VAT, and subtotal + VAT = grand total. State exact
+  figures — no rounding, no "approximately".
+- If milestones exist, they **sum to the contract sum**, and their VATs sum to
+  the contract VAT. Map each milestone onto whole work packages where you can;
+  it makes every later document reconcile for free.
+- Progress percentages should be **value-weighted** (earned value ÷ contract
+  sum), not an average of the rows.
+- Invoiced-to-date − payments received = amount outstanding.
+- Say whether a "Contract Value" is inclusive or exclusive of VAT, and whether
+  it includes approved variations. **The templates do not say, and 04, 08 and 09
+  can each be read either way** — so annotate the figure.
+
+A fully worked, reconciling example across nine documents is in
+`workspaces/document-templates/drafts/samples/README.md` §3. Read it before
+building a document family from scratch.
+
+---
+
+## 3. Fixed values — never invent these
+
+Canonical source is [`company/brand.md`](../../../company/brand.md); duplicated
+here only because Mode B has no file access. **If `brand.md` changes, update
+this copy in the same commit.**
 
 ```
-Company name:   DOVA FUTURES LIMITED
+Legal name:     DOVA FUTURES LIMITED
+RC No.:         8219604
+TIN:            32745404-0001
 Tagline:        DESIGNERS · BUILDERS · DEVELOPERS
 Email:          info@dovafutures.com
 Phone:          +234 816 367 5439
 Website:        dovafutures.com
+
+Remittance:     Providus Bank · Dova Futures Limited · 1306839309
+                (This SUPERSEDES Globus Bank 1000489264. Five issued POOL
+                invoices still carry the old account — do not copy from them.
+                Nigerian NUBAN accounts have no sort code; template 03 ships a
+                Sort Code field that should be left out.)
+```
+
+---
+
+## 4. Voice
+
+[`company/voice-and-tone.md`](../../../company/voice-and-tone.md) governs every
+word. In short: restrained, precise, premium. Short sentences, concrete nouns,
+exact figures. **No exclamation marks, no marketing filler.** British/Nigerian
+spellings (colour, organise, metre). Letters use formal Nigerian business
+English — "Dear Mrs. Nwaobi", "Yours sincerely" to a named person, "Yours
+faithfully" to an unnamed one.
+
+Litmus test: if it could appear in a glossy Lagos property brochure, it passes.
+
+---
+
+## 5. Where the output goes, and who approves it
+
+**This is a hard limit, not a preference.**
+
+- Drafts go to **`workspaces/<your-workspace>/drafts/`**. Client-job drafts go
+  to `workspaces/client-jobs/drafts/`.
+- **Never write into `projects/`.** Only a principal-approved document is
+  promoted into `projects/<JOB>/01-Documents/`, and that is not your call.
+  — `company/document-policy.md` §5
+- **Never send, email, publish or deliver anything.** Drafts only. Outbound
+  delivery needs the principal's explicit approval.
+  — `company/ethics.md`, `governance/guardrails.md`
+- **Never append to `bim-standards/registers/project-register.csv`** as a side
+  effect of drafting.
+- **Payroll is never committed.** Template 05 with real staff data does not go
+  into git at all — `workspaces/company-ops/PROJECT.md`.
+- Log the finished draft in your workspace's `memory/done-log.md`: document
+  type, reference, recipient, date drafted.
+
+Naming, following live practice:
+`<REF>_<Client>_<Short-Description>.html` — e.g.
+`INV-2026-014_Aterin-Heights_Milestone-2.html`.
+
+---
+
+## 6. Known traps — verify each, do not assume they are fixed
+
+Measured 2026-08-02. All are logged in `memory/triage.md` and unresolved.
+
+1. **Five templates overflow A4 while empty, and all nine hardcode
+   `Page 1 of 1`.** At the 794 px width the templates are built to, A4 is
+   1123 px: `01` = 1297, `02` = 1182, `04` = 1238, `08` = 1348, `09` = 1273.
+   `07` has only 51 px of headroom. So a filled document very likely runs to
+   two pages, prints `Page 1 of 1` in the middle of itself, and prints nothing
+   on page 2. **Check the length of what you produce and warn the user.**
+2. **Templates 04, 05 and 08 have no reference-number field at all.** There is
+   nowhere in the HTML to put one. Put the reference in the filename and say so.
+3. **Template 03 has no retention row; template 09 has no VAT line.** If you
+   need retention on an invoice, add it as a negative line item. If you need
+   VAT on a milestone claim, state it in the milestone description instead.
+4. **Template 08's Variance and Status cells, and the Impact badges, are not
+   `contenteditable`.** Edit them in the HTML source, or the variance column
+   will contradict the percentages beside it.
+5. **Fonts load from the Google Fonts CDN.** An offline render silently loses
+   Bebas Neue and Inter and stops looking like a DOVA document. If you render,
+   confirm the output actually shows Bebas Neue.
+6. **`render-pdf.js` needs `@page :first { margin-top: 0 }`,** which no
+   template carries — without it page 1's letterhead lands 20 mm down the paper.
+   The renderer is at `workspaces/client-jobs/tools/render-pdf.js`; it needs
+   `CHROME_PATH` and must run unsandboxed.
+7. **Two incompatible pagination strategies exist** in live documents:
+   `thead`/`tfoot` spacers (`QTE-2026-001`) and the two-pass `render-pdf.js`
+   splice. **Do not invent a third.** Pick one and say which.
+8. Add `data-wrap` to the screen wrapper and
+   `[data-wrap] { padding: 0 !important; min-height: 0 !important; }` to the
+   print block — otherwise the wrapper's padding pushes the sheet onto a
+   spurious second page. See `INV-2026-DEMO-001`.
+
+---
+
+## 7. Worked reference
+
+Ten complete samples — one per template, all sharing one fictional client and
+project with figures that reconcile exactly — are in
+`workspaces/document-templates/drafts/samples/`. **When in doubt about wording,
+density, table depth or tone, open the matching `SAMPLE-NN-*.html` and follow
+it.** Its `README.md` documents every figure and how it was derived.
+
+---
+
+## 8. Colour and type tokens
+
+Same provenance and same rule as §3 — canonical in `company/brand.md`, copied
+here only for Mode B. Never re-declare these anywhere else; never invent a
+shade that is not on this list.
+
+```
 Primary:        #1C4636  (dark forest green)
 Accent:         #B85C38  (terracotta)
 Surface:        #F5EFE8  (warm cream)
@@ -35,13 +245,22 @@ Background:     #E8E1D5
 Body text:      #1A1A1A
 Muted text:     #4A4F5C
 Label text:     #6B7280
+Placeholder:    #9E4F30  (clay — means "not filled in"; strip it when you fill)
+Focus ring:     #5AA17C  (mint)
 Display font:   Bebas Neue
 Body font:      Inter
 ```
 
 ---
 
-## Template Catalog
+## 9. Field checklist per template
+
+> **A summary, not a substitute.** In Mode A, read the template HTML — it is the
+> source of truth for which fields exist, and this list has already drifted from
+> it. The `T0N` labels below map to the files in §1. The **reference formats in
+> this section follow `documents/README.md` and therefore disagree with the
+> template HTML on T02, T06, T07 and T09 — §1 has the actual values.** Templates
+> 04, 05 and 08 have no reference field at all, whatever this section implies.
 
 ### T01 — Report
 **Use when:** Any formal report — inspection, assessment, survey, summary memo.
