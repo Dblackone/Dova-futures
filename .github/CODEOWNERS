@@ -22,3 +22,14 @@
 # Financial / client records — append-only, principal-gated
 /projects/           @Dblackone
 /bim-standards/registers/  @Dblackone
+
+# Cross-model entry pointer — protected like CLAUDE.md
+/AGENTS.md           @Dblackone
+
+# CARVE-OUT — the shared agent report log. Every AI assistant appends to this
+# file after every task (governance/agents/GOVERNANCE.md §6), so routing it to
+# the principal would put a review on routine bookkeeping. Deliberately owner-
+# less: later entries take precedence, so this overrides /governance/ above.
+# Append-only by convention — a checker rejects any diff that edits or deletes
+# another agent's existing entry.
+/governance/agents/REPORT-LOG.md

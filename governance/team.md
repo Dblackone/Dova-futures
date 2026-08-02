@@ -1,5 +1,12 @@
 # team.md — The Agent Team (Org + Naming)
 
+> **Multi-model note.** This file defines the role/callsign taxonomy for the
+> Claude Code roster. Since 2026-08 the repository is worked on by several
+> models. The cross-model layer — identity registry, model tags, attribution
+> formats, and the shared contract every assistant follows — lives in
+> [`governance/agents/`](agents/SHARED-RULES.md). Nothing below changes; the model tag
+> is added *alongside* the handle (`@build/forge [claude-code]`).
+
 > Layers a managed team onto the loop. Real life: jobs go to team members on
 > branches, a lead manages the repo, QA checks the work. Here: named agents do
 > the same, coordinating through the board on disk — because agents can't talk
@@ -44,18 +51,19 @@
 
 ## The roster
 
-| Handle | File (`.claude/agents/`) | Job |
-|--------|--------------------------|-----|
-| `@lead/atlas` | `lead-atlas.md` | Decompose, assign, route to QA, propose merges, own the board |
-| `@build/forge` | `build-forge.md` | Implement one task on its own worktree |
-| `@build/nova` | (copy of forge) | Second parallel implementer |
-| `@qa/vera` | `qa-vera.md` | Independent verification + bug hunt |
-| `@sec/warden` | `sec-warden.md` | Security review before sensitive merges |
-| `@arch/sol` | `arch-sol.md` | Keep architecture coherent |
-| `@docs/quill` | `docs-quill.md` | Documentation |
+**The roster lives in [`governance/agents/REGISTRY.md`](agents/REGISTRY.md) —
+the single source of truth for agent identity.** It lists every agent, its role,
+its model tag, and its status, across all models. It is not duplicated here:
+two copies of a roster is two rosters, and one of them is always wrong.
+
+This file owns the **role taxonomy** above and the **naming/branch conventions**
+below. The registry owns **who exists**. `.claude/agents/*.md` owns **how a
+Claude Code agent is implemented**.
 
 > Keep a small fixed core. Spin up extra `build/*` workers per task; don't create
 > a dozen standing agents. WIP limit: max 3 active branches at once to start.
+> `@lead/atlas` additionally holds **governance authority** for the repository —
+> see [`governance/agents/GOVERNANCE.md`](agents/GOVERNANCE.md).
 
 ## Rules of engagement
 

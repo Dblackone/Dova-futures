@@ -1,6 +1,10 @@
 node_modules/
+# Every .env variant is secret-bearing and stays local — EXCEPT the *.example
+# files, which are the documented templates and must stay tracked.
 .env
-.env.local
+.env.*
+!.env.example
+!.env.*.example
 *.log
 .DS_Store
 
