@@ -151,6 +151,72 @@ pick up without re-deriving the state of the repository.
   - Any assistant other than Claude: read `GOVERNANCE.md` before touching
     anything under `company/`, `governance/`, `prompts/`, or `.github/`.
 
+### 2026-08-02 21:40 — @docs/quill [claude-code]
+- **Model:** Claude Opus 5, Claude Code
+- **Workspace:** `document-templates`
+- **Task:** Document System Phase 2 — produce one realistic sample document for
+  every template in `documents/templates/`, sharing one fictional client and
+  project, for the principal to review before Phase 3.
+- **Files modified:**
+  - new: `workspaces/document-templates/drafts/samples/SAMPLE-00-Letterhead.html`
+    … `SAMPLE-09-Milestone-Payment-Request.html` (10 files) + that folder's
+    `README.md`
+  - modified: `workspaces/document-templates/memory/{status,next-up,done-log}.md`
+  - modified: `memory/triage.md` (7 new rows, appended)
+  - modified: this file (append)
+  - **not touched:** `documents/templates/**` (no template edited),
+    `projects/**`, `bim-standards/registers/project-register.csv`
+- **Summary of changes:** Invented one client and project — Aterin Heights
+  Limited, job `SAMPLE-2026-ATH-001`, a clubhouse and pool deck at Ajah, Lagos
+  — and ran it through its lifecycle across the ten templates. Every figure
+  derives from a single ₦97,779,000 ex-VAT contract sum and reconciles exactly:
+  four milestones mapping onto whole work packages, two invoices, a
+  value-weighted progress calculation (69.7% actual vs 72.1% planned), an
+  interim milestone claim, and a completion certificate. VAT 7.5% and retention
+  5% throughout, per the brief. All ten templates were read in full first.
+- **Verified:** Measured all ten samples **and all ten blank templates** in
+  headless Chrome (`puppeteer-core` from `workspaces/client-jobs/tools/`), print
+  media emulated, `[data-paper]` height against A4 = 1123 px. Result table is in
+  the sample `README.md` §4. `document.fonts.check` confirmed Bebas Neue and
+  Inter loaded on all ten. Samples 02 and 08 inspected visually in a browser.
+  Grep confirms no `[Bracketed Placeholder]` and no italic clay placeholder
+  styling survives in any sample. **Not verified:** no PDFs rendered — see
+  unresolved issue 2; no checker has reviewed this; the arithmetic was computed
+  by hand and re-checked, not by a tool.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:**
+  1. **🔴 Five templates overflow A4 while completely empty, and all nine
+     hardcode a `Page 1 of 1` footer.** 01 = 1297 px, 02 = 1182 px, 04 =
+     1238 px, 08 = 1348 px, 09 = 1273 px against A4's 1123 px; 07 has 51 px of
+     headroom and the filled sample overflows it. Any two-page document prints
+     `Page 1 of 1` mid-document and nothing on page 2. This promotes
+     `documents/TEMPLATE-INVENTORY.md` §4 finding 5 from tidy-up to blocking.
+  2. **No template renders correctly through `render-pdf.js` as shipped** —
+     none carries `@page :first { margin-top: 0 }`, so page 1's letterhead lands
+     20 mm down the paper. Adding it to the samples would have meant introducing
+     a pagination strategy the templates do not have, which the brief forbade,
+     so PDFs were skipped and the defect reported instead.
+  3. Five further template defects logged to `memory/triage.md`: templates 04,
+     05 and 08 have no reference-number field at all; 03 has no retention row
+     while 09 has no VAT line; 08's Variance/Status cells and Impact badges are
+     not `contenteditable`; 03 ships a Sort Code field Nigerian NUBAN banking
+     does not use; and "Contract Value" is ambiguous across 04, 08 and 09.
+  4. Seven filling decisions need the principal's confirmation — listed in the
+     sample `README.md` §6. One of them (whether VAT is charged on the gross
+     works value or net of retention) is a genuine tax question with a wrong
+     answer, and is not mine to settle.
+  5. Nothing is merged. This is maker output on a branch, and **Phase 2 is gated
+     on the principal's review** by the brief itself.
+- **Recommendations for the next agent:**
+  - **Do not start Phase 3.** The gate is the principal's review of
+    `workspaces/document-templates/drafts/samples/README.md`.
+  - A checker run (maker ≠ checker) should independently re-derive the figures
+    in that README §3 and re-run the §4 measurement before the principal spends
+    time on wording.
+  - When Phase 3 does start, the pagination decision comes first — the 12pt body
+    scaling the principal asked for on 2026-07-31 makes the overflow worse, so
+    scaling before pagination is settled just moves the problem.
+
 ---
 
 *This file is permanent. It is never truncated or archived wholesale — if it
