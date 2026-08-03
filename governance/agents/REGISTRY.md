@@ -11,9 +11,10 @@ duplicate each other:
 
 | File | Owns | Does not own |
 |------|------|--------------|
-| **This file** | **Identity** — which agents exist, their model, their status | how a role behaves; how an agent is implemented |
+| **This file** | **Identity** — which agents exist, their model, their status | how a role behaves; how an agent is implemented; who may approve what |
+| `governance/agents/GOVERNANCE.md` | **Authority** — who leads, who approves, what full permission means | who exists |
 | `governance/team.md` | The **role taxonomy** (`lead`/`build`/`qa`/`sec`/`arch`/`docs`/`ops`), branch naming, rules of engagement | the list of agents — it points here |
-| `.claude/agents/*.md` | The **implementation** — Claude Code system prompts, tool grants | identity or roles for any other model |
+| `.claude/agents/*.md` · `.codex/agents/*.toml` | The **implementation** — system prompts and tool grants for Claude Code and Codex | identity or roles for any other model |
 
 If you are adding an agent, this file is the change. If you find the roster
 listed anywhere else, that copy is stale by definition — file a `GP-NNN`.
@@ -64,7 +65,7 @@ learn the job (`build`), the individual (`ember`), and the model
 |-----------|-----------|------|------|--------------|
 | `claude-code` | Claude Code (Anthropic) | Cloud | Yes — full tool access | [`models/claude-code.md`](models/claude-code.md) |
 | `gemma-lmstudio` | Gemma via LM Studio | **Local, this PC** | Depends on client — see file | [`models/gemma-lmstudio.md`](models/gemma-lmstudio.md) |
-| `codex` | OpenAI Codex | Cloud | Yes | [`models/codex.md`](models/codex.md) |
+| `codex` | OpenAI Codex | Cloud | Yes — full tool access | [`models/codex.md`](models/codex.md) — **lead orchestrator** |
 | `<new>` | — | — | — | copy [`models/_TEMPLATE.md`](models/_TEMPLATE.md) |
 
 Adding a model = one row here + one file in `models/`. Nothing else changes.
@@ -77,7 +78,9 @@ Adding a model = one row here + one file in `models/`. Nothing else changes.
 
 | Handle | Model tag | Role | Definition | Notes |
 |--------|-----------|------|------------|-------|
-| `@lead/atlas` | `claude-code` | lead | `.claude/agents/lead-atlas.md` | Decompose, assign, route to QA, own the board. Does not write code. |
+| `@lead/vector` | `codex` | lead | `.codex/agents/lead-vector.toml` · `models/codex.md` | **LEAD ORCHESTRATOR.** Plans, assigns, coordinates agents, reviews integrations and dependencies, implements approved work, maintains repository consistency. Not the final approving authority. |
+| `@lead/atlas` | `claude-code` | lead | `.claude/agents/lead-atlas.md` | **Senior planning & review.** Decompose, plan, document, review, route to QA, own the board — when assigned by Codex or authorized by Vollmann. Not the administrator. |
+| `@qa/quartz` | `codex` | qa | `models/codex.md` | Cross-model checker — verifies work built by another model. Active since 2026-08-03. |
 | `@build/forge` | `claude-code` | build | `.claude/agents/build-forge.md` | Implementer, one task per branch |
 | `@build/nova` | `claude-code` | build | copy of forge | Second parallel implementer |
 | `@qa/vera` | `claude-code` | qa | `.claude/agents/qa-vera.md` | Independent verification; read-only on source |
@@ -90,11 +93,19 @@ Adding a model = one row here + one file in `models/`. Nothing else changes.
 > **grandfathered**: a bare `@build/forge` in history means `claude-code`.
 > Every *new* signature carries the tag explicitly.
 
+**Authority is not in this table.** A handle says what an agent does, not what it
+may approve. Vollmann Akarakiri is the final approving authority; `@lead/vector`
+is the lead orchestrator; `@lead/atlas` supports planning and review. See
+[`GOVERNANCE.md`](GOVERNANCE.md) §1.
+
+**Codex holds two handles**, and which one it signs is which role it is acting
+in. Maker ≠ checker still binds across them: work built as `@lead/vector` is not
+verified by `@qa/quartz` — same agent, two hats. A different agent checks it.
+
 ### Reserved (not yet in use)
 
 | Handle | Model tag | Role | For |
 |--------|-----------|------|-----|
-| `@qa/quartz` | `codex` | qa | A cross-model checker, so Claude's work can be verified by a different model |
 | `@build/kite` | `kimi` | build | Placeholder if Kimi is added |
 
 ### Retired

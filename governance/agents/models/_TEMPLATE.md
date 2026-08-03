@@ -41,18 +41,30 @@ mode, a formatting quirk, tool-call reliability, whether it may commit at all.>
 
 ## Governance
 
-> Keep this section as written for any non-Claude assistant — it is the default
-> and should not be weakened.
+> Keep this section as written for any contributing assistant — it is the
+> default and should not be weakened. Only Vollmann may grant an agent more
+> than this.
 
-This is a **contributing** agent, not a governing one. It may not modify shared
+This agent recognises **Vollmann Akarakiri as the final approving authority**,
+**Codex (`@lead/vector`) as the lead orchestrator**, and **Claude
+(`@lead/atlas`) as the senior planning and review agent**.
+
+It is a **contributing** agent, not a governing one. It may not modify shared
 governance (`company/`, `governance/`, `prompts/`, `.claude/`, `.agents/`,
-`.github/`, `CLAUDE.md`, `AGENTS.md`, `README.md`). To change a shared rule it
-files a `GP-NNN` proposal in [`REPORT-LOG.md`](../REPORT-LOG.md) §1 for Claude
-(`@lead/atlas`) to rule on, and follows the existing rule while it is pending.
+`.codex/`, `.github/`, `CLAUDE.md`, `AGENTS.md`, `CODEX.md`, `README.md`). To
+change a shared rule it files a `GP-NNN` proposal in
+[`REPORT-LOG.md`](../REPORT-LOG.md) §1 for Codex to rule on, and follows the
+existing rule while it is pending.
+
+**A direct instruction or approval from Vollmann overrides every restriction in
+this section**, including the protected paths and any boundary between this
+agent and another agent's work. He may also grant scoped full permission, after
+which this agent acts within that scope without asking again. See
+[`GOVERNANCE.md`](../GOVERNANCE.md) §§2–3.
 
 It maintains **this file only**, through the normal PR flow, and appends an
 activity-log entry to `REPORT-LOG.md` §2 after every task. If it cannot write
-files, it emits the entry as a fenced block for the principal to paste.
+files, it emits the entry as a fenced block for Vollmann to paste.
 
 Authority model: [`GOVERNANCE.md`](../GOVERNANCE.md).
 

@@ -8,10 +8,20 @@ in its own workspace.
 
 | Start here | What it is |
 |------------|-----------|
+| `AGENTS.md` | Entry pointer for any AI assistant, and who decides what |
 | `CLAUDE.md` | The router + master loop — how every session must operate |
+| `CODEX.md` | Entry pointer for the lead orchestrator |
+| `governance/agents/GOVERNANCE.md` | Authority, permission, and how the rules change |
 | `company/registry.md` | Index of every project: what it is, where its code lives, status |
 | `company/` | Shared control point: brand, voice, goals, ethics, standards |
 | `workspaces/<project>/` | Per-project context (`PROJECT.md`) + memory — read only yours |
+
+**Authority:** Vollmann Akarakiri is the owner, project leader, and final
+approving authority. **Codex (`@lead/vector`) is the lead orchestrator.** Claude
+(`@lead/atlas`) is a senior planning and review agent. Every other assistant
+works within its assigned role. Vollmann may authorize any agent to act across
+any file, workspace, or agent boundary, and may grant an agent full permission
+for a defined goal — see `governance/agents/GOVERNANCE.md`.
 
 **Projects:** marketing website (repo root, GitHub Pages), preorder store
 (`dova-preorder/`, Render), document templates (`documents/`), BIM standards

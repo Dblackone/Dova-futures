@@ -7,6 +7,12 @@
 > cross-model layer — agent identity, model tags, and attribution — lives in
 > `governance/agents/SHARED-RULES.md`; root `AGENTS.md` is the pointer for tools that
 > look for that filename.
+>
+> **Authority:** Vollmann Akarakiri is the owner, project leader, and final
+> approving authority. **Codex (`@lead/vector`) is the lead orchestrator.**
+> Claude (`@lead/atlas`) is a senior planning and review agent. Full structure,
+> including what a grant of full permission means:
+> `governance/agents/GOVERNANCE.md`.
 
 ## 0. What this repository is — and STEP 0 of every run
 
@@ -36,8 +42,13 @@ most context in it is NOT about your task.
    `PROJECT.md` declares, the gitignored `sandbox/` (scratch), the shared
    board/triage, and your row in the registry. Everything else — `company/`,
    `governance/`, other workspaces, deploy files — is read-only; changes there
-   go through a dedicated principal-reviewed PR. Full contract:
+   go through a dedicated PR that Vollmann reviews. Full contract:
    `governance/collaboration.md`.
+7. **Unless Vollmann says otherwise.** A direct instruction or approval from him
+   is valid authorization anywhere in this repository, including files another
+   agent owns or created. Write-scope is for coordination between agents, not a
+   gate on the owner. Do the work, and record what authorized it
+   (`governance/agents/GOVERNANCE.md` §§2, 7).
 
 ## 1. How every run works (the loop)
 
@@ -98,19 +109,45 @@ Only use the connectors listed here. Adding one is a deliberate decision.
 - [ ] Google Drive — assets & documents
 - [ ] <add / remove as needed>
 
-## 5. Roles (maker vs checker)
+## 5. Authority and roles
+
+**The hierarchy** (full text: `governance/agents/GOVERNANCE.md`):
+
+| | |
+|---|---|
+| **Vollmann Akarakiri** | Owner, project leader, **final approving authority**. Approves, rejects, overrides, reverses or modifies any agent decision. Authorizes work across any file, module, workstream or agent boundary. Grants agents full authority over a defined scope. |
+| **Codex** `@lead/vector` | **Lead orchestrator.** Plans and coordinates work, assigns tasks, coordinates agents, reviews integrations and dependencies, implements approved work, maintains repository consistency. Not the owner; not the final approver. |
+| **Claude** `@lead/atlas` | **Senior planning and review.** Planning, architecture, documentation, research, governance review, QA, risk and consistency review. Coordinates only when assigned by Codex or authorized by Vollmann. Not the administrator. |
+| **Other agents** | Work within their assigned roles; recognise Codex as lead and Vollmann as final authority. |
+
+**Maker vs checker** — unchanged, and it survives every grant of permission:
 
 - A **maker** run builds. It never marks its own work approved.
 - A **checker** run verifies independently against acceptance criteria, then
   approves or rejects with reasons. Use `prompts/maker.md` and
   `prompts/checker.md`. Team roster + branch naming: `governance/team.md`.
 
+**Scoped full permission.** Vollmann may grant an agent full authority for a
+session, task, project, workstream, or goal — "all permissions are given",
+"proceed without further approval", "do whatever is required", "achieve this at
+all costs", or any equivalent. Inside that scope the agent has advance approval:
+it may create, edit, move, reorganize or delete relevant files, refactor
+unsuitable implementations, install dependencies, run commands and tests,
+delegate to other agents, modify another agent's work, and make the technical
+calls the goal requires — **without stopping to ask again**. It still branches,
+tests, documents, validates, and reports honestly. Contract:
+`governance/agents/GOVERNANCE.md` §§3–5.
+
 ## 6. Guardrails (you stay the engineer)
 
 - Never push to protected `main` directly — open a PR / propose a diff.
 - Never send external messages (email, client docs) without explicit approval.
-- Stop and ask if a change is destructive, costly, or outside the stated goal.
+- Stop and ask if a change is destructive, costly, or outside the stated goal —
+  **unless you hold scoped full permission covering it** (§5), in which case
+  proceed and report what you did.
 - If token cost or scope balloons, stop and summarise instead of pushing on.
+  Under an "at all costs" grant, persist through difficulty and try
+  alternatives instead — but never claim completion you have not verified.
 - **Deploy-critical paths:** the website ships from the repo ROOT via GitHub
   Pages, and the store ships from `dova-preorder/` via `render.yaml`. Never
   move, rename, or restructure those paths (or `.github/workflows/deploy.yml`,

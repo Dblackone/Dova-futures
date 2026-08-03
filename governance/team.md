@@ -41,7 +41,7 @@
 
 | tag | role | writes code? |
 |------|------|--------------|
-| `lead` | orchestration / project management | no |
+| `lead` | orchestration / project management | the lead orchestrator (`@lead/vector`) does; `@lead/atlas` does not |
 | `build` | implementation (maker) | yes |
 | `qa` | verification (checker) | no (read + run tests) |
 | `sec` | security review | no (read-only) |
@@ -62,22 +62,45 @@ Claude Code agent is implemented**.
 
 > Keep a small fixed core. Spin up extra `build/*` workers per task; don't create
 > a dozen standing agents. WIP limit: max 3 active branches at once to start.
-> `@lead/atlas` additionally holds **governance authority** for the repository —
-> see [`governance/agents/GOVERNANCE.md`](agents/GOVERNANCE.md).
+
+## Who leads
+
+**Vollmann Akarakiri** is the owner, project leader, and final approving
+authority. **`@lead/vector [codex]`** is the lead orchestrator — it plans,
+assigns, coordinates the other agents, reviews integrations and dependencies,
+and implements approved work. **`@lead/atlas [claude-code]`** is the senior
+planning and review agent: planning, architecture, documentation, research,
+governance review, QA, and risk/consistency review, coordinating only when
+assigned by Codex or authorized by Vollmann.
+
+A role tag says what an agent *does*, not what it may *approve*. Authority lives
+in [`governance/agents/GOVERNANCE.md`](agents/GOVERNANCE.md), and a direct
+instruction from Vollmann outranks every rule in this file.
 
 ## Rules of engagement
 
-1. **Lead doesn't code.** Atlas orchestrates and gatekeeps only.
-2. **Maker ≠ checker.** The agent that built a thing never approves it.
+1. **The orchestrator coordinates.** `@lead/vector` may implement approved work;
+   `@lead/atlas` plans, documents and reviews rather than building features.
+2. **Maker ≠ checker.** The agent that built a thing never approves it — and
+   that holds across a single agent's own handles.
 3. **Board is truth.** No agent assumes another's state; it reads the board.
-4. **You hold the merge key.** Atlas *proposes* merges to protected `main`;
-   they gate on `@qa/vera` approval and your explicit OK.
+4. **You hold the merge key.** The lead *proposes* merges to protected `main`;
+   they gate on a checker's approval and your explicit OK.
 5. **Blocked → escalate, don't guess.** Move the card to Blocked, note why.
+6. **Vollmann's word is authorization.** He may direct any agent to work on any
+   file, in any workspace, including work another agent owns, and may grant an
+   agent full permission for a defined goal. Ownership is for coordination, not
+   for restricting him. Record the authorization; don't ask him to repeat it.
 
-## Where the files live (Claude Code)
+## Where the files live
 
-- Agent definitions: `.claude/agents/<name>.md` (project) — copy the files from
-  this kit's `agents/` folder there, or run `/agents` to scaffold interactively.
+- **Codex** agent definitions: `.codex/agents/<name>.toml` — including
+  `lead-vector.toml`, the lead-orchestrator definition.
+- **Claude Code** agent definitions: `.claude/agents/<name>.md` (project) — copy
+  the files from this kit's `agents/` folder there, or run `/agents` to scaffold
+  interactively.
+- Both directories are protected (`GOVERNANCE.md` §8) and routed to Vollmann in
+  `.github/CODEOWNERS`.
 - Each file is YAML frontmatter (`name`, `description`, `tools`, optional
   `model`) + a body that is the agent's system prompt.
 - The Lead dispatches a worker by passing it the card: the goal, the file paths,

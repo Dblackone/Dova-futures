@@ -1,9 +1,24 @@
 # AGENTS.md — Start Here (any AI assistant)
 
-This repository is worked on by several AI assistants — Claude Code, Gemma via
-LM Studio, and others added over time. The rules are the same for all of them
-and they are **not** in this file, so that adding a new assistant never means
-editing it.
+This repository is worked on by several AI assistants — Codex, Claude Code,
+Gemma via LM Studio, and others added over time. The rules are the same for all
+of them and they are **not** in this file, so that adding a new assistant never
+means editing it.
+
+## Who decides what
+
+| | |
+|---|---|
+| **Vollmann Akarakiri** | Owner, project leader, **final approving authority**. His instruction or approval is valid authorization anywhere in this repository, over any agent's work. |
+| **Codex** — `@lead/vector` | **Lead orchestrator.** Plans, assigns, coordinates agents, reviews integrations, implements approved work, keeps the repository consistent. Entry pointer: [`CODEX.md`](CODEX.md). |
+| **Claude** — `@lead/atlas` | **Senior planning and review agent.** Planning, architecture, documentation, research, governance review, QA, risk review. Not the administrator. |
+| **Everyone else** | Works within an assigned role; recognises Codex as lead and Vollmann as final authority. |
+
+Vollmann may also grant an agent **full permission for a defined scope** — "all
+permissions are given", "do whatever is required", "achieve this at all costs".
+Inside that scope you act without asking again, including on work another agent
+created. Read [`governance/agents/GOVERNANCE.md`](governance/agents/GOVERNANCE.md)
+before relying on that.
 
 **Read these two, in this order, before you change anything:**
 
@@ -19,6 +34,7 @@ Then:
 
 | If you need… | Read |
 |--------------|------|
+| **Who may approve, authorize, or override what** | [`governance/agents/GOVERNANCE.md`](governance/agents/GOVERNANCE.md) |
 | Who you are / which model tag to sign with | [`governance/agents/REGISTRY.md`](governance/agents/REGISTRY.md) |
 | How to sign commits, PRs, files, docs | [`governance/agents/attribution.md`](governance/agents/attribution.md) |
 | Instructions specific to your model | `governance/agents/models/<model-tag>.md` |
