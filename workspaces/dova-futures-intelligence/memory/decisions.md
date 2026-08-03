@@ -1,5 +1,7 @@
 # Project Decisions
 
+- 2026-08-03 - master brief boundary - alternatives considered: discard the older DOVA OS specifications, merge them wholesale into the current orchestration plan, or use them as the deterministic project/knowledge/workflow substrate beneath Jarvis - combine them as layered responsibilities, keeping Jarvis as the control plane and DOVA OS as the local-first substrate - preserves useful prior design while preventing premature autonomous-agent scope - logged by @qa/quartz [codex].
+
 - 2026-08-03 - repository index boundary - alternatives considered: scan and load every workspace at startup, expose no project context, or read the registry plus this workspace's own memory - use registry and local intelligence metadata only for the first dashboard so startup is lightweight and does not execute or mutate other workspaces - logged by @qa/quartz [codex].
 
 - 2026-08-03 - naming and shell - alternatives considered: retain MARK/JARVIS branding, rename compatibility internals wholesale, or move the active surface to DOVA Intelligence while preserving stable legacy tool identifiers - use DOVA Intelligence for the visible UI and active prompt; retain legacy identifiers only where compatibility depends on them - logged by @qa/quartz [codex].

@@ -265,3 +265,14 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** GP-001
 - **Unresolved issues:** Workspace registry row still needs protected-governance approval. The maker has not received an independent checker review.
 - **Recommendations for the next agent:** Have an independent checker review the approval flow, then register the workspace and continue with the read-only `file_controller` adapter.
+
+### 2026-08-03 04:00 - @qa/quartz [codex]
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** dova-futures-intelligence
+- **Task:** Compare the older DOVA OS specifications with the current DOVA Intelligence/Jarvis workspace and formulate a combined build brief and continuous agentic delivery plan.
+- **Files modified:** `workspaces/dova-futures-intelligence/drafts/DOVA_INTELLIGENCE_MASTER_BRIEF.md`; `workspaces/dova-futures-intelligence/memory/status.md`; `workspaces/dova-futures-intelligence/memory/next-up.md`; `workspaces/dova-futures-intelligence/memory/done-log.md`; `workspaces/dova-futures-intelligence/memory/decisions.md`; this file.
+- **Summary of changes:** Drafted an unapproved master brief that makes Jarvis the control plane and the older DOVA OS foundation/delivery/knowledge/commercial design the deterministic substrate. Added release boundaries, achievable/deferred scope, milestone gates, role-based dispatch rules, approval checkpoints and principal decisions still required.
+- **Verified:** Source files and current workspace history were read; existing dependency-free tests and `git diff --check` run after the documentation change.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Principal must choose the first workflow, first indexed folder, provider/runtime, approval classes, backup boundary and data scopes. Workspace registration proposal GP-001 remains pending; no independent checker review of this draft has occurred.
+- **Recommendations for the next agent:** Have the principal review the draft, then implement only the confirmed M1 milestone: read-only `file_controller` adapter plus structured audit boundary.
