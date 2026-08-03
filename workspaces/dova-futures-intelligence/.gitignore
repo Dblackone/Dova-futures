@@ -1,0 +1,7 @@
+﻿config/api_keys.json
+memory/long_term.json
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc

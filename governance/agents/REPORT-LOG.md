@@ -222,3 +222,24 @@ pick up without re-deriving the state of the repository.
 *This file is permanent. It is never truncated or archived wholesale — if it
 grows unwieldy, Claude moves closed proposals and entries older than one year
 into `memory/archive/`, leaving a dated pointer here.*
+
+### GP-001 - Register DOVA Futures Intelligence workspace
+- **Submitted:** 2026-08-03 by @qa/quartz [codex]
+- **Governance file affected:** `company/registry.md` - Active workspaces table
+- **Issue identified:** The intelligence prototype is now located at `workspaces/dova-futures-intelligence/` and has a complete `PROJECT.md`, but the workspace is absent from the registry.
+- **Why it is a problem:** The repository router cannot reliably complete STEP 0 for future intelligence sessions, and the project status is invisible in the hub index.
+- **Proposed change:** Add an Active workspaces row for `dova-futures-intelligence`, pointing to `workspaces/dova-futures-intelligence/PROJECT.md`, code under that workspace, deployed `-`, and status `Active - orchestration foundation; approval resume wired`.
+- **Expected benefit:** Future agents will route to the correct project context and the hub will reflect the active build.
+- **Possible side effects:** The row adds a new project to the active workspace list; no deploy-critical path changes.
+- **Status:** PENDING
+
+### 2026-08-03 02:44 - @qa/quartz [codex]
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** dova-futures-intelligence
+- **Task:** Continue the intelligence build from the hand-off workspace and implement the next queued approval-control milestone.
+- **Files modified:** `workspaces/dova-futures-intelligence/core/gateway.py`; `workspaces/dova-futures-intelligence/ui.py`; `workspaces/dova-futures-intelligence/main.py`; `workspaces/dova-futures-intelligence/tests/test_gateway.py`; `workspaces/dova-futures-intelligence/memory/status.md`; `workspaces/dova-futures-intelligence/memory/next-up.md`; `workspaces/dova-futures-intelligence/memory/done-log.md`; `workspaces/dova-futures-intelligence/memory/decisions.md`; `governance/agents/REPORT-LOG.md`
+- **Summary of changes:** Relocated the unregistered hand-off to `workspaces/dova-futures-intelligence/` and archived its empty nested Git metadata in ignored `sandbox/`. Added one pending-action slot in the gateway, an explicit desktop approval button, and resume handling for approved local writes.
+- **Verified:** `python -m unittest discover -s tests -v` - 20 passing; `python -m compileall -q core main.py ui.py`; `git diff --check`. No live desktop session or API provider was run.
+- **Governance suggestions submitted:** GP-001
+- **Unresolved issues:** Workspace registry row still needs protected-governance approval. The maker has not received an independent checker review.
+- **Recommendations for the next agent:** Have an independent checker review the approval flow, then register the workspace and continue with the read-only `file_controller` adapter.

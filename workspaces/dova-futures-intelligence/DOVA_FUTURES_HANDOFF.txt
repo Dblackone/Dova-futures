@@ -1,0 +1,46 @@
+DOVA FUTURES INTELLIGENCE — BUILD HANDOFF
+Date: 2026-08-03
+Source: MARK XXXIX-OR prototype
+Destination: https://github.com/Dblackone/Dova-futures
+Workspace path: workspaces/dova-futures-intelligence/
+
+MOVE INSTRUCTION
+Move this entire folder into:
+Dova-futures/workspaces/dova-futures-intelligence/
+
+Do not place it at the Dova-futures repository root. The root is the live marketing website, and dova-preorder/ is deploy-critical.
+
+WHAT IS BUILT
+- Shared contracts for requests, tools, plans, providers, approvals, events, and memory queries.
+- Capability registry with required-input validation.
+- Policy engine that blocks high-impact actions until approval.
+- Workspace-scoped filesystem listing and controlled text writing.
+- Provider metadata and fallback routing with a deterministic mock provider.
+- Headless interaction gateway for desktop, voice, and API channels.
+- Prototype UI bridge: /core list [path] and /core write <path> <content>.
+- Architecture, decisions, capability inventory, project, and handoff documents.
+- 18 dependency-free automated tests.
+
+VERIFY
+From this workspace run:
+python -m unittest discover -s tests -v
+Expected: 18 tests passing.
+
+Never commit config/api_keys.json, .env, memory/long_term.json, or generated runtime files.
+
+KNOWN LIMITATIONS
+- Natural-language planning is not yet connected to the new core.
+- The UI has no approval button yet, so writes stop safely at approval.
+- Existing actions still use legacy direct dispatch.
+- actions.cmd_control is referenced but absent; keep it unavailable until reviewed.
+- Live Gemini, OpenRouter, and LM Studio adapters are not yet connected.
+- Durable tasks, audit persistence, layered memory, and domain agents are future milestones.
+
+NEXT
+1. Register the workspace in the Dova-futures project registry.
+2. Read CLAUDE.md and governance/agents/SHARED-RULES.md in the destination repo.
+3. Add approval controls to the desktop UI.
+4. Migrate one read-only file_controller capability.
+5. Add audit persistence and the first live provider adapter.
+
+Continue from this state. Do not restart the architecture or move this project into the destination repository root.
