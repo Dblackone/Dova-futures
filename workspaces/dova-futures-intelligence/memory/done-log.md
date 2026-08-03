@@ -1,5 +1,7 @@
 # Done Log
 
+- 2026-08-03 - Drafted `drafts/DOVA_INTELLIGENCE_MASTER_BRIEF.md`, combining the older DOVA OS local-first foundation/delivery model with the current Jarvis orchestration, approval and agentic build loop; implementation authority remains pending principal review. Agent: @qa/quartz [codex] (GPT-5).
+
 - 2026-08-03 - Added read-only repository context parsing and a PROJECT INDEX panel showing registered project statuses, intelligence status, and the next recorded action. Added parser coverage; verification now passes with 22 tests. Agent: @qa/quartz [codex] (GPT-5).
 
 - 2026-08-03 - Replaced the visible prototype shell with a DOVA Intelligence manual workspace: DOVA brand palette, manual command section, project-file context, activity panel, approval action, and DOVA system prompt. Verified with 20 tests, AST parsing, and off-screen UI construction. Agent: @qa/quartz [codex] (GPT-5).
