@@ -223,6 +223,28 @@ pick up without re-deriving the state of the repository.
 grows unwieldy, Claude moves closed proposals and entries older than one year
 into `memory/archive/`, leaving a dated pointer here.*
 
+### 2026-08-03 03:35 - @qa/quartz [codex]
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** dova-futures-intelligence
+- **Task:** Continue the build by surfacing repository project/status context in the DOVA Intelligence manual dashboard.
+- **Files modified:** `workspaces/dova-futures-intelligence/core/repository_context.py`; `workspaces/dova-futures-intelligence/tests/test_repository_context.py`; `workspaces/dova-futures-intelligence/ui.py`; `workspaces/dova-futures-intelligence/memory/status.md`; `workspaces/dova-futures-intelligence/memory/next-up.md`; `workspaces/dova-futures-intelligence/memory/done-log.md`; `workspaces/dova-futures-intelligence/memory/decisions.md`
+- **Summary of changes:** Added a read-only registry parser and connected a compact PROJECT INDEX panel to the manual UI. It reports registered project count/statuses plus this workspace's status and next action without scanning or mutating other workspace content.
+- **Verified:** `python -B -m unittest discover -s tests -v` - 22 passing; AST parsing passed; off-screen UI construction passed; `git diff --check` passed.
+- **Governance suggestions submitted:** none
+- **Unresolved issues:** The dashboard currently reads registry-level status only; detailed project cards and live provider integration remain future work. Independent checker review is still required.
+- **Recommendations for the next agent:** Run the updated desktop visually, then add the read-only `file_controller` adapter and richer repository-backed cards if the layout is approved.
+
+### 2026-08-03 03:20 - @qa/quartz [codex]
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** dova-futures-intelligence
+- **Task:** Replace the inherited MARK/JARVIS desktop presentation with the DOVA Intelligence manual UI and naming surface.
+- **Files modified:** `workspaces/dova-futures-intelligence/ui.py`; `workspaces/dova-futures-intelligence/main.py`; `workspaces/dova-futures-intelligence/core/prompt.txt`; `workspaces/dova-futures-intelligence/memory/status.md`; `workspaces/dova-futures-intelligence/memory/next-up.md`; `workspaces/dova-futures-intelligence/memory/done-log.md`; `workspaces/dova-futures-intelligence/memory/decisions.md`
+- **Summary of changes:** Added a DOVA Futures brand palette and new manual workspace builders for header, status, activity, project-file context, manual command entry, approval, microphone, and footer. Updated the active system prompt and runtime-visible naming to DOVA Intelligence.
+- **Verified:** `python -B -m unittest discover -s tests -v` - 20 passing; AST parsing passed; off-screen `MainWindow` construction passed; `git diff --check` passed. No live API/audio session was run.
+- **Governance suggestions submitted:** none
+- **Unresolved issues:** Compatibility modules still contain legacy MARK/JARVIS identifiers; changing stable tool names requires a separate migration. Independent checker review is still required.
+- **Recommendations for the next agent:** Run the desktop with the configured environment and inspect the new manual shell visually, then add repository-backed project/status cards.
+
 ### GP-001 - Register DOVA Futures Intelligence workspace
 - **Submitted:** 2026-08-03 by @qa/quartz [codex]
 - **Governance file affected:** `company/registry.md` - Active workspaces table

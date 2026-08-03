@@ -72,7 +72,7 @@ def _load_system_prompt() -> str:
         return PROMPT_PATH.read_text(encoding="utf-8")
     except Exception:
         return (
-            "You are JARVIS, Tony Stark's AI assistant. "
+            "You are DOVA Intelligence, the local-first intelligence system for DOVA Futures. "
             "Be concise, direct, and always use the provided tools to complete tasks. "
             "Never simulate or guess results — always call the appropriate tool."
         )
@@ -531,7 +531,7 @@ class JarvisLive:
                 self.ui.write_log(f"CORE ERR: {result.error}")
             return
         if not self._loop or not self.session:
-            self.ui.write_log("ERR: JARVIS is not connected yet. Please wait for 'JARVIS online.'")
+            self.ui.write_log("ERR: DOVA Intelligence is not connected yet. Please wait for 'DOVA Intelligence online.'")
             return
         future = asyncio.run_coroutine_threadsafe(
             self.session.send_client_content(
@@ -892,9 +892,9 @@ class JarvisLive:
                     self.audio_in_queue = asyncio.Queue()
                     self.out_queue      = asyncio.Queue(maxsize=10)
 
-                    print("[JARVIS] ✅ Connected.")
+                    print("[DOVA INTELLIGENCE] Connected.")
                     self.ui.set_state("LISTENING")
-                    self.ui.write_log("SYS: JARVIS online.")
+                    self.ui.write_log("SYS: DOVA Intelligence online.")
 
                     tg.create_task(self._send_realtime())
                     tg.create_task(self._listen_audio())

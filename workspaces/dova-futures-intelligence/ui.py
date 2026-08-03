@@ -44,29 +44,34 @@ _RIGHT_W = 340
 
 _OS = platform.system()  # "Windows" | "Darwin" | "Linux"
 
+try:
+    from core.repository_context import RepositorySnapshot
+except ImportError:
+    RepositorySnapshot = None
+
 
 class C:
-    BG        = "#00060a"
-    PANEL     = "#010d14"
-    PANEL2    = "#010f18"
-    BORDER    = "#0d3347"
-    BORDER_B  = "#1a5c7a"
-    BORDER_A  = "#0f4060"
-    PRI       = "#00d4ff"
-    PRI_DIM   = "#007a99"
-    PRI_GHO   = "#001f2e"
-    ACC       = "#ff6b00"
-    ACC2      = "#ffcc00"
-    GREEN     = "#00ff88"
-    GREEN_D   = "#00aa55"
-    RED       = "#ff3355"
-    MUTED_C   = "#ff3366"
-    TEXT      = "#8ffcff"
-    TEXT_DIM  = "#3a8a9a"
-    TEXT_MED  = "#5ab8cc"
-    WHITE     = "#d8f8ff"
-    DARK      = "#000d14"
-    BAR_BG    = "#011520"
+    BG        = "#E8E1D5"
+    PANEL     = "#F5EFE8"
+    PANEL2    = "#F5EFE8"
+    BORDER    = "#B8AA9A"
+    BORDER_B  = "#1C4636"
+    BORDER_A  = "#B85C38"
+    PRI       = "#1C4636"
+    PRI_DIM   = "#4C6F5E"
+    PRI_GHO   = "#DDE8E0"
+    ACC       = "#B85C38"
+    ACC2      = "#9E4F30"
+    GREEN     = "#1C4636"
+    GREEN_D   = "#4C6F5E"
+    RED       = "#9E4F30"
+    MUTED_C   = "#B85C38"
+    TEXT      = "#1A1A1A"
+    TEXT_DIM  = "#6D665F"
+    TEXT_MED  = "#4C463F"
+    WHITE     = "#1A1A1A"
+    DARK      = "#F5EFE8"
+    BAR_BG    = "#E8E1D5"
 
 
 def qcol(h: str, a: int = 255) -> QColor:
@@ -1016,6 +1021,7 @@ class MainWindow(QMainWindow):
 
     def __init__(self, face_path: str):
         super().__init__()
+        self.setWindowTitle("DOVA Intelligence")
         self.setWindowTitle("J.A.R.V.I.S — MARK XXXIX")
         self.setMinimumSize(_MIN_W, _MIN_H)
         self.resize(_DEFAULT_W, _DEFAULT_H)
@@ -1413,6 +1419,7 @@ class MainWindow(QMainWindow):
         cat  = _file_category(p)
         icon, _ = _FILE_ICONS.get(cat, _FILE_ICONS["unknown"])
         size = _fmt_size(p.stat().st_size)
+        self._file_hint.setText(f"{icon}  {p.name}  |  {size}  |  Tell DOVA Intelligence what to do with it")
         self._file_hint.setText(f"{icon}  {p.name}  ·  {size}  ·  Tell JARVIS what to do with it")
         self._log.append_log(f"FILE: {p.name} ({size}) loaded")
         if self.on_text_command:
@@ -1506,6 +1513,195 @@ class MainWindow(QMainWindow):
             self._overlay = None
         self._apply_state("LISTENING")
         self._log.append_log(f"SYS: Initialised. OS={os_name.upper()}. JARVIS online.")
+
+    # DOVA Intelligence shell: the legacy HUD methods remain below for
+    # compatibility, but these builders define the current manual workspace.
+    def _build_header(self) -> QWidget:
+        w = QWidget()
+        w.setFixedHeight(68)
+        w.setStyleSheet(f"background: {C.DARK}; border-bottom: 2px solid {C.BORDER_B};")
+        lay = QHBoxLayout(w)
+        lay.setContentsMargins(18, 0, 18, 0)
+
+        badge = QLabel("DOVA FUTURES")
+        badge.setFont(QFont("Courier New", 8, QFont.Weight.Bold))
+        badge.setStyleSheet(f"color: {C.ACC}; background: transparent;")
+        lay.addWidget(badge)
+        lay.addStretch()
+
+        centre = QVBoxLayout()
+        centre.setSpacing(1)
+        title = QLabel("DOVA INTELLIGENCE")
+        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        title.setFont(QFont("Courier New", 17, QFont.Weight.Bold))
+        title.setStyleSheet(f"color: {C.PRI}; background: transparent;")
+        centre.addWidget(title)
+        subtitle = QLabel("LOCAL-FIRST COMPANY OPERATING SYSTEM")
+        subtitle.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        subtitle.setFont(QFont("Courier New", 7))
+        subtitle.setStyleSheet(f"color: {C.TEXT_DIM}; background: transparent;")
+        centre.addWidget(subtitle)
+        lay.addLayout(centre)
+        lay.addStretch()
+
+        clock = QVBoxLayout()
+        self._clock_lbl = QLabel("00:00:00")
+        self._clock_lbl.setAlignment(Qt.AlignmentFlag.AlignRight)
+        self._clock_lbl.setFont(QFont("Courier New", 14, QFont.Weight.Bold))
+        self._clock_lbl.setStyleSheet(f"color: {C.PRI}; background: transparent;")
+        clock.addWidget(self._clock_lbl)
+        self._date_lbl = QLabel("")
+        self._date_lbl.setAlignment(Qt.AlignmentFlag.AlignRight)
+        self._date_lbl.setFont(QFont("Courier New", 7))
+        self._date_lbl.setStyleSheet(f"color: {C.TEXT_DIM}; background: transparent;")
+        clock.addWidget(self._date_lbl)
+        lay.addLayout(clock)
+        return w
+
+    def _build_left_panel(self) -> QWidget:
+        w = QWidget()
+        w.setFixedWidth(_LEFT_W + 20)
+        w.setStyleSheet(f"background: {C.PANEL}; border-right: 1px solid {C.BORDER};")
+        lay = QVBoxLayout(w)
+        lay.setContentsMargins(10, 12, 10, 12)
+        lay.setSpacing(7)
+
+        heading = QLabel("WORKSPACE STATUS")
+        heading.setFont(QFont("Courier New", 7, QFont.Weight.Bold))
+        heading.setStyleSheet(f"color: {C.PRI}; background: transparent; border-bottom: 1px solid {C.BORDER}; padding-bottom: 5px;")
+        lay.addWidget(heading)
+
+        self._bar_cpu = MetricBar("CPU", C.PRI)
+        self._bar_mem = MetricBar("MEM", C.ACC)
+        self._bar_net = MetricBar("NET", C.GREEN)
+        self._bar_gpu = MetricBar("GPU", C.ACC2)
+        self._bar_tmp = MetricBar("TMP", C.RED)
+        for bar in [self._bar_cpu, self._bar_mem, self._bar_net, self._bar_gpu, self._bar_tmp]:
+            lay.addWidget(bar)
+
+        info = QWidget()
+        info.setStyleSheet(f"background: {C.BAR_BG}; border: 1px solid {C.BORDER}; border-radius: 4px;")
+        info_lay = QVBoxLayout(info)
+        info_lay.setContentsMargins(7, 6, 7, 6)
+        self._uptime_lbl = QLabel("UP  --:--")
+        self._uptime_lbl.setStyleSheet(f"color: {C.PRI}; background: transparent;")
+        self._proc_lbl = QLabel("PROC  --")
+        self._proc_lbl.setStyleSheet(f"color: {C.TEXT_MED}; background: transparent;")
+        os_name = {"Windows": "WIN", "Darwin": "macOS", "Linux": "LINUX"}.get(_OS, _OS.upper())
+        os_lbl = QLabel(f"OS  {os_name}")
+        os_lbl.setStyleSheet(f"color: {C.ACC}; background: transparent;")
+        for label in [self._uptime_lbl, self._proc_lbl, os_lbl]:
+            label.setFont(QFont("Courier New", 8))
+            info_lay.addWidget(label)
+        lay.addWidget(info)
+
+        snapshot_box = QWidget()
+        snapshot_box.setStyleSheet(f"background: {C.BAR_BG}; border: 1px solid {C.BORDER}; border-radius: 4px;")
+        snapshot_lay = QVBoxLayout(snapshot_box)
+        snapshot_lay.setContentsMargins(7, 6, 7, 6)
+        snapshot_title = QLabel("PROJECT INDEX")
+        snapshot_title.setFont(QFont("Courier New", 7, QFont.Weight.Bold))
+        snapshot_title.setStyleSheet(f"color: {C.ACC}; background: transparent;")
+        snapshot_lay.addWidget(snapshot_title)
+        snapshot = QLabel(self._repository_snapshot_text())
+        snapshot.setWordWrap(True)
+        snapshot.setFont(QFont("Courier New", 6))
+        snapshot.setStyleSheet(f"color: {C.TEXT_MED}; background: transparent;")
+        snapshot_lay.addWidget(snapshot)
+        lay.addWidget(snapshot_box)
+        lay.addStretch()
+
+        for txt, colour in [("CORE\nREADY", C.PRI), ("LOCAL\nFIRST", C.GREEN), ("MANUAL\nMODE", C.ACC)]:
+            label = QLabel(txt)
+            label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            label.setFont(QFont("Courier New", 7, QFont.Weight.Bold))
+            label.setStyleSheet(f"color: {colour}; background: {C.BAR_BG}; border: 1px solid {C.BORDER}; border-radius: 3px; padding: 5px;")
+            lay.addWidget(label)
+        return w
+
+    def _repository_snapshot_text(self) -> str:
+        if RepositorySnapshot is None:
+            return "Repository index unavailable"
+        try:
+            repo_root = BASE_DIR.parents[1]
+            return RepositorySnapshot.load(repo_root).compact_text(max_projects=2)
+        except (OSError, UnicodeError):
+            return "Repository index unavailable"
+
+    def _build_right_panel(self) -> QWidget:
+        w = QWidget()
+        w.setFixedWidth(_RIGHT_W)
+        w.setStyleSheet(f"background: {C.PANEL}; border-left: 1px solid {C.BORDER};")
+        lay = QVBoxLayout(w)
+        lay.setContentsMargins(10, 10, 10, 10)
+        lay.setSpacing(7)
+
+        def section(text: str) -> QLabel:
+            label = QLabel(text)
+            label.setFont(QFont("Courier New", 7, QFont.Weight.Bold))
+            label.setStyleSheet(f"color: {C.PRI}; background: transparent;")
+            return label
+
+        lay.addWidget(section("ACTIVITY"))
+        self._log = LogWidget()
+        lay.addWidget(self._log, stretch=1)
+        line = QFrame(); line.setFrameShape(QFrame.Shape.HLine); line.setStyleSheet(f"color: {C.BORDER};")
+        lay.addWidget(line)
+
+        lay.addWidget(section("PROJECT FILE"))
+        self._drop_zone = FileDropZone()
+        self._drop_zone.file_selected.connect(self._on_file_selected)
+        lay.addWidget(self._drop_zone)
+        self._file_hint = QLabel("No file loaded - drop or browse to inspect a project file")
+        self._file_hint.setWordWrap(True)
+        self._file_hint.setFont(QFont("Courier New", 7))
+        self._file_hint.setStyleSheet(f"color: {C.TEXT_MED}; background: transparent;")
+        lay.addWidget(self._file_hint)
+
+        line2 = QFrame(); line2.setFrameShape(QFrame.Shape.HLine); line2.setStyleSheet(f"color: {C.BORDER};")
+        lay.addWidget(line2)
+        lay.addWidget(section("MANUAL COMMAND"))
+        lay.addWidget(QLabel("Type an explicit command or ask DOVA Intelligence a question."))
+        lay.addLayout(self._build_input_row())
+
+        self._core_approve_btn = QPushButton("APPROVE PENDING ACTION")
+        self._core_approve_btn.setFixedHeight(28)
+        self._core_approve_btn.setFont(QFont("Courier New", 8, QFont.Weight.Bold))
+        self._core_approve_btn.setStyleSheet(f"QPushButton {{ background: #F4E4DA; color: {C.ACC}; border: 1px solid {C.ACC}; border-radius: 3px; }} QPushButton:hover {{ background: #EBD0C2; }}")
+        self._core_approve_btn.clicked.connect(self._approve_core_action)
+        self._core_approve_btn.hide()
+        lay.addWidget(self._core_approve_btn)
+
+        self._mute_btn = QPushButton("MICROPHONE ACTIVE")
+        self._mute_btn.setFixedHeight(30)
+        self._mute_btn.setFont(QFont("Courier New", 8, QFont.Weight.Bold))
+        self._mute_btn.clicked.connect(self._toggle_mute)
+        self._style_mute_btn()
+        lay.addWidget(self._mute_btn)
+
+        fs_btn = QPushButton("FULLSCREEN  [F11]")
+        fs_btn.setFixedHeight(26)
+        fs_btn.setFont(QFont("Courier New", 7))
+        fs_btn.setStyleSheet(f"QPushButton {{ background: transparent; color: {C.TEXT_MED}; border: 1px solid {C.BORDER}; border-radius: 3px; }} QPushButton:hover {{ color: {C.PRI}; border-color: {C.PRI}; }}")
+        fs_btn.clicked.connect(self._toggle_fullscreen)
+        lay.addWidget(fs_btn)
+        return w
+
+    def _build_footer(self) -> QWidget:
+        w = QWidget()
+        w.setFixedHeight(24)
+        w.setStyleSheet(f"background: {C.PANEL}; border-top: 1px solid {C.BORDER};")
+        lay = QHBoxLayout(w); lay.setContentsMargins(14, 0, 14, 0)
+        def footer(text: str, colour: str = C.TEXT_DIM) -> QLabel:
+            label = QLabel(text)
+            label.setFont(QFont("Courier New", 7))
+            label.setStyleSheet(f"color: {colour}; background: transparent;")
+            return label
+        lay.addWidget(footer("DOVA INTELLIGENCE  |  MANUAL CONTROL"))
+        lay.addStretch()
+        lay.addWidget(footer("DOVA FUTURES LIMITED", C.PRI))
+        return w
+
 
 class _RootShim:
     def __init__(self, app: QApplication):

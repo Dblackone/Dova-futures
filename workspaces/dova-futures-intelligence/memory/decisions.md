@@ -1,5 +1,9 @@
 # Project Decisions
 
+- 2026-08-03 - repository index boundary - alternatives considered: scan and load every workspace at startup, expose no project context, or read the registry plus this workspace's own memory - use registry and local intelligence metadata only for the first dashboard so startup is lightweight and does not execute or mutate other workspaces - logged by @qa/quartz [codex].
+
+- 2026-08-03 - naming and shell - alternatives considered: retain MARK/JARVIS branding, rename compatibility internals wholesale, or move the active surface to DOVA Intelligence while preserving stable legacy tool identifiers - use DOVA Intelligence for the visible UI and active prompt; retain legacy identifiers only where compatibility depends on them - logged by @qa/quartz [codex].
+
 - 2026-08-03 - approval UX - alternatives considered: discard the pending request and require the user to retype it, or retain one exact pending local action until the explicit approval button is pressed - retain one pending action so approval resumes the request the user already reviewed without broadening the action scope - logged by @qa/quartz [codex].
 
 ## 2026-08-03 — Package as a dedicated hub workspace

@@ -1,11 +1,11 @@
 # Status
 
 **Project:** DOVA Futures Intelligence  
-**Status:** Active - orchestration foundation implemented; local approval resume is wired.  
+**Status:** Active - DOVA Intelligence shell and read-only repository index implemented.
 **Last verified:** 2026-08-03
 
-The provider-neutral core and headless gateway work independently of API credentials. The legacy desktop assistant remains operational as the compatibility path. The project now lives at `workspaces/dova-futures-intelligence/` in the hub.
+The desktop shell presents DOVA Intelligence using DOVA Futures brand colours, manual controls, project-file context, activity visibility, approval handling, and a read-only project index sourced from the repository registry. The provider-neutral core remains independent of API credentials.
 
-**Verification:** `python -m unittest discover -s tests -v` - 20 tests passing. `python -m compileall -q core main.py ui.py` and `git diff --check` also pass.
+**Verification:** `python -B -m unittest discover -s tests -v` - 22 tests passing. AST parsing, off-screen `MainWindow` construction, and `git diff --check` pass.
 
-**Handoff note:** Registry registration remains pending because `company/registry.md` is protected governance; a proposal is recorded in the shared report log.
+**Handoff note:** Legacy MARK/JARVIS identifiers remain in compatibility/history code only; the visible UI, active prompt, and repository index use DOVA Intelligence naming.
