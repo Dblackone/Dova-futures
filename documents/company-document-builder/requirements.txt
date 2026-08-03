@@ -1,0 +1,6 @@
+Jinja2
+WeasyPrint
+jsonschema
+pytest
+playwright
+pypdf

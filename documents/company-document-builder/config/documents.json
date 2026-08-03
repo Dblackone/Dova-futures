@@ -1,0 +1,24 @@
+{
+  "quotation": {
+    "template": "quotation/template.html",
+    "schema": "schemas/quotation-schema.json",
+    "output_prefix": "quotation",
+    "calculator": "quotation"
+  },
+  "invoice": {
+    "template": "invoice/template.html",
+    "output_prefix": "invoice"
+  },
+  "report": {
+    "template": "report/template.html",
+    "output_prefix": "report"
+  },
+  "payment_request": {
+    "template": "payment-request/template.html",
+    "output_prefix": "payment-request"
+  },
+  "completion_certificate": {
+    "template": "completion-certificate/template.html",
+    "output_prefix": "completion-certificate"
+  }
+}

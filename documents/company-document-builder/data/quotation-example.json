@@ -1,0 +1,15 @@
+{
+  "document_reference": "DOVA/QT/2026/008",
+  "document_date": "03 August 2026",
+  "valid_until": "17 August 2026",
+  "currency": { "code": "NGN", "symbol": "₦", "decimal_places": 2 },
+  "company": { "name": "Dova Futures Limited", "address": "Lagos, Nigeria", "phone": "+234 816 367 5439", "email": "info@dovafutures.com" },
+  "client": { "name": "The Client Representative", "company": "Example Company Limited", "address": "Ikeja, Lagos", "phone": "+234 800 000 0000", "email": "client@example.com" },
+  "project": { "title": "Construction of Aluminium Protectors", "location": "Lagos, Nigeria" },
+  "introduction": "We are pleased to submit our quotation for the proposed construction and installation works.",
+  "items": [{ "description": "Construction and installation of aluminium protectors", "specification": "Installation to the three external porches of the main building.", "quantity": 27.4, "unit": "m²", "rate": 62000 }],
+  "tax": { "enabled": false, "rate_percent": 0 },
+  "discount": { "enabled": false, "amount": 0 },
+  "terms": ["The quotation is valid for fourteen days.", "The client shall provide uninterrupted access to the work area.", "Any work outside the stated scope will be treated as a variation."],
+  "authorised_signatory": { "name": "Vollmann Olamide Akarakiri", "position": "CEO and Managing Director", "signature_image": null }
+}

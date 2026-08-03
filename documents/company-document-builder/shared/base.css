@@ -1,0 +1,28 @@
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@page :first { margin-top: 0; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: #E8E1D5; color: #1A1A1A; font-family: Inter, Arial, sans-serif; font-size: 11pt; line-height: 1.45; }
+h1, h2, h3, .display { font-family: "Bebas Neue", Arial, sans-serif; font-weight: 400; letter-spacing: .04em; }
+.paper { max-width: 794px; margin: 0 auto; background: #fff; }
+.screen-wrapper { padding: 32px 24px; }
+.document-header { display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; background: #1C4636; color: #F5EFE8; }
+.rule { height: 3px; background: #B85C38; }
+.content { padding: 36px 48px 20px; }
+table { width: 100%; border-collapse: collapse; }
+thead { display: table-header-group; }
+tr, .keep-together { break-inside: avoid; page-break-inside: avoid; }
+.numeric { text-align: right; white-space: nowrap; }
+.totals, .signature-block { break-inside: avoid; page-break-inside: avoid; }
+@media print {
+  body { background: #fff; }
+  [data-wrap] { padding: 0 !important; min-height: 0 !important; }
+  .screen-wrapper { padding: 0 !important; min-height: 0 !important; }
+  [data-no-print] { display: none !important; }
+  .paper { max-width: none; min-height: 297mm; box-shadow: none !important; }
+}
