@@ -7,6 +7,7 @@
 /prompts/            @Dblackone
 /.claude/            @Dblackone
 /.agents/            @Dblackone
+/.codex/             @Dblackone
 /CLAUDE.md           @Dblackone
 /README.md           @Dblackone
 /.github/            @Dblackone
@@ -23,8 +24,9 @@
 /projects/           @Dblackone
 /bim-standards/registers/  @Dblackone
 
-# Cross-model entry pointer — protected like CLAUDE.md
+# Cross-model entry pointers — protected like CLAUDE.md
 /AGENTS.md           @Dblackone
+/CODEX.md            @Dblackone
 
 # CARVE-OUT — the shared agent report log. Every AI assistant appends to this
 # file after every task (governance/agents/GOVERNANCE.md §6), so routing it to

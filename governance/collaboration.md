@@ -45,15 +45,39 @@ A session working in workspace `<p>` may modify ONLY:
 | The registry roll-up | your project's one row in `company/registry.md` |
 
 **Read-only for normal sessions** (changes require a dedicated PR that
-CODEOWNERS routes to the principal): `company/`, `governance/`, `prompts/`,
-`.claude/`, `.agents/`, `CLAUDE.md`, `README.md`, `.github/`, and the
-deploy-critical files (`index.html`*, `server.js`*, `render.yaml`, `CNAME`,
-`package.json`).
+CODEOWNERS routes to Vollmann): `company/`, `governance/`, `prompts/`,
+`.claude/`, `.agents/`, `.codex/`, `CLAUDE.md`, `AGENTS.md`, `CODEX.md`,
+`README.md`, `.github/`, and the deploy-critical files (`index.html`*,
+`server.js`*, `render.yaml`, `CNAME`, `package.json`).
 *The website workspace's declared code paths include the root site files —
 that workspace may edit them; others may not.
 
 **Never, in any session:** another workspace's folders; another session's open
 branch; append-only records (done-logs, registers) except by appending.
+
+## Authorized exceptions to write-scope
+
+Write-scope prevents *accidental* collisions between agents. It is not a barrier
+to work Vollmann has asked for, or to work the lead orchestrator has planned.
+
+A session may work outside the scope above when any of these hold:
+
+1. **Vollmann directly authorizes it.** His instruction or approval is valid
+   authorization anywhere in the repository, over any agent's work
+   (`governance/agents/GOVERNANCE.md` §2).
+2. **It is part of an approved plan.**
+3. **Codex (`@lead/vector`) delegates it** within an approved scope.
+4. **The session holds scoped full permission** for a goal that requires it
+   (`GOVERNANCE.md` §3).
+
+Under any of the four, record it: which agent, which files and whose work they
+were, why, and what authorized it — in the `REPORT-LOG.md` §2 entry for the run,
+and on `memory/board.md` if another workspace is affected. The board note is
+what stops the owning workspace's next session from being surprised.
+
+Two things stay closed regardless: another **session's open branch** (rebase or
+coordinate; never write into someone else's working branch), and rewriting an
+**append-only record** (append instead).
 
 ## Temporary → permanent (the promotion path)
 

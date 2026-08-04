@@ -277,6 +277,62 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Unresolved issues:** Principal must choose the first workflow, first indexed folder, provider/runtime, approval classes, backup boundary and data scopes. Workspace registration proposal GP-001 remains pending; no independent checker review of this draft has occurred.
 - **Recommendations for the next agent:** Have the principal review the draft, then implement only the confirmed M1 milestone: read-only `file_controller` adapter plus structured audit boundary.
 
+### 2026-08-03 — @lead/atlas [claude-code]
+- **Model:** Claude Opus 5, Claude Code
+- **Workspace:** cross-cutting — hub governance (`company-ops` adjacent). Flagged
+  explicitly as cross-workspace per `CLAUDE.md` STEP 0 §4; instructed directly by
+  Vollmann.
+- **Task:** Audit and restructure the repository's authority model — replace the
+  structure in which Claude was administrator and lead orchestrator with:
+  Vollmann as final approving authority, Codex as lead orchestrator, Claude as
+  senior planning and review agent. Add human-authorization and scoped
+  full-permission rules.
+- **Files modified:**
+  - rewritten: `governance/agents/GOVERNANCE.md`, `governance/agents/models/codex.md`,
+    `.claude/agents/lead-atlas.md`
+  - renamed + rewritten: `.codex/agents/lead-atlas.toml` → `.codex/agents/lead-vector.toml`
+  - new: `CODEX.md` (root)
+  - modified: `governance/agents/SHARED-RULES.md`, `governance/agents/REGISTRY.md`,
+    `governance/agents/models/claude-code.md`, `governance/agents/models/gemma-lmstudio.md`,
+    `governance/agents/models/_TEMPLATE.md`, `governance/team.md`,
+    `governance/guardrails.md`, `governance/collaboration.md`, `CLAUDE.md`,
+    `AGENTS.md`, `README.md`, `.github/CODEOWNERS`, `memory/decisions.md`, this file
+- **Summary of changes:** Authority now reads: Vollmann Akarakiri — owner,
+  project leader, final approving authority; Codex (`@lead/vector`) — lead
+  orchestrator, may modify governance and rule on `GP-NNN` proposals; Claude
+  (`@lead/atlas`) — senior planning and review, coordinating only when assigned
+  or authorized. Added the Human Authorization Rule (§2), scoped full-permission
+  authorization with its trigger phrases and granted-action list (§3), the "at
+  all costs" interpretation (§4), safety obligations under full permission (§5),
+  approval boundaries (§6), and a cross-agent work record format (§7). Codex
+  activated in `REGISTRY.md` with a second handle; `@qa/quartz` moved from
+  Reserved to Active, matching what git history already showed. Two mechanical
+  fixes: `.codex/` and `CODEX.md` added to `CODEOWNERS` (the Codex agent
+  definitions were previously unprotected), and the Codex-side lead definition
+  renamed off the `atlas` callsign, which `REGISTRY.md` §1 rule 1 binds
+  permanently to `claude-code`.
+- **Verified:** Full-repository re-scan for every authority string identified in
+  the audit — no file now names Claude as administrator, lead agent, or sole
+  governance authority. `GOVERNANCE.md` §8 protected-path table reconciled
+  line-by-line against `.github/CODEOWNERS` (invariant holds). Link targets in
+  changed files resolved against the filesystem. **Not verified:** no test suite
+  covers documentation; no checker run has reviewed this change.
+- **Governance suggestions submitted:** none — this change was instructed
+  directly by Vollmann, so it is a decision, not a proposal.
+- **Unresolved issues:** (1) **GP-001 remains PENDING** — under the new model it
+  routes to Codex, not Claude, so it was deliberately left unruled. (2) This
+  change is maker output and has had **no independent checker review**; the maker
+  was Claude and Claude cannot approve it. (3) The four defaults Vollmann was
+  offered and did not separately confirm are implemented as recommended: the
+  callsign `@lead/vector`, retaining `@lead/atlas` rescoped, full permission not
+  waiving maker≠checker, and creating root `CODEX.md`. Any of the four is a
+  one-file change if he wants it different.
+- **Recommendations for the next agent:** Codex should (a) review this change as
+  the incoming lead orchestrator, (b) rule on GP-001, and (c) confirm whether
+  `models/codex.md` capabilities — usable context in particular — match its real
+  configuration; that row is recorded as "not measured" rather than guessed.
+
+
 ### 2026-08-04 17:13 - @qa/quartz [codex]
 - **Model:** OpenAI Codex, GPT-5
 - **Workspace:** cross-cutting repository audit
@@ -287,3 +343,4 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none
 - **Unresolved issues:** Local `main` has not been fast-forwarded; the upstream commit includes protected governance files and should be reviewed before pulling.
 - **Recommendations for the next agent:** Review `ef89ae3`, then fast-forward local `main` if approved.
+

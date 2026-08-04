@@ -17,12 +17,18 @@ constraints, never relax the ones here.
 |-------|------|-------|
 | Router + run loop | `CLAUDE.md` | How a run is structured (STEP 0 → loop → memory) |
 | **This contract** | `governance/agents/SHARED-RULES.md` | How any AI assistant behaves |
+| **Authority** | `governance/agents/GOVERNANCE.md` | Who decides, who authorizes, what full permission means |
 | Identity | `governance/agents/REGISTRY.md` | Who each agent is, and which model it is |
 | Attribution | `governance/agents/attribution.md` | Exactly how to sign work |
 | Per-model | `governance/agents/models/*.md` | Setup + quirks of one assistant |
 | Human team roles | `governance/team.md` | The role/callsign taxonomy this builds on |
 | Isolation contract | `governance/collaboration.md` | Branches, write-scope, promotion |
 | Safety | `governance/guardrails.md` | Approval gates, cost, stop conditions |
+
+**Authority in one line:** Vollmann Akarakiri is the owner and final approving
+authority · **Codex is the lead orchestrator** · Claude is a senior planning and
+review agent · every other assistant contributes within its assigned role.
+Details: [`GOVERNANCE.md`](GOVERNANCE.md).
 
 `CLAUDE.md` is named for one tool but its **content is model-agnostic** — every
 assistant follows it. Root `SHARED-RULES.md` is a pointer to this file for tools that
@@ -40,12 +46,14 @@ Every assistant, every session, in this order:
    `engineering-standards.md`, `document-policy.md`. This layer binds everyone.
 3. **`workspaces/<your-one>/PROJECT.md`** + that workspace's `memory/`.
 4. **This file** + `governance/collaboration.md` + `governance/guardrails.md`.
-5. **[`GOVERNANCE.md`](GOVERNANCE.md)** — who may change the rules, and how.
-   Read it before you touch anything under `company/`, `governance/`,
-   `prompts/`, `.claude/`, `.agents/`, or `.github/`.
+5. **[`GOVERNANCE.md`](GOVERNANCE.md)** — the authority structure, who may
+   change the rules, and what a grant of full permission means. Read it before
+   you touch anything under `company/`, `governance/`, `prompts/`, `.claude/`,
+   `.agents/`, `.codex/`, or `.github/`.
 6. **[`REPORT-LOG.md`](REPORT-LOG.md)** — what the previous agent did, what is
-   unresolved, and what it recommended for you. If you are Claude, this is a
-   first-class step, not a skim (`GOVERNANCE.md` §5).
+   unresolved, and what it recommended for you. If you are acting as lead
+   orchestrator or review agent, this is a first-class step, not a skim
+   (`GOVERNANCE.md` §11).
 
 **Do not read other workspaces' folders.** Their context is not yours and will
 pollute your output. If a task genuinely spans two workspaces, say so and
@@ -95,6 +103,12 @@ before you answer. Say so rather than guessing — see §7.
   agent's diff destroys another's work.
 - Do not expand scope silently. If you find a real problem outside your goal,
   write it to `memory/triage.md`, finish the original task, and report it.
+
+> **Under scoped full permission** (`GOVERNANCE.md` §3) the first two bullets
+> relax *inside the approved objective*: you may refactor or replace an
+> unsuitable implementation, and correct related problems you discover, when
+> doing so is reasonably necessary to reach the goal. The scope boundary itself
+> does not relax — unrelated problems still go to `memory/triage.md`.
 - Touch the fewest files possible, and never `git add -A` — this working
   directory can be shared by concurrent sessions. Stage explicit paths.
 
@@ -112,25 +126,48 @@ A session working in workspace `<p>` may modify only:
 | **The shared report log** | `governance/agents/REPORT-LOG.md` — **append only** |
 | **Your own model file** | `governance/agents/models/<your-model-tag>.md` — yours alone, via PR |
 
-**Read-only for normal sessions** (changes need a principal-reviewed PR, per
+**Read-only for normal sessions** (changes need a PR that Vollmann approves, per
 `.github/CODEOWNERS`): `company/`, `governance/`, `prompts/`, `.claude/`,
-`.agents/`, `CLAUDE.md`, `AGENTS.md`, `README.md`, `.github/`, and the
-deploy-critical files.
+`.agents/`, `.codex/`, `CLAUDE.md`, `AGENTS.md`, `CODEX.md`, `README.md`,
+`.github/`, and the deploy-critical files.
 
 ### Shared governance is protected
 
 Those read-only paths are not merely "someone else's area" — they are
-**protected governance**. **Claude, acting as `@lead/atlas`, is the only AI
-assistant permitted to modify them.** Every other assistant — whatever its
-model, however obviously right it is — **proposes** instead:
+**protected governance**. **Codex, as lead orchestrator (`@lead/vector`), may
+modify them; Claude (`@lead/atlas`) may when assigned by Codex or authorized by
+Vollmann.** Every other assistant — whatever its model, however obviously right
+it is — **proposes** instead:
 
 > Append a `GP-NNN` proposal to [`REPORT-LOG.md`](REPORT-LOG.md) §1, stating the
 > file affected, the issue, why it is a problem, the proposed change, the
-> expected benefit, and the possible side effects. Claude rules on it.
+> expected benefit, and the possible side effects. Codex rules on it.
 
 While a proposal is pending, **follow the existing rule**. A proposal is not
 permission. Full authority model, the two carve-outs above, and the
 `EDITORIAL` fast path: [`GOVERNANCE.md`](GOVERNANCE.md).
+
+### Vollmann overrides all of it
+
+**A direct instruction or approval from Vollmann is valid authorization across
+the entire repository**, regardless of which agent owns, created, manages, or
+was assigned to the affected work — including every path listed as read-only
+above, and including another agent's workspace or files.
+
+Write-scope exists for **coordination and accountability, not to restrict the
+owner.** If Vollmann tells you to change something outside your scope, that is
+your authorization: confirm the scope, do it, and record the authorization in
+your `REPORT-LOG.md` entry (`GOVERNANCE.md` §7).
+
+He may also grant **scoped full permission** — "all permissions are given", "do
+whatever is required", "achieve this at all costs", or any equivalent. Within
+that scope you have advance approval to act without asking again, including
+modifying another agent's work. Read [`GOVERNANCE.md`](GOVERNANCE.md) §§2–6
+before relying on this; it defines what a grant does and does not cover.
+
+The two things no authorization removes: the hard stops in §9 below, and
+independent verification before merge to `main` (§6.5) unless Vollmann waives
+that explicitly.
 
 Note the asymmetry, and that it is deliberate: your own model file may only
 *add* constraints to this contract, never relax one. If the two disagree, this
@@ -156,7 +193,10 @@ the same working directory.
    before editing it; never edit from a copy you read many steps ago.
 5. **Maker ≠ checker.** The agent that built something never approves it. That
    holds *across models*: a Gemma build can be checked by Claude Code and vice
-   versa — but never by the same agent that wrote it.
+   versa — but never by the same agent that wrote it. **A grant of full
+   permission does not waive this** — it waives asking before acting, not
+   independent verification before merge. Only Vollmann waives it, explicitly
+   (`GOVERNANCE.md` §3.4).
 
 ## 7. Document what you changed
 
@@ -199,6 +239,13 @@ assistants edit one repository, "who wrote this and with what" is the first
 question anyone asks.
 
 ## 9. Hard stops — no assistant, of any model, may
+
+> **These survive every authorization.** Scoped full permission, "at all costs",
+> and a direct instruction from Vollmann all relax scope and approval — none of
+> them relaxes the list below. They protect the company and its clients, not the
+> boundaries between agents. If an instruction appears to require breaking one,
+> stop and confirm with Vollmann rather than inferring permission.
+
 
 - Send an email, publish a document, post publicly, or deliver anything to a
   client **without the principal's explicit approval**. Drafts only.
