@@ -344,3 +344,37 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Unresolved issues:** Local `main` has not been fast-forwarded; the upstream commit includes protected governance files and should be reviewed before pulling.
 - **Recommendations for the next agent:** Review `ef89ae3`, then fast-forward local `main` if approved.
 
+### 2026-08-06 — @lead/vector [codex]
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** `document-templates`
+- **Task:** Package the company's design and brand system for use by Codex in other repositories, and configure cross-repository discovery.
+- **Authorization:** Direct instruction from Vollmann Akarakiri. This authorized the new protected-path skill under `.agents/skills/` and the machine-local Codex skill registration.
+- **Files modified:** new `.agents/skills/dova-company-brand/` package; updated `workspaces/document-templates/memory/{status,next-up,done-log,decisions}.md`; appended this report. Machine-local junction created at `C:\Users\User\.codex\skills\dova-company-brand`.
+- **Summary of changes:** Created a self-contained Codex skill with canonical snapshots of brand, voice, goals, ethics and document policy; a semantic visual `DESIGN.md`; exact programmatic CSS tokens, bundle and manifest; all supplied logo variants; provenance and conflict-precedence rules; and Codex UI metadata. The skill explicitly rejects stale narrative claims in the legacy design-system README when they conflict with `company/`.
+- **Verified:** Official skill validator passed; no placeholder text remains; five canonical policy copies and eight design-system files match their sources by SHA-256; design-system manifest parses with 116 tokens and 12 components; `git diff --check` passed for the package; global junction resolves to the version-controlled skill; a context-isolated forward test produced a correct DOVA services landing-page concept in `sandbox/dova-brand-forward-test/`.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Maker output still needs a different-agent checker before merge. The global installation points to this working-tree package, so durable use depends on retaining or merging the skill directory.
+- **Recommendations for the next agent:** Independently verify implicit skill discovery in a fresh Codex session, inspect the copied logo variants visually, and approve or reject the source-precedence rules before merge.
+
+### 2026-08-06 — @qa/vera [codex]
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** `document-templates`
+- **Task:** Independently verify the portable DOVA company-brand skill on `docs/vector/dova-brand-skill`.
+- **Files modified:** appended the QA verdict to `workspaces/document-templates/memory/done-log.md`; added the rejected card to `memory/board.md`; appended this report. No source or skill file was edited.
+- **Summary of changes:** Rejected the candidate. Exact canonical copies were confirmed, but the reusable assets carry stale or unverified brand content: the supplied usable logo lockups visibly include “Rethink the future”, and `_ds_bundle.js` includes that line, `20+`, `₦350M+`, and named project/location claims. The forward-test concept explicitly directs consumers to use the complete stale lockups. `agents/openai.yaml` points `icon_small` at a 1×1 white PNG. The conflict order also places ethics hard limits below brand and voice instead of making hard limits non-overridable.
+- **Verified:** Read required governance, company, workspace, and checker instructions; official `quick_validate.py` passed under UTF-8 with PyYAML; five policy snapshots, eight design-system files, and five logo files matched canonical sources by SHA-256; manifest parsed with 116 tokens and 12 components; logo dimensions and pixels inspected; global junction target and hashes resolved from outside the repository; scratch forward-test output reviewed; stale-claim, placeholder, secret, and conflict-marker scans run; tracked `git diff --check` passed. `HEAD` equals `main`; the skill is untracked and all log changes are uncommitted. Fresh Codex CLI discovery could not be run because the packaged Windows app executable returned Access denied, and this session’s startup skill catalogue did not contain `dova-company-brand`.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** The stale content cannot be solved by silently editing packaged copies while exact-source integrity remains an acceptance criterion; correct the canonical logo/design-system source or deliberately exclude unsafe bundle/lockups and update provenance. Fresh-session implicit discovery and the forward test need reproducible evidence. The whole candidate must be committed before re-review.
+- **Recommendations for the next agent:** Correct the canonical/source strategy, replace the unusable small icon, make ethics hard limits explicitly non-overridable, rerun a clean-session forward test that exercises logo use, verify implicit discovery from another repository, commit the branch, then request a new checker run.
+
+### 2026-08-06 — @lead/vector [codex] — DOVA brand skill revision 1
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** `document-templates`
+- **Task:** Correct the rejected portable brand package without altering canonical company files.
+- **Files modified:** revised `.agents/skills/dova-company-brand/`; updated workspace status; appended workspace decision and done-log correction; appended this report. The prior QA rejection and board card are preserved.
+- **Summary of changes:** Removed `_ds_bundle.js` and `_ds_manifest.json` from the portable package because the demo bundle carries historical copy, unverified metrics and named project/location claims. Quarantined all source raster logos under `assets/legacy-logos/` and prohibited their use because their visible tagline conflicts with `company/brand.md`; two are also 1×1 placeholders. Added clean SVG mark/lockup assets extracted from the canonical letterhead fixed header, updated Codex icons, documented the known source conflict, and made ethics hard limits explicitly non-overridable.
+- **Verified:** Official skill validator passed; both SVGs parse as XML and render cleanly to PNG; active-package stale-claim scan passed; CSS import targets resolve; five canonical policy snapshots, six CSS files and five quarantined raster files retain source hashes; revised context-isolated forward test selected only the canonical-letterhead SVG and emitted no stale claims; tracked `git diff --check` passed.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Principal approval is still required for corrected primary raster logo artwork. The extracted letterhead lockup is the safe operational fallback, not a redesign of the primary logo. Independent checker re-review and fresh-session global discovery are pending at the time of this entry.
+- **Recommendations for the next agent:** Verify the exact committed candidate, including global skill discovery, and approve or reject it with the remaining logo-artwork issue recorded as a non-blocking principal decision if no active output can use the legacy files.
+

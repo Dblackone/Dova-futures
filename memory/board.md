@@ -18,7 +18,9 @@ _(empty)_
 _(empty)_
 
 ## Blocked
-_(empty)_
+| Card | Owner | Branch | Blocker |
+|------|-------|--------|---------|
+| **DOVA-BRAND-SKILL** Package portable company-brand skill | @lead/vector | `docs/vector/dova-brand-skill` | ❌ REJECTED by @qa/vera [codex] 2026-08-06: remove stale tagline/claims from active reusable assets without breaking canonical provenance, replace the 1×1 UI icon, produce an auditable clean forward test, verify fresh-session discovery, and commit the candidate diff before re-review. |
 
 ## Done (pending merge approval)
 | Card | Owner | Branch | Notes |

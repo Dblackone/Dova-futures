@@ -42,6 +42,11 @@
 5. [ ] **Safari print verification** — run the full print workflow for all ten
    templates in Safari; log fixes.
 
+6. [ ] **Independent checker review of the portable DOVA brand skill** — verify
+   source precedence, copied-asset integrity, Codex discovery, and one branded
+   output from a fresh session. _Acceptance: checker approves or lists precise
+   corrections; principal still controls merge._
+
 ## Someday / backlog
 - Password protection (`express-basic-auth`) if client wants staff-only access.
 - Auto-populate invoices from job data (`projects/` → template fields).

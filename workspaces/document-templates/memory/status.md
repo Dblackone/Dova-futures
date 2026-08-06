@@ -1,7 +1,7 @@
 # status.md — Current Snapshot (document-templates)
 
-**Last updated:** 2026-08-02 — Document System Phase 2 complete (TEMPLATES-04),
-awaiting the principal's review
+**Last updated:** 2026-08-06 — Portable DOVA company-brand skill packaged and
+registered globally in Codex; Document System Phase 2 still awaits review
 **Health:** 🟡 blocked on review — and Phase 2 surfaced a high-severity library
 defect (see "Open / blocked")
 
@@ -13,6 +13,8 @@ defect (see "Open / blocked")
   Design sources.
 - Design system tokens in `documents/_ds/dova-futures-design-system-*/`.
 - Company-wide usage rule is `company/document-policy.md`.
+- Portable Codex skill at `.agents/skills/dova-company-brand/`, globally linked
+  at `C:\Users\User\.codex\skills\dova-company-brand` for use from other repos.
 - **Document System Phase 2 done:** ten sample documents in
   `drafts/samples/`, one per template, sharing one fictional client and project
   (Aterin Heights Limited / `SAMPLE-2026-ATH-001`). Read that folder's
@@ -22,11 +24,14 @@ defect (see "Open / blocked")
   link decided).
 
 ## Recently done (last 3)
+- Portable DOVA company-brand Codex skill — canonical policy snapshots,
+  semantic `DESIGN.md`, sanitised token CSS, a canonical-letterhead SVG lockup,
+  and quarantined legacy logo inventory; validated and forward-tested after the
+  first QA rejection. Awaiting re-review of the committed candidate.
 - Phase 2 sample set — ten documents + review README (`drafts/samples/`).
   Awaiting principal review and a checker.
 - `DOVA-Document-System.md` — portable offline reference for the whole template
   system. Awaiting checker.
-- `documents/TEMPLATE-INVENTORY.md` — Phase 1 audit of all ten templates.
 
 ## Open / blocked
 - **BLOCKING — Phase 3 cannot start until the principal reviews the Phase 2

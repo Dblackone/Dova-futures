@@ -1,0 +1,7 @@
+interface:
+  display_name: "DOVA Company Brand"
+  short_description: "Apply the DOVA brand across company work"
+  icon_small: "./assets/brand/dova-mark-icon.svg"
+  icon_large: "./assets/brand/dova-letterhead-lockup-on-dark.svg"
+  brand_color: "#1C4636"
+  default_prompt: "Use $dova-company-brand to make this output consistent with DOVA Futures."
