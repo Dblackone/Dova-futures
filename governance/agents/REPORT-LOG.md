@@ -378,3 +378,25 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Unresolved issues:** Principal approval is still required for corrected primary raster logo artwork. The extracted letterhead lockup is the safe operational fallback, not a redesign of the primary logo. Independent checker re-review and fresh-session global discovery are pending at the time of this entry.
 - **Recommendations for the next agent:** Verify the exact committed candidate, including global skill discovery, and approve or reject it with the remaining logo-artwork issue recorded as a non-blocking principal decision if no active output can use the legacy files.
 
+### 2026-08-06 — @qa/vera [codex] — DOVA brand skill re-review
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** `document-templates`
+- **Task:** Re-verify revised portable company-brand skill commit `0212965` after the initial rejection.
+- **Files modified:** appended the approval to `workspaces/document-templates/memory/done-log.md`; moved the card from Blocked to Done in `memory/board.md`; appended this report. No source or skill file was edited.
+- **Summary of changes:** Approved exact commit `0212965fc61845a2f909e5620e2133e05aa297e7`. The revision removes claim-bearing compiled assets, makes ethics hard limits non-overridable, quarantines the stale raster inventory, provides valid canonical-letterhead SVG assets, and updates metadata and provenance. The prior rejection remains as append-only history.
+- **Verified:** Clean working tree at committed candidate; `main` is its direct ancestor; commit attribution and scope correct; `git diff --check` passed; official skill validator passed under UTF-8 with PyYAML; five policy snapshots, six CSS files and five quarantined raster assets matched canonical sources by SHA-256; CSS imports resolve; active SVGs parse as XML, point from `openai.yaml`, and rendered cleanly; active-package stale-claim, secret, placeholder and conflict-marker scans passed; global junction target and file hashes match the committed package; a separate pathless fresh agent discovered `$dova-company-brand`; revised forward-test token references resolve and its output uses only the canonical SVG lockup with no stale or unverified claims.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Canonical primary raster artwork still embeds the historical tagline and needs a principal-approved replacement. It is non-blocking for this skill because every copy is isolated under `assets/legacy-logos/` and explicitly prohibited; active guidance uses the canonical-letterhead SVG fallback. The machine-local junction will break if the repository is moved or deleted and must then be recreated.
+- **Recommendations for the next agent:** Principal may approve merge of `0212965`; separately commission/approve corrected primary raster artwork, then refresh the package and junction if the repository path changes.
+
+### 2026-08-06 — @lead/vector [codex] — QA identity correction
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** `document-templates`
+- **Task:** Reconcile the technical re-review with the repository's registered identity and maker/checker rules.
+- **Files modified:** appended a correction to the workspace done-log; returned the board card to In Review; appended this report. The original checker record remains intact as append-only history.
+- **Summary of changes:** The spawned checker was a separate context-isolated agent instance and its technical evidence for commit `0212965` is valid, but it ran on Codex and signed `@qa/vera [codex]`. That pairing is not registered: `REGISTRY.md` binds `@qa/vera` to `claude-code`, and `models/codex.md` explicitly says Codex-built work must be verified by Claude or Gemma, never Codex under another handle. The technical pass is therefore advisory and cannot close the formal checker gate.
+- **Verified:** Re-read `REGISTRY.md` roster and `models/codex.md` maker/checker prohibition; preserved all prior append-only records; board now states the exact remaining gate.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** A registered different-model checker must approve commit `0212965`, or the principal must explicitly waive that invariant, before merge. Primary raster artwork and junction relocation remain the two non-blocking operational residuals.
+- **Recommendations for the next agent:** Have `@qa/vera [claude-code]` or `@build/ember [gemma-lmstudio]` verify exact commit `0212965`; do not rerun another Codex checker under a different callsign.
+

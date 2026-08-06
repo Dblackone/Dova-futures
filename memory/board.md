@@ -15,12 +15,12 @@ _(empty)_
 _(empty)_
 
 ## In Review (with QA)
-_(empty)_
+| Card | Owner | Branch | Review state |
+|------|-------|--------|--------------|
+| **DOVA-BRAND-SKILL** Package portable company-brand skill | @lead/vector | `docs/vector/dova-brand-skill` | Exact commit `0212965` passed an isolated Codex QA instance's full technical suite. Formal checker gate remains open because `@qa/vera` is registered to `claude-code` and `models/codex.md` forbids Codex from approving Codex-built work. |
 
 ## Blocked
-| Card | Owner | Branch | Blocker |
-|------|-------|--------|---------|
-| **DOVA-BRAND-SKILL** Package portable company-brand skill | @lead/vector | `docs/vector/dova-brand-skill` | ❌ REJECTED by @qa/vera [codex] 2026-08-06: remove stale tagline/claims from active reusable assets without breaking canonical provenance, replace the 1×1 UI icon, produce an auditable clean forward test, verify fresh-session discovery, and commit the candidate diff before re-review. |
+_(empty)_
 
 ## Done (pending merge approval)
 | Card | Owner | Branch | Notes |
