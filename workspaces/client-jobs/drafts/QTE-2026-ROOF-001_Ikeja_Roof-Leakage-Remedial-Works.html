@@ -7,11 +7,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  @page { size: A4; margin: 0; }
+  @page { size: A4; margin: 24mm 0 20mm; }
   @page :first { margin-top: 0; }
   @media print {
     html, body { margin: 0 !important; }
     body { background: white !important; padding: 0 !important; }
+    [data-wrap] { background: white !important; padding: 0 !important; min-height: 0 !important; }
     [data-no-print] { display: none !important; }
     [data-paper] { box-shadow: none !important; max-width: 100% !important; }
   }
@@ -19,7 +20,7 @@
 </style>
 </head>
 <body>
-<div style="min-height:100vh;background:#E8E1D5;padding:32px 24px;font-family:'Inter',sans-serif;box-sizing:border-box;">
+<div data-wrap style="min-height:100vh;background:#E8E1D5;padding:32px 24px;font-family:'Inter',sans-serif;box-sizing:border-box;">
 
   <div data-no-print style="max-width:794px;margin:0 auto 16px;display:flex;justify-content:space-between;align-items:center;">
     <a href="../index.html" style="font-size:13px;color:#1C4636;text-decoration:none;font-weight:500;">← All Templates</a>
@@ -41,12 +42,6 @@
       </div>
     </div>
     <div style="height:3px;background:#B85C38;"></div>
-
-    <div data-first-page-footer style="position:absolute;top:1045px;left:48px;right:48px;border-top:1px solid #D1CBC6;padding:14px 0;display:flex;justify-content:space-between;align-items:center;background:#fff;">
-      <span style="font-size:10px;color:#6B7280;">DOVA Futures Limited · RC No. 8219604</span>
-      <span style="font-family:'Bebas Neue',sans-serif;font-size:11px;color:#1C4636;letter-spacing:0.12em;">DOVAFUTURES.COM</span>
-      <span style="font-size:10px;color:#6B7280;">Page 1 of 2</span>
-    </div>
 
     <div style="padding:36px 48px 20px;">
       <div style="font-family:'Bebas Neue',sans-serif;font-size:12px;color:#B85C38;letter-spacing:0.35em;margin-bottom:8px;">PROJECT QUOTATION</div>
@@ -110,6 +105,21 @@
             <tr style="background:#fff;"><td style="padding:6px 8px;text-align:center;color:#6B7280;">5</td><td style="padding:6px 10px;color:#1A1A1A;">Structural / cracked-wall repair</td><td style="padding:6px 8px;text-align:center;">LS</td><td style="padding:6px 8px;text-align:center;">1</td><td style="padding:6px 8px;text-align:right;">450,000</td><td style="padding:6px 8px;text-align:right;font-weight:500;">450,000</td></tr>
             <tr style="background:#F5EFE8;"><td style="padding:6px 8px;text-align:center;color:#6B7280;">6</td><td style="padding:6px 10px;color:#1A1A1A;">Roof-cap / coping corrections, fabrication and installation</td><td style="padding:6px 8px;text-align:center;">LS</td><td style="padding:6px 8px;text-align:center;">1</td><td style="padding:6px 8px;text-align:right;">620,000</td><td style="padding:6px 8px;text-align:right;font-weight:500;">620,000</td></tr>
             <tr style="background:#E8E1D5;font-weight:700;"><td colspan="5" style="padding:7px 10px;text-align:right;">Measure 1 subtotal</td><td style="padding:7px 8px;text-align:right;">1,396,000</td></tr>
+          </tbody>
+        </table>
+        <div style="margin:18px 0 10px;padding:12px 14px;background:#F5EFE8;border-left:3px solid #1C4636;font-size:11px;color:#4A4F5C;line-height:1.6;page-break-inside:avoid;"><strong style="color:#1C4636;">Measure 2 — precautionary localised treatment.</strong> This allowance covers screeding, Aquaseal admixture, primer and bituminous refelting along approximately 144 m² of slab-to-wall perimeter. It is a precautionary measure based on visible inspection; the exact water-entry path and final extent will be confirmed by opening-up and investigation. Protective aluminium coating is excluded from this measure.</div>
+        <table style="width:100%;border-collapse:collapse;font-size:11.5px;page-break-inside:avoid;">
+          <thead>
+            <tr style="background:#1C4636;">
+              <th style="padding:9px 8px;text-align:center;color:#F5EFE8;font-weight:600;letter-spacing:0.06em;font-size:9px;text-transform:uppercase;width:32px;">#</th>
+              <th style="padding:9px 10px;text-align:left;color:#F5EFE8;font-weight:600;letter-spacing:0.06em;font-size:9px;text-transform:uppercase;">Description of Works</th>
+              <th style="padding:9px 8px;text-align:center;color:#F5EFE8;font-weight:600;letter-spacing:0.06em;font-size:9px;text-transform:uppercase;width:50px;">Unit</th>
+              <th style="padding:9px 8px;text-align:center;color:#F5EFE8;font-weight:600;letter-spacing:0.06em;font-size:9px;text-transform:uppercase;width:40px;">Qty</th>
+              <th style="padding:9px 8px;text-align:right;color:#F5EFE8;font-weight:600;letter-spacing:0.06em;font-size:9px;text-transform:uppercase;width:90px;">Rate (₦)</th>
+              <th style="padding:9px 8px;text-align:right;color:#F5EFE8;font-weight:600;letter-spacing:0.06em;font-size:9px;text-transform:uppercase;width:90px;">Amount (₦)</th>
+            </tr>
+          </thead>
+          <tbody style="font-size:10px;">
             <tr style="background:#1C4636;color:#F5EFE8;font-weight:700;"><td colspan="6" style="padding:7px 10px;letter-spacing:0.08em;">MEASURE 2 — LOCALISED SLAB-TO-WALL WATERPROOFING</td></tr>
             <tr style="background:#fff;"><td style="padding:6px 8px;text-align:center;color:#6B7280;">7</td><td style="padding:6px 10px;color:#1A1A1A;">Cement for screeding</td><td style="padding:6px 8px;text-align:center;">bags</td><td style="padding:6px 8px;text-align:center;">50</td><td style="padding:6px 8px;text-align:right;">12,500</td><td style="padding:6px 8px;text-align:right;font-weight:500;">625,000</td></tr>
             <tr style="background:#F5EFE8;"><td style="padding:6px 8px;text-align:center;color:#6B7280;">8</td><td style="padding:6px 10px;color:#1A1A1A;">Sharp sand — working allowance</td><td style="padding:6px 8px;text-align:center;">tonnes</td><td style="padding:6px 8px;text-align:center;">10</td><td style="padding:6px 8px;text-align:right;">20,000</td><td style="padding:6px 8px;text-align:right;font-weight:500;">200,000</td></tr>
@@ -170,7 +180,6 @@
 
     </div>
 
-    <div style="height:24px;"></div>
   </div>
 </div>
 </body>

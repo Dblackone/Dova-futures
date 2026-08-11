@@ -3,8 +3,9 @@
 ## `render-pdf.js`
 
 Renders a client document's HTML to the branded A4 PDF we deliver: page 1 keeps
-its full green letterhead, pages 2..N get a slim running header and a footer
-with `Page X of Y`. This is the HW-05 treatment (first used on
+its full green letterhead, pages 2..N get a slim running header, and every page
+uses the same footer with the document reference and `Page X of Y`. This is the
+HW-05 treatment (first used on
 `RPT-2026-POOL-002`, then `RPT-2026-DEMO-001`).
 
 ```bash

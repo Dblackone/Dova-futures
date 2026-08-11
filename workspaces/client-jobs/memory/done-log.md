@@ -509,3 +509,39 @@ at two pages each with one page marker per page; the report image is embedded;
 arithmetic, line-item coverage and invoice draft/not-payable safeguards pass.
 Client contact details, final site measurements, VAT confirmation, commercial
 terms and principal approval remain open. Files remain drafts in `drafts/`.
+## 2026-08-11 — ROOF-07: client-facing report wording and PDF layout correction
+
+Reworked `RPT-2026-ROOF-001` for client use: replaced the internal classification,
+rewrote the executive summary for clarity, converted recommendations to a
+numbered list, and clarified the conclusion that visible findings may not reveal
+concealed or secondary water-entry routes. The report now asks that any newly
+identified route be recorded, reported to Broll Properties and agreed before the
+repair sequence or scope changes. Removed the internal Reviewed By field; the
+authorisation block now shows Prepared By and Approved By — Broll Properties,
+with a Name / Date line.
+
+Corrected print layout across the family by removing the outer cream canvas from
+PDFs, reserving clear running-header/footer bands, separating the quotation into
+two pricing tables with a Measure 2 explanation, and re-rendering all PDFs.
+
+**Verified by @qa/quartz [codex]:** report/quotation PDFs are three pages and the
+invoice is two pages; page markers occur once on their physical pages, body text
+clears headers and footers, corners are white, the report image embeds, arithmetic
+and VAT remain correct, and invoice draft/not-payable safeguards pass.
+## 2026-08-11 — ROOF-08: unified footers and compact final pagination
+
+Rebuilt the roof-repairs document family after visual inspection of every PDF
+page. Removed the separate HTML first-page footers and changed the PDF renderer
+so page 1 and all continuation pages use the exact same margin-box footer.
+There is now no secondary border or wrapper margin below the first-page footer.
+
+The invoice was compacted without removing content and now fits on one A4 page.
+The quotation now fits on two pages, with Measure 1 on page 1 and the Measure 2
+explanation/table plus commercial terms and acceptance on page 2. The report
+was rebalanced to two pages with the site image, recommendations, conclusion and
+authorisation together on page 2.
+
+**Independent checker result (@qa/quartz [codex]): APPROVE.** Footer geometry
+is identical on every page; no body/header/footer overlap or outer cream border
+remains. Final page counts are invoice 1, quotation 2 and report 2. Arithmetic,
+VAT, image embedding and draft/not-payable safeguards remain correct.

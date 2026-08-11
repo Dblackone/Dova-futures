@@ -3,9 +3,9 @@
  * render-pdf.js — render a client document HTML to a branded A4 PDF.
  *
  * Page 1 keeps the document's own full green letterhead. Pages 2..N get a slim
- * running header (DOVA FUTURES LIMITED + document title, orange rule) and a
- * footer (RC No. · DOVAFUTURES.COM · doc ref · Page X of Y). This is the HW-05
- * treatment first used on RPT-2026-POOL-002.
+ * running header (DOVA FUTURES LIMITED + document title, orange rule). Every
+ * page receives the same footer (RC No. · DOVAFUTURES.COM · doc ref · Page X
+ * of Y). This is the HW-05 treatment first used on RPT-2026-POOL-002.
  *
  * Setup (once, in this folder):   npm install
  * Usage:
@@ -42,7 +42,9 @@ const CHROME = process.env.CHROME_PATH
 const GREEN = '#1C4636', ORANGE = '#B85C38', GREY = '#6B7280', RULE = '#D1CBC6';
 
 // Identical in both passes so pagination is comparable page-for-page.
-const MARGIN = { top: '20mm', bottom: '16mm', left: '0mm', right: '0mm' };
+// Reserve clear bands for the running header/footer on continuation pages.
+// The first page overrides the top margin in the document with @page :first.
+const MARGIN = { top: '24mm', bottom: '20mm', left: '0mm', right: '0mm' };
 
 function parseArgs(argv) {
   const src = argv[0];
@@ -83,6 +85,10 @@ const footerTemplate = (ref) => `
   </tr></table>
 </div>`;
 
+// Page 1 keeps the full in-document letterhead, so its margin-box header is
+// intentionally blank. The footer is the same template used on every page.
+const blankHeaderTemplate = '<div style="font-size:1px;width:100%;"></div>';
+
 async function renderPasses(opts, tmpDir) {
   const browser = await puppeteer.launch({
     executablePath: CHROME,
@@ -100,7 +106,7 @@ async function renderPasses(opts, tmpDir) {
 
     const common = { format: 'A4', printBackground: true, margin: MARGIN };
     const withHF = path.join(tmpDir, 'pass-header.pdf');
-    const noHF = path.join(tmpDir, 'pass-plain.pdf');
+    const firstPage = path.join(tmpDir, 'pass-first-page.pdf');
 
     // Pass A — running header/footer on every page. We keep pages 2..N.
     await page.pdf({
@@ -108,20 +114,24 @@ async function renderPasses(opts, tmpDir) {
       headerTemplate: headerTemplate(opts.title),
       footerTemplate: footerTemplate(opts.ref),
     });
-    // Pass B — no header/footer. We keep page 1, which carries the letterhead.
-    await page.pdf({ ...common, path: noHF, displayHeaderFooter: false });
+    // Pass B — full page-1 letterhead, blank margin header, standard footer.
+    await page.pdf({
+      ...common, path: firstPage, displayHeaderFooter: true,
+      headerTemplate: blankHeaderTemplate,
+      footerTemplate: footerTemplate(opts.ref),
+    });
 
-    return { withHF, noHF };
+    return { withHF, firstPage };
   } finally {
     await browser.close();
   }
 }
 
-async function splice({ withHF, noHF }, outPath) {
+async function splice({ withHF, firstPage }, outPath) {
   const a = await PDFDocument.load(fs.readFileSync(withHF));
-  const b = await PDFDocument.load(fs.readFileSync(noHF));
+  const b = await PDFDocument.load(fs.readFileSync(firstPage));
   if (a.getPageCount() !== b.getPageCount()) {
-    throw new Error(`Pagination drift: header pass=${a.getPageCount()} plain pass=${b.getPageCount()} — aborting`);
+    throw new Error(`Pagination drift: continuation pass=${a.getPageCount()} first-page pass=${b.getPageCount()} — aborting`);
   }
   const total = a.getPageCount();
 
@@ -141,7 +151,9 @@ async function splice({ withHF, noHF }, outPath) {
   try {
     const total = await splice(await renderPasses(opts, tmpDir), opts.out);
     console.log(`OK pages=${total} -> ${opts.out}`);
-    console.log(`page 1: letterhead, no running header | pages 2-${total}: branded header + footer with page numbers`);
+    console.log(total === 1
+      ? 'page 1: letterhead + standard footer'
+      : `page 1: letterhead + standard footer | pages 2-${total}: branded header + the same footer`);
   } finally {
     fs.rmSync(tmpDir, { recursive: true, force: true });
   }

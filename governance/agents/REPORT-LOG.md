@@ -469,3 +469,17 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Summary:** Quotation now lists all Measure 1 and Measure 2 materials/labour, with Measure 2 aluminium coating shown as excluded at ₦0. Client and site fields identify Broll Properties and Ikeja City Mall.
 - **Verified:** Independent checker APPROVE. Direct subtotal ₦4,245,200; VAT at 7.5% provisional ₦318,390; inclusive total ₦4,563,590. All PDFs are two pages with exactly one marker per page; report image embeds; invoice remains draft/not payable before acceptance and approval.
 - **Unresolved issues:** Client contact, site measurements, VAT confirmation, overhead/profit, payment terms and principal approval remain open. No external issue or promotion performed.
+### 2026-08-11 — @lead/vector [codex] — client-facing report wording and PDF layout correction
+- **Workspace:** `client-jobs`
+- **Task:** Revise the Broll Properties roof-leakage report for client understanding and correct PDF page layout after principal review.
+- **Files modified:** report HTML/PDF; quote and invoice HTML/PDF; `workspaces/client-jobs/tools/render-pdf.js`; client-jobs `memory/done-log.md`; this report log.
+- **Summary:** Report is client-facing, with clearer executive summary, numbered recommendations, qualified concealed-route conclusion, no Reviewed By field, and Approved By = Broll Properties with Name / Date. PDFs print on a white canvas with reserved header/footer bands; the quotation has separate Measure 1 and Measure 2 tables with an explanatory gap.
+- **Verified:** Independent checker APPROVE. Report and quotation are 3 pages; invoice is 2 pages; markers are exact and non-duplicated, body content clears headers/footers, report image embeds, arithmetic/VAT pass, and invoice remains draft/not payable.
+- **Unresolved issues:** Final client contact, site measurements, VAT confirmation, overhead/profit, payment terms and principal approval remain open. No external issue or promotion performed.
+### 2026-08-11 — @lead/vector [codex] — unified footers and compact roof-document pagination
+- **Workspace:** `client-jobs`
+- **Task:** Correct recurring first-page/footer inconsistencies and fit the invoice onto one page.
+- **Files modified:** roof report/quote/invoice HTML and PDFs; `workspaces/client-jobs/tools/render-pdf.js`; tools README; client-jobs done-log; this report log.
+- **Summary:** Removed hand-built first-page footers. The renderer now places the same footer template on every page while retaining the full page-1 letterhead and continuation-page headers. Reflowed the family to invoice 1 page, quotation 2 pages and report 2 pages.
+- **Verified:** Visually inspected rasterised pages and obtained independent checker APPROVE. Footer geometry/content is identical on every page; no extra lower border, cream canvas, header/footer bleed or transition overlap remains. All invoice content is readable on one page; quote tables/gap and report image/signatures are intact; arithmetic and VAT reconcile.
+- **Unresolved issues:** Final client contact, confirmed measurements, VAT/commercial terms and principal approval remain open. Documents remain drafts and were not issued externally.
