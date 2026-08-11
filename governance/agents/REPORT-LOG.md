@@ -462,3 +462,10 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Verified:** `render-pdf.js` succeeded for all three; independent PyMuPDF coordinate check confirmed `Page 1 of 2` on page 1 and `Page 2 of 2` on page 2 for each PDF; final checker APPROVE.
 - **Unresolved issues:** Client details, site measurements, VAT, commercial terms and principal approval remain outstanding. All documents remain drafts.
 
+### 2026-08-11 — @lead/vector [codex] — Broll client update and detailed quotation
+- **Workspace:** `client-jobs`
+- **Task:** Update the roof-repairs document family for Broll Properties at Ikeja City Mall and expose detailed costs for both measures.
+- **Files modified:** three HTML drafts and three rendered PDFs in `workspaces/client-jobs/drafts/`; client-jobs `memory/done-log.md`; this report log.
+- **Summary:** Quotation now lists all Measure 1 and Measure 2 materials/labour, with Measure 2 aluminium coating shown as excluded at ₦0. Client and site fields identify Broll Properties and Ikeja City Mall.
+- **Verified:** Independent checker APPROVE. Direct subtotal ₦4,245,200; VAT at 7.5% provisional ₦318,390; inclusive total ₦4,563,590. All PDFs are two pages with exactly one marker per page; report image embeds; invoice remains draft/not payable before acceptance and approval.
+- **Unresolved issues:** Client contact, site measurements, VAT confirmation, overhead/profit, payment terms and principal approval remain open. No external issue or promotion performed.

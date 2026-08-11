@@ -495,3 +495,17 @@ per PDF.
 confirmed the first-page footer is physically on page 1 and no duplicate marker
 appears on page 2. Canonical lineage, image reference, arithmetic and draft-only
 invoice safeguards also passed.
+## 2026-08-11 — ROOF-06: Broll client update and detailed quotation breakdown
+
+Updated the roof-repairs report, quotation and invoice for **Broll Properties,
+Ikeja City Mall** (Obafemi Awolowo Way, Alausa, Ikeja, Lagos). The quotation
+now itemises every material and labour line for Measure 1 and Measure 2,
+including the explicit zero-cost aluminium-coating exclusion in Measure 2.
+The direct subtotal remains **₦4,245,200**; VAT is shown at **7.5%
+provisional (₦318,390)** and the inclusive total is **₦4,563,590**.
+
+**Verified by @qa/quartz [codex]:** all three PDFs re-rendered successfully
+at two pages each with one page marker per page; the report image is embedded;
+arithmetic, line-item coverage and invoice draft/not-payable safeguards pass.
+Client contact details, final site measurements, VAT confirmation, commercial
+terms and principal approval remain open. Files remain drafts in `drafts/`.

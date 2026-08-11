@@ -54,7 +54,7 @@
 
 7. [ ] **Roof repairs: principal/site confirmation** — review the prepared
    `RPT-2026-ROOF-001`, `QTE-2026-ROOF-001` and `INV-2026-ROOF-001` drafts;
-   confirm client details, measured coping length, felt coverage, primer dosage,
+   confirm the remaining client contact details, measured coping length, felt coverage, primer dosage,
    sand allowance, labour/access costs, VAT rate, overhead/profit and the final
    payment schedule. No job code exists and none of the documents may be issued
    externally before principal approval.

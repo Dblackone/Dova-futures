@@ -19,14 +19,15 @@
 
 ## Pipeline (prospective — no job code issued yet)
 
-- **Ikeja roof leakage remedial works.** Internal working brief extracted from
+- **Broll Properties — Ikeja City Mall roof leakage remedial works.** Internal working brief extracted from
   the principal's Roof Repairs Brief conversation and saved as
   `drafts/ROOF-REPAIRS-BRIEF_Ikeja.md`. Measure 1 is **₦1,396,000** and
   Measure 2 is **₦2,849,200**, for a combined direct working total of
   **₦4,245,200**. Measure 2 explicitly excludes protective aluminium coating;
   the report, quotation and draft invoice are now prepared in `drafts/` using
   references `RPT-2026-ROOF-001`, `QTE-2026-ROOF-001` and `INV-2026-ROOF-001`.
-  VAT is shown provisionally at 7.5%; no job code exists and nothing is issued.
+  VAT is shown provisionally at 7.5%; client/site are identified, contact details
+  remain to be confirmed; no job code exists and nothing is issued.
 
 - **Broll Properties — Ikeja City Mall, Alausa, Ikeja, Lagos.** Tile demolition
   to expose the structural ground slab (5,000 – 5,500 m²) + carting away.
