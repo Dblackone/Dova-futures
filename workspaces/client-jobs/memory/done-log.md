@@ -404,3 +404,58 @@ closes on the signed acceptance page as the next step.
 3. VAT at 5% still unconfirmed, and it now appears in both attachments.
 4. The on-acceptance checklist (job code, register Seq 003, job folder, move
    both documents out of `drafts/`).
+
+## 2026-08-11 — ROOF-01: roof repairs working brief extracted
+
+Extracted the latest corrected brief from the referenced **Roof Repairs Brief**
+conversation and saved the internal Markdown handoff at
+`drafts/ROOF-REPAIRS-BRIEF_Ikeja.md`.
+
+The brief records Measure 1 at **₦1,396,000**, Measure 2 at **₦2,849,200**,
+and the combined direct working total at **₦4,245,200**. It carries two drums
+of aluminium protective coating and one drum of primer in Measure 1, and removes
+aluminium coating from Measure 2. It is draft-only, has no job code, and is not
+an approved client quotation.
+
+**Verified by @lead/vector [codex]:** arithmetic recomputed from the line items
+(M1 = ₦1,396,000; M2 = ₦2,849,200; combined = ₦4,245,200); file exists in
+the client-jobs `drafts/` folder. Independent checker review remains required
+before any formal quotation is issued.
+
+**Independent checker result (qa-vera): APPROVE.** The checker recomputed both
+measure totals and the combined total, confirmed the latest aluminium-coating
+correction, and found the draft-only safeguards and unresolved confirmations
+clear. Unrelated pre-existing working-tree edits remain outside this task and
+must be isolated before staging.
+
+## 2026-08-11 — ROOF-02: inspection notice clause added
+
+Added an inspection notice to `drafts/ROOF-REPAIRS-BRIEF_Ikeja.md` stating that
+the two measures are based only on visible inspection; Measure 1 is the leading
+remedial lead, Measure 2 is precautionary, the defective-wall image will be
+attached, and the exact leakage cause/path may only be confirmed once opening-up
+and investigation begin. The possible deflection-related cracking is described
+as an unconfirmed interpretation, not a diagnosis.
+
+**Verified by @lead/vector [codex]:** read the edited brief and checked that the
+new clause preserves the draft-only status and does not alter any quantities or
+working totals.
+
+**Independent checker result (qa-vera): APPROVE.** The amended notice covers all
+requested points, the possible deflection movement is not presented as a
+diagnosis, and the three working totals remain unchanged.
+
+## 2026-08-11 — ROOF-03: damage-wall image attached
+
+Copied the principal-supplied `Damage Wall .jpeg` into the draft folder as
+`drafts/ROOF-REPAIRS-DAMAGE-WALL.jpeg` and embedded it in the roof-repairs
+brief with a figure caption. The caption limits the image to visible-condition
+evidence and does not present a definitive leakage or structural diagnosis.
+
+**Verified by @lead/vector [codex]:** source image opened for visual inspection;
+copied file exists at 76,365 bytes; Markdown reference uses the workspace-local
+filename; cost quantities and totals were not changed.
+
+**Independent checker result (qa-vera): APPROVE.** The JPEG resolves from the
+relative Markdown path, the caption is evidence-only, and the notice language
+and working totals remain correct.

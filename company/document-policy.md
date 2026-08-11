@@ -59,6 +59,23 @@ DOVA Futures output consistent.
 
 ---
 
+## PDF presentation standards
+
+Every multi-page PDF export must preserve a deliberate page system:
+
+- The page itself is white and prints flush to the PDF canvas. Do not export a
+  browser-preview background, outer page border, shadow, or coloured frame.
+- Page 1 uses the canonical full DOVA letterhead. Every later page uses a
+  compact running header that identifies DOVA Futures and the document.
+- Every page has a definite footer inside the safe print area. The footer must
+  identify the company, document reference and draft/approval status, and show
+  the page number where the renderer supports it.
+- Headers and footers are part of the page composition, not accidental content
+  at the beginning or end of a continuous browser flow. Check every rendered
+  page before issue for clipping, blank spill pages and broken sections.
+
+---
+
 ## What this rule covers
 
 - Client-facing deliverables: quotes, invoices, letters, certificates

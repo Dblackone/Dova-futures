@@ -168,6 +168,12 @@ Use the packaged calm easing curve. Typical motion is a 0.3-second transition, a
 - Never rely on colour alone to communicate state.
 - Test reduced motion, keyboard use, narrow mobile widths, wide desktop widths, and print output when applicable.
 
+For multi-page company PDFs, use explicit page compositions rather than one
+unbounded browser flow. The PDF canvas must be white with no preview frame or
+outer page border. Retain the full letterhead on page 1, provide a compact
+running header on every later page, and place an identifying footer on every
+page. Visually inspect every rendered page before delivery.
+
 ## 9. Signature composition
 
 A recognisably DOVA screen typically combines:

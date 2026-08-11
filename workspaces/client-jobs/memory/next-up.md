@@ -52,6 +52,12 @@
    _Nothing sent to the client by an agent — presenting is the principal's
    action._
 
+7. [ ] **Roof repairs brief: principal/site confirmation** — review
+   `drafts/ROOF-REPAIRS-BRIEF_Ikeja.md`; confirm measured coping length, felt
+   coverage, primer dosage, sand allowance, labour/access costs and the eventual
+   VAT/overhead/profit treatment before converting it into a formal report or
+   quotation. No job code exists and the draft must not be issued externally.
+
 ## Someday / backlog
 - Backfill older completed projects (see `assets/Project Pictures/`) as
   archived job folders if useful for records.

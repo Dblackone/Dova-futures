@@ -400,3 +400,48 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Unresolved issues:** A registered different-model checker must approve commit `0212965`, or the principal must explicitly waive that invariant, before merge. Primary raster artwork and junction relocation remain the two non-blocking operational residuals.
 - **Recommendations for the next agent:** Have `@qa/vera [claude-code]` or `@build/ember [gemma-lmstudio]` verify exact commit `0212965`; do not rerun another Codex checker under a different callsign.
 
+### 2026-08-11 — @lead/vector [codex] — roof repairs brief extraction
+- **Workspace:** `client-jobs`
+- **Task:** Extract the latest corrected Roof Repairs Brief conversation into a Markdown handoff for Codex report/manifest drafting.
+- **Files modified:** `workspaces/client-jobs/drafts/ROOF-REPAIRS-BRIEF_Ikeja.md`; client-jobs `memory/status.md`, `memory/next-up.md`, `memory/decisions.md`, `memory/done-log.md`; this report log.
+- **Summary:** Recorded the two-measure roof leakage remedial scope, quantities, execution sequence, confirmation points and working costs. Measure 1 = ₦1,396,000; Measure 2 = ₦2,849,200; combined direct working total = ₦4,245,200. Measure 2 explicitly has no aluminium protective coating.
+- **Verified:** Recomputed all line-item arithmetic in PowerShell; confirmed the Markdown draft is present under the workspace `drafts/` folder.
+- **Governance suggestions:** none.
+- **Unresolved issues:** Site measurements, product coverage/dosage, sand and labour allowances, VAT, overhead/profit and any formal selling price remain unconfirmed. No job code exists; no external delivery made.
+- **Next agent:** Principal/site review before conversion into a formal report or quotation; independent checker review remains required.
+
+### 2026-08-11 — @qa/quartz [codex] — roof repairs brief checker result
+- **Workspace:** `client-jobs`
+- **Task:** Independent verification of `ROOF-REPAIRS-BRIEF_Ikeja.md`.
+- **Files modified:** none (read-only checker run).
+- **Result:** **APPROVE.** Recomputed M1 = ₦1,396,000, M2 = ₦2,849,200 and combined = ₦4,245,200; confirmed all latest corrections, draft-only safeguards and unresolved confirmation points.
+- **Watch-item:** Unrelated pre-existing edits in the shared working tree must be isolated before staging or committing this task.
+
+### 2026-08-11 — @lead/vector [codex] — roof repairs inspection notice
+- **Workspace:** `client-jobs`
+- **Task:** Add the principal's inspection limitation and measure-priority notice to the roof repairs brief.
+- **Files modified:** `workspaces/client-jobs/drafts/ROOF-REPAIRS-BRIEF_Ikeja.md`; client-jobs `memory/done-log.md`; this report log.
+- **Summary:** Clarified that the measures rely on visible inspection only; Measure 1 is the promising lead, Measure 2 is precautionary, the damaged-wall image will be attached, and the exact cause/path may only be confirmed after opening-up during the works. Deflection movement is framed as possible, not confirmed.
+- **Verified:** Read the edited Markdown; quantities and working totals remain unchanged.
+- **Unresolved issues:** The image attachment and site investigation remain outstanding. No external issue or client delivery was made.
+
+### 2026-08-11 — @qa/quartz [codex] — amended roof repairs notice checker result
+- **Workspace:** `client-jobs`
+- **Task:** Independent verification of the added inspection notice.
+- **Files modified:** none (read-only checker run).
+- **Result:** **APPROVE.** Confirmed visible-inspection-only basis, Measure 1 as leading, Measure 2 as precautionary, wall-image attachment note, deferred confirmation of the leakage cause/path, and unchanged totals (₦1,396,000 / ₦2,849,200 / ₦4,245,200).
+
+### 2026-08-11 — @lead/vector [codex] — damage-wall image attachment
+- **Workspace:** `client-jobs`
+- **Task:** Attach the principal-supplied damage-wall JPEG to the roof-repairs brief.
+- **Files modified:** `workspaces/client-jobs/drafts/ROOF-REPAIRS-DAMAGE-WALL.jpeg`; `workspaces/client-jobs/drafts/ROOF-REPAIRS-BRIEF_Ikeja.md`; client-jobs `memory/done-log.md`; this report log.
+- **Summary:** Copied the supplied image into the draft folder and added a local Markdown image reference plus a caption stating that it records visible condition only and is not a definitive diagnosis.
+- **Verified:** Viewed the source image; confirmed the copied file exists; confirmed the brief's quantities and totals are unchanged.
+- **Unresolved issues:** The image does not establish the exact leakage path or structural cause; opening-up and site investigation remain required.
+
+### 2026-08-11 — @qa/quartz [codex] — damage-wall image attachment checker result
+- **Workspace:** `client-jobs`
+- **Task:** Independent verification of the image-attached roof repairs brief.
+- **Files modified:** none (read-only checker run).
+- **Result:** **APPROVE.** Confirmed the relative JPEG reference resolves, the figure caption is evidence-only, the inspection notice remains intact, and the totals remain ₦1,396,000 / ₦2,849,200 / ₦4,245,200.
+

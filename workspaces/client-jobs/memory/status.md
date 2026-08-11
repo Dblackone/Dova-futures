@@ -1,6 +1,6 @@
 # status.md — Current Snapshot (client-jobs)
 
-**Last updated:** 2026-07-31 — Broll Properties (Ikeja City Mall) Report & Quotation repriced by the principal; rebuilt + re-rendered
+**Last updated:** 2026-08-11 — Roof Repairs Brief extracted to an internal working handoff; Broll Properties remains the latest formally repriced document
 **Health:** 🟢 on track
 
 ## Now
@@ -18,6 +18,14 @@
     and RPT-2026-OSG-001 project report drafted.
 
 ## Pipeline (prospective — no job code issued yet)
+
+- **Ikeja roof leakage remedial works.** Internal working brief extracted from
+  the principal's Roof Repairs Brief conversation and saved as
+  `drafts/ROOF-REPAIRS-BRIEF_Ikeja.md`. Measure 1 is **₦1,396,000** and
+  Measure 2 is **₦2,849,200**, for a combined direct working total of
+  **₦4,245,200**. Measure 2 explicitly excludes protective aluminium coating;
+  the brief remains unpriced as a formal selling document and has no job code.
+
 - **Broll Properties — Ikeja City Mall, Alausa, Ikeja, Lagos.** Tile demolition
   to expose the structural ground slab (5,000 – 5,500 m²) + carting away.
   `RPT-2026-DEMO-001` combined Report & Quotation drafted in `drafts/`.
