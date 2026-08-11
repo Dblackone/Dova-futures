@@ -1,5 +1,10 @@
 # next-up.md — Prioritised Queue (website)
 
+0. [ ] **Export and review the website handover** — move
+   `workspaces/website/drafts/DOVA-WEBSITE-HANDOVER.md` into the new website
+   repository, reconcile its open decisions, and obtain principal/checker review
+   before changing the live root paths.
+
 1. [ ] **Deploy contact form backend** — Configure SMTP env vars on a host
    (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `CONTACT_TO_EMAIL`).
    Send a test form submission and confirm email arrives at

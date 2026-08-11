@@ -47,6 +47,10 @@
    output from a fresh session. _Acceptance: checker approves or lists precise
    corrections; principal still controls merge._
 
+7. [ ] **Review website handover design-system extraction** — confirm the new
+   repository consumes the canonical token files and does not carry stale README
+   claims or an unapproved local token fork.
+
 ## Someday / backlog
 - Password protection (`express-basic-auth`) if client wants staff-only access.
 - Auto-populate invoices from job data (`projects/` → template fields).

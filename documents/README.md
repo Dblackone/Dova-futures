@@ -9,6 +9,12 @@
 
 ## Template Index
 
+**Offline combined Word collection:**
+`docx/DOVA-Futures-Offline-Template-Collection.docx` contains the blank
+letterhead and all nine document templates in one editable file. Each template
+starts on a new page so it can be duplicated, edited, and saved entirely
+offline in Microsoft Word.
+
 | # | File | Docx | Purpose | When to use |
 |---|------|------|---------|-------------|
 | 01 | `templates/01-Report.html` | `docx/01-Report.docx` | General Report | Any formal internal or external report: site inspection, assessment, summary memo |
@@ -93,6 +99,7 @@ documents/
 │   ├── 08-Project-Report.html / .dc.html
 │   └── 09-Milestone-Payment-Request.html / .dc.html
 └── docx/
+    ├── DOVA-Futures-Offline-Template-Collection.docx  ← all templates in one editable Word file
     ├── 01-Report.docx
     ├── 02-Project-Quote.docx
     ├── 03-Payment-Invoice.docx

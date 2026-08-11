@@ -1,16 +1,22 @@
 # status.md — Current Snapshot (document-templates)
 
-**Last updated:** 2026-08-06 — Portable DOVA company-brand skill packaged and
-registered globally in Codex; Document System Phase 2 still awaits review
+**Last updated:** 2026-08-11 — Combined editable offline Word template
+collection added; Document System Phase 2 still awaits review
 **Health:** 🟡 blocked on review — and Phase 2 surfaced a high-severity library
 defect (see "Open / blocked")
 
 ## Now
+- Design-system rules and the website-facing component contract were extracted
+  into `workspaces/website/drafts/DOVA-WEBSITE-HANDOVER.md` for the new website
+  repository; canonical token files remain unchanged.
 - **10** print-ready branded templates in `documents/` — the original 9 (Session
   3, 2026-06-22) plus `00-Letterhead` (html/pdf/docx, added 2026-07-10 via
   `scripts/gen-letterhead-docx.mjs`, which pulls `docx` + `sharp` from the root
   package.json) — plus a gallery index, `.docx` versions, and the Claude
   Design sources.
+- One combined offline Word file at
+  `documents/docx/DOVA-Futures-Offline-Template-Collection.docx` contains the
+  letterhead and all nine editable templates, each beginning on a fresh page.
 - Design system tokens in `documents/_ds/dova-futures-design-system-*/`.
 - Company-wide usage rule is `company/document-policy.md`.
 - Portable Codex skill at `.agents/skills/dova-company-brand/`, globally linked
@@ -24,14 +30,14 @@ defect (see "Open / blocked")
   link decided).
 
 ## Recently done (last 3)
+- Combined editable Word collection — blank letterhead plus templates 01–09 in
+  one 18-page `.docx`; technically approved by an independent Codex QA run.
 - Portable DOVA company-brand Codex skill — canonical policy snapshots,
   semantic `DESIGN.md`, sanitised token CSS, a canonical-letterhead SVG lockup,
   and quarantined legacy logo inventory; validated and forward-tested after the
   first QA rejection. Awaiting re-review of the committed candidate.
 - Phase 2 sample set — ten documents + review README (`drafts/samples/`).
   Awaiting principal review and a checker.
-- `DOVA-Document-System.md` — portable offline reference for the whole template
-  system. Awaiting checker.
 
 ## Open / blocked
 - **BLOCKING — Phase 3 cannot start until the principal reviews the Phase 2
@@ -44,6 +50,10 @@ defect (see "Open / blocked")
   on page 2. This makes the pagination-strategy decision blocking, not cosmetic.
   Six further template defects logged the same day — all in root
   `memory/triage.md`.
+- 🔴 **Nine original individual Word files (`01`–`09`) have damaged ZIP CRCs.**
+  Microsoft Word reports those source packages as corrupted. Their document
+  XML was recoverable and was normalised into the healthy combined collection,
+  but the individual originals remain unchanged and still need regeneration.
 - Client decision needed: templates public, password-gated, or admin-linked
   (Options A/B/C in `memory/archive/session-handoff-2026-06.md` § Session 3).
 - Full print-to-PDF workflow not yet verified in Safari.
