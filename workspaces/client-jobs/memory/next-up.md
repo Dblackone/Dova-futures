@@ -52,11 +52,12 @@
    _Nothing sent to the client by an agent — presenting is the principal's
    action._
 
-7. [ ] **Roof repairs brief: principal/site confirmation** — review
-   `drafts/ROOF-REPAIRS-BRIEF_Ikeja.md`; confirm measured coping length, felt
-   coverage, primer dosage, sand allowance, labour/access costs and the eventual
-   VAT/overhead/profit treatment before converting it into a formal report or
-   quotation. No job code exists and the draft must not be issued externally.
+7. [ ] **Roof repairs: principal/site confirmation** — review the prepared
+   `RPT-2026-ROOF-001`, `QTE-2026-ROOF-001` and `INV-2026-ROOF-001` drafts;
+   confirm client details, measured coping length, felt coverage, primer dosage,
+   sand allowance, labour/access costs, VAT rate, overhead/profit and the final
+   payment schedule. No job code exists and none of the documents may be issued
+   externally before principal approval.
 
 ## Someday / backlog
 - Backfill older completed projects (see `assets/Project Pictures/`) as

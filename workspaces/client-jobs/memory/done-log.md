@@ -459,3 +459,39 @@ filename; cost quantities and totals were not changed.
 **Independent checker result (qa-vera): APPROVE.** The JPEG resolves from the
 relative Markdown path, the caption is evidence-only, and the notice language
 and working totals remain correct.
+
+## 2026-08-11 — ROOF-04: report, quotation and draft invoice prepared
+
+Prepared a three-document draft family from the canonical templates in
+`documents/templates/`:
+
+- `RPT-2026-ROOF-001_Ikeja_Roof-Leakage-Remedial-Works.html` and `.pdf`
+- `QTE-2026-ROOF-001_Ikeja_Roof-Leakage-Remedial-Works.html` and `.pdf`
+- `INV-2026-ROOF-001_Ikeja_Roof-Leakage-Remedial-Works.html` and `.pdf`
+
+The report includes the supplied damage-wall image. The quotation and invoice
+reconcile to the direct working subtotal **₦4,245,200**, provisional VAT at
+7.5% **₦318,390**, and inclusive total **₦4,563,590**. Payment stages remain
+to be confirmed by the principal. The invoice is explicitly
+marked draft-only and not payable before quotation acceptance and principal
+approval. Client identity, site address, VAT treatment, overhead/profit and
+final payment terms remain open.
+
+**Verified by @lead/vector [codex]:** each HTML starts from its canonical
+template; filled placeholders were removed; PDFs rendered successfully through
+`render-pdf.js` (report 3 pages, quotation 2 pages, invoice 2 pages); arithmetic
+recomputed independently. These are drafts only and remain in `drafts/`.
+
+## 2026-08-11 — ROOF-05: pagination footer correction
+
+The first render exposed a template pagination defect: the flowing `Page 1 of
+1` footer moved to page 2 on the longer report and quotation. The report and
+quotation drafts were corrected with an absolute first-page footer and the
+flowing duplicate removed, then all three PDFs were re-rendered. Final output
+is **2 pages each**, with exactly one `Page 1 of 2` and one `Page 2 of 2` marker
+per PDF.
+
+**Independent checker result (qa-vera): APPROVE.** PyMuPDF coordinate checks
+confirmed the first-page footer is physically on page 1 and no duplicate marker
+appears on page 2. Canonical lineage, image reference, arithmetic and draft-only
+invoice safeguards also passed.

@@ -445,3 +445,20 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Files modified:** none (read-only checker run).
 - **Result:** **APPROVE.** Confirmed the relative JPEG reference resolves, the figure caption is evidence-only, the inspection notice remains intact, and the totals remain ₦1,396,000 / ₦2,849,200 / ₦4,245,200.
 
+### 2026-08-11 — @lead/vector [codex] — roof repairs report, quote and invoice
+- **Workspace:** `client-jobs`
+- **Task:** Prepare a report, quotation and invoice from the roof-repairs brief.
+- **Files modified:** three HTML drafts and three rendered PDFs in `workspaces/client-jobs/drafts/`; client-jobs `memory/status.md`, `memory/next-up.md`, `memory/decisions.md`, `memory/done-log.md`; this report log.
+- **Summary:** Used canonical templates 01, 02 and 03. Report includes the supplied wall-damage image. Documents use RPT/QTE/INV references and reconcile to direct subtotal ₦4,245,200, provisional VAT 7.5% ₦318,390 and inclusive total ₦4,563,590.
+- **Verified:** Filled placeholders removed; arithmetic recomputed; `render-pdf.js` succeeded with 3 report pages, 2 quote pages and 2 invoice pages; `git diff --check` clean.
+- **Unresolved issues:** Client identity/address/contact, exact site measurements, VAT rate, overhead/profit, final payment schedule and principal approval remain outstanding. Invoice is draft-only and not payable before acceptance.
+- **Next agent:** Principal/site review and independent checker review before any external issue or promotion to `projects/`.
+
+### 2026-08-11 — @lead/vector [codex] — pagination footer correction
+- **Workspace:** `client-jobs`
+- **Task:** Correct first-page footer placement after checker rejection.
+- **Files modified:** report and quotation HTML drafts; all three rendered PDFs; client-jobs `memory/done-log.md`; this report log.
+- **Summary:** Moved the report and quotation first-page footer out of document flow, removed duplicate source footers, and re-rendered. Final report, quotation and invoice PDFs are each 2 pages with one correctly placed page marker per page.
+- **Verified:** `render-pdf.js` succeeded for all three; independent PyMuPDF coordinate check confirmed `Page 1 of 2` on page 1 and `Page 2 of 2` on page 2 for each PDF; final checker APPROVE.
+- **Unresolved issues:** Client details, site measurements, VAT, commercial terms and principal approval remain outstanding. All documents remain drafts.
+
