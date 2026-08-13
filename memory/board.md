@@ -18,6 +18,7 @@ _(empty)_
 | Card | Owner | Branch | Review state |
 |------|-------|--------|--------------|
 | **DOVA-BRAND-SKILL** Package portable company-brand skill | @lead/vector | `docs/vector/dova-brand-skill` | Exact commit `0212965` passed an isolated Codex QA instance's full technical suite. Formal checker gate remains open because `@qa/vera` is registered to `claude-code` and `models/codex.md` forbids Codex from approving Codex-built work. |
+| **AFUZE-DOCS-01** Verify Afuze quotation/invoice drafts | @lead/vector [codex] | `main` (untracked drafts) | ✅ **APPROVED** by @qa/vera [claude-code] 2026-08-13 — arithmetic, 12px body content, quote 2-page pagination, invoice 1-page rendering, A/B/C-only scope, footer markers, and draft safeguards pass |
 
 ## Blocked
 _(empty)_

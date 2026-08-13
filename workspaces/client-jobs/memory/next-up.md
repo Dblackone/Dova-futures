@@ -3,10 +3,13 @@
 1. [ ] **ROAD: client decision on QTE-2026-001** — quote is approved by the
    principal and ready; once Mr. C. K. Musa picks a pavement alternate
    (A concrete ₦6,014,625 / B interlocking ₦5,369,625, recommended) and accepts:
-   edit the file to remove the unselected alternate's row/totals, then draft
-   `INV-2026-ROAD-001` for the agreed payment stage. _Do not invoice before
-   acceptance; confirm the payment split (mobilisation/completion/full) with
-   the principal first._
+    edit the file to remove the unselected alternate's row/totals, then draft
+    `INV-2026-ROAD-001` for the agreed payment stage. _Do not invoice before
+    acceptance; confirm the payment split (mobilisation/completion/full) with
+    the principal first._
+   - **Afuze residence renovation package:** review draft `QTE-2026-002` and
+     companion draft `INV-2026-AFUZE-001` (inclusive total ₦5,699,925) before
+     any client presentation or invoice issue.
 2. [ ] **POOL: confirm invoice status** — with principal: which of
    INV-2026-POOL-001..005 are delivered/paid? Log outcomes.
 3. [ ] **OSG: principal review** — RPT-2026-OSG-001 + cost estimate need the

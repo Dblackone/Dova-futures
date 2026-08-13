@@ -12,7 +12,9 @@
     QTE-2026-001 complete and **approved in form by the principal** (ROAD-10).
     Items 1–4 firm, subtotal ₦2,295,000; pavement 200m² priced as alternates:
     A concrete ₦6,014,625 / B interlocking ₦5,369,625 (recommended). Nothing
-    sent to the client by an agent — presenting is the principal's action.
+    sent to the client by an agent — presenting is the principal's action. A
+    separate Afuze residence renovation package is drafted as QTE-2026-002 with
+    companion INV-2026-AFUZE-001; both are pending principal review.
   - **GM-2026-OSG-001** (Grail Movement Hall of Worship, Osogbo — altar +
     structure remodification) — scope of works, cost-estimate working notes,
     and RPT-2026-OSG-001 project report drafted.

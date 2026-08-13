@@ -499,3 +499,25 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Verified:** Direct inspection of `index.html`, `server.js`, `data/projects.js`, asset references, design-system token CSS, `_ds_manifest.json`, `_ds_bundle.js`, workspace memory and historical archive. Existing unrelated working-tree changes were preserved and not overwritten. No external publication or new repository creation performed.
 - **Unresolved issues:** New repository destination/hosting, SMTP deployment, project-data reconciliation, asset rights, social handles, OG image, Element SDK retention, icon cleanup and principal/checker review remain open. The handover is a draft for export.
 - **Next agent:** Review the handover independently, then export it with the approved source subset into the new website repository; do not move live root paths without a migration plan.
+
+### 2026-08-13 — @qa/vera [claude-code] — Afuze quotation and invoice draft verification
+- **Model:** Claude Code, independent QA checker
+- **Workspace:** `client-jobs`
+- **Task:** Independently verify `QTE-2026-002` and `INV-2026-ROAD-001` Afuze quotation/invoice HTML and PDF drafts against the canonical quote/invoice templates and supplied acceptance criteria.
+- **Files modified:** `workspaces/client-jobs/memory/done-log.md`, `memory/board.md`, and this report log only; no source draft edited.
+- **Summary:** Recomputed A/B/C and all derived totals; confirmed client-facing descriptions omit internal material build-up, the approximately seven-trip allowance note, no Section D, invoice A/B/C-only line structure, and draft/not-payable safeguards. Quote project description is explicitly 13px rather than 12px. The quote PDF is a three-page render with content overprinting the footer/header bands and an orphaned signature-only page; invoice is a clean one-page render.
+- **Verified:** Read canonical `documents/templates/02-Project-Quote.html` and `03-Payment-Invoice.html`; ran arithmetic independently; ran `render-pdf.js` to separate scratch outputs; `pdfinfo` reports quote 3 pages and invoice 1 page; `pdftotext` confirms one footer marker per physical page; rasterised and visually inspected all four pages; `git status` confirms the four draft artifacts remain untracked.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Quotation must be reflowed so table content and acceptance do not enter running header/footer bands, the detached third page is removed or made deliberate, and general body copy is 12px before re-review. Client phone/email remains a placeholder, so the drafts must not be issued.
+- **Recommendations for the next agent:** Return to `@lead/atlas`; correct the quotation layout/body sizing and regenerate both PDFs as needed, then request a fresh independent checker run. Keep all four artifacts in `drafts/` and do not issue the invoice before quotation acceptance and principal authorisation.
+
+### 2026-08-13 — @qa/vera [claude-code] — Afuze final formatting re-check
+- **Model:** Claude Code, independent QA checker
+- **Workspace:** `client-jobs`
+- **Task:** Re-check the revised Afuze quotation and invoice drafts after formatting fixes.
+- **Files modified:** `workspaces/client-jobs/memory/done-log.md`, `memory/board.md`, and this report log only; no source draft edited.
+- **Summary:** **APPROVE.** Arithmetic reconciles to works ₦4,851,000, VAT ₦363,825, professional fee ₦485,100, and total ₦5,699,925. Visible body blocks compute at 12px in source; decompressed PDF content contains 12pt body text operators. Quote is now 2 clean pages; invoice is 1 clean page.
+- **Verified:** Fresh `render-pdf.js` rerender succeeded with quote `pages=2` and invoice `pages=1`; `pdfinfo` confirms A4 page counts; raster inspection found no overlap or orphan page; footer marker count is exactly one per physical page; no Section D text; invoice has exactly one Section A, B and C line; seven-trip note and draft/not-payable safeguards present; `git diff --check` passed.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Client phone/email remains a visible placeholder; principal approval and client acceptance are still required before issue. Drafts remain untracked under `drafts/`.
+- **Recommendations for the next agent:** Keep the artifacts in `workspaces/client-jobs/drafts/` until client details, acceptance, and principal authorisation are complete; do not issue the invoice before quotation acceptance.
