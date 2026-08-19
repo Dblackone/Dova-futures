@@ -532,3 +532,15 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none
 - **Unresolved issues:** The updated convention has not yet been independently checked or adopted on a live project. Existing legacy project-code rows remain in the register by design.
 - **Recommendations for the next agent:** Have `@qa/vera` independently review BIM-04, then use the convention when the next project is registered; do not rename historical register rows.
+
+### 2026-08-19 — @lead/vector [codex] — first DOVA Futures Hub dashboard slice
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `dova-futures-intelligence`
+- **Task:** Begin the approved product-hub direction with a simple read-only offline interface, while leaving the live website and preorder deployment untouched until their destination repositories are supplied.
+- **Files modified:** `workspaces/dova-futures-intelligence/hub/index.html`; `workspaces/dova-futures-intelligence/hub/build_snapshot.py`; `workspaces/dova-futures-intelligence/hub/snapshot.js`; `workspaces/dova-futures-intelligence/hub/README.md`; `workspaces/dova-futures-intelligence/tests/test_hub_snapshot.py`; intelligence `memory/status.md`, `memory/next-up.md`, `memory/decisions.md`, `memory/done-log.md`; this report log.
+- **Summary:** Added a dependency-free browser dashboard with workspace cards, search/filter controls, registry-coverage warning, code-location summaries, next actions, and links to workspace context/status files. The Python builder creates a portable JavaScript snapshot from the repository registry and workspace metadata. Jarvis integration remains deferred until the read-only view is stable.
+- **Authorization:** Principal approved the recommended staged dashboard approach in the current conversation; no deploy-critical path or external repository was changed.
+- **Verified:** Existing intelligence suite passes with 23 tests; the new snapshot test passes; Node validates the generated snapshot and reports seven workspace records with `dova-futures-intelligence` visibly unregistered; `git diff --check` passes for the new files.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Website and preorder destination GitHub repositories are still required before migration; root promotion of the dashboard remains deferred; the intelligence workspace still needs a registry row.
+- **Recommendations for the next agent:** Obtain the two destination repository URLs, prepare migration plans and deployment checks, then promote the dashboard to the root only after independent verification of both external deployments.
