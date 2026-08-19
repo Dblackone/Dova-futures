@@ -1,5 +1,10 @@
 # next-up.md — Prioritised Queue (preorder-store)
 
+0. [ ] **Create/provide the standalone preorder repository** — use
+   `drafts/DOVA-PREORDER-MIGRATION-REPORT.md`, flatten `dova-preorder/` to the
+   destination root, correct Render `rootDir`, and preserve the webhook raw-body
+   ordering. Do not delete the hub copy until independent review passes.
+
 1. [ ] **Security/QA check of the payment flow** — dispatch @sec/warden +
    @qa/vera over `routes/checkout.js`, `lib/paystack.js`, `middleware/auth.js`.
    _Acceptance: webhook signature verified correctly; no order state can be

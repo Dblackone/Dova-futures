@@ -1,9 +1,9 @@
 # next-up.md — Prioritised Queue (website)
 
-0. [ ] **Export and review the website handover** — move
-   `workspaces/website/drafts/DOVA-WEBSITE-HANDOVER.md` into the new website
-   repository, reconcile its open decisions, and obtain principal/checker review
-   before changing the live root paths.
+0. [ ] **Review website migration branch** — review and merge
+   `migration/vector/website-extract-20260819` in the supplied website
+   repository, then verify Pages/custom-domain behaviour before removing the
+   duplicate root website from the hub.
 
 1. [ ] **Deploy contact form backend** — Configure SMTP env vars on a host
    (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `CONTACT_TO_EMAIL`).
