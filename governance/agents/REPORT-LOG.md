@@ -521,3 +521,14 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Client phone/email remains a visible placeholder; principal approval and client acceptance are still required before issue. Drafts remain untracked under `drafts/`.
 - **Recommendations for the next agent:** Keep the artifacts in `workspaces/client-jobs/drafts/` until client details, acceptance, and principal authorisation are complete; do not issue the invoice before quotation acceptance.
+
+### 2026-08-19 — @lead/vector [codex] — BIM project naming convention clarification
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `bim-standards`
+- **Task:** Clarify the project naming convention using the supplied reference images as non-binding reference material.
+- **Files modified:** `bim-standards/01-naming-projects.md`; `bim-standards/02-naming-sheets.md`; `bim-standards/05-naming-families.md`; `workspaces/bim-standards/memory/status.md`; `workspaces/bim-standards/memory/next-up.md`; `workspaces/bim-standards/memory/done-log.md`; `workspaces/bim-standards/memory/decisions.md`; this report log.
+- **Summary of changes:** Retained DOVA's existing `DOVA-YY-SEQ-SHORT-NAME` identifier and added explicit Revit Project Information rules, a `00`–`09` + `99_Archive` project tree, and a purpose-based non-Revit filename pattern. Updated two BIM cross-references from the previous `06_BIM` path. The append-only project register was deliberately not rewritten; older codes are historical and are not templates for new projects.
+- **Verified:** Re-read the edited standards; searched `bim-standards/` for stale old folder references; confirmed the register remains unchanged. No Revit or pyRevit runtime check was applicable. Independent checker review is pending.
+- **Governance suggestions submitted:** none
+- **Unresolved issues:** The updated convention has not yet been independently checked or adopted on a live project. Existing legacy project-code rows remain in the register by design.
+- **Recommendations for the next agent:** Have `@qa/vera` independently review BIM-04, then use the convention when the next project is registered; do not rename historical register rows.

@@ -1,9 +1,14 @@
 # status.md — Current Snapshot (bim-standards)
 
-**Last updated:** 2026-07-15 — merge of main-side Sessions (2026-07-06 BIM work) into the hub structure
+**Last updated:** 2026-08-19 — project naming convention clarification by @lead/vector [codex]
 **Health:** 🟢 on track
 
 ## Now
+- **Project naming standard clarified:** `01-naming-projects.md` now defines the
+  canonical DOVA project code, Revit Project Information fields, numbered
+  project folders (`00`–`09` + `99_Archive`), and a purpose-based filename rule;
+  cross-references in the sheet and family standards now use
+  `04_BIM_and_CAD/`.
 - **Tools verified live:** the 5 pyRevit tools were run against an open Revit
   2026 document via the `Revit_Connector` MCP (not just `py_compile`) —
   collectors, Transaction usage, and BuiltInParameter access all confirmed
@@ -23,6 +28,8 @@
   (candidate: extend the New Project Setup pyRevit tool).
 
 ## Recently done (last 3)
+- BIM-04 (2026-08-19): project folder and file naming convention clarified from
+  the existing DOVA code standard; no register rows changed.
 - BIM-03 (2026-07-06): Architecture Template `.rte` built live in Revit 2027.
 - BIM-02 (2026-07-06): 5 tools verified against live Revit 2026; 2 bugs fixed.
 - BIM-01 (2026-07-05): entire `bim-standards/` system created (PR #18).
@@ -37,5 +44,7 @@
 ## Notes for the next run
 - Entry point is `bim-standards/README.md`.
 - Register CSV + shared-parameter file are append-only singletons.
+- BIM-04 is maker work; an independent checker should review the updated naming
+  docs before firm-wide adoption.
 - `View.CreateViewTemplate()` is the correct API for making view templates
   (`IsTemplate` has no public setter) — see BIM-03 done-log entry for detail.

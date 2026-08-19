@@ -68,5 +68,5 @@ Families/
 ```
 
 Project-specific one-off families (won't be reused elsewhere) stay inside
-that project's `06_BIM/Families/` folder instead of the firm library — the
+that project's `04_BIM_and_CAD/Families/` folder instead of the firm library — the
 firm library is only for families intended for reuse across projects.

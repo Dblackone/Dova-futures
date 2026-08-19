@@ -8,7 +8,8 @@
     acceptance; confirm the payment split (mobilisation/completion/full) with
     the principal first._
    - **Afuze residence renovation package:** review draft `QTE-2026-002` and
-     companion draft `INV-2026-AFUZE-001` (inclusive total ₦5,699,925) before
+     companion draft `INV-2026-AFUZE-001` (inclusive total ₦6,874,925, including
+     the ₦1,000,000 proposed gypsum-board ceiling item) before
      any client presentation or invoice issue.
 2. [ ] **POOL: confirm invoice status** — with principal: which of
    INV-2026-POOL-001..005 are delivered/paid? Log outcomes.

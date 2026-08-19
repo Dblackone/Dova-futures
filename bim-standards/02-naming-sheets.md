@@ -51,5 +51,5 @@ second time:
 
 Every issued set is tracked in a per-project drawing register (a copy of the
 project register pattern, one row per sheet, per revision) stored in
-`06_BIM/03_Published/` alongside the issued PDF/DWG set. Fields: Sheet
+`04_BIM_and_CAD/03_Published/` alongside the issued PDF/DWG set. Fields: Sheet
 Number, Sheet Name, Revision, Issue Date, Issue Purpose, Issued To.
