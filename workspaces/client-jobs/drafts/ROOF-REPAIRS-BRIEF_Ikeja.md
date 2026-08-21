@@ -63,13 +63,15 @@ All dimensions and quantities remain subject to site measurement before a formal
 | Labour to felt | 30 m² | ₦1,800/m² | ₦54,000 |
 | Bituminous primer | 1 drum | ₦28,000/drum | ₦28,000 |
 | Protective aluminium coating | 2 drums | ₦32,000/drum | ₦64,000 |
-| Structural / cracked-wall repair | Lump sum | — | ₦450,000 |
-| Repair corrections to existing roof cap and continuous roof coping, including fabrication and installation | Lump sum | — | ₦620,000 |
-| **Measure 1 working total** |  |  | **₦1,396,000** |
+| Structural / cracked-wall repair | Lump sum | — | ₦550,000 |
+| Repair corrections to existing roof cap and continuous roof coping, including fabrication and installation | Lump sum | — | ₦730,000 |
+| **Measure 1 working total** |  |  | **₦1,606,000** |
 
-The ₦450,000 wall-repair allowance is to cover opening/chiselling, reinforcement or stitching where required, cement/sand, re-screeding or plastering, waterproofing admixture and making good. The ₦620,000 coping allowance is inclusive of the proposed cap/coping correction, fabrication, installation and related repair sundries; the final profile and developed sheet quantity must be confirmed on site.
+The ₦550,000 wall-repair allowance is to cover opening/chiselling, reinforcement or stitching where required, cement/sand, re-screeding or plastering, waterproofing admixture and making good. The ₦730,000 coping allowance is inclusive of the proposed cap/coping correction, fabrication, installation and related repair sundries; the final profile and developed sheet quantity must be confirmed on site.
 
 ## 4. Measure 2 — localised slab-to-wall waterproofing
+
+This is a precautionary perimeter treatment only. The quoted band extends approximately **1 metre vertically up the wall and 1 metre horizontally onto the slab** along the estimated **72-metre perimeter**, giving approximately **144 m²** of treatment. It does not include screeding or refelting the full slab area because the existing felt on the main slab appeared satisfactory during the visible inspection. If opening-up and cleaning reveal that a wider treatment is required, the finding must be recorded and Broll Properties informed before additional work proceeds.
 
 ### Scope and sequence
 
@@ -103,11 +105,23 @@ The five-drum primer allowance and ₦100,000 primer-application allowance are c
 
 | Measure | Working total |
 |---|---:|
-| Measure 1 — coping, blockwork and associated wall repairs | ₦1,396,000 |
+| Measure 1 — coping, blockwork and associated wall repairs | ₦1,606,000 |
 | Measure 2 — localised slab-to-wall waterproofing | ₦2,849,200 |
-| **Combined direct working total** | **₦4,245,200** |
+| **Direct works subtotal** | **₦4,455,200** |
+| Professional Supervision and Works — 10% | ₦445,520 |
+| VAT — 7.5% | ₦367,554 |
+| **Contract total** | **₦5,268,274** |
 
-This is a direct working-cost position from the conversation. It is not yet a formal selling price and does not state VAT, overhead, profit, contingency or a payment schedule.
+The quotation is based on the visible site inspection recorded in Report **RPT-2026-ICM-ROOF-001**. The exact leakage path, final quantities and repair sequence may change after opening-up, clean-up and site investigation.
+
+### Payment schedule
+
+| Stage | Trigger | Amount |
+|---|---|---:|
+| 60% mobilisation | Before commencement | ₦3,160,964.40 |
+| 30% second payment | After Measure 1 is fully completed and Measure 2 has commenced, with cement screeding at the slab-to-wall perimeter completed | ₦1,580,482.20 |
+| 10% final payment | After completion of the entire job | ₦526,827.40 |
+| **Total** |  | **₦5,268,274.00** |
 
 ## 6. Proposed execution order
 
@@ -124,6 +138,6 @@ This is a direct working-cost position from the conversation. It is not yet a fo
 - Aquaseal product/dosage and whether one 20-litre keg is sufficient for the selected screed mix.
 - Whether the ₦100,000 Measure 2 labour allowance is for primer application only now that aluminium coating has been removed.
 - Labour, access, lifting, transport and working-hours constraints at the site.
-- VAT treatment, overhead/profit and any contingency before converting this brief into a formal quotation.
+- Any additional contingency required if opening-up reveals a wider concealed defect or a different water-entry route.
 
 No job code has been issued. Do not file this brief as an official project record or send it externally without the principal’s approval.

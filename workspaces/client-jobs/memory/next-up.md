@@ -56,12 +56,15 @@
    _Nothing sent to the client by an agent — presenting is the principal's
    action._
 
-7. [ ] **Roof repairs: principal/site confirmation** — review the prepared
-   `RPT-2026-ROOF-001`, `QTE-2026-ROOF-001` and `INV-2026-ROOF-001` drafts;
-   confirm the remaining client contact details, measured coping length, felt coverage, primer dosage,
-   sand allowance, labour/access costs, VAT rate, overhead/profit and the final
-   payment schedule. No job code exists and none of the documents may be issued
-   externally before principal approval.
+7. [ ] **ICM roof repairs: principal/site confirmation** — review the prepared
+   `RPT-2026-ICM-ROOF-001`, `QTE-2026-ICM-ROOF-001` and
+   `INV-2026-ICM-ROOF-001` drafts for Broll Properties. The quotation contract
+   total is **₦5,268,274** (direct works ₦4,455,200; Professional Supervision
+   and Works at 10% ₦445,520; VAT at 7.5% ₦367,554), with 60/30/10 stages.
+   The draft invoice requests only the 60% mobilisation of **₦3,160,964.40**.
+   Confirm the contact details, measured coping length, felt coverage, primer
+   dosage, sand allowance and labour/access constraints. No job code exists and
+   none of the documents may be issued externally before principal approval.
 
 ## Someday / backlog
 - Backfill older completed projects (see `assets/Project Pictures/`) as

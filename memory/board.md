@@ -12,7 +12,9 @@ _(empty)_
 | **HERO-02** Supply placeholder before/after image pairs | @docs/quill | `docs/quill/hero-reveal-assets` | A `memory/decisions.md` entry noting placeholder strategy + instructions for swapping in real assets once available |
 
 ## In Progress
-_(empty)_
+| Card | Owner | Branch | Acceptance |
+|------|-------|--------|------------|
+| **TOOL-SUITE-01** Integrate six external AI tools | @lead/vector [codex] | `feat/vector/intelligence-tool-suite` | Hallmark and HyperFrames available as project skills; Voicebox, Agent Reach, Career Ops, and World Monitor have repository-scoped, non-secret installation/launch paths; upstream licences and runtime boundaries documented; intelligence tests pass |
 
 ## In Review (with QA)
 | Card | Owner | Branch | Review state |

@@ -17,6 +17,7 @@
 | [`bim-standards`](../workspaces/bim-standards/PROJECT.md) | it touches Revit naming standards or the pyRevit toolkit | `bim-standards/` | — | Tools verified live in Revit (2 bugs fixed); Architecture .rte built; QA on real firm project pending |
 | [`client-jobs`](../workspaces/client-jobs/PROJECT.md) | it is a specific paid client project or job | `projects/` | — | 3 active: FHS Pool (Ibafo), C.K. Musa road (Afuze), Hall of Worship (Osogbo) |
 | [`company-ops`](../workspaces/company-ops/PROJECT.md) | internal/admin work not tied to one client (registers, payroll, automations, heartbeat) | `automations/`, registers, admin docs | — | Baseline scaffold |
+| [`dova-futures-intelligence`](../workspaces/dova-futures-intelligence/PROJECT.md) | it touches the local AI orchestration platform, repository dashboard, or agent tool integrations | `workspaces/dova-futures-intelligence/` | — (local) | Read-only hub plus six-tool integration suite; Voicebox desktop runtime remains optional |
 
 ## Starting a new project / side project
 

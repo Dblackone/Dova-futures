@@ -1,6 +1,18 @@
 {
   "version": 1,
   "skills": {
+    "agent-reach": {
+      "source": "Panniantong/Agent-Reach",
+      "sourceType": "github",
+      "skillPath": "agent_reach/skill/SKILL.md",
+      "computedHash": "f6b806656fb8850e503c1ba8561abe20b07f8cbf768e3e5c92336e46b395a5f1"
+    },
+    "career-ops": {
+      "source": "santifer/career-ops",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/career-ops/SKILL.md",
+      "computedHash": "155df4fd85b825f8087544f44fe73c3ec88029433835759aca48cf6f5c66f9af"
+    },
     "design-md": {
       "source": "google-labs-code/stitch-skills",
       "sourceType": "github",
@@ -12,6 +24,66 @@
       "sourceType": "github",
       "skillPath": "plugins/stitch-utilities/skills/enhance-prompt/SKILL.md",
       "computedHash": "71cc23e9ec5fc6361e12453495fa8c683f6cf26f3efaf9b230b0f43e0a32cc96"
+    },
+    "hallmark": {
+      "source": "Nutlope/hallmark",
+      "sourceType": "github",
+      "skillPath": "skills/hallmark/SKILL.md",
+      "computedHash": "6d53b2b609e05849c1dd0fc53e37daa7515089d5880c15e7e885c86e8b814e9c"
+    },
+    "hyperframes": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/hyperframes/SKILL.md",
+      "computedHash": "7413b946ae894f251ea4e50da31a85652114710ace6a78f5290ca1a63b69ee4e"
+    },
+    "hyperframes-animation": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/hyperframes-animation/SKILL.md",
+      "computedHash": "8f21f3293e536b9ca8d344dd95c827f7dda0c659b9f1973c6bb76d6b95e3de6b"
+    },
+    "hyperframes-audio": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/hyperframes-audio/SKILL.md",
+      "computedHash": "867ae12bdf95aec29805ac40b5d46b292788e819a0259eb0a8077d7ee2973ca0"
+    },
+    "hyperframes-cli": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/hyperframes-cli/SKILL.md",
+      "computedHash": "44eb159482895a85b577905c11f0f8e2942726ba379cc7244d09968b54d9fd2b"
+    },
+    "hyperframes-core": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/hyperframes-core/SKILL.md",
+      "computedHash": "f54ad2d49a2be88653bcf4117e0bf42e0d8c6a024725adec51eea929ae0c582d"
+    },
+    "hyperframes-creative": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/hyperframes-creative/SKILL.md",
+      "computedHash": "c15aa756864bf8f7893a39c1a9b088ed52f65e92caea599e087b0551f5d922bb"
+    },
+    "hyperframes-keyframes": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/hyperframes-keyframes/SKILL.md",
+      "computedHash": "fc5657f4f5cbbeeab23f951ed739e0fe9e29a9865cdabb80d9e87840628a2a46"
+    },
+    "hyperframes-registry": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/hyperframes-registry/SKILL.md",
+      "computedHash": "ac8a17b31cb3dcbd025e17be617a531b2be6905cb764d4b1339bca54d7bc8f33"
+    },
+    "media-use": {
+      "source": "heygen-com/hyperframes",
+      "sourceType": "github",
+      "skillPath": "skills/media-use/SKILL.md",
+      "computedHash": "da60be87c824bb2cbb473a54cdc8d2b858af757b461b39480d03925f0c43c4ac"
     },
     "react:components": {
       "source": "google-labs-code/stitch-skills",

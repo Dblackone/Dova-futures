@@ -1,6 +1,6 @@
 # status.md — Current Snapshot (client-jobs)
 
-**Last updated:** 2026-08-11 — Roof Repairs Brief extracted to an internal working handoff; Broll Properties remains the latest formally repriced document
+**Last updated:** 2026-08-21 — ICM roof-repairs report, quotation and mobilisation-invoice drafts revised and verified
 **Health:** 🟢 on track
 
 ## Now
@@ -22,15 +22,17 @@
 
 ## Pipeline (prospective — no job code issued yet)
 
-- **Broll Properties — Ikeja City Mall roof leakage remedial works.** Internal working brief extracted from
-  the principal's Roof Repairs Brief conversation and saved as
-  `drafts/ROOF-REPAIRS-BRIEF_Ikeja.md`. Measure 1 is **₦1,396,000** and
-  Measure 2 is **₦2,849,200**, for a combined direct working total of
-  **₦4,245,200**. Measure 2 explicitly excludes protective aluminium coating;
-  the report, quotation and draft invoice are now prepared in `drafts/` using
-  references `RPT-2026-ROOF-001`, `QTE-2026-ROOF-001` and `INV-2026-ROOF-001`.
-  VAT is shown provisionally at 7.5%; client/site are identified, contact details
-  remain to be confirmed; no job code exists and nothing is issued.
+- **Broll Properties — Ikeja City Mall roof leakage remedial works.** Internal
+  brief and client-facing drafts are in `drafts/` under ICM references
+  `RPT-2026-ICM-ROOF-001`, `QTE-2026-ICM-ROOF-001` and
+  `INV-2026-ICM-ROOF-001`. Measure 1 is **₦1,606,000** and Measure 2 is
+  **₦2,849,200**, giving direct works of **₦4,455,200**. Professional
+  Supervision and Works at 10% is **₦445,520** and VAT at 7.5% is
+  **₦367,554**, for a contract total of **₦5,268,274**. Payment is 60/30/10;
+  the one-page draft invoice requests only the 60% mobilisation of
+  **₦3,160,964.40**. Measure 2 excludes aluminium coating and is limited to
+  the one-metre-up/one-metre-onto-slab perimeter band. Contact and final site
+  measurements remain to be confirmed; no job code exists and nothing is issued.
 
 - **Broll Properties — Ikeja City Mall, Alausa, Ikeja, Lagos.** Tile demolition
   to expose the structural ground slab (5,000 – 5,500 m²) + carting away.
@@ -54,6 +56,10 @@
   **Draft only, not sent.** Job code opens on acceptance.
 
 ## Recently done (last 3)
+- ROOF-09: renamed the roof-repairs family to ICM references; applied the
+  revised Measure 1 rates, 10% professional supervision and works, 7.5% VAT,
+  60/30/10 milestones and client-facing scope wording; verified clean 1/2/2-page
+  invoice/quotation/report PDFs with consistent footers.
 - BROLL-04: Section A converted from a ₦750/m² rate to a **lump sum
   ₦3,600,000** over a **5,000 – 5,500 m²** area band (excess = variation);
   **VAT 7.5% → 5%**; "Reviewed By" removed from the authorisation block.

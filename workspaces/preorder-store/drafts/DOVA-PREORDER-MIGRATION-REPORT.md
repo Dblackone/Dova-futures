@@ -6,7 +6,7 @@
 **Prepared:** 19 August 2026  
 **Prepared by:** @lead/vector [codex]  
 **Source:** `dova-preorder/` in the `Dova-futures` hub  
-**Destination:** Separate preorder repository — not yet created
+**Destination:** `https://github.com/Dblackone/Dova-preorder.git`
 
 > Draft internal handoff. This report is for repository migration and technical
 > review. It does not approve a live launch, payment collection, client issue,
@@ -191,6 +191,8 @@ second editable copy in the hub.
 
 ## 9. Current decision
 
-The preorder app is **prepared for migration but not yet moved**. The missing
-destination repository is the only external dependency for this part of the
-move. No live payment or Render configuration has been changed by this report.
+The preorder app has been prepared on destination branch
+`migration/vector/preorder-extract-20260820` at commit `bdb343f`. It has not
+been merged or deployed. The hub source remains intact until independent
+review, principal approval and destination deployment verification are
+complete. No live payment keys or Render service settings were changed.
