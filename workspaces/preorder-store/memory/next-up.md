@@ -1,9 +1,9 @@
 # next-up.md — Prioritised Queue (preorder-store)
 
-0. [ ] **Create/provide the standalone preorder repository** — use
-   `drafts/DOVA-PREORDER-MIGRATION-REPORT.md`, flatten `dova-preorder/` to the
-   destination root, correct Render `rootDir`, and preserve the webhook raw-body
-   ordering. Do not delete the hub copy until independent review passes.
+0. [ ] **Review the standalone migration branch** — independently review
+   `migration/vector/preorder-extract-20260820` in `Dblackone/Dova-preorder`
+   against the migration report, then obtain principal approval before merge.
+   Do not delete the hub copy until destination deployment checks pass.
 
 1. [ ] **Security/QA check of the payment flow** — dispatch @sec/warden +
    @qa/vera over `routes/checkout.js`, `lib/paystack.js`, `middleware/auth.js`.
@@ -17,5 +17,7 @@
 4. [ ] **Seed real products** — add actual preorder products + images via admin.
 
 ## Someday / backlog
-- Automated tests for order-ref generation and webhook handling.
+- Expand automated coverage from checkout validation to order-reference and
+  webhook replay handling; duplicate webhook behaviour currently has a recorded
+  local smoke check only.
 - Order-confirmation email template aligned with `company/document-policy.md` look.

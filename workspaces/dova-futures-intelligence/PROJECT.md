@@ -15,6 +15,8 @@ This workspace contains the Python desktop prototype and the new provider-neutra
 - `core/` — contracts, registry, policy, providers, gateway, and local capabilities.
 - `actions/` — compatibility action modules awaiting incremental adapter migration.
 - `agent/` — legacy planner/executor/task queue path.
+- `integrations/` — repository-scoped external skills, locked CLIs, bootstrap,
+  licence boundaries, and health checks.
 - `memory/` — compatibility JSON memory code plus workspace handoff records.
 
 ## How to run and verify
@@ -45,4 +47,7 @@ The current usable path is `core.gateway.InteractionGateway`. It supports explic
 - Do not expand unrestricted computer control or generated-code execution into the new core without policy tests.
 - `actions.cmd_control` is referenced by the legacy executor but absent; keep it unavailable until a reviewed implementation exists.
 - Preserve the legacy UI/action path while migrating capability by capability.
+- Keep external applications behind CLI, HTTP, or MCP boundaries. Do not vendor
+  large upstream repositories or commit credentials, voice data, CVs, cookies,
+  generated media, or model files.
 - The destination Dova-futures repository is a hub. This project belongs under `workspaces/dova-futures-intelligence/`, not at the repository root.

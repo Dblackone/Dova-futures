@@ -12,13 +12,15 @@ _(empty)_
 | **HERO-02** Supply placeholder before/after image pairs | @docs/quill | `docs/quill/hero-reveal-assets` | A `memory/decisions.md` entry noting placeholder strategy + instructions for swapping in real assets once available |
 
 ## In Progress
-_(empty)_
+| Card | Owner | Branch | Acceptance |
+|------|-------|--------|------------|
+| **TOOL-SUITE-01** Integrate six external AI tools | @lead/vector [codex] | `feat/vector/intelligence-tool-suite` | Hallmark and HyperFrames available as project skills; Voicebox, Agent Reach, Career Ops, and World Monitor have repository-scoped, non-secret installation/launch paths; upstream licences and runtime boundaries documented; intelligence tests pass |
 
 ## In Review (with QA)
 | Card | Owner | Branch | Review state |
 |------|-------|--------|--------------|
 | **DOVA-BRAND-SKILL** Package portable company-brand skill | @lead/vector | `docs/vector/dova-brand-skill` | Exact commit `0212965` passed an isolated Codex QA instance's full technical suite. Formal checker gate remains open because `@qa/vera` is registered to `claude-code` and `models/codex.md` forbids Codex from approving Codex-built work. |
-| **AFUZE-DOCS-01** Verify Afuze quotation/invoice drafts | @lead/vector [codex] | `main` (untracked drafts) | ✅ **APPROVED** by @qa/vera [claude-code] 2026-08-13 — arithmetic, 12px body content, quote 2-page pagination, invoice 1-page rendering, A/B/C-only scope, footer markers, and draft safeguards pass |
+| **AFUZE-DOCS-01** Verify Afuze quotation/invoice drafts | @lead/vector [codex] | `feat/vector/intelligence-tool-suite` (working-tree drafts) | ✅ **APPROVED** 2026-08-21 — quotation, full invoice and short-form `INV-2026-AFUZE-002` pass Engineer C. K. Musa naming, consistent ₦5,300,000.00 lump sum, no VAT/professional-fee lines, 12px body and draft safeguards; short invoice is one page and contains all seven requested scope headings — verified by @qa/vera |
 
 ## Blocked
 _(empty)_
