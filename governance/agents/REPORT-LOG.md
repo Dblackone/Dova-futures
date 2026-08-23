@@ -580,3 +580,39 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Client contact details and final site measurements/product coverages/access constraints remain to be confirmed; quotation acceptance and principal approval are required before the invoice may be issued or paid.
 - **Recommendations for the next agent:** Preserve the ICM naming convention and renderer footer treatment; after site and client confirmations, update all three drafts together, re-render, and repeat arithmetic and visual PDF QA before presentation.
+
+### 2026-08-21 — @lead/vector [codex] — Afuze residence lump-sum document revision
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `client-jobs`
+- **Task:** Revise the Afuze residence quotation and draft invoice for Engineer C. K. Musa according to the principal's instruction.
+- **Files modified:** `QTE-2026-002` and `INV-2026-AFUZE-001` HTML/PDF drafts; client-jobs memory files; this report log.
+- **Summary:** Reverted to the original A/B/C scope by removing the proposed gypsum-board ceiling addition; changed all client-facing names to Engineer C. K. Musa; removed line-level material/labour pricing, VAT and separate professional-fee presentation; and set one discounted lump-sum amount of ₦5,000,000.00 covering the listed scope.
+- **Authorization:** Principal supplied the changes in the active conversation. Documents remain drafts; no promotion or external delivery performed.
+- **Verified:** Fresh PDF rendering produced quotation 2 pages and invoice 1 page. Independent @qa/vera [claude-code] approved client naming, A/B/C-only scope, absence of A8/gypsum, single ₦5,000,000.00 lump sum, absence of VAT/professional-fee lines, 12px body text, pagination and draft safeguards.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Client contact details remain placeholders; quotation acceptance and principal approval are required before the invoice may be issued or paid.
+- **Recommendations for the next agent:** Keep both documents together as the current lump-sum draft family and re-render both together if any scope, client or commercial term changes.
+
+### 2026-08-21 — @lead/vector [codex] — Afuze lump-sum amount revision
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `client-jobs`
+- **Task:** Revise the current Afuze residence quotation and draft invoice lump sum from ₦5,000,000.00 to ₦5,300,000.00.
+- **Files modified:** `QTE-2026-002` and `INV-2026-AFUZE-001` HTML/PDF drafts; client-jobs memory files; coordination board; this report log.
+- **Summary:** Updated every client-facing total to one discounted lump sum of ₦5,300,000.00. The original A/B/C scope, Engineer C. K. Musa naming, no-VAT/no-separate-professional-fee structure, 12px body scale and draft safeguards are unchanged.
+- **Authorization:** Principal supplied the revised lump-sum amount in the active conversation. Documents remain drafts; no promotion or external delivery performed.
+- **Verified:** Fresh PDF rendering produced quotation 2 pages and invoice 1 page; extracted PDF text contains the revised amount and no stale ₦5,000,000.00; references, client name, scope exclusions and invoice safeguards pass; `git diff --check` is clean. Independent @qa/vera approved all criteria and visually confirmed no clipping or overlap.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Client contact details remain placeholders; quotation acceptance and principal approval are required before the invoice may be issued or paid.
+- **Recommendations for the next agent:** Treat ₦5,300,000.00 as the current Afuze lump-sum total and keep both drafts synchronized after any future revision.
+
+### 2026-08-21 — @lead/vector [codex] — Afuze short-form invoice
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `client-jobs`
+- **Task:** Create a second, shorter Afuze invoice using a generic scope list.
+- **Files modified:** New `INV-2026-AFUZE-002` HTML/PDF draft; client-jobs memory; coordination board; this report log.
+- **Summary:** Created a one-page invoice for Engineer C. K. Musa at the existing ₦5,300,000.00 lump sum, listing demolition of agreed walls to expand the living room, visitor's room, visitor's toilet, double door, upstairs door, BQ renovations and access-road repairs. No VAT or separate professional fee was added.
+- **Authorization:** Principal requested the additional invoice and supplied the scope wording in the active conversation. The document remains a draft; no external delivery performed.
+- **Verified:** PDF renders to one page; reference, client, amount, seven scope items and draft safeguards pass extracted-text checks. Independent @qa/vera approved the source and PDF and found no clipping or overlap.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Client phone and email remain placeholders; quotation acceptance and principal approval are required before issue or payment.
+- **Recommendations for the next agent:** Keep `INV-2026-AFUZE-002` as the concise alternative invoice and preserve the ₦5,300,000.00 no-VAT lump-sum structure unless the principal instructs otherwise.

@@ -7,9 +7,9 @@
     `INV-2026-ROAD-001` for the agreed payment stage. _Do not invoice before
     acceptance; confirm the payment split (mobilisation/completion/full) with
     the principal first._
-   - **Afuze residence renovation package:** review draft `QTE-2026-002` and
-     companion draft `INV-2026-AFUZE-001` (inclusive total ₦6,874,925, including
-     the ₦1,000,000 proposed gypsum-board ceiling item) before
+   - **Afuze residence renovation package:** review draft `QTE-2026-002`,
+     companion draft `INV-2026-AFUZE-001`, and short-form draft `INV-2026-AFUZE-002` (discounted lump-sum total ₦5,300,000,
+     original A/B/C scope, no VAT or separate professional-fee line) before
      any client presentation or invoice issue.
 2. [ ] **POOL: confirm invoice status** — with principal: which of
    INV-2026-POOL-001..005 are delivered/paid? Log outcomes.

@@ -14,8 +14,9 @@
     A concrete ₦6,014,625 / B interlocking ₦5,369,625 (recommended). Nothing
     sent to the client by an agent — presenting is the principal's action. A
     separate Afuze residence renovation package is drafted as QTE-2026-002 with
-    companion INV-2026-AFUZE-001; both are pending principal review. The
-    proposed new gypsum-board ceiling is included in Section A at ₦1,000,000.
+    companion INV-2026-AFUZE-001 and short-form INV-2026-AFUZE-002; all are pending principal review. The
+    package now uses the original A/B/C scope and a discounted ₦5,300,000
+    lump-sum total with no VAT or separate professional-fee line. INV-2026-AFUZE-002 presents the same total against seven concise scope headings.
   - **GM-2026-OSG-001** (Grail Movement Hall of Worship, Osogbo — altar +
     structure remodification) — scope of works, cost-estimate working notes,
     and RPT-2026-OSG-001 project report drafted.
