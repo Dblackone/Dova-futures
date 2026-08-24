@@ -1,7 +1,7 @@
 # Status
 
 **Project:** DOVA Futures Intelligence  
-**Status:** Active — private Hub and cloud intelligence operational; local orchestration/tool suite preserved; OneDrive and workstation bridges pending.
+**Status:** Active — private Hub and cloud intelligence operational; live GitHub and read-only OneDrive views implemented in draft PR #35; Microsoft registration, merge and deployment pending.
 **Last verified:** 2026-08-24 — @lead/vector [codex]
 
 The workspace retains the provider-neutral local gateway and repository-scoped
@@ -15,10 +15,12 @@ mobile Hub journeys and a server-side OpenAI Responses API adapter using a
 dedicated secret key and `gpt-5.4-mini`. The complete design reference remains
 in `design/hub-ux-prototype/`.
 
-OneDrive/Microsoft Graph and the workstation bridge are not connected. The Hub
-must not claim access to private project files until the required credentials,
-folder scope, and approval boundaries are configured.
+Microsoft Graph sign-in, project-folder listing, file search and OneDrive web
+opening are implemented with delegated `User.Read` + `Files.Read` only. They
+remain honestly disconnected until the owner registers the Entra application,
+adds the deployment settings and approves the root path. Document writes and
+the workstation bridge remain disabled.
 
 Verification includes 23 local intelligence tests, integration health checks,
-the Hub production build, two Hub server-render/secret-boundary tests, and a
-live cloud-intelligence smoke check.
+the Hub production build, five Hub server/authentication tests, ESLint, clean
+npm audits, and live retrieval of all three GitHub repository records.

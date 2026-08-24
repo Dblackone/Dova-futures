@@ -1,5 +1,7 @@
 # Done Log
 
+- 2026-08-24 — Implemented draft PR #35 with owner-authenticated live GitHub metadata for the Hub, website and pre-order repositories plus Microsoft Entra SPA/PKCE scaffolding for read-only OneDrive project listing, file search and OneDrive web opening. Added five server/authentication tests; production build, ESLint and npm audit pass. No OneDrive write permission or document output was enabled. — by @lead/vector [codex]
+
 - 2026-08-19 - Installed the six requested tool families as a repository-scoped integration suite: Agent Reach, Hallmark and Career Ops router skills; nine HyperFrames core skills; 25 World Monitor operational skills; locked Node CLIs; a commit-pinned Agent Reach virtual environment; and a Voicebox localhost MCP/HTTP boundary. Verified 23 intelligence tests, integration doctor, CLI help, World Monitor tool discovery, npm audit and pip dependency health. Voicebox desktop runtime and authenticated/optional channels remain deliberately unconfigured; independent review is pending. Agent: @lead/vector [codex] (GPT-5).
 
 - 2026-08-24 — Built and privately deployed the responsive DOVA Hub application with product/workspace navigation, truthful integration states, an owner-only access boundary, and a tested server-side OpenAI Responses API adapter using a dedicated secret key. OneDrive and workstation access remain disconnected by design. — by @lead/vector [codex]
