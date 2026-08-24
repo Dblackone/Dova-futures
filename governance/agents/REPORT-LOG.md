@@ -556,3 +556,51 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Website branch requires principal/checker review and merge; Pages/custom-domain behaviour and backend hosting still need verification. Preorder destination repository is still missing; payment/admin independent QA, persistence choice, test order and Render setup remain open. Scratch inspection checkout remains outside the hub source tree.
 - **Recommendations for the next agent:** Review the website pull request, then provide/create the preorder destination repository. Migrate preorder only after its acceptance gates and independent security/QA review are satisfied; remove hub duplicates only after destination deployments are verified.
+
+### 2026-08-24 — @lead/vector [codex] — Afuze balance-payment invoice
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `client-jobs`
+- **Task:** Create a payment invoice for Engineer C. K. Musa using the current Afuze commercial and payment figures.
+- **Files modified:** New `INV-2026-AFUZE-003` HTML/PDF draft; client-jobs memory; coordination board; this report log.
+- **Summary:** Created a one-page balance invoice showing a ₦5,300,000.00 contract lump sum, ₦4,000,000.00 received and ₦1,300,000.00 due. No VAT or separate professional fee. The project-name reference avoids carrying forward the older quotation total.
+- **Authorization:** Principal requested the payment invoice in the active conversation; the payment received figure came from the linked Cost Analysis Notes. The document remains a draft and was not sent externally.
+- **Verified:** Arithmetic, client name, dates, Providus Bank account, 12px body scale, draft safeguard and extracted PDF text pass. Independent @qa/vera approved both HTML and the one-page PDF and confirmed no clipping or overlap.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Client phone/email remain placeholders. Principal must confirm the ₦4,000,000 received figure and approve issue before the invoice is sent.
+- **Recommendations for the next agent:** If the payment received figure changes, update the deduction and amount due together and rerender before issue.
+
+### 2026-08-24 — @lead/vector [codex] — product Hub repository reorganization
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `company-ops` + `dova-futures-intelligence` + website/preorder boundary records
+- **Task:** Reorganize the repository as a product and operations Hub, preserve the complete Hub UX prototype, retire independently migrated website/preorder duplicates, and prepare a no-content OneDrive inventory prompt without implementing DOVA Intelligence.
+- **Files modified:** Repository routing/governance pointers; `hub/` and Pages workflow; website/preorder workspace records; company registry/assets; DOVA Intelligence design/memory/test paths; root tooling metadata; company-ops plan/prompt/memory; migration duplicate deletions. Existing `projects/` and client-job changes were not touched.
+- **Summary:** Promoted the dependency-free read-only overview to repository-level `hub/` and restricted Pages to that folder; preserved the desktop/mobile UX prototype under `workspaces/dova-futures-intelligence/design/hub-ux-prototype/`; moved approved shared logos/icons to `company/assets/`; retired the duplicate marketing website, preorder app, website-specific media, and obsolete Hub Render/CNAME files after external verification; updated canonical routing to the two external product repositories. Added a paste-ready Quark workflow that inventories OneDrive from metadata only, completely excludes `OneDrive\\Documents\\GitHub`, writes one Markdown report, and makes proposals without moving files or assigning project codes.
+- **Authorization:** Principal explicitly instructed implementation of the recommended repository reorganization, preservation of the prototype, no DOVA Intelligence implementation, and creation of the OneDrive/Quark prompt.
+- **Verified:** External website `main`: `npm ci`, two Playwright tests, and default Pages HTTP 200. GitHub Pages API confirmed `dovafutures.com` remains assigned to the Hub repository and the external site has no custom domain; the two live URLs serve different builds. External preorder `main`: `npm ci`, three tests and root-level Render configuration. Hub/intelligence: 23 unit tests pass; snapshot regeneration succeeds with seven registered workspaces; Hub/prototype/tooling JavaScript parses; `git diff --check` passes after corrections; local HTTP smoke test returned 200 for `index.html` and `snapshot.js`. Pages artifact is `hub/` only and automatic deployment is disabled until domain transfer. No push, merge, DNS change, OneDrive traversal, or production Intelligence integration performed.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Independent checker review and principal merge approval remain. Transfer `dovafutures.com` from this repository to the website repository, then configure `hub.dovafutures.com` before enabling automatic Hub deployment. The external website reports one high-severity npm advisory; preorder reports one low-severity advisory plus a pnpm allow-scripts warning. The Hub tooling lockfile advisory was resolved to zero findings. The OneDrive report has not yet been run or reviewed.
+- **Recommendations for the next agent:** Independently review OPS-02 before merge. After Quark returns the metadata report, resolve uncertain project mappings and approve a dry-run migration register before any OneDrive move. Plan authentication, Graph/OneDrive, cloud/local providers and DOVA Intelligence runtime as a separate approved implementation.
+
+### 2026-08-24 — @lead/vector [codex] — OneDrive ownership reorganization
+- **Model:** OpenAI Codex, GPT-5 desktop workspace
+- **Workspace:** `company-ops`
+- **Task:** Implement the principal-approved 12-step OneDrive reorganization after confirming the official Grail Message Foundation (GMF) and NU-Avenue Resources Limited names.
+- **Files modified:** OneDrive content outside `Documents/GitHub`; `workspaces/company-ops/memory/status.md`; `workspaces/company-ops/memory/next-up.md`; `workspaces/company-ops/memory/done-log.md`; `workspaces/company-ops/memory/decisions.md`; this report log.
+- **Summary of changes:** Created separate organisation, Personal, Education, shared BIM/CAD/render-library, Other Organisations and Needs Review roots. Completed 238 exact, collision-checked moves covering GMF, NU-Avenue, Nature's Beauty, DOVA, education, personal records and confirmed CAD ownership; retained GitHub, ChatGPT, Claude Code, Custom Office Templates and application working paths. Generated migration, ownership, protected-path, CAD classification, duplicate-candidate, validation and reverse-order rollback CSVs under `OneDrive/Documents/Needs Review/_Migration_Control/2026-08-24/`. No deletion or deduplication was performed.
+- **Authorization:** The principal explicitly approved steps 1–12 and instructed implementation in the active conversation.
+- **Verified:** All 238 logged operations completed; 237 ordinary destinations exist; zero original moved paths remain; all 48 protected paths exist; official organisation roots and DOVA capitalization pass; no overwrite/deletion operation is logged; OneDrive process is active. The organized roots contain 6,434 files; 298 same-name-and-size candidate groups were recorded for review only.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Shell checks cannot prove OneDrive's cloud upload queue is fully settled. Confirm the client UI shows sync complete before discarding the rollback register. Duplicate candidates require separate human/content review and approval before any deletion.
+- **Recommendations for the next agent:** Perform an independent read-only checker pass against the migration and rollback registers after OneDrive sync settles; do not move protected application folders or delete duplicate candidates.
+
+### 2026-08-24 — @lead/vector [codex] — DOVA OneDrive project-layout correction
+- **Model:** OpenAI Codex, GPT-5 desktop workspace
+- **Workspace:** `company-ops`
+- **Task:** Correct the DOVA OneDrive project hierarchy so all projects appear directly under `01_Projects` and each project owns its internal document/design/drawing structure.
+- **Files modified:** DOVA OneDrive project paths outside `Documents/GitHub`; company-ops memory; this report log; migration-control CSVs.
+- **Summary of changes:** Moved all 19 projects out of the lifecycle/mapping wrappers and directly under `DOVA Futures Limited/01_Projects`; renamed `AFUZE PROJECT` to `MR C.K. MUSA - AFUZE PROJECT`; preserved the superseded wrappers under DOVA `99_Archive`; applied a consistent project structure with Documents, Design, Drawings and Models, Consultants, Construction and Site, Photos and Media, Needs Review and Archive areas. Existing files kept their names and were classified conservatively.
+- **Authorization:** The principal directly requested this correction in the active conversation.
+- **Verified:** 502 cumulative migration operations all completed; 19 direct project folders and zero loose project-root files; no Active/On Hold/Completed/Mapping wrappers remain; all 19 projects contain all required folders; all 48 protected paths remain; no deletion or overwrite was logged; 502-step rollback register regenerated; 11 validation checks pass.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** OneDrive cloud-side queue completion remains visible only in the desktop client. Project contents placed in project-local `90_Needs_Review` need later human classification where names were ambiguous.
+- **Recommendations for the next agent:** Wait for OneDrive to report Up to date, then perform read-only spot checks of the 19 project structures before any further naming correction.

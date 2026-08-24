@@ -3,9 +3,10 @@
 1. [ ] **Complete the domain handoff** — transfer `dovafutures.com` from this
    repository to `Dova-futures-website`, verify HTTPS/content, configure
    `hub.dovafutures.com`, then re-enable automatic Hub deployment.
-2. [ ] **Review the OneDrive inventory** — import the Quark-produced metadata
-   report, resolve uncertain project mappings, and approve naming/migration
-   waves before any move or rename.
+2. [ ] **Close the OneDrive migration watch** — confirm the OneDrive client has
+   finished syncing, spot-check the organisation roots, then review the 298
+   same-name-and-size candidate groups. Do not delete or merge duplicates
+   without separate approval; retain the rollback register until accepted.
 3. [ ] **Request independent checker review of OPS-02** — verify the Hub-only
    Pages artifact, references, test results, and absence of unintended client
    file changes before merge.

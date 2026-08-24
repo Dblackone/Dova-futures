@@ -16,6 +16,10 @@
     separate Afuze residence renovation package is drafted as QTE-2026-002 with
     companion INV-2026-AFUZE-001; both are pending principal review. The
     proposed new gypsum-board ceiling is included in Section A at ₦1,000,000.
+    A separate balance-payment draft, `INV-2026-AFUZE-003`, was prepared on
+    24 August 2026 using the principal's current ₦5,300,000 lump sum less
+    ₦4,000,000 received, leaving ₦1,300,000 due. It uses the project name as
+    its reference rather than carrying forward the older quotation total.
   - **GM-2026-OSG-001** (Grail Movement Hall of Worship, Osogbo — altar +
     structure remodification) — scope of works, cost-estimate working notes,
     and RPT-2026-OSG-001 project report drafted.

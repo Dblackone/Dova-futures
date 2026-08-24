@@ -2,6 +2,10 @@
 
 > Format: date — what — outcome — verified by
 
+- 2026-08-24 — OPS-03 DOVA project-layout correction — flattened `DOVA Futures Limited/01_Projects` to 19 direct project folders, renamed the Afuze folder to `MR C.K. MUSA - AFUZE PROJECT`, removed lifecycle/mapping wrappers from the live project root by preserving them in `99_Archive`, and applied the standard Documents/Design/Drawings-and-Models/Site/Media/Review/Archive structure to every project; migration and rollback registers now contain 502 successful operations — maker @lead/vector [codex]; 11 post-correction checks pass, cloud-side sync completion remains pending
+
+- 2026-08-24 — OPS-03 OneDrive ownership reorganization — implemented the principal-approved 12-step migration: created organisation, personal, education, shared-library and review roots; preserved protected working/application folders; completed 238 collision-checked moves; generated leave-in-place, ownership, CAD classification, duplicate-review and reverse-order rollback registers; deleted nothing — maker @lead/vector [codex]; local integrity validation passed, cloud-side sync completion and independent checker review remain pending
+
 - 2026-08-24 — OPS-02 maker pass — promoted `hub/` as the only Pages artifact, retired independently verified website/preorder duplicates, retained approved shared brand assets, preserved the complete Hub UX prototype, updated canonical routing, and prepared a metadata-only OneDrive inventory prompt; existing client/project records were untouched — maker @lead/vector [codex]; checker verification pending
 
 - 2026-07-09 — Hub reorganization — created company/ control layer (8 files), workspaces/ with 6 project dossiers + _TEMPLATE, rewrote CLAUDE.md as router, dissolved context/, split global memory per project — maker run this session; checker verification pending

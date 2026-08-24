@@ -11,6 +11,9 @@
      companion draft `INV-2026-AFUZE-001` (inclusive total ₦6,874,925, including
      the ₦1,000,000 proposed gypsum-board ceiling item) before
      any client presentation or invoice issue.
+   - **Afuze balance payment:** review standalone draft `INV-2026-AFUZE-003`
+     (₦5,300,000 contract lump sum less ₦4,000,000 received = ₦1,300,000 due)
+     before client issue.
 2. [ ] **POOL: confirm invoice status** — with principal: which of
    INV-2026-POOL-001..005 are delivered/paid? Log outcomes.
 3. [ ] **OSG: principal review** — RPT-2026-OSG-001 + cost estimate need the
