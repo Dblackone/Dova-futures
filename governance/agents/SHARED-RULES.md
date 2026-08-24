@@ -66,15 +66,13 @@ before you answer. Say so rather than guessing — see §7.
 
 ## 2. Respect the existing architecture
 
-- **Deploy-critical paths never move.** GitHub Pages ships the **repo root**
-  (`.github/workflows/deploy.yml`, `path: .`) and Render ships `dova-preorder/`
-  (`render.yaml`, `rootDir:`). Moving or renaming `index.html`, `server.js`,
-  `package.json`, `render.yaml`, `CNAME`, `dova-preorder/`, or the workflow
-  breaks a live site. A migration needs an approved plan, not a tidy-up.
-- **Don't introduce a stack.** The website is deliberately vanilla HTML/CSS/JS
-  with Tailwind via CDN and **no build step**. Both Express apps are plain
-  CommonJS. Do not add React, TypeScript, a bundler, or a framework because it
-  is what you would normally reach for.
+- **Deploy-critical paths never move casually.** GitHub Pages publishes only
+  `hub/` (`.github/workflows/deploy.yml`, `path: hub`). Moving that folder or
+  broadening the artifact can break the Hub or expose private repository data.
+  A deployment-boundary change needs an approved plan.
+- **Don't introduce a stack without need.** The production Hub is deliberately
+  dependency-free HTML/CSS/JS. DOVA Intelligence has its own workspace and may
+  not be implemented as a side effect of Hub maintenance.
 - **Don't add a dependency** without a one-line justification logged in the
   workspace's `memory/decisions.md`.
 - **Read before you act.** Never invent a file path, an API, a config key, or a
@@ -129,7 +127,7 @@ A session working in workspace `<p>` may modify only:
 **Read-only for normal sessions** (changes need a PR that Vollmann approves, per
 `.github/CODEOWNERS`): `company/`, `governance/`, `prompts/`, `.claude/`,
 `.agents/`, `.codex/`, `CLAUDE.md`, `AGENTS.md`, `CODEX.md`, `README.md`,
-`.github/`, and the deploy-critical files.
+`.github/`, and the deploy-critical `hub/` artifact/workflow.
 
 ### Shared governance is protected
 

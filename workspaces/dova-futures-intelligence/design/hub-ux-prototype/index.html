@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOVA Futures Hub — Figma Capture Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="board-header">
+    <div class="board-kicker">DOVA FUTURES LIMITED · PRODUCT HUB</div>
+    <h1>HUB UX SYSTEM & PROTOTYPE</h1>
+    <p>Desktop and mobile design review board · Cloud dashboard with optional local workstation bridge</p>
+  </header>
+
+  <main>
+    <section class="foundation-board" aria-label="Design foundations">
+      <div class="foundation-copy">
+        <span class="eyebrow">01 · FOUNDATIONS</span>
+        <h2>Architectural restraint.<br>Operational clarity.</h2>
+        <p>A premium working environment built around DOVA’s forest, cream and clay palette. Bebas Neue provides decisive orientation; Inter carries dense operational information.</p>
+      </div>
+      <div class="swatches" id="swatches"></div>
+      <div class="type-specimen">
+        <span>DISPLAY · BEBAS NEUE</span>
+        <strong>BUILD WITH<br>PRECISION</strong>
+        <p>Body · Inter — Clear project intelligence, approval context and repository status across every DOVA workspace.</p>
+      </div>
+    </section>
+
+    <section class="component-board" aria-label="Component inventory">
+      <div class="section-title"><span>02 · COMPONENTS</span><h2>Core interface language</h2></div>
+      <div class="component-row">
+        <button class="button primary">Primary action</button>
+        <button class="button secondary">Secondary</button>
+        <button class="button ghost">Ghost</button>
+        <span class="tag success">Healthy</span>
+        <span class="tag warning">Attention</span>
+        <span class="tag neutral">Waiting</span>
+        <div class="search">⌕ <span>Search files, workspaces and decisions</span><kbd>⌘ K</kbd></div>
+      </div>
+      <div class="component-row cards-row">
+        <article class="metric sample"><span>WORKSPACES</span><strong>07</strong><small>6 healthy · 1 needs attention</small></article>
+        <article class="attention-row sample"><i class="dot clay"></i><div><strong>Website migration validation</strong><small>Approval required · 2 hours ago</small></div><b>→</b></article>
+        <article class="prompt sample"><span>Ask DOVA Intelligence</span><p>Summarise the current risks across all active products.</p><button>Send ↑</button></article>
+      </div>
+    </section>
+
+    <section class="screens-section">
+      <div class="section-title"><span>03 · DESKTOP</span><h2>Complete desktop journeys · 1440 × 1024</h2></div>
+      <div class="desktop-grid" id="desktop-grid"></div>
+    </section>
+
+    <section class="screens-section mobile-section">
+      <div class="section-title"><span>04 · MOBILE</span><h2>Responsive mobile journeys · 390 × 844</h2></div>
+      <div class="mobile-grid" id="mobile-grid"></div>
+    </section>
+  </main>
+  <script src="prototype.js"></script>
+</body>
+</html>

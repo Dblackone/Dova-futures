@@ -11,15 +11,17 @@ This project is the beginning of DOVA Futures Intelligence: a local-first deskto
 
 The existing MARK XXXIX-OR desktop assistant is being preserved as a capability prototype while its orchestration layer is rebuilt as a modular platform.
 
-## Important move instruction
+## Placement status
 
-Copy or move this entire folder into:
+This folder has already been placed at:
 
 ```text
 Dova-futures/workspaces/dova-futures-intelligence/
 ```
 
-Do not place it at the Dova-futures repository root. The root is the live marketing website, and `dova-preorder/` is a separate deploy-critical application.
+Keep intelligence runtime code in this workspace. The repository-level `hub/`
+is the separately deployed read-only overview; public website and preorder
+sources now live in their external repositories.
 
 ## What is already built
 

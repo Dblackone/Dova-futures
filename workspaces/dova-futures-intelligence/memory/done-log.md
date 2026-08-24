@@ -1,5 +1,7 @@
 # Done Log
 
+- 2026-08-24 - Promoted the dependency-free read-only overview to repository-level `hub/`; preserved the 18-screen desktop and 18-screen mobile UX prototype in `design/hub-ux-prototype/` with Canva references. No OneDrive, OpenAI, authentication, write workflow, or DOVA Intelligence runtime was implemented. Agent: @lead/vector [codex] (GPT-5).
+
 - 2026-08-19 - Built the first read-only offline hub dashboard in `hub/`, with a dependency-free HTML interface, refreshable `build_snapshot.py` generator, registry-coverage warning, search/filter controls, and workspace context/status links. Added snapshot parser coverage; verification passes with 23 tests and Node snapshot validation. Website and preorder migration remain deferred until destination repositories are supplied. Agent: @lead/vector [codex] (GPT-5).
 
 - 2026-08-03 - Drafted `drafts/DOVA_INTELLIGENCE_MASTER_BRIEF.md`, combining the older DOVA OS local-first foundation/delivery model with the current Jarvis orchestration, approval and agentic build loop; implementation authority remains pending principal review. Agent: @qa/quartz [codex] (GPT-5).

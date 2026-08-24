@@ -1,11 +1,21 @@
 # Status
 
-**Project:** DOVA Futures Intelligence  
-**Status:** Active - read-only offline hub dashboard prototype implemented; website/store migration awaits destination repositories.
-**Last verified:** 2026-08-19
+**Project:** DOVA Futures Intelligence
 
-The desktop shell presents DOVA Intelligence using DOVA Futures brand colours, manual controls, project-file context, activity visibility, approval handling, and a read-only project index sourced from the repository registry. The new dependency-free browser dashboard in `hub/` presents workspace status, code locations, next actions, and registry coverage from a refreshable local snapshot. The provider-neutral core remains independent of API credentials. A draft master brief now combines the older DOVA OS foundation/workflow specifications with the current Jarvis orchestration plan.
+**Status:** Design preserved; read-only Hub deployed boundary prepared; intelligence implementation deferred.
 
-**Verification:** `python -B -m unittest discover -s tests -v` - 23 tests passing. The snapshot JavaScript validates in Node, the builder emits seven workspace records, and `git diff --check` passes for the new files.
+**Last verified:** 2026-08-24
 
-**Handoff note:** Legacy MARK/JARVIS identifiers remain in compatibility/history code only; the visible UI, active prompt, and repository index use DOVA Intelligence naming. The brief is unapproved and must not be treated as implementation authority until the principal confirms the first workflow and provider/runtime choices.
+The repository-level `hub/` is a dependency-free, read-only snapshot of
+workspace status and routing. The complete desktop/mobile Hub UX is stored in
+`design/hub-ux-prototype/` as a design reference and mirrored in Canva.
+
+No OpenAI/cloud provider, local model, Microsoft Graph/OneDrive connection,
+authentication, database, document-writing workflow, or DOVA Intelligence
+runtime was added during the repository reorganization. The existing
+provider-neutral prototype/core remains isolated in this workspace.
+
+The website and preorder sources of truth are now external repositories. The
+Hub snapshot is isolated to `hub/`, but its automatic Pages deployment remains
+gated until `dovafutures.com` is transferred to the website repository and a
+separate Hub domain is configured.

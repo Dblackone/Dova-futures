@@ -66,9 +66,9 @@ your own handles: work you built as `@lead/vector` is not verified by
 - **The hard stops** in `SHARED-RULES.md` §9 and `company/ethics.md` — client
   delivery, secrets, fabricated claims, unapproved documents in `projects/`,
   rewriting append-only records. No authorization removes these.
-- **Deploy-critical paths** — the repo root site files, `dova-preorder/`,
-  `render.yaml`, `CNAME`, `.github/workflows/deploy.yml`. These ship live
-  systems; restructuring them needs an explicitly approved migration plan.
+- **Deploy-critical paths** — `hub/` and `.github/workflows/deploy.yml`. Pages
+  must publish only the Hub artifact; broadening it could expose private files.
+  The website and preorder app are governed in their separate repositories.
 
 ## When Vollmann grants full permission
 

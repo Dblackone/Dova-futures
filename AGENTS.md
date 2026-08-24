@@ -44,7 +44,7 @@ Then:
 **The three things most likely to go wrong if you skip the above:**
 
 1. You read the wrong workspace and answer with context that isn't yours.
-2. You move or restructure something at the repo root or in `dova-preorder/` —
-   both are deploy-critical and ship live sites from those exact paths.
+2. You publish anything outside `hub/` through GitHub Pages, exposing private
+   repository or client records; `hub/` is the only deployable Pages artifact.
 3. You write a company document from scratch instead of from
    `documents/templates/`, which `company/document-policy.md` forbids.
