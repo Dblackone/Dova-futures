@@ -17,19 +17,19 @@ const icons: Record<Page, string> = {
 
 const products = [
   { mark: "W", name: "DOVA Website", domain: "dovafutures.com", detail: "Public company website in its dedicated repository.", status: "Live", tone: "healthy" },
-  { mark: "H", name: "DOVA Hub", domain: "hub.dovafutures.com", detail: "Private product, workspace and intelligence dashboard.", status: "In build", tone: "attention" },
+  { mark: "H", name: "DOVA Hub", domain: "hub.dovafutures.com", detail: "Private product, workspace and intelligence dashboard.", status: "Deployed", tone: "healthy" },
   { mark: "P", name: "DOVA Pre-order", domain: "preorder.dovafutures.com", detail: "Pre-order application in its dedicated repository.", status: "Repository linked", tone: "pending" },
 ] as const;
 
 const workspaces = [
-  { name: "DOVA Futures Intelligence", scope: "Hub, orchestration and intelligence", status: "Active", next: "Deploy first private version" },
+  { name: "DOVA Futures Intelligence", scope: "Hub, orchestration and intelligence", status: "Active", next: "Connect approved live services" },
   { name: "Company Operations", scope: "Governance, templates and company records", status: "Active", next: "Complete OneDrive inventory" },
   { name: "Website", scope: "Reference and migration tracking", status: "Separated", next: "Validate production ownership" },
   { name: "Pre-order Store", scope: "Reference and product tracking", status: "Separated", next: "Configure deployment domain" },
 ] as const;
 
 const attention = [
-  { icon: "DNS", title: "Add Hub DNS record", note: "Namecheap CNAME: hub → dblackone.github.io", status: "Owner action", tone: "attention" },
+  { icon: "DNS", title: "Add Hub DNS records", note: "Namecheap CNAME: hub → custom-domains.chatgpt.site, plus the two verification TXT records", status: "Owner action", tone: "attention" },
   { icon: "1D", title: "Connect Microsoft OneDrive", note: "Requires an approved Microsoft Entra app and folder scope", status: "Not connected", tone: "pending" },
 ] as const;
 
@@ -169,7 +169,7 @@ function Activity() {
   const items = [
     { icon: "AI", title: "Dedicated OpenAI key configured", note: "Stored locally as a secret; not committed", status: "Current", tone: "healthy" },
     { icon: "WEB", title: "Website domain transferred", note: "dovafutures.com now resolves to the website repository", status: "Verified", tone: "healthy" },
-    { icon: "HUB", title: "Hub application implementation started", note: "Responsive shell and server adapters", status: "Active", tone: "attention" },
+    { icon: "HUB", title: "Private Hub application deployed", note: "Responsive dashboard and server-side DOVA Intelligence", status: "Verified", tone: "healthy" },
   ];
   return <><Heading title="Activity" description="A concise record of material Hub and product changes." /><section className="panel">{items.map((item) => <ListRow key={item.title} {...item} />)}</section></>;
 }
