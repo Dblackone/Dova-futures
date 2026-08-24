@@ -2,6 +2,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
+const authenticatedHeaders = {
+  accept: "text/html",
+  "oai-authenticated-user-id": "owner-test-user",
+  "oai-authenticated-user-email": "owner@example.com",
+};
+
 async function worker() {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
@@ -11,7 +17,7 @@ async function worker() {
 test("server-renders the DOVA Hub shell", async () => {
   const app = await worker();
   const response = await app.fetch(
-    new Request("http://localhost/", { headers: { accept: "text/html" } }),
+    new Request("http://localhost/", { headers: authenticatedHeaders }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
     { waitUntil() {}, passThroughOnException() {} },
   );
@@ -27,7 +33,7 @@ test("server-renders the DOVA Hub shell", async () => {
 test("reports integration state without returning secrets", async () => {
   const app = await worker();
   const response = await app.fetch(
-    new Request("http://localhost/api/status"),
+    new Request("http://localhost/api/status", { headers: authenticatedHeaders }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
     { waitUntil() {}, passThroughOnException() {} },
   );
@@ -36,4 +42,30 @@ test("reports integration state without returning secrets", async () => {
   assert.equal(typeof payload.openai.configured, "boolean");
   assert.equal(payload.openai.model, "gpt-5.4-mini");
   assert.equal("key" in payload.openai, false);
+});
+
+test("redirects an anonymous page request to sign-in", async () => {
+  const app = await worker();
+  const response = await app.fetch(
+    new Request("http://localhost/", { headers: { accept: "text/html" }, redirect: "manual" }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+  assert.equal(response.status, 307);
+  assert.match(response.headers.get("location") || "", /^\/signin-with-chatgpt\?return_to=/);
+});
+
+test("rejects anonymous API requests before using integrations", async () => {
+  const app = await worker();
+  for (const [path, init] of [
+    ["/api/status", undefined],
+    ["/api/intelligence", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ prompt: "test" }) }],
+  ]) {
+    const response = await app.fetch(
+      new Request(`http://localhost${path}`, init),
+      { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+      { waitUntil() {}, passThroughOnException() {} },
+    );
+    assert.equal(response.status, 401, path);
+  }
 });

@@ -4,7 +4,7 @@
 
 **Owner:** @lead/vector [codex]
 
-**Scope:** Repository organisation only. DOVA Intelligence runtime and OneDrive integration are explicitly excluded.
+**Scope:** Phase A covered repository organisation only. DOVA Intelligence runtime and OneDrive integration were explicitly excluded from that phase. The principal subsequently authorised and deployed the private runtime as a separate Phase B change; OneDrive remains unconnected pending Microsoft approval.
 
 ## Objective
 
@@ -48,7 +48,7 @@ Dova-futures/
 5. Retain small shared logo/icon assets under `company/assets/`; remove website-specific media already held by the website repository.
 6. Update registry, workspace pointers, root documentation and deployment guardrails to describe the new boundaries.
 7. Leave `projects/` untouched until the OneDrive inventory and migration plan are reviewed.
-8. Do not add OpenAI, Microsoft Graph, OneDrive, authentication, database or DOVA Intelligence runtime code.
+8. Phase A did not add OpenAI, Microsoft Graph, OneDrive, authentication, database or DOVA Intelligence runtime code. A later, separately authorised Phase B added the authenticated private Hub and server-side OpenAI connection; Microsoft Graph and OneDrive remain deferred.
 
 ## Recovery
 
