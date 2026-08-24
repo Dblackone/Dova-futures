@@ -1,7 +1,7 @@
 # Next Up
 
-1. Review the deployed private Hub and record UI/content changes.
-2. Add and verify the Sites DNS records for `hub.dovafutures.com`.
+1. Add the three Namecheap DNS records supplied by Sites for `hub.dovafutures.com`, then verify SSL activation.
+2. Review the deployed private Hub and record UI/content changes.
 3. Register a Microsoft Entra application and approve a least-privilege OneDrive folder boundary before enabling file access.
 4. Review the OneDrive metadata inventory and approve the document architecture before moving files.
 5. Keep the repository-scoped external tool suite behind its reviewed CLI, HTTP, or MCP boundaries.

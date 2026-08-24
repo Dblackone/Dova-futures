@@ -1,6 +1,6 @@
 # Status — preorder-store
 
-**Last updated:** 2026-08-24  
+**Last updated:** 2026-08-24
 **Health:** Yellow — migrated; launch and payment assurance remain
 
 The preorder source of truth is `https://github.com/Dblackone/Dova-preorder`
