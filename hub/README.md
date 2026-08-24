@@ -4,10 +4,9 @@ This folder is the deployable artifact for the legacy public product overview.
 The Pages workflow uploads this folder only. Its snapshot is a deliberately
 curated product allowlist and never scans workspace memory or client jobs.
 
-Deployment is temporarily manual because `dovafutures.com` is still assigned
-to this repository in GitHub Pages settings. Transfer that domain to the
-external website repository and configure `hub.dovafutures.com` here before
-enabling automatic Hub deployment.
+Deployment remains manual because the functional Hub is owner-only on OpenAI
+Sites. Do not enable this public GitHub Pages fallback without a separate
+approval; `hub.dovafutures.com` is reserved for the authenticated application.
 
 ## Refresh the snapshot
 

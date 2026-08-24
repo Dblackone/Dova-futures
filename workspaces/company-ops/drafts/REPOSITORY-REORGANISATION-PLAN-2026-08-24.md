@@ -14,7 +14,7 @@ Make `Dova-futures` the company and product Hub repository. The marketing websit
 
 | Product | Source of truth | Verification performed |
 |---|---|---|
-| DOVA website | `https://github.com/Dblackone/Dova-futures-website` | Migration PR is merged into `main`; `npm ci` and two Playwright site audits passed; default Pages URL returns HTTP 200. `dovafutures.com` remains assigned to the Hub repository and must be transferred before Hub deployment. |
+| DOVA website | `https://github.com/Dblackone/Dova-futures-website` | Migration PR is merged into `main`; `npm ci` and two Playwright site audits passed; the default Pages URL and `dovafutures.com` return HTTP 200 after the custom-domain handoff. |
 | DOVA preorder | `https://github.com/Dblackone/Dova-preorder` | Migration PR is merged into `main`; root-level Render Blueprint is present; `npm ci` and three Node tests passed. |
 
 ## Target repository layout
