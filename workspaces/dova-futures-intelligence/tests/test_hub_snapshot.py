@@ -1,8 +1,16 @@
+import importlib.util
 import tempfile
 import unittest
 from pathlib import Path
 
-from hub.build_snapshot import build
+
+HUB_BUILDER = Path(__file__).resolve().parents[3] / "hub" / "build_snapshot.py"
+SPEC = importlib.util.spec_from_file_location("dova_hub_build_snapshot", HUB_BUILDER)
+if SPEC is None or SPEC.loader is None:  # pragma: no cover - import guard
+    raise RuntimeError(f"Unable to load Hub snapshot builder at {HUB_BUILDER}")
+MODULE = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(MODULE)
+build = MODULE.build
 
 
 class HubSnapshotTests(unittest.TestCase):

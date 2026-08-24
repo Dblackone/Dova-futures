@@ -2,6 +2,8 @@
 
 - 2026-08-19 - Installed the six requested tool families as a repository-scoped integration suite: Agent Reach, Hallmark and Career Ops router skills; nine HyperFrames core skills; 25 World Monitor operational skills; locked Node CLIs; a commit-pinned Agent Reach virtual environment; and a Voicebox localhost MCP/HTTP boundary. Verified 23 intelligence tests, integration doctor, CLI help, World Monitor tool discovery, npm audit and pip dependency health. Voicebox desktop runtime and authenticated/optional channels remain deliberately unconfigured; independent review is pending. Agent: @lead/vector [codex] (GPT-5).
 
+- 2026-08-24 - Promoted the dependency-free read-only overview to repository-level `hub/`; preserved the 18-screen desktop and 18-screen mobile UX prototype in `design/hub-ux-prototype/` with Canva references. No OneDrive, OpenAI, authentication, write workflow, or DOVA Intelligence runtime was implemented. Agent: @lead/vector [codex] (GPT-5).
+
 - 2026-08-19 - Built the first read-only offline hub dashboard in `hub/`, with a dependency-free HTML interface, refreshable `build_snapshot.py` generator, registry-coverage warning, search/filter controls, and workspace context/status links. Added snapshot parser coverage; verification passes with 23 tests and Node snapshot validation. Website and preorder migration remain deferred until destination repositories are supplied. Agent: @lead/vector [codex] (GPT-5).
 
 - 2026-08-03 - Drafted `drafts/DOVA_INTELLIGENCE_MASTER_BRIEF.md`, combining the older DOVA OS local-first foundation/delivery model with the current Jarvis orchestration, approval and agentic build loop; implementation authority remains pending principal review. Agent: @qa/quartz [codex] (GPT-5).

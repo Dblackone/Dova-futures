@@ -17,7 +17,7 @@
 - [ ] Branch rebased on `origin/main`; no conflict markers anywhere
 - [ ] No secrets, no debug logging, no `.env` values
 - [ ] Active workspace `memory/` updated (status, done-log, next-up)
-- [ ] Deploy-critical paths untouched (`index.html`†, `server.js`†, `render.yaml`, `CNAME`, `.github/workflows/deploy.yml`, `dova-preorder/`†) — † unless this IS that workspace's declared work
+- [ ] Pages boundary remains limited to `hub/` (`hub/` and `.github/workflows/deploy.yml` untouched unless this is approved Hub work)
 - [ ] Checker run requested (maker ≠ checker)
 
 ## Needs principal approval for

@@ -3,13 +3,14 @@
 ## Identity
 
 - **Workspace slug:** `dova-futures-intelligence`
-- **One-line purpose:** Local-first desktop AI orchestration platform for DOVA Futures.
+- **One-line purpose:** Hybrid DOVA Intelligence and Hub experience: cloud-accessible oversight with an optional local-system execution/model layer.
 - **Owner:** DOVA Futures Limited / principal approval required for high-impact actions.
 - **Status:** active — architecture and orchestration foundation in progress.
 
 ## Where the code lives
 
-This workspace contains the Python desktop prototype and the new provider-neutral orchestration core:
+This workspace contains the Python desktop prototype, provider-neutral
+orchestration research, and the approved Hub UX design reference:
 
 - `main.py`, `ui.py` — existing desktop and Gemini Live integration.
 - `core/` — contracts, registry, policy, providers, gateway, and local capabilities.
@@ -18,6 +19,9 @@ This workspace contains the Python desktop prototype and the new provider-neutra
 - `integrations/` — repository-scoped external skills, locked CLIs, bootstrap,
   licence boundaries, and health checks.
 - `memory/` — compatibility JSON memory code plus workspace handoff records.
+- `design/hub-ux-prototype/` — desktop/mobile design reference only.
+- repository-level `hub/` — deployed read-only overview; no intelligence runtime.
+- `hub-app/` — private responsive Hub and server-side cloud intelligence adapter.
 
 ## How to run and verify
 
@@ -51,3 +55,5 @@ The current usable path is `core.gateway.InteractionGateway`. It supports explic
   large upstream repositories or commit credentials, voice data, CVs, cookies,
   generated media, or model files.
 - The destination Dova-futures repository is a hub. This project belongs under `workspaces/dova-futures-intelligence/`, not at the repository root.
+- Intelligence runtime code belongs under `workspaces/dova-futures-intelligence/`.
+  The repository-level `hub/` remains limited to the non-sensitive read-only overview.

@@ -1,4 +1,6 @@
 node_modules/
+__pycache__/
+*.py[cod]
 # Every .env variant is secret-bearing and stays local — EXCEPT the *.example
 # files, which are the documented templates and must stay tracked.
 .env
@@ -7,14 +9,6 @@ node_modules/
 !.env.*.example
 *.log
 .DS_Store
-
-# Dova Preorder
-dova-preorder/preorder.db
-dova-preorder/public/uploads/
-dova-preorder/*.db
-dova-preorder/*.db-shm
-dova-preorder/*.db-wal
-dova-preorder/data/
 
 # Session scratch space — never committed (see governance/collaboration.md)
 sandbox/*

@@ -1,8 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy Hub to GitHub Pages
 
 on:
-  push:
-    branches: [main]
+  # Safety gate: dovafutures.com is still assigned to this repository's Pages
+  # settings. Keep deployment manual until the marketing domain is transferred
+  # to Dova-futures-website and hub.dovafutures.com is configured here.
   workflow_dispatch:
 
 permissions:
@@ -29,7 +30,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          # Publish only the read-only Hub. Never expose the private repository
+          # tree or client/project records as part of the Pages artifact.
+          path: hub
 
       - name: Deploy to GitHub Pages
         id: deployment
