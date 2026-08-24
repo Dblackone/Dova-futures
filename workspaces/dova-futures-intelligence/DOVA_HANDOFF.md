@@ -1,17 +1,18 @@
 # DOVA Futures Intelligence — Handoff Instructions
 
-## Destination
+## Placement status
 
-Move this folder into the Dova-futures repository as:
+This folder is already in the Dova-futures repository as:
 
 `workspaces/dova-futures-intelligence/`
 
-Do not place it at the Dova-futures repository root. The root contains the live marketing website, and `dova-preorder/` is a separate deploy-critical application.
+Keep intelligence runtime code here. Repository-level `hub/` is the deployed
+read-only overview; website and preorder source live in separate repositories.
 
-## After moving
+## After checkout
 
 1. Read the destination repository's `CLAUDE.md` and `governance/agents/SHARED-RULES.md`.
-2. Register this workspace in `company/registry.md` using the destination repository's review process.
+2. Confirm this workspace remains registered in `company/registry.md`.
 3. Read this folder's `PROJECT.md`, then `memory/status.md` and `memory/next-up.md`.
 4. Keep the existing local `config/api_keys.json` and `memory/long_term.json` out of Git.
 5. Run `python -m unittest discover -s tests -v` from this workspace.

@@ -128,6 +128,6 @@ Everything in `SHARED-RULES.md` §9, plus:
 ## Verification
 
 Before trusting a Codex session: give it one closed task with known correct
-output (e.g. "which workspace owns `dova-preorder/`, and what must never
-move?") and check it answers from the repository, not from priors. Confirm it
+output (e.g. "which folder is the only GitHub Pages artifact, and what must
+never be published with it?") and check it answers from the repository, not from priors. Confirm it
 states which workspace it routed itself into before proposing any change.

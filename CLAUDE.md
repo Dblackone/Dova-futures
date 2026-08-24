@@ -148,10 +148,10 @@ tests, documents, validates, and reports honestly. Contract:
 - If token cost or scope balloons, stop and summarise instead of pushing on.
   Under an "at all costs" grant, persist through difficulty and try
   alternatives instead — but never claim completion you have not verified.
-- **Deploy-critical paths:** the website ships from the repo ROOT via GitHub
-  Pages, and the store ships from `dova-preorder/` via `render.yaml`. Never
-  move, rename, or restructure those paths (or `.github/workflows/deploy.yml`,
-  `CNAME`) without an explicitly approved migration plan.
+- **Deploy-critical paths:** GitHub Pages ships only `hub/`. Never broaden the
+  Pages artifact or move `hub/`/`.github/workflows/deploy.yml` without an
+  explicitly approved migration plan. The website and preorder application
+  ship from their separate repositories listed in `company/registry.md`.
 - Full policy: `governance/guardrails.md`.
 
 ## 7. Definition of done

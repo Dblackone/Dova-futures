@@ -59,8 +59,8 @@ Three things a grant never covers, unless you say so on that specific item:
    append-only records.
 2. **Independent verification before merge** (§2 below). Full permission waives
    asking, not checking.
-3. Restructuring the deploy-critical paths — repo root site files,
-   `dova-preorder/`, `render.yaml`, `CNAME`, `.github/workflows/deploy.yml`.
+3. Restructuring the deploy-critical `hub/` artifact or its
+   `.github/workflows/deploy.yml` publication boundary.
 
 ### 3b. Your instruction is authorization
 

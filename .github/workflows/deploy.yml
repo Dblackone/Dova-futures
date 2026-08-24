@@ -1,8 +1,8 @@
-name: Deploy to GitHub Pages
+name: Deploy Hub to GitHub Pages
 
 on:
-  push:
-    branches: [main]
+  # Safety gate: the functional Hub is owner-only on OpenAI Sites. Keep this
+  # curated public fallback manual unless the principal approves publication.
   workflow_dispatch:
 
 permissions:
@@ -29,7 +29,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          # Publish only the read-only Hub. Never expose the private repository
+          # tree or client/project records as part of the Pages artifact.
+          path: hub
 
       - name: Deploy to GitHub Pages
         id: deployment

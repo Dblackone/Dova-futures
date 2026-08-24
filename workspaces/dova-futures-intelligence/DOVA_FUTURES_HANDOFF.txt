@@ -4,11 +4,12 @@ Source: MARK XXXIX-OR prototype
 Destination: https://github.com/Dblackone/Dova-futures
 Workspace path: workspaces/dova-futures-intelligence/
 
-MOVE INSTRUCTION
-Move this entire folder into:
+PLACEMENT STATUS
+This folder is already located at:
 Dova-futures/workspaces/dova-futures-intelligence/
 
-Do not place it at the Dova-futures repository root. The root is the live marketing website, and dova-preorder/ is deploy-critical.
+Keep intelligence runtime code in this workspace. The repository-level hub/
+folder is the read-only overview; website and preorder source live externally.
 
 WHAT IS BUILT
 - Shared contracts for requests, tools, plans, providers, approvals, events, and memory queries.
