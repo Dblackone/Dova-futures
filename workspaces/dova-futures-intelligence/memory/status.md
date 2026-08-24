@@ -2,20 +2,24 @@
 
 **Project:** DOVA Futures Intelligence
 
-**Status:** Design preserved; read-only Hub deployed boundary prepared; intelligence implementation deferred.
+**Status:** Private Hub application deployed; cloud DOVA Intelligence operational; OneDrive and workstation bridges not connected.
 
-**Last verified:** 2026-08-24
+**Last verified:** 2026-08-24 — @lead/vector [codex]
 
-The repository-level `hub/` is a dependency-free, read-only snapshot of
-workspace status and routing. The complete desktop/mobile Hub UX is stored in
-`design/hub-ux-prototype/` as a design reference and mirrored in Canva.
+The responsive Hub application lives in `hub-app/` and is deployed privately
+through OpenAI Sites. It provides Overview, DOVA Intelligence, Projects, Files,
+Workspaces, Products, Attention, Activity, Repository Guide, and Settings views.
 
-No OpenAI/cloud provider, local model, Microsoft Graph/OneDrive connection,
-authentication, database, document-writing workflow, or DOVA Intelligence
-runtime was added during the repository reorganization. The existing
-provider-neutral prototype/core remains isolated in this workspace.
+The OpenAI Responses API adapter is active with a dedicated server-side key and
+defaults to `gpt-5.4-mini`. The key is stored only in ignored local environment
+configuration and the hosting provider's secret store.
 
-The website and preorder sources of truth are now external repositories. The
-Hub snapshot is isolated to `hub/`, but its automatic Pages deployment remains
-gated until `dovafutures.com` is transferred to the website repository and a
-separate Hub domain is configured.
+Project and file views intentionally show an unconnected state. No project
+names, client records, or OneDrive files are simulated or copied into GitHub.
+Microsoft Graph/OneDrive requires an approved Entra application and explicit
+folder scope before it can be enabled. The optional workstation/local-model
+bridge remains planned.
+
+The repository-level `hub/` remains a dependency-free public snapshot fallback.
+The complete desktop/mobile design reference remains in
+`design/hub-ux-prototype/`.

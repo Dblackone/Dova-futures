@@ -1,7 +1,7 @@
 # Next Up
 
-1. Principal review and edit of the full desktop/mobile UX prototype.
-2. Complete the website/Hub domain separation before enabling automatic Pages deployment.
-3. Review the returned OneDrive metadata inventory and approve a document architecture; do not move files before that review.
-4. Produce a separate implementation plan for authentication, Microsoft Graph/OneDrive, cloud OpenAI access, optional local-model bridge, permissions, audit logs, and deployment.
-5. Implement DOVA Intelligence only after the architecture and security gates above are explicitly approved.
+1. Add the three Namecheap DNS records supplied by the Sites custom-domain setup for `hub.dovafutures.com`, then verify SSL activation.
+2. Review the deployed responsive Hub and record UI/content edits.
+3. Register a Microsoft Entra application, approve the least-privilege OneDrive scopes, and choose the initial project-folder boundary.
+4. Review the returned OneDrive metadata inventory and approve the document architecture before moving any files.
+5. Design the optional workstation bridge for local filesystem and local-model access; keep it independent from the cloud Hub.
