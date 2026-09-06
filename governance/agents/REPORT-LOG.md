@@ -616,3 +616,15 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Client phone and email remain placeholders; quotation acceptance and principal approval are required before issue or payment.
 - **Recommendations for the next agent:** Keep `INV-2026-AFUZE-002` as the concise alternative invoice and preserve the ₦5,300,000.00 no-VAT lump-sum structure unless the principal instructs otherwise.
+
+### 2026-09-06 — @lead/vector [codex] — personal digital portfolio card
+- **Model:** OpenAI Codex desktop
+- **Workspace:** `website`
+- **Task:** Create a personal digital business card for Vollmann Akarakiri that links directly to his portfolio and contact channels.
+- **Files modified:** external website branch `feat/vector/personal-digital-card` (`README.md`, `site-audit.spec.js`, `vollmann/index.html`, vCard, QR and OG assets); website workspace memory; coordination board; this report log.
+- **Summary:** Added a standalone `/vollmann/` page using the existing Dova field-journal design and real portrait/portfolio assets. The page includes full/construction/interior folios, call/email/WhatsApp actions, native-share and clipboard fallbacks, downloadable contact data, a scannable QR and dedicated social-preview image.
+- **Authorization:** Principal asked to proceed in the active conversation. The website branch is pushed for review; no merge or production deployment was performed.
+- **Verified:** `npm ci`; `node --check server.js`; Playwright 3/3 across 320, 375, 768 and 1280px; MIME/signature checks for vCard, PNG, SVG and PDFs; CRLF vCard; visual desktop/mobile inspection; QR independently decoded to the intended URL; separate QA, general code and JavaScript reviewer agents approved the final state.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Principal approval is required to merge/deploy. Personal social handles remain omitted because the canonical brand record marks them TBD. Existing npm audit reports three moderate and one high advisory; this feature did not alter dependencies.
+- **Recommendations for the next agent:** After principal approval, merge the external branch and verify the live `/vollmann/` URL plus WhatsApp/social preview rendering; add social links only after exact handles are supplied.

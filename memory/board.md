@@ -30,6 +30,7 @@ _(empty)_
 |------|-------|--------|-------|
 | **HERO-01** Build before/after reveal component | @build/forge | `feat/forge/hero-reveal` | All 10 AC passed. ✅ APPROVED by @qa/vera 2026-06-14 |
 | **OPS-01** Repo reorg: company hub + collaboration scaffolding + folder renames | @company-ops | `claude/repo-organization-master-k7k9nm` | All 8 acceptance criteria (A–H) passed. ✅ APPROVED by @qa/vera 2026-07-18. Minor watch-item: pre-existing dead link (not caused by this branch) logged to memory/triage.md. |
+| **PERSONAL-CARD-01** Personal digital portfolio card | @lead/vector [codex] | external `feat/vector/personal-digital-card` · `9011324` | Technical review APPROVED: responsive card, portfolio/contact actions, share fallbacks, OG image, CRLF vCard and QR decode pass. Principal merge/deploy approval pending. |
 
 ## Merged ✅
 _(empty)_
