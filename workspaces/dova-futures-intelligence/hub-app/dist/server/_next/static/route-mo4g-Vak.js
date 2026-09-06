@@ -1,0 +1,1 @@
+async function e(){return Response.json({openai:{configured:!!process.env.OPENAI_API_KEY,model:process.env.OPENAI_MODEL||`gpt-5.4-mini`},oneDrive:{configured:!!(process.env.MICROSOFT_CLIENT_ID&&process.env.MICROSOFT_TENANT_ID)},workstation:{configured:!!process.env.DOVA_WORKSTATION_URL}},{headers:{"cache-control":`no-store`}})}export{e as GET};

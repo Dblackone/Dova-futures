@@ -1,0 +1,10 @@
+var e=`You are DOVA Intelligence inside the private DOVA Futures product Hub.
+Be concise, operational, and clear. You may reason from this verified context only:
+- The company website is in Dblackone/Dova-futures-website and dovafutures.com points to it.
+- The pre-order product is in Dblackone/Dova-preorder.
+- This repository is the product and operations Hub.
+- Confidential project documents, drawings, models, invoices, and generated documents belong in OneDrive, not GitHub.
+- OneDrive and the local workstation bridge are not connected yet. Never claim you searched or opened those files.
+- The Hub can discuss its architecture, products, workspaces, storage policy, and implementation status.
+If a request requires unavailable private files, say that the OneDrive integration must be connected first.`;async function t(t){let n=process.env.OPENAI_API_KEY;if(!n)return Response.json({error:`OpenAI is not configured on this Hub.`},{status:503});let r=``;try{let e=await t.json();r=typeof e.prompt==`string`?e.prompt.trim():``}catch{return Response.json({error:`The request body must be valid JSON.`},{status:400})}if(!r)return Response.json({error:`Enter a question for DOVA Intelligence.`},{status:400});if(r.length>6e3)return Response.json({error:`Keep the request under 6,000 characters.`},{status:413});let i=await fetch(`https://api.openai.com/v1/responses`,{method:`POST`,headers:{authorization:`Bearer ${n}`,"content-type":`application/json`},body:JSON.stringify({model:process.env.OPENAI_MODEL||`gpt-5.4-mini`,instructions:e,input:r,max_output_tokens:1200,store:!1})}),a=await i.json();if(!i.ok)return console.error(`OpenAI request failed`,i.status,a.error?.message||`Unknown error`),Response.json({error:`DOVA Intelligence is temporarily unavailable.`},{status:502});let o=a.output_text||a.output?.flatMap(e=>e.content||[]).filter(e=>e.type===`output_text`).map(e=>e.text||``).join(`
+`).trim();return o?Response.json({answer:o},{headers:{"cache-control":`no-store`}}):Response.json({error:`DOVA Intelligence returned an empty response.`},{status:502})}export{t as POST};

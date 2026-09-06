@@ -556,3 +556,13 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Website branch requires principal/checker review and merge; Pages/custom-domain behaviour and backend hosting still need verification. Preorder destination repository is still missing; payment/admin independent QA, persistence choice, test order and Render setup remain open. Scratch inspection checkout remains outside the hub source tree.
 - **Recommendations for the next agent:** Review the website pull request, then provide/create the preorder destination repository. Migrate preorder only after its acceptance gates and independent security/QA review are satisfied; remove hub duplicates only after destination deployments are verified.
+### 2026-09-01 — @lead/vector [codex] — OpenClaw/DOVA Intelligence product assessment
+- **Model:** OpenAI Codex desktop
+- **Workspace:** `dova-futures-intelligence`
+- **Task:** Assess the principal's proposed local AI for OpenClaw, correct assumptions, derive requirements from prior work, recommend models/integrations and provide a pre-build visual direction.
+- **Files modified:** `workspaces/dova-futures-intelligence/drafts/DOVA_OPENCLAW_AI_PRODUCT_BRIEF.md`; intelligence `memory/status.md`, `memory/next-up.md`, `memory/done-log.md`; this report log.
+- **Summary:** Recommended OpenClaw as the maintained runtime beneath a DOVA-specific PWA/product layer, with local LM Studio/Ollama inference, explicit remote fallback, scoped MCP tools, approval-first actions and the document factory as the first complete workflow. Recorded system evidence, model candidates, feature priorities, milestones and principal decisions. A preview-only UI concept was generated outside the repository.
+- **Verified:** OpenClaw `2026.7.1-2`; config valid; Gateway registered but not listening; LM Studio local model catalogue and active Gemma model inspected; Ollama catalogue inspected; RTX 4060 8 GB VRAM, 32 GB RAM and available disk confirmed; current OpenClaw, LM Studio, MCP and Qwen documentation reviewed. No runtime repair, model download or configuration mutation performed.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Principal decisions in brief §12; Gateway recovery; DOVA-specific model evaluation; workspace registry entry; independent checker review after implementation begins.
+- **Recommendations for the next agent:** Do not build a competing orchestrator. After principal approval, recover the Gateway first, benchmark Gemma versus Qwen on sanitised DOVA tasks, then implement one document workflow through supported OpenClaw extension boundaries.
