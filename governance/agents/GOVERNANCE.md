@@ -234,10 +234,9 @@ they are **necessary to achieve the approved objective** and can be performed
 Two standing exceptions survive any grant, because they ship live systems and
 carry client obligations:
 
-- **Deploy-critical paths** — the repo root site files, `dova-preorder/`,
-  `render.yaml`, `CNAME`, `.github/workflows/deploy.yml`. Moving or restructuring
-  these breaks a live site and needs an explicitly approved migration plan, not
-  an inference from a general grant.
+- **Deploy-critical paths** — `hub/` and `.github/workflows/deploy.yml`. Moving
+  them or publishing a broader artifact can break the Hub or expose private
+  records and needs an explicitly approved migration plan.
 - **Client delivery** — nothing goes to a client, and no document is filed into
   `projects/`, without Vollmann's approval on that specific item
   (`company/ethics.md`).

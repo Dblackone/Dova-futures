@@ -47,10 +47,9 @@ A session working in workspace `<p>` may modify ONLY:
 **Read-only for normal sessions** (changes require a dedicated PR that
 CODEOWNERS routes to Vollmann): `company/`, `governance/`, `prompts/`,
 `.claude/`, `.agents/`, `.codex/`, `CLAUDE.md`, `AGENTS.md`, `CODEX.md`,
-`README.md`, `.github/`, and the deploy-critical files (`index.html`*,
-`server.js`*, `render.yaml`, `CNAME`, `package.json`).
-*The website workspace's declared code paths include the root site files —
-that workspace may edit them; others may not.
+`README.md`, `.github/`, and the deploy-critical Hub files (`hub/` and
+`.github/workflows/deploy.yml`). Product application source is changed in its
+own external repository, not from this Hub repository.
 
 **Never, in any session:** another workspace's folders; another session's open
 branch; append-only records (done-logs, registers) except by appending.

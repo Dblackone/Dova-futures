@@ -1,0 +1,20 @@
+{
+  "name": "dova-intelligence-integrations",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Repository-scoped CLIs used by DOVA Futures Intelligence.",
+  "scripts": {
+    "doctor": "node doctor.mjs",
+    "career-ops": "career-ops",
+    "hyperframes": "hyperframes",
+    "worldmonitor": "worldmonitor"
+  },
+  "devDependencies": {
+    "@santifer/career-ops": "1.27.0",
+    "hyperframes": "0.8.3",
+    "worldmonitor": "0.1.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

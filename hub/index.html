@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOVA Futures Hub</title>
+  <style>
+    :root {
+      --forest: #1C4636;
+      --deep: #102A20;
+      --terracotta: #B85C38;
+      --cream: #F5EFE8;
+      --tan: #E8E1D5;
+      --ink: #1A1A1A;
+      --muted: #68736d;
+      --line: rgba(28, 70, 54, .16);
+      --white: #fffdf9;
+      --shadow: 0 18px 45px rgba(16, 42, 32, .09);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--tan);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    a { color: var(--forest); }
+    .shell { max-width: 1320px; margin: 0 auto; padding: 28px; }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: flex-end;
+      padding: 30px;
+      color: var(--cream);
+      background: var(--deep);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #dca487;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 8px; font-size: clamp(2rem, 4vw, 4.2rem); line-height: .95; letter-spacing: -.045em; }
+    .hero-copy { max-width: 650px; margin-bottom: 0; color: #c5d0c9; line-height: 1.6; }
+    .hero-meta { min-width: 230px; color: #c5d0c9; font-size: .82rem; line-height: 1.7; text-align: right; }
+    .hero-meta strong { display: block; color: var(--cream); font-size: 1rem; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 24px 0 16px; }
+    .search { flex: 1 1 320px; min-width: 220px; }
+    input {
+      width: 100%;
+      padding: 13px 15px;
+      color: var(--ink);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font: inherit;
+      outline: none;
+    }
+    input:focus { border-color: var(--forest); box-shadow: 0 0 0 3px rgba(90, 161, 124, .22); }
+    .button, .filter {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 15px;
+      color: var(--forest);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .button:hover, .filter:hover { border-color: var(--forest); }
+    .filter.active { color: var(--cream); background: var(--forest); border-color: var(--forest); }
+    .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .metric, .notice, .card { background: var(--white); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 8px 25px rgba(16, 42, 32, .04); }
+    .metric { padding: 18px; }
+    .metric-label { color: var(--muted); font-size: .73rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .metric-value { display: block; margin-top: 6px; color: var(--forest); font-size: 2rem; font-weight: 800; }
+    .notice { display: none; margin-bottom: 24px; padding: 16px 18px; color: #6a331f; background: #fff4ed; border-color: rgba(184, 92, 56, .3); line-height: 1.55; }
+    .notice.show { display: block; }
+    .notice strong { color: var(--terracotta); }
+    .section-heading { display: flex; justify-content: space-between; gap: 20px; align-items: baseline; margin: 0 0 12px; }
+    .section-heading h2 { margin-bottom: 0; color: var(--deep); font-size: 1.35rem; }
+    .section-heading span { color: var(--muted); font-size: .82rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; }
+    .card { display: flex; flex-direction: column; min-height: 250px; padding: 20px; }
+    .card-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+    .card h3 { margin-bottom: 5px; color: var(--deep); font-size: 1.15rem; }
+    .purpose { min-height: 42px; margin-bottom: 16px; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+    .status { flex: 0 0 auto; padding: 5px 8px; color: var(--forest); background: #e8f3eb; border-radius: 999px; font-size: .68rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+    .status.warning { color: #75431d; background: #fff0d8; }
+    .status.missing { color: #7f3022; background: #fde5df; }
+    .details { display: grid; gap: 10px; margin-top: auto; }
+    .detail { padding-top: 9px; border-top: 1px solid var(--line); }
+    .detail-label { display: block; margin-bottom: 3px; color: var(--muted); font-size: .67rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .detail-value { color: var(--ink); font-size: .83rem; line-height: 1.45; overflow-wrap: anywhere; }
+    .card-actions { display: flex; gap: 8px; margin-top: 16px; }
+    .card-actions a { padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; font-size: .78rem; text-decoration: none; }
+    .card-actions a:first-child { color: var(--cream); background: var(--forest); border-color: var(--forest); }
+    .empty { grid-column: 1 / -1; padding: 35px; color: var(--muted); background: var(--white); border: 1px dashed var(--line); border-radius: 14px; text-align: center; }
+    footer { margin: 30px 0 4px; color: var(--muted); font-size: .76rem; line-height: 1.6; }
+    @media (max-width: 760px) {
+      .shell { padding: 14px; }
+      .hero { display: block; padding: 24px; }
+      .hero-meta { margin-top: 20px; text-align: left; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">DOVA Futures Limited</p>
+        <h1 id="page-title">Company Hub</h1>
+        <p class="hero-copy">A calm, read-only view of the workspaces, operating records, and product context behind DOVA Futures.</p>
+      </div>
+      <div class="hero-meta">
+        <strong>REPOSITORY SNAPSHOT</strong>
+        <span id="snapshot-date">Loading repository snapshot…</span>
+      </div>
+    </section>
+
+    <div class="toolbar" aria-label="Workspace filters">
+      <label class="search"><span class="visually-hidden">Search workspaces</span><input id="search" type="search" placeholder="Search workspaces, code paths, or status…"></label>
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="attention">Needs attention</button>
+      <a class="button" href="https://github.com/Dblackone/Dova-futures/blob/main/README.md">Repository guide</a>
+      <a class="button" href="https://github.com/Dblackone/Dova-futures/blob/main/company/registry.md">Open registry</a>
+    </div>
+
+    <section class="metrics" aria-label="Repository summary">
+      <div class="metric"><span class="metric-label">Workspaces</span><strong class="metric-value" id="metric-workspaces">—</strong></div>
+      <div class="metric"><span class="metric-label">Registered</span><strong class="metric-value" id="metric-registered">—</strong></div>
+      <div class="metric"><span class="metric-label">Attention</span><strong class="metric-value" id="metric-attention">—</strong></div>
+      <div class="metric"><span class="metric-label">Hub health</span><strong class="metric-value" id="metric-health">—</strong></div>
+    </section>
+
+    <div class="notice" id="coverage-notice" role="status"></div>
+
+    <section aria-labelledby="workspace-heading">
+      <div class="section-heading">
+        <h2 id="workspace-heading">Workspaces</h2>
+        <span id="result-count"></span>
+      </div>
+      <div class="grid" id="workspace-grid"></div>
+    </section>
+
+    <footer>
+      Read-only view. Refresh the snapshot with <code>python hub/build_snapshot.py</code> from the repository root. Product applications are maintained in their separate repositories.
+    </footer>
+  </main>
+
+  <script src="snapshot.js"></script>
+  <script>
+    const snapshot = window.DOVA_HUB_SNAPSHOT || { generatedAt: null, workspaces: [] };
+    const state = { filter: 'all', query: '' };
+    const $ = (selector) => document.querySelector(selector);
+
+    function isAttention(workspace) {
+      const text = `${workspace.status} ${workspace.nextAction}`.toLowerCase();
+      return workspace.registered === false || /pending|at risk|blocked|await|review|missing|unavailable|needs/.test(text);
+    }
+
+    function esc(value) {
+      return String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+    }
+
+    function link(path, label) {
+      const repositoryBase = 'https://github.com/Dblackone/Dova-futures/blob/main/';
+      return path ? `<a href="${repositoryBase}${encodeURI(path).replace(/#/g, '%23')}">${esc(label)}</a>` : esc(label);
+    }
+
+    function render() {
+      const workspaces = snapshot.workspaces || [];
+      const attention = workspaces.filter(isAttention);
+      const filtered = workspaces.filter((workspace) => {
+        if (state.filter === 'attention' && !isAttention(workspace)) return false;
+        const haystack = JSON.stringify(workspace).toLowerCase();
+        return haystack.includes(state.query.toLowerCase());
+      });
+
+      $('#metric-workspaces').textContent = workspaces.length;
+      $('#metric-registered').textContent = workspaces.filter((workspace) => workspace.registered).length;
+      $('#metric-attention').textContent = attention.length;
+      $('#metric-health').textContent = attention.length ? 'Review' : 'Clear';
+      $('#snapshot-date').textContent = snapshot.generatedAt ? `Generated ${snapshot.generatedAt}` : 'Snapshot unavailable';
+      $('#result-count').textContent = `${filtered.length} shown`;
+
+      const missing = workspaces.filter((workspace) => !workspace.registered).map((workspace) => workspace.slug);
+      const notice = $('#coverage-notice');
+      if (missing.length) {
+        notice.classList.add('show');
+        notice.innerHTML = `<strong>Registry coverage:</strong> ${esc(missing.join(', '))} exists on disk but is not listed in <code>company/registry.md</code>.`;
+      } else {
+        notice.classList.remove('show');
+        notice.textContent = '';
+      }
+
+      const grid = $('#workspace-grid');
+      if (!filtered.length) {
+        grid.innerHTML = '<div class="empty">No workspaces match this view.</div>';
+        return;
+      }
+      grid.innerHTML = filtered.map((workspace) => {
+        const statusClass = !workspace.registered ? 'missing' : isAttention(workspace) ? 'warning' : '';
+        return `<article class="card">
+          <div class="card-top">
+            <div><h3>${esc(workspace.slug)}</h3><p class="purpose">${esc(workspace.purpose)}</p></div>
+            <span class="status ${statusClass}">${esc(workspace.registered ? 'Listed' : 'Unlisted')}</span>
+          </div>
+          <div class="details">
+            <div class="detail"><span class="detail-label">Status</span><span class="detail-value">${esc(workspace.status)}</span></div>
+            <div class="detail"><span class="detail-label">Code / files</span><span class="detail-value">${esc(workspace.codePath)}</span></div>
+            <div class="detail"><span class="detail-label">Next action</span><span class="detail-value">${esc(workspace.nextAction)}</span></div>
+          </div>
+          <div class="card-actions">
+            ${link(workspace.projectPath, 'Open context')}
+            ${link(workspace.statusPath, 'Open status')}
+          </div>
+        </article>`;
+      }).join('');
+    }
+
+    $('#search').addEventListener('input', (event) => { state.query = event.target.value; render(); });
+    document.querySelectorAll('[data-filter]').forEach((button) => button.addEventListener('click', () => {
+      state.filter = button.dataset.filter;
+      document.querySelectorAll('[data-filter]').forEach((item) => item.classList.toggle('active', item === button));
+      render();
+    }));
+    render();
+  </script>
+</body>
+</html>

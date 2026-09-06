@@ -556,6 +556,7 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Website branch requires principal/checker review and merge; Pages/custom-domain behaviour and backend hosting still need verification. Preorder destination repository is still missing; payment/admin independent QA, persistence choice, test order and Render setup remain open. Scratch inspection checkout remains outside the hub source tree.
 - **Recommendations for the next agent:** Review the website pull request, then provide/create the preorder destination repository. Migrate preorder only after its acceptance gates and independent security/QA review are satisfied; remove hub duplicates only after destination deployments are verified.
+<<<<<<< HEAD
 ### 2026-09-01 — @lead/vector [codex] — OpenClaw/DOVA Intelligence product assessment
 - **Model:** OpenAI Codex desktop
 - **Workspace:** `dova-futures-intelligence`
@@ -566,3 +567,65 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Principal decisions in brief §12; Gateway recovery; DOVA-specific model evaluation; workspace registry entry; independent checker review after implementation begins.
 - **Recommendations for the next agent:** Do not build a competing orchestrator. After principal approval, recover the Gateway first, benchmark Gemma versus Qwen on sanitised DOVA tasks, then implement one document workflow through supported OpenClaw extension boundaries.
+=======
+
+### 2026-08-20 — @lead/vector [codex] — standalone preorder migration branch
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `preorder-store`
+- **Task:** Migrate the preorder application to the supplied `Dblackone/Dova-preorder` repository while preserving the hub source and live configuration.
+- **Files modified:** destination branch `migration/vector/preorder-extract-20260820`; preorder-store migration report and memory files; this report log.
+- **Summary:** Flattened the tracked `dova-preorder/` source into the destination root, explicitly excluded the local `.env`, corrected the Render Blueprint for a root-level app, added repository guidance/ignore rules and three checkout-validation tests, and pushed commit `bdb343f`. A full install exposed the old native SQLite dependency's Node 24 incompatibility, so the branch pins Node 24 and uses the compatible current 12.x `better-sqlite3` line.
+- **Authorization:** Principal supplied the destination repository in the current conversation, continuing the previously approved migration. No merge to `main`, live deployment, secret configuration or hub-source deletion performed.
+- **Verified:** `npm ci`; SQLite native module open/query; `npm test` with 3/3 passing; Node syntax checks; seven public pages return 200; catalogue API returns 200 JSON; unauthenticated admin route returns 401; invalid webhook signature returns 400; duplicate valid `charge.success` events both return 200 while payment/order remain singly verified/paid; raw-body middleware precedes JSON parsing; secret-pattern scan found no committed credential; branch confirmed pushed.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Independent security/QA checker and principal merge approval remain required. Persistence choice, Render service creation, test-key end-to-end Paystack initialisation, SMTP configuration and real product seeding remain open. Hub duplicate must remain until the destination deployment is verified.
+- **Recommendations for the next agent:** Independently review commit `bdb343f` against `DOVA-PREORDER-MIGRATION-REPORT.md`, with special attention to payment amounts, admin sessions, webhook replay and native SQLite deployment; merge only after approval, then deploy with test credentials and decide persistent storage before live orders.
+
+### 2026-08-21 — @lead/vector [codex] — ICM roof-repairs client document revision
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `client-jobs`
+- **Task:** Apply the principal's final Ikeja City Mall roof-repairs scope, commercial, payment, naming and presentation corrections to the report, quotation and draft invoice.
+- **Files modified:** roof-repairs brief; renamed `RPT/QTE/INV-2026-ICM-ROOF-001` HTML/PDF drafts; client-jobs memory files; this report log.
+- **Summary:** Repriced Measure 1 items 5/6 to ₦550,000/₦730,000; separated the 10% Professional Supervision and Works charge from 7.5% VAT; set the contract total to ₦5,268,274; added 60/30/10 milestones; limited the invoice to the 60% mobilisation; narrowed Measure 2 to the visible-inspection perimeter band; rewrote Measure 1 for a lay client audience; adopted ICM references, Design Team metadata and two-party acceptance fields; removed the visible pre-VAT subtotal line.
+- **Authorization:** Principal supplied and approved the corrections in the active conversation. Documents remain drafts; no job code opened, document promoted or client communication sent.
+- **Verified:** Independent arithmetic reconciliation; HTML stale-value/reference scan; PDF text extraction; page counts invoice 1 / quotation 2 / report 2; exact one-per-page markers; report image embedded; every rendered page visually inspected for white edges, consistent footers and header/footer clearance; `git diff --check` clean.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Client contact details and final site measurements/product coverages/access constraints remain to be confirmed; quotation acceptance and principal approval are required before the invoice may be issued or paid.
+- **Recommendations for the next agent:** Preserve the ICM naming convention and renderer footer treatment; after site and client confirmations, update all three drafts together, re-render, and repeat arithmetic and visual PDF QA before presentation.
+
+### 2026-08-21 — @lead/vector [codex] — Afuze residence lump-sum document revision
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `client-jobs`
+- **Task:** Revise the Afuze residence quotation and draft invoice for Engineer C. K. Musa according to the principal's instruction.
+- **Files modified:** `QTE-2026-002` and `INV-2026-AFUZE-001` HTML/PDF drafts; client-jobs memory files; this report log.
+- **Summary:** Reverted to the original A/B/C scope by removing the proposed gypsum-board ceiling addition; changed all client-facing names to Engineer C. K. Musa; removed line-level material/labour pricing, VAT and separate professional-fee presentation; and set one discounted lump-sum amount of ₦5,000,000.00 covering the listed scope.
+- **Authorization:** Principal supplied the changes in the active conversation. Documents remain drafts; no promotion or external delivery performed.
+- **Verified:** Fresh PDF rendering produced quotation 2 pages and invoice 1 page. Independent @qa/vera [claude-code] approved client naming, A/B/C-only scope, absence of A8/gypsum, single ₦5,000,000.00 lump sum, absence of VAT/professional-fee lines, 12px body text, pagination and draft safeguards.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Client contact details remain placeholders; quotation acceptance and principal approval are required before the invoice may be issued or paid.
+- **Recommendations for the next agent:** Keep both documents together as the current lump-sum draft family and re-render both together if any scope, client or commercial term changes.
+
+### 2026-08-21 — @lead/vector [codex] — Afuze lump-sum amount revision
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `client-jobs`
+- **Task:** Revise the current Afuze residence quotation and draft invoice lump sum from ₦5,000,000.00 to ₦5,300,000.00.
+- **Files modified:** `QTE-2026-002` and `INV-2026-AFUZE-001` HTML/PDF drafts; client-jobs memory files; coordination board; this report log.
+- **Summary:** Updated every client-facing total to one discounted lump sum of ₦5,300,000.00. The original A/B/C scope, Engineer C. K. Musa naming, no-VAT/no-separate-professional-fee structure, 12px body scale and draft safeguards are unchanged.
+- **Authorization:** Principal supplied the revised lump-sum amount in the active conversation. Documents remain drafts; no promotion or external delivery performed.
+- **Verified:** Fresh PDF rendering produced quotation 2 pages and invoice 1 page; extracted PDF text contains the revised amount and no stale ₦5,000,000.00; references, client name, scope exclusions and invoice safeguards pass; `git diff --check` is clean. Independent @qa/vera approved all criteria and visually confirmed no clipping or overlap.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Client contact details remain placeholders; quotation acceptance and principal approval are required before the invoice may be issued or paid.
+- **Recommendations for the next agent:** Treat ₦5,300,000.00 as the current Afuze lump-sum total and keep both drafts synchronized after any future revision.
+
+### 2026-08-21 — @lead/vector [codex] — Afuze short-form invoice
+- **Model:** OpenAI Codex, desktop workspace
+- **Workspace:** `client-jobs`
+- **Task:** Create a second, shorter Afuze invoice using a generic scope list.
+- **Files modified:** New `INV-2026-AFUZE-002` HTML/PDF draft; client-jobs memory; coordination board; this report log.
+- **Summary:** Created a one-page invoice for Engineer C. K. Musa at the existing ₦5,300,000.00 lump sum, listing demolition of agreed walls to expand the living room, visitor's room, visitor's toilet, double door, upstairs door, BQ renovations and access-road repairs. No VAT or separate professional fee was added.
+- **Authorization:** Principal requested the additional invoice and supplied the scope wording in the active conversation. The document remains a draft; no external delivery performed.
+- **Verified:** PDF renders to one page; reference, client, amount, seven scope items and draft safeguards pass extracted-text checks. Independent @qa/vera approved the source and PDF and found no clipping or overlap.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Client phone and email remain placeholders; quotation acceptance and principal approval are required before issue or payment.
+- **Recommendations for the next agent:** Keep `INV-2026-AFUZE-002` as the concise alternative invoice and preserve the ₦5,300,000.00 no-VAT lump-sum structure unless the principal instructs otherwise.
+>>>>>>> 2acd5212fb0ed3e2f7a76bbe190a604e684bc675
