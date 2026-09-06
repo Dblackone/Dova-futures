@@ -623,7 +623,7 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Task:** Create a personal digital business card for Vollmann Akarakiri that links directly to his portfolio and contact channels.
 - **Files modified:** external website branch `feat/vector/personal-digital-card` (`README.md`, `site-audit.spec.js`, `vollmann/index.html`, vCard, QR and OG assets); website workspace memory; coordination board; this report log.
 - **Summary:** Added a standalone `/vollmann/` page using the existing Dova field-journal design and real portrait/portfolio assets. The page includes full/construction/interior folios, call/email/WhatsApp actions, native-share and clipboard fallbacks, downloadable contact data, a scannable QR and dedicated social-preview image.
-- **Authorization:** Principal asked to proceed in the active conversation. The website branch is pushed for review; no merge or production deployment was performed.
+- **Authorization:** Principal asked to proceed in the active conversation. External website PR #2 and Hub tracking PR #36 are open; no merge or production deployment was performed.
 - **Verified:** `npm ci`; `node --check server.js`; Playwright 3/3 across 320, 375, 768 and 1280px; MIME/signature checks for vCard, PNG, SVG and PDFs; CRLF vCard; visual desktop/mobile inspection; QR independently decoded to the intended URL; separate QA, general code and JavaScript reviewer agents approved the final state.
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Principal approval is required to merge/deploy. Personal social handles remain omitted because the canonical brand record marks them TBD. Existing npm audit reports three moderate and one high advisory; this feature did not alter dependencies.

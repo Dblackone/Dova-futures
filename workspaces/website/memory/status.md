@@ -14,8 +14,8 @@ retired from this branch; approved shared assets remain under `company/assets/`.
 Verification: `npm ci` completed and two Playwright tests passed in an isolated
 audit clone. Live URL checks confirmed HTTP 200 after the domain handoff.
 
-The personal digital card is ready for principal review on the external website
-branch `feat/vector/personal-digital-card` at commit `9011324`. It adds the
+The personal digital card is ready for principal review in external website
+PR #2 (`feat/vector/personal-digital-card`, commit `9011324`). It adds the
 `/vollmann/` page, portfolio links, direct contact actions, sharing fallbacks, a
 downloadable vCard, a verified QR code and a dedicated social-preview image.
 The branch is pushed but is not merged or deployed.
