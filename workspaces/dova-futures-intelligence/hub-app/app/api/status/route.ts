@@ -7,7 +7,7 @@ export async function GET() {
   }
   return Response.json({
     openai: { configured: Boolean(process.env.OPENAI_API_KEY), model: process.env.OPENAI_MODEL || "gpt-5.4-mini" },
-    oneDrive: { configured: Boolean(process.env.MICROSOFT_CLIENT_ID && process.env.MICROSOFT_TENANT_ID) },
+    oneDrive: { configured: Boolean(process.env.MICROSOFT_CLIENT_ID && process.env.MICROSOFT_TENANT_ID && process.env.ONEDRIVE_ROOT_PATH) },
     workstation: { configured: Boolean(process.env.DOVA_WORKSTATION_URL) },
   }, { headers: { "cache-control": "no-store" } });
 }

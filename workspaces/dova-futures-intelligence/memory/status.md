@@ -1,17 +1,7 @@
 # Status
 
 **Project:** DOVA Futures Intelligence  
-<<<<<<< HEAD
-**Status:** Active - OpenClaw/DOVA Intelligence product direction assessed; implementation awaits principal review.
-**Last verified:** 2026-09-01
-
-The desktop shell presents DOVA Intelligence using DOVA Futures brand colours, manual controls, project-file context, activity visibility, approval handling, and a read-only project index sourced from the repository registry. The dependency-free browser dashboard in `hub/` presents workspace status, code locations, next actions, and registry coverage from a refreshable local snapshot. The provider-neutral core remains independent of API credentials. `drafts/DOVA_OPENCLAW_AI_PRODUCT_BRIEF.md` now assesses the installed OpenClaw/LM Studio/Ollama environment and recommends using OpenClaw as the runtime beneath a DOVA-specific product layer rather than building a competing agent runtime.
-
-**Verification:** Read-only system probes confirmed OpenClaw `2026.7.1-2`, valid configuration, a stopped Gateway, local LM Studio model availability, and the laptop's 32 GB RAM / RTX 4060 8 GB VRAM profile. No implementation or provider configuration was changed during this assessment.
-
-**Handoff note:** Legacy MARK/JARVIS identifiers remain in compatibility/history code only; the visible UI, active prompt, and repository index use DOVA Intelligence naming. Both product briefs are unapproved and must not be treated as implementation authority until the principal confirms the OpenClaw boundary, first workflow, provider/runtime and privacy policy.
-=======
-**Status:** Active — private Hub and cloud intelligence operational; local orchestration/tool suite preserved; OneDrive and workstation bridges pending.
+**Status:** Active — private Hub and cloud intelligence operational; live GitHub and read-only OneDrive views implemented in draft PR #35; Microsoft registration, merge and deployment pending.
 **Last verified:** 2026-08-24 — @lead/vector [codex]
 
 The workspace retains the provider-neutral local gateway and repository-scoped
@@ -25,11 +15,20 @@ mobile Hub journeys and a server-side OpenAI Responses API adapter using a
 dedicated secret key and `gpt-5.4-mini`. The complete design reference remains
 in `design/hub-ux-prototype/`.
 
-OneDrive/Microsoft Graph and the workstation bridge are not connected. The Hub
-must not claim access to private project files until the required credentials,
-folder scope, and approval boundaries are configured.
+Microsoft Graph sign-in, project-folder listing, file search and OneDrive web
+opening are implemented with delegated `User.Read` + `Files.Read` only. They
+remain honestly disconnected until the owner registers the Entra application,
+adds the deployment settings and approves the root path. Document writes and
+the workstation bridge remain disabled.
 
 Verification includes 23 local intelligence tests, integration health checks,
-the Hub production build, two Hub server-render/secret-boundary tests, and a
-live cloud-intelligence smoke check.
->>>>>>> 2acd5212fb0ed3e2f7a76bbe190a604e684bc675
+the Hub production build, five Hub server/authentication tests, ESLint, clean
+npm audits, and live retrieval of all three GitHub repository records.
+
+## OpenClaw assessment — 2026-09-01
+
+The separate `drafts/DOVA_OPENCLAW_AI_PRODUCT_BRIEF.md` assesses the installed OpenClaw/LM Studio/Ollama environment and recommends OpenClaw as the runtime beneath a DOVA-specific product layer. Read-only probes recorded OpenClaw `2026.7.1-2`, valid configuration, a stopped Gateway, local LM Studio models, and 32 GB RAM / RTX 4060 8 GB VRAM. No implementation or provider configuration changed. Both product briefs remain unapproved; runtime, first workflow, provider and privacy decisions require principal review. This assessment does not replace the existing private Hub implementation.
+
+## Repository reconciliation — 2026-09-07
+
+PR #34 is already merged. PR #35 is being reconciled with current main; integration deployment and Microsoft registration remain pending. Historical verification above records the original implementation checks.

@@ -556,7 +556,6 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Website branch requires principal/checker review and merge; Pages/custom-domain behaviour and backend hosting still need verification. Preorder destination repository is still missing; payment/admin independent QA, persistence choice, test order and Render setup remain open. Scratch inspection checkout remains outside the hub source tree.
 - **Recommendations for the next agent:** Review the website pull request, then provide/create the preorder destination repository. Migrate preorder only after its acceptance gates and independent security/QA review are satisfied; remove hub duplicates only after destination deployments are verified.
-<<<<<<< HEAD
 ### 2026-09-01 — @lead/vector [codex] — OpenClaw/DOVA Intelligence product assessment
 - **Model:** OpenAI Codex desktop
 - **Workspace:** `dova-futures-intelligence`
@@ -567,7 +566,6 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Principal decisions in brief §12; Gateway recovery; DOVA-specific model evaluation; workspace registry entry; independent checker review after implementation begins.
 - **Recommendations for the next agent:** Do not build a competing orchestrator. After principal approval, recover the Gateway first, benchmark Gemma versus Qwen on sanitised DOVA tasks, then implement one document workflow through supported OpenClaw extension boundaries.
-=======
 
 ### 2026-08-20 — @lead/vector [codex] — standalone preorder migration branch
 - **Model:** OpenAI Codex, desktop workspace
@@ -628,4 +626,3 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Client phone and email remain placeholders; quotation acceptance and principal approval are required before issue or payment.
 - **Recommendations for the next agent:** Keep `INV-2026-AFUZE-002` as the concise alternative invoice and preserve the ₦5,300,000.00 no-VAT lump-sum structure unless the principal instructs otherwise.
->>>>>>> 2acd5212fb0ed3e2f7a76bbe190a604e684bc675
