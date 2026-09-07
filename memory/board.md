@@ -30,7 +30,7 @@ _(empty)_
 |------|-------|--------|-------|
 | **HERO-01** Build before/after reveal component | @build/forge | `feat/forge/hero-reveal` | All 10 AC passed. ✅ APPROVED by @qa/vera 2026-06-14 |
 | **OPS-01** Repo reorg: company hub + collaboration scaffolding + folder renames | @company-ops | `claude/repo-organization-master-k7k9nm` | All 8 acceptance criteria (A–H) passed. ✅ APPROVED by @qa/vera 2026-07-18. Minor watch-item: pre-existing dead link (not caused by this branch) logged to memory/triage.md. |
-| **PERSONAL-CARD-01** Personal digital business card | @lead/vector [codex] | `feat/vector/personal-digital-card` | ✅ **APPROVED** 2026-09-06 — responsive card, portfolio/contact actions, share fallbacks, OG image, CRLF vCard and QR target pass independent verification — verified by @qa/vera [codex] |
+| **PERSONAL-CARD-01** Personal digital portfolio card | @lead/vector [codex] | external PR #2 · `9011324` | Technical review APPROVED: responsive card, portfolio/contact actions, share fallbacks, OG image, CRLF vCard and QR decode pass. Principal merge/deploy approval pending. |
 
 ## Merged ✅
 _(empty)_
@@ -47,3 +47,7 @@ read-only from client-jobs, so the library itself was NOT changed. A run in that
 workspace should apply the same scaling across all ten templates plus
 `documents/_ds/`, and check page counts — on RPT-2026-DEMO-001 the increase added
 a page (7 → 8).
+
+## 2026-09-07 — merge reconciliation
+
+@lead/vector [codex] owns `codex/resolve-september-conflicts` for the principal's request to resolve repository conflicts and merge. Scope spans PR #35 (intelligence), PR #36 (website handoff), and already-committed conflict markers in shared/client history. Existing log entries are preserved; no client deliverable or external website source changes are included. Independent integration review is in progress.

@@ -1,14 +1,13 @@
 # Done Log
 
-<<<<<<< HEAD
 - 2026-09-01 - Assessed the installed OpenClaw, LM Studio and Ollama environment; reviewed recent DOVA/Codex workflows; produced `drafts/DOVA_OPENCLAW_AI_PRODUCT_BRIEF.md` with the recommended OpenClaw runtime boundary, DOVA feature set, local/hybrid model strategy, MCP integration plan, phased delivery gates and principal decisions. Generated a preview-only high-fidelity DOVA Intelligence UI concept outside the repository. No OpenClaw configuration or implementation was changed. Agent: @lead/vector [codex] (GPT-5).
-=======
+- 2026-08-24 — Implemented draft PR #35 with owner-authenticated live GitHub metadata for the Hub, website and pre-order repositories plus Microsoft Entra SPA/PKCE scaffolding for read-only OneDrive project listing, file search and OneDrive web opening. Added five server/authentication tests; production build, ESLint and npm audit pass. No OneDrive write permission or document output was enabled. — by @lead/vector [codex]
+
 - 2026-08-19 - Installed the six requested tool families as a repository-scoped integration suite: Agent Reach, Hallmark and Career Ops router skills; nine HyperFrames core skills; 25 World Monitor operational skills; locked Node CLIs; a commit-pinned Agent Reach virtual environment; and a Voicebox localhost MCP/HTTP boundary. Verified 23 intelligence tests, integration doctor, CLI help, World Monitor tool discovery, npm audit and pip dependency health. Voicebox desktop runtime and authenticated/optional channels remain deliberately unconfigured; independent review is pending. Agent: @lead/vector [codex] (GPT-5).
 
 - 2026-08-24 — Built and privately deployed the responsive DOVA Hub application with product/workspace navigation, truthful integration states, an owner-only access boundary, and a tested server-side OpenAI Responses API adapter using a dedicated secret key. OneDrive and workstation access remain disconnected by design. — by @lead/vector [codex]
 
 - 2026-08-24 - Promoted the dependency-free read-only overview to repository-level `hub/`; preserved the 18-screen desktop and 18-screen mobile UX prototype in `design/hub-ux-prototype/` with Canva references. No OneDrive, OpenAI, authentication, write workflow, or DOVA Intelligence runtime was implemented. Agent: @lead/vector [codex] (GPT-5).
->>>>>>> 2acd5212fb0ed3e2f7a76bbe190a604e684bc675
 
 - 2026-08-19 - Built the first read-only offline hub dashboard in `hub/`, with a dependency-free HTML interface, refreshable `build_snapshot.py` generator, registry-coverage warning, search/filter controls, and workspace context/status links. Added snapshot parser coverage; verification passes with 23 tests and Node snapshot validation. Website and preorder migration remain deferred until destination repositories are supplied. Agent: @lead/vector [codex] (GPT-5).
 
@@ -21,3 +20,6 @@
 - 2026-08-03 - Relocated the prototype into `workspaces/dova-futures-intelligence/`; added a pending local-action approval control that resumes approved core writes; expanded gateway coverage to 20 dependency-free tests. Agent: @qa/quartz [codex] (GPT-5).
 
 - 2026-08-03 — Added provider-neutral contracts, capability registry, policy engine, provider router, headless gateway, workspace-scoped filesystem capabilities, and prototype UI bridge. Verified with 18 dependency-free tests. Agent: Codex / GPT-5.
+
+- 2026-09-07 — Reconciled live integration PR #35 with main, preserved OpenClaw and Hub history, and removed committed conflict delimiters from intelligence/shared/client logs. Local core verification: 23 tests pass. Integration review identified the missing MSAL v5 redirect bridge; correction and final validation are in progress. — @lead/vector [codex]
+- 2026-09-07 — Final reconciliation validation: 23 core tests and 6 Hub rendered/auth tests pass; production build succeeds including the new MSAL redirect bridge. npm audit reports zero vulnerabilities after targeted lock updates. Independent checker approved both merge resolutions and the bridge correction. Real Microsoft sign-in remains untested until Entra registration and deployment. — @lead/vector [codex]

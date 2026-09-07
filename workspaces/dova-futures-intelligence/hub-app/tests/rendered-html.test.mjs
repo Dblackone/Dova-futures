@@ -30,6 +30,21 @@ test("server-renders the DOVA Hub shell", async () => {
   assert.doesNotMatch(html, /sk-proj-|OPENAI_API_KEY/);
 });
 
+test("serves the Microsoft bridge without a Hub sign-in gate or COOP", async () => {
+  const app = await worker();
+  const response = await app.fetch(
+    new Request("http://localhost/auth/redirect", { headers: { accept: "text/html" } }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("cross-origin-opener-policy"), null);
+  const html = await response.text();
+  assert.match(html, /Completing Microsoft sign-in/);
+  assert.doesNotMatch(html, /Your work, one clear view/);
+  assert.match(html, /<script[^>]*src=/);
+});
+
 test("reports integration state without returning secrets", async () => {
   const app = await worker();
   const response = await app.fetch(
@@ -59,6 +74,8 @@ test("rejects anonymous API requests before using integrations", async () => {
   const app = await worker();
   for (const [path, init] of [
     ["/api/status", undefined],
+    ["/api/github", undefined],
+    ["/api/onedrive/config", undefined],
     ["/api/intelligence", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ prompt: "test" }) }],
   ]) {
     const response = await app.fetch(
@@ -68,4 +85,18 @@ test("rejects anonymous API requests before using integrations", async () => {
     );
     assert.equal(response.status, 401, path);
   }
+});
+
+test("reports an honest disconnected OneDrive configuration", async () => {
+  const app = await worker();
+  const response = await app.fetch(
+    new Request("http://localhost/api/onedrive/config", { headers: authenticatedHeaders }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+  assert.equal(response.status, 200);
+  const payload = await response.json();
+  assert.equal(payload.configured, false);
+  assert.deepEqual(payload.scopes, ["User.Read", "Files.Read"]);
+  assert.equal("clientSecret" in payload, false);
 });
