@@ -26,3 +26,5 @@ occupied the Hub repository's deploy paths; that constraint was retired by the
 separations verified on 2026-08-24. Intelligence code remains isolated in this
 workspace while the read-only overview is published from repository-level
 `hub/`.
+
+- 2026-09-07 — Reconcile PRs #35/#36 through one isolated merge branch, retaining both parent histories and all historical log entries; remove accidental committed conflict delimiters and keep OpenClaw assessment separate from existing Hub implementation. Refresh only vulnerable Browserslist/fflate transitive lock entries after npm audit reported high/moderate issues. Principal authorised conflict resolution and merge. — @lead/vector [codex]

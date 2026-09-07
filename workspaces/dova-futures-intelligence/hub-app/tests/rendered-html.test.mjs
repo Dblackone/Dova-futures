@@ -30,6 +30,21 @@ test("server-renders the DOVA Hub shell", async () => {
   assert.doesNotMatch(html, /sk-proj-|OPENAI_API_KEY/);
 });
 
+test("serves the Microsoft bridge without a Hub sign-in gate or COOP", async () => {
+  const app = await worker();
+  const response = await app.fetch(
+    new Request("http://localhost/auth/redirect", { headers: { accept: "text/html" } }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("cross-origin-opener-policy"), null);
+  const html = await response.text();
+  assert.match(html, /Completing Microsoft sign-in/);
+  assert.doesNotMatch(html, /Your work, one clear view/);
+  assert.match(html, /<script[^>]*src=/);
+});
+
 test("reports integration state without returning secrets", async () => {
   const app = await worker();
   const response = await app.fetch(

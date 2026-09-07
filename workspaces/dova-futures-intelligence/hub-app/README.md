@@ -24,7 +24,9 @@ Create an ignored `.env.local` with `OPENAI_API_KEY` to enable DOVA Intelligence
 
 ## Microsoft OneDrive registration
 
-Create a Microsoft Entra app registration for a single-page application, then add the exact Hub origins as redirect URIs (the private Sites origin now and `https://hub.dovafutures.com` after DNS verification). Grant delegated `User.Read` and `Files.Read`; do not create a client secret for this browser PKCE flow.
+Create a Microsoft Entra app registration for a single-page application, then register each Hub origin followed by `/auth/redirect` as a redirect URI. Register the private Sites URL with that path now and `https://hub.dovafutures.com/auth/redirect` after DNS verification. For local development, register the actual local origin and port followed by `/auth/redirect`. Protocol, host, port and path must match exactly, with no trailing slash. Grant delegated `User.Read` and `Files.Read`; do not create a client secret for this browser PKCE flow.
+
+MSAL v5 uses the bundled `/auth/redirect` page to return popup and silent authentication responses to the Hub. Keep this route free of Hub sign-in gates, MSAL providers and application navigation. Hosting must serve it without `Cross-Origin-Opener-Policy` headers. See [Microsoft's redirect bridge setup](https://learn.microsoft.com/en-us/entra/msal/javascript/browser/redirect-bridge). Deployment and the corresponding Entra registration update are both required before testing real Microsoft sign-in.
 
 Configure these server settings in the Hub deployment:
 

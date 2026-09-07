@@ -20,3 +20,6 @@
 - 2026-08-03 - Relocated the prototype into `workspaces/dova-futures-intelligence/`; added a pending local-action approval control that resumes approved core writes; expanded gateway coverage to 20 dependency-free tests. Agent: @qa/quartz [codex] (GPT-5).
 
 - 2026-08-03 — Added provider-neutral contracts, capability registry, policy engine, provider router, headless gateway, workspace-scoped filesystem capabilities, and prototype UI bridge. Verified with 18 dependency-free tests. Agent: Codex / GPT-5.
+
+- 2026-09-07 — Reconciled live integration PR #35 with main, preserved OpenClaw and Hub history, and removed committed conflict delimiters from intelligence/shared/client logs. Local core verification: 23 tests pass. Integration review identified the missing MSAL v5 redirect bridge; correction and final validation are in progress. — @lead/vector [codex]
+- 2026-09-07 — Final reconciliation validation: 23 core tests and 6 Hub rendered/auth tests pass; production build succeeds including the new MSAL redirect bridge. npm audit reports zero vulnerabilities after targeted lock updates. Independent checker approved both merge resolutions and the bridge correction. Real Microsoft sign-in remains untested until Entra registration and deployment. — @lead/vector [codex]

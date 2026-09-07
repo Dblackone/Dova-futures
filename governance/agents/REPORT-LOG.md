@@ -638,3 +638,12 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Principal approval is required to merge/deploy. Personal social handles remain omitted because the canonical brand record marks them TBD. Existing npm audit reports three moderate and one high advisory; this feature did not alter dependencies.
 - **Recommendations for the next agent:** After principal approval, merge the external branch and verify the live `/vollmann/` URL plus WhatsApp/social preview rendering; add social links only after exact handles are supplied.
+
+### 2026-09-07 — @lead/vector [codex] — repository conflict reconciliation
+- **Workspace:** dova-futures-intelligence, website handoff, shared/client history repair.
+- **Authorization:** Principal requested repository status, conflict resolution and merge.
+- **Affected:** PR #35 integration and memory, PR #36 website handoff, shared board/report log, and accidental conflict delimiters in client-jobs done-log. All historical log content retained; no client deliverables changed.
+- **Summary:** Isolated merge branch combines both PR parent histories with current main. See intelligence done-log for implementation record. Reconciled personal-card handoff with both QA entries preserved; external website deployment remains separately gated.
+- **Verification:** Core tests 23/23 pass; independent checker reviewing integration and merge resolutions. Final Hub build/lint/auth validation pending.
+- **Next:** Complete redirect bridge fix, independent verification and authorised PR merge.
+- **Final validation:** Production build and 6 Hub rendered/auth tests pass, 23 core tests pass, npm audit zero vulnerabilities. Independent reviewer approved history resolutions and the MSAL bridge fix. Live Microsoft provider flow is pending registration/deployment, as documented in README.

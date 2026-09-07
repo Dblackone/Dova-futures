@@ -43,7 +43,7 @@ export function useOneDrive(): OneDriveState {
           auth: {
             clientId: nextConfig.clientId,
             authority: `https://login.microsoftonline.com/${nextConfig.tenantId}`,
-            redirectUri: window.location.origin,
+            redirectUri: `${window.location.origin}/auth/redirect`,
           },
           cache: { cacheLocation: "sessionStorage" },
         });
