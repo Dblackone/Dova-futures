@@ -1,7 +1,7 @@
 # next-up.md — Prioritised Queue (client-jobs)
 
-1. [ ] **ROAD: client decision on QTE-2026-001** — quote is approved by the
-   principal and ready; once Mr. C. K. Musa picks a pavement alternate
+1. [ ] **ROAD: client decision on QTE-2026-001** — quote is submitted to
+   C. K. Musa for the Afuze site; once the client picks a pavement alternate
    (A concrete ₦6,014,625 / B interlocking ₦5,369,625, recommended) and accepts:
     edit the file to remove the unselected alternate's row/totals, then draft
     `INV-2026-ROAD-001` for the agreed payment stage. _Do not invoice before
@@ -15,7 +15,7 @@
    INV-2026-POOL-001..005 are delivered/paid? Log outcomes.
 3. [ ] **OSG: principal review** — RPT-2026-OSG-001 + cost estimate need the
    principal's review/approval before anything is presented to the Grail
-   Movement.
+   Message Foundation.
 4. [ ] **Populate FHS Pool job folders** — remaining drawings and site photos
    into `02-Drawings/`, `04-Photos/`.
 
@@ -65,6 +65,10 @@
    Confirm the contact details, measured coping length, felt coverage, primer
    dosage, sand allowance and labour/access constraints. No job code exists and
    none of the documents may be issued externally before principal approval.
+
+8. [ ] **Project inventory confirmations** — confirm Afuye spelling, “Seku
+   Mall” spelling, Uselu/Ikenne/Iselewu details,
+   Renovation Akure identity, and the meaning of the MTR/CFO belt report note.
 
 ## Someday / backlog
 - Backfill older completed projects (see `assets/Project Pictures/`) as

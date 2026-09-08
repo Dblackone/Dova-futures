@@ -1,15 +1,15 @@
 # status.md — Current Snapshot (client-jobs)
 
-**Last updated:** 2026-08-21 — ICM roof-repairs report, quotation and mobilisation-invoice drafts revised and verified
+**Last updated:** 2026-09-07 — project hierarchy and client/site corrections recorded
 **Health:** 🟢 on track
 
 ## Now
-- **4 active jobs:**
+- **4 formal project records:**
   - **DFL-2026-POOL-001** (FHS Hotel Swimming Pool, Ibafo) — invoices
     INV-001..005 issued, VQ-2026-POOL-001 waterfall variation quoted,
     PROGRESS-REPORT-001 (June 2026) filed, HNM July correspondence on file.
   - **DFL-2026-ROAD-001** (C. K. Musa access road erosion repair, Afuze, Edo) —
-    QTE-2026-001 complete and **approved in form by the principal** (ROAD-10).
+    quotation submitted; awaiting client response and pavement alternate choice.
     Items 1–4 firm, subtotal ₦2,295,000; pavement 200m² priced as alternates:
     A concrete ₦6,014,625 / B interlocking ₦5,369,625 (recommended). Nothing
     sent to the client by an agent — presenting is the principal's action. A
@@ -17,9 +17,23 @@
     companion INV-2026-AFUZE-001 and short-form INV-2026-AFUZE-002; all are pending principal review. The
     package now uses the original A/B/C scope and a discounted ₦5,300,000
     lump-sum total with no VAT or separate professional-fee line. INV-2026-AFUZE-002 presents the same total against seven concise scope headings.
-  - **GM-2026-OSG-001** (Grail Movement Hall of Worship, Osogbo — altar +
-    structure remodification) — scope of works, cost-estimate working notes,
-    and RPT-2026-OSG-001 project report drafted.
+  - **GM-2026-OSG-001** (Grail Message Foundation Hall of Worship, Osogbo —
+    altar + structure remodification) — design/planning stage; scope of works,
+    cost-estimate working notes and RPT-2026-OSG-001 drafted.
+
+## Corrected hierarchy
+
+- `projects/C-K-Musa_Afuze/` is the parent folder for the access-road
+  and Afuze residence renovation sub-projects.
+- `projects/Grail-Message-Foundation-Projects/` is the Grail Message Foundation
+  parent folder, including the Osogbo Hall of Worship and Yellow Bush Ikatemo
+  planning record.
+- `projects/Broll-Properties_Ikeja-City-Mall/` is the parent for the multiple
+  Ikeja City Mall submissions, including tile demolition, roof repairs, fire
+  detection, Body Shop outlets and conference-room design.
+- `projects/PROJECT-INDEX.md` and
+  `projects/Portfolio-and-Design-Studies/PORTFOLIO-STATUS.md` record the
+  corrected names, aliases and unresolved identification points.
 
 ## Pipeline (prospective — no job code issued yet)
 
@@ -75,7 +89,7 @@
 - HW: job **DFL-2026-POOL-002** (Homework — Swimming Pool, 5.4×3.2m) opened and
   filed. Combined **Report & Quotation** `RPT-2026-POOL-002` (Contract Sum
   **₦7,567,893**, 7.5% VAT incl.; running header/footer + page numbers) now
-  lives in `projects/DFL-2026-POOL-002_Homework_Swimming-Pool/01-Documents/`.
+  lives in `projects/Homework/DFL-2026-POOL-002_Swimming-Pool/01-Documents/`.
   Registered (Seq 002), added to PROJECT.md. Only client contact/address +
   Reviewed/Client-Acceptance signatures remain to complete before presentation.
 - ROAD-10: principal approved final 3-page QTE-2026-001 PDF (2026-07-05).
