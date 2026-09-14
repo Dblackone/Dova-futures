@@ -34,6 +34,55 @@ const puppeteer = require('puppeteer-core');
 const { PDFDocument } = require('pdf-lib');
 const fs = require('fs');
 const path = require('path');
+const { pathToFileURL } = require('url');
+
+// Invoice layout is sourced from the actual template, not another CSS copy.
+const invoiceTemplate = path.resolve(__dirname, '../../../documents/templates/03-Payment-Invoice.html');
+async function renderInvoice(page, opts, tmpDir) {
+  const css = fs.readFileSync(invoiceTemplate, 'utf8').match(/<style id="invoice-print-standard">([\s\S]*?)<\/style>/)[1];
+  await page.evaluate(() => {
+    document.querySelector('#invoice-print-standard')?.remove();
+    const paper = document.querySelector('[data-paper]');
+    if (!paper) throw new Error('Invoice must use canonical template [data-paper]');
+    paper.parentElement.setAttribute('data-wrap', '');
+    // Older corrected invoices hid their own footer for the report renderer.
+    // Invoice mode has no margin-box footer, so retain the original legal/draft strip.
+    for (const el of paper.querySelectorAll('[data-no-print]')) {
+      if (el.textContent.includes('RC No.') && /Page\s+1/.test(el.textContent)) el.removeAttribute('data-no-print');
+    }
+  });
+  const style = await page.addStyleTag({ content: css });
+  await style.evaluate(el => { el.id = 'invoice-print-standard'; });
+  await page.emulateMediaType('print');
+  const layout = await page.evaluate(() => {
+    const paper = document.querySelector('[data-paper]');
+    paper.style.zoom = '1';
+    const maxHeight = 276 * 96 / 25.4; // 1mm rounding reserve inside 277mm printable height.
+    const height = paper.getBoundingClientRect().height;
+    const scale = Math.min(1, maxHeight / height);
+    if (scale < 0.85) throw new Error('Invoice exceeds one-page capacity; shorten descriptions/layout. No PDF saved.');
+    paper.style.zoom = String(scale);
+    const bounds = paper.getBoundingClientRect();
+    const overflow = [...paper.querySelectorAll('*')].some(el => {
+      if (!el.getClientRects().length) return false;
+      const r = el.getBoundingClientRect();
+      return r.left < bounds.left - 1 || r.right > bounds.right + 1 || r.bottom > bounds.bottom + 1;
+    });
+    if (overflow || bounds.height > maxHeight + 1) throw new Error('Invoice content overflows printable bounds. No PDF saved.');
+    return { scale, height: bounds.height, width: bounds.width };
+  });
+  const candidate = path.join(tmpDir, 'invoice.pdf');
+  await page.pdf({ path: candidate, format: 'A4', preferCSSPageSize: true,
+    printBackground: true, displayHeaderFooter: false,
+    margin: { top: '10mm', bottom: '10mm', left: '10mm', right: '10mm' } });
+  const pdf = await PDFDocument.load(fs.readFileSync(candidate));
+  if (pdf.getPageCount() !== 1) throw new Error(`Invoice must be one page, got ${pdf.getPageCount()}. No PDF saved.`);
+  // Publish only after both geometry and actual PDF pagination pass.
+  fs.copyFileSync(candidate, opts.out);
+  if (opts['html-out']) fs.writeFileSync(path.resolve(opts['html-out']), await page.content());
+  console.log(`Invoice layout: ${JSON.stringify(layout)}; 10mm safe margins; one in-document footer`);
+  return { invoice: true };
+}
 
 const CHROME = process.env.CHROME_PATH
   || 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
@@ -101,9 +150,11 @@ async function renderPasses(opts, tmpDir) {
   });
   try {
     const page = await browser.newPage();
-    await page.goto('file:///' + opts.src.replace(/\\/g, '/'), { waitUntil: 'networkidle0', timeout: 60000 });
+    await page.goto(pathToFileURL(opts.src).href, { waitUntil: 'networkidle0', timeout: 60000 });
     try { await page.evaluate(() => document.fonts.ready); } catch { /* fonts API unavailable — proceed */ }
 
+    const isInvoice = /^INV-/i.test(opts.ref) || await page.$('[data-document-type="invoice"]');
+    if (isInvoice) return await renderInvoice(page, opts, tmpDir);
     const common = { format: 'A4', printBackground: true, margin: MARGIN };
     const withHF = path.join(tmpDir, 'pass-header.pdf');
     const firstPage = path.join(tmpDir, 'pass-first-page.pdf');
@@ -149,7 +200,8 @@ async function splice({ withHF, firstPage }, outPath) {
   const opts = parseArgs(process.argv.slice(2));
   const tmpDir = fs.mkdtempSync(path.join(require('os').tmpdir(), 'dova-pdf-'));
   try {
-    const total = await splice(await renderPasses(opts, tmpDir), opts.out);
+    const passes = await renderPasses(opts, tmpDir);
+    const total = passes.invoice ? 1 : await splice(passes, opts.out);
     console.log(`OK pages=${total} -> ${opts.out}`);
     console.log(total === 1
       ? 'page 1: letterhead + standard footer'

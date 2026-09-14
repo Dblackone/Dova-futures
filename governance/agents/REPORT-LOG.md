@@ -647,3 +647,37 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Verification:** Core tests 23/23 pass; independent checker reviewing integration and merge resolutions. Final Hub build/lint/auth validation pending.
 - **Next:** Complete redirect bridge fix, independent verification and authorised PR merge.
 - **Final validation:** Production build and 6 Hub rendered/auth tests pass, 23 core tests pass, npm audit zero vulnerabilities. Independent reviewer approved history resolutions and the MSAL bridge fix. Live Microsoft provider flow is pending registration/deployment, as documented in README.
+
+### 2026-09-08 — @lead/vector [codex] — Afuze payments-received invoice
+- **Model:** OpenAI Codex desktop
+- **Workspace:** `client-jobs`
+- **Task:** Create a payment invoice recording two payments received from Engineer C. K. Musa.
+- **Files modified:** New `INV-2026-AFUZE-004` HTML/PDF draft; client-jobs memory; coordination board; this report log.
+- **Summary:** Created a one-page payment acknowledgement against the Afuze Residence Renovation Works lump sum. It records ₦4,000,000 received on 25 August 2026 and ₦1,000,000 received on 8 September 2026, for ₦5,000,000 total received and ₦300,000 outstanding against ₦5,300,000. No VAT or separate professional fee was added.
+- **Authorization:** Principal supplied both received-payment amounts and relative dates in the active conversation. The document remains a draft; no external delivery performed.
+- **Verified:** Fresh PDF rendering produced one page. Extracted text and arithmetic checks passed; visual review found no clipping or overlap. Independent @qa/vera returned APPROVE on the reference, client, dates, amounts, balance, Providus account details, no-fee wording and draft status.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Confirm the two payment entries against the bank record before authorising the draft for issue.
+- **Recommendations for the next agent:** Preserve the payment acknowledgement label and update both received total and outstanding balance together if another payment is recorded.
+
+### 2026-09-13 - @lead/vector [codex]
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** client-jobs
+- **Task:** Generate a consolidated FHS Hotel swimming-pool invoice and save it in the existing project document folder.
+- **Files modified:** `projects/FHS-Hotel-Projects/DFL-2026-POOL-001_FHS-Hotel_Swimming-Pool-Ibafo/01-Documents/INV-2026-POOL-006.html`; `projects/FHS-Hotel-Projects/DFL-2026-POOL-001_FHS-Hotel_Swimming-Pool-Ibafo/01-Documents/INV-2026-POOL-006.pdf`; client-jobs memory files; this file.
+- **Summary of changes:** Created the requested folder and populated the canonical payment-invoice template with ₦794,050 existing balance, ₦115,000 Aqua Seal/transport expenditure and ₦85,000 concrete mixer rental. Excluded the unaccepted waterfall variation and used Providus Bank details.
+- **Verified:** Rendered successfully to a 2-page PDF; total reconciles to ₦994,050; no generic invoice placeholders remain; `git diff --check` passed.
+- **Authorization:** Direct principal instruction in the active conversation authorized generation and storage; no external delivery performed.
+- **Unresolved issues:** Principal should confirm that INV-006 replaces/consolidates the relevant unpaid items in INV-001..005 before sending, to avoid double billing.
+- **Recommendations for the next agent:** Obtain principal confirmation, then present/send INV-006 through the approved client channel and record payment outcome.
+
+### 2026-09-13 - @lead/vector [codex] — correction
+- **Correction:** The invoice was moved from the mistakenly created `Bravo Features Limited` folder into the existing FHS project `01-Documents/` folder. The mistaken folder is empty; deletion was blocked by the inherited project delete-deny permission. No invoice files remain there and no new client folder was intended.
+
+### 2026-09-13 — @lead/vector [codex] — Canonical invoice print correction
+- **Authority/scope:** Principal explicitly requested source-level invoice fixes and company-folder saving; spans document-templates and client-jobs.
+- **Changed:** Template 03 print CSS; render-pdf.js invoice branch; regression test and INVOICE-STANDARD.md; regenerated POOL-006 HTML/PDF; workspace status/history.
+- **Evidence:** Prior POOL scale corrections 5a853ca/07c2f57, DEMO and AFUZE wrapper resets, renderer history 6730cb7/fc943c7. Original POOL-006 omitted those fixes.
+- **Verified:** Template + DEMO render one A4 page; oversized fixture rejects without overwriting existing output. POOL-006 full-scale one-page render, 10mm margins, raster visual check and extracted financial/footer strings pass. Report branch still renders roof report with two-pass output (2 pages). No merge or formal self-approval.
+- **Archive correction:** Actual deliverables now at `C:/Users/User/OneDrive/Documents/DOVA Futures Limited/01_Projects/FHS POOL IBAFO/01_Documents/04_Costs_and_Procurement/INV-2026-POOL-006.html` and `.pdf`; no new folder created. Repo copies synchronised. No client delivery.
+- **Next:** Independent cross-model review before merge; confirm consolidation treatment of previous unpaid invoices before client issue to avoid duplicate billing.

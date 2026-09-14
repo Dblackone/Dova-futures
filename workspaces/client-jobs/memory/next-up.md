@@ -8,9 +8,12 @@
     acceptance; confirm the payment split (mobilisation/completion/full) with
     the principal first._
    - **Afuze residence renovation package:** review draft `QTE-2026-002`,
-     companion draft `INV-2026-AFUZE-001`, and short-form draft `INV-2026-AFUZE-002` (discounted lump-sum total ₦5,300,000,
-     original A/B/C scope, no VAT or separate professional-fee line) before
-     any client presentation or invoice issue.
+     companion draft `INV-2026-AFUZE-001`, short-form draft
+     `INV-2026-AFUZE-002`, and payment acknowledgement
+     `INV-2026-AFUZE-004` (₦5,300,000 lump sum; ₦5,000,000 recorded received;
+     ₦300,000 outstanding; no VAT or separate professional-fee line) before
+     any client presentation or invoice issue. Confirm both recorded payment
+     dates and amounts against the bank record before authorising INV-004.
 2. [ ] **POOL: confirm invoice status** — with principal: which of
    INV-2026-POOL-001..005 are delivered/paid? Log outcomes.
 3. [ ] **OSG: principal review** — RPT-2026-OSG-001 + cost estimate need the

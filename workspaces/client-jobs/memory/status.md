@@ -4,19 +4,27 @@
 **Health:** 🟢 on track
 
 ## Now
+- 2026-09-13: Canonical invoice print fix implemented in template + renderer; POOL-006 regenerated as one A4 page with 10mm margins and filed in the company archive `01_Projects/FHS POOL IBAFO/01_Documents/04_Costs_and_Procurement/`. See tools/INVOICE-STANDARD.md. Not sent; formal cross-model review remains pending.
 - **4 formal project records:**
   - **DFL-2026-POOL-001** (FHS Hotel Swimming Pool, Ibafo) — invoices
-    INV-001..005 issued, VQ-2026-POOL-001 waterfall variation quoted,
+    INV-001..006 issued/drafted, VQ-2026-POOL-001 waterfall variation quoted,
     PROGRESS-REPORT-001 (June 2026) filed, HNM July correspondence on file.
+    Consolidated INV-2026-POOL-006 for ₦994,050 is saved under the project’s
+    existing `01-Documents/` folder; it combines the ₦794,050 contract balance,
+    ₦115,000 Aqua Seal/transport expenditure and ₦85,000 concrete mixer rental.
   - **DFL-2026-ROAD-001** (C. K. Musa access road erosion repair, Afuze, Edo) —
     quotation submitted; awaiting client response and pavement alternate choice.
     Items 1–4 firm, subtotal ₦2,295,000; pavement 200m² priced as alternates:
     A concrete ₦6,014,625 / B interlocking ₦5,369,625 (recommended). Nothing
     sent to the client by an agent — presenting is the principal's action. A
     separate Afuze residence renovation package is drafted as QTE-2026-002 with
-    companion INV-2026-AFUZE-001 and short-form INV-2026-AFUZE-002; all are pending principal review. The
+    companion INV-2026-AFUZE-001, short-form INV-2026-AFUZE-002 and payment
+    acknowledgement INV-2026-AFUZE-004; all are pending principal review. The
     package now uses the original A/B/C scope and a discounted ₦5,300,000
-    lump-sum total with no VAT or separate professional-fee line. INV-2026-AFUZE-002 presents the same total against seven concise scope headings.
+    lump-sum total with no VAT or separate professional-fee line.
+    INV-2026-AFUZE-002 presents the same total against seven concise scope
+    headings. INV-2026-AFUZE-004 records ₦4,000,000 received on 25 August 2026
+    and ₦1,000,000 received on 8 September 2026, leaving ₦300,000 outstanding.
   - **GM-2026-OSG-001** (Grail Message Foundation Hall of Worship, Osogbo —
     altar + structure remodification) — design/planning stage; scope of works,
     cost-estimate working notes and RPT-2026-OSG-001 drafted.
@@ -99,7 +107,9 @@
 - ROAD: blocked on client feedback — pavement alternate choice + quote
   acceptance; then draft INV-2026-ROAD-001 once the principal confirms the
   payment stage (do NOT invoice before acceptance).
-- POOL: confirm payment status of INV-001..005 with principal.
+- POOL: confirm payment status of INV-001..006 with principal; INV-006 is a
+  consolidated invoice and should not be charged in addition to superseded
+  unpaid invoice items.
 - OSG: estimate/report await principal review before any client presentation.
 - BROLL: `RPT-2026-DEMO-001` repriced by the principal and rebuilt. Open points
   before it goes out:

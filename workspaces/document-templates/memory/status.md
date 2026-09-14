@@ -6,6 +6,7 @@ collection added; Document System Phase 2 still awaits review
 defect (see "Open / blocked")
 
 ## Now
+- 2026-09-13: At the principal's explicit instruction, invoice template 03 now owns safe A4 print CSS used by the client-jobs renderer. One-page/overflow regressions pass; no other template changed. Formal checker review pending; see client-jobs/tools/INVOICE-STANDARD.md.
 - Design-system rules and the website-facing component contract were extracted
   into `workspaces/website/drafts/DOVA-WEBSITE-HANDOVER.md` for the new website
   repository; canonical token files remain unchanged.
