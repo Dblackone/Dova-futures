@@ -14,8 +14,10 @@
      ₦300,000 outstanding; no VAT or separate professional-fee line) before
      any client presentation or invoice issue. Confirm both recorded payment
      dates and amounts against the bank record before authorising INV-004.
-2. [ ] **POOL: confirm invoice status** — with principal: which of
-   INV-2026-POOL-001..005 are delivered/paid? Log outcomes.
+2. [ ] **POOL: confirm invoice status** — revised `INV-2026-POOL-006` now includes
+   selected VQ-2026-POOL-001 Option C and totals ₦1,617,050. With the principal,
+   confirm which of INV-2026-POOL-001..005 are delivered/paid before sending the
+   consolidated invoice; log outcomes to avoid duplicate billing.
 3. [ ] **OSG: principal review** — RPT-2026-OSG-001 + cost estimate need the
    principal's review/approval before anything is presented to the Grail
    Message Foundation.
@@ -72,6 +74,14 @@
 8. [ ] **Project inventory confirmations** — confirm Afuye spelling, “Seku
    Mall” spelling, Uselu/Ikenne/Iselewu details,
    Renovation Akure identity, and the meaning of the MTR/CFO belt report note.
+
+9. [ ] **LUSH: principal review of feasibility draft** — review
+   `RPT-2026-LUSH-001_DOVA-Futures_Lush-Abuja-Store-Feasibility` (HTML/PDF)
+   before any presentation. If approved, confirm the store area/layout,
+   opening date, budget, Jabi Mall fit-out manual, fire/MEP requirements,
+   final Lush material approvals, samples and supplier evidence; then prepare
+   the detailed procurement/programme schedule. No BOQ, quotation, job code or
+   external delivery is authorised by this draft.
 
 ## Someday / backlog
 - Backfill older completed projects (see `assets/Project Pictures/`) as

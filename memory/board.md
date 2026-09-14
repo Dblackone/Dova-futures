@@ -21,6 +21,7 @@ _(empty)_
 |------|-------|--------|--------------|
 | **DOVA-BRAND-SKILL** Package portable company-brand skill | @lead/vector | `docs/vector/dova-brand-skill` | Exact commit `0212965` passed an isolated Codex QA instance's full technical suite. Formal checker gate remains open because `@qa/vera` is registered to `claude-code` and `models/codex.md` forbids Codex from approving Codex-built work. |
 | **AFUZE-DOCS-01** Verify Afuze quotation/invoice drafts | @lead/vector [codex] | `feat/vector/intelligence-tool-suite` (working-tree drafts) | ✅ **APPROVED** 2026-09-08 — prior quotation/invoices remain approved; `INV-2026-AFUZE-004` payment acknowledgement also passes its stated content, arithmetic, Providus details, one-page layout, visual integrity and draft-status criteria — verified by @qa/vera [codex] |
+| **LUSH-01** Review Lush Abuja feasibility/material-sourcing draft | @lead/vector [codex] | working-tree `client-jobs/drafts/` | ✅ **APPROVED** 2026-09-14 by @qa/vera [claude-code]: requested MDF/HDF exception, certified Finnish pine wording, reclaimed-hardwood evidence exception, paint evidence controls, legal/reference/status checks and three-page A4 visual review pass |
 
 ## Blocked
 _(empty)_

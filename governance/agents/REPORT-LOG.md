@@ -681,3 +681,56 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Verified:** Template + DEMO render one A4 page; oversized fixture rejects without overwriting existing output. POOL-006 full-scale one-page render, 10mm margins, raster visual check and extracted financial/footer strings pass. Report branch still renders roof report with two-pass output (2 pages). No merge or formal self-approval.
 - **Archive correction:** Actual deliverables now at `C:/Users/User/OneDrive/Documents/DOVA Futures Limited/01_Projects/FHS POOL IBAFO/01_Documents/04_Costs_and_Procurement/INV-2026-POOL-006.html` and `.pdf`; no new folder created. Repo copies synchronised. No client delivery.
 - **Next:** Independent cross-model review before merge; confirm consolidation treatment of previous unpaid invoices before client issue to avoid duplicate billing.
+
+### 2026-09-14 — @lead/vector [codex] — Add selected waterfall to INV-2026-POOL-006
+- **Authority/scope:** Principal selected the recommendation in VQ-2026-POOL-001 and instructed that it be included in the last FHS invoice for client sending; update limited to the existing invoice and archive copy.
+- **Changed:** Added Option C — 2ft wall waterfall with integrated LED light — as a fourth invoice line at ₦623,000, with the quote reference and breakdown (₦175,000 unit + ₦448,000 ancillary items) in the notes. Recalculated subtotal and total due from ₦994,050 to ₦1,617,050; removed the prior waterfall-exclusion wording.
+- **Verified:** Canonical renderer regenerated the actual archive PDF as one A4 page at 10mm margins. PDF text extraction confirms ₦1,617,050, ₦623,000, the three existing amounts, Option C, VQ-2026-POOL-001 and Page 1 of 1; no stale exclusion remains. Raster visual inspection found no clipping or spill. Archive and repository PDF hashes match.
+- **Archive:** `C:/Users/User/OneDrive/Documents/DOVA Futures Limited/01_Projects/FHS POOL IBAFO/01_Documents/04_Costs_and_Procurement/INV-2026-POOL-006.html` and `.pdf`.
+- **Unresolved:** This is prepared for principal review and external sending; no client message or delivery was made. Confirm the consolidated treatment of earlier invoice balances before issue to avoid duplicate billing.
+
+### 2026-09-14 — @lead/vector [codex] — Lush Abuja store feasibility report
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** `client-jobs`
+- **Task:** Create a concise feasibility and material-sourcing report for a proposed Lush store at Jabi Mall, Abuja, using the registered company name.
+- **Files modified:** New `workspaces/client-jobs/drafts/RPT-2026-LUSH-001_DOVA-Futures_Lush-Abuja-Store-Feasibility.html` and rendered PDF; client-jobs memory files; coordination board; this report log.
+- **Summary:** Built a three-page report from `documents/templates/01-Report.html`. It merges project understanding with the Lush ethical/material basis, gives a Nigerian/local-hybrid/import schedule with conditional local alternatives, sets substitution, evidence, SONCAP and programme controls, and states the feasibility conclusion and limitations.
+- **Authorization:** Direct principal instruction in the active conversation authorized report creation. The report remains a draft for principal review; no job code, BOQ, quotation, procurement commitment or external delivery was created.
+- **Verified:** `render-pdf.js` produced a three-page A4 PDF; table continuation/header, running headers/footers and page markers were visually checked; PDF text extraction confirms the registered legal name, reference, schedule, controls and no template content placeholders. Independent @qa/vera [claude-code] recheck approved the corrected HTML/PDF: legal name/reference, MDF/HDF exception, Finnish-pine wording, paint evidence criteria, draft status and visual layout all pass.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Confirm store area/layout, opening date, budget, current Jabi Mall fit-out manual, fire/MEP requirements, final Lush approvals, samples, live stock/lead times, certificates and accepted substitutions before detailed design or procurement.
+- **Recommendations for the next agent:** Obtain principal/Lush approval; if approved, move into a detailed BOQ/vendor-verification/procurement programme only after the missing project inputs are supplied.
+
+### 2026-09-14 — @qa/vera [claude-code] — LUSH-01 final independent recheck
+- **Model:** Anthropic Claude Code, Sonnet
+- **Workspace:** `client-jobs`
+- **Task:** Recheck the corrected Lush Abuja feasibility/material-sourcing HTML and PDF against the handoff criteria.
+- **Files modified:** None in the source artifacts; appended the signed verdict to `workspaces/client-jobs/memory/done-log.md` and updated the LUSH-01 coordination card in `memory/board.md` as required.
+- **Summary:** Confirmed the MDF/HDF approval exception, certified Finnish pine wording, and paint alternative evidence criteria. Legal name/reference, placeholder absence, draft-only controls, pagination and visual layout all pass.
+- **Verified:** `pdfinfo` reports 3 pages at A4 size (595.92 × 841.92 pt); independent 120-DPI raster review found no clipping, overlap or orphan spill; `git diff --check` is clean; no debug/secret patterns were found in the target HTML.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Principal review and Lush/client approval remain pending; the document stays a draft and must not be issued externally without approval.
+- **Recommendations for the next agent:** Preserve the current draft-only boundary; obtain principal/Lush approvals and missing store inputs before any BOQ, procurement commitment or job-code promotion.
+
+### 2026-09-14 — @qa/vera [claude-code] — LUSH-01 precision recheck
+- **Model:** Anthropic Claude Code, Sonnet
+- **Workspace:** `client-jobs`
+- **Task:** Recheck the final Lush report after adding the reclaimed-tropical-hardwood exception stated in the guide.
+- **Files modified:** None in the report artifacts; source remains the principal’s draft.
+- **Summary:** Confirmed reclaimed tropical hardwood is permitted only with evidence while new tropical hardwood remains excluded; the prior MDF/HDF exception, certified Finnish pine wording and paint evidence criteria remain intact.
+- **Verified:** Regenerated PDF remains three-page A4 with no clipping, overlap or orphan spill; legal/reference, placeholder and draft-only checks pass.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Principal and Lush/client approval, store inputs and detailed vendor evidence remain pending.
+- **Recommendations for the next agent:** Preserve the draft-only boundary and proceed to detailed BOQ/procurement planning only after the missing inputs and approvals are received.
+
+### 2026-09-14 — @lead/vector [codex] — Lush report evidence-line removal
+- **Model:** OpenAI Codex, GPT-5
+- **Workspace:** `client-jobs`
+- **Task:** Remove the “Selected evidence” links line from the Lush Abuja feasibility report at the principal’s instruction.
+- **Files modified:** `workspaces/client-jobs/drafts/RPT-2026-LUSH-001_DOVA-Futures_Lush-Abuja-Store-Feasibility.html` and regenerated PDF; this log and client-jobs done-log.
+- **Summary:** Removed the selected-evidence label and all linked sources from Section 04 while leaving the sourcing schedule, controls, conclusion, legal details and draft status intact.
+- **Authorization:** Direct principal instruction in the active conversation; no external delivery or project promotion performed.
+- **Verified:** Renderer produced the matching three-page A4 PDF; the evidence line/link text is absent from both HTML and PDF; independent @qa/vera [claude-code] approved the revision with no clipping or overlap.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Principal/Lush approval and missing store inputs remain pending.
+- **Recommendations for the next agent:** Use the current HTML/PDF drafts for principal review; do not issue externally until approved.

@@ -1,17 +1,20 @@
 # status.md — Current Snapshot (client-jobs)
 
-**Last updated:** 2026-09-07 — project hierarchy and client/site corrections recorded
+**Last updated:** 2026-09-14 — Lush Abuja feasibility draft recorded; awaiting principal review
 **Health:** 🟢 on track
 
 ## Now
+- 2026-09-14: Principal selected Option C from `VQ-2026-POOL-001` (2ft wall waterfall with integrated LED light). `INV-2026-POOL-006` now includes the ₦623,000 variation and totals ₦1,617,050; revised HTML/PDF are filed in the existing FHS company archive folder. Prepared for principal review before sending.
+- 2026-09-14: Preliminary Lush Abuja store feasibility and material-sourcing report `RPT-2026-LUSH-001` drafted from the canonical report template. It concludes that a Jabi Mall store is feasible in principle, with a Nigerian-first/local-hybrid/import schedule and ethical procurement controls. Independent checker approved the corrected three-page HTML/PDF; principal review remains pending and the draft has not been issued.
 - 2026-09-13: Canonical invoice print fix implemented in template + renderer; POOL-006 regenerated as one A4 page with 10mm margins and filed in the company archive `01_Projects/FHS POOL IBAFO/01_Documents/04_Costs_and_Procurement/`. See tools/INVOICE-STANDARD.md. Not sent; formal cross-model review remains pending.
 - **4 formal project records:**
   - **DFL-2026-POOL-001** (FHS Hotel Swimming Pool, Ibafo) — invoices
     INV-001..006 issued/drafted, VQ-2026-POOL-001 waterfall variation quoted,
     PROGRESS-REPORT-001 (June 2026) filed, HNM July correspondence on file.
-    Consolidated INV-2026-POOL-006 for ₦994,050 is saved under the project’s
+    Consolidated INV-2026-POOL-006 for ₦1,617,050 is saved under the project’s
     existing `01-Documents/` folder; it combines the ₦794,050 contract balance,
-    ₦115,000 Aqua Seal/transport expenditure and ₦85,000 concrete mixer rental.
+    ₦115,000 Aqua Seal/transport expenditure, ₦85,000 concrete mixer rental and
+    the selected ₦623,000 Option C waterfall variation.
   - **DFL-2026-ROAD-001** (C. K. Musa access road erosion repair, Afuze, Edo) —
     quotation submitted; awaiting client response and pavement alternate choice.
     Items 1–4 firm, subtotal ₦2,295,000; pavement 200m² priced as alternates:
@@ -44,6 +47,8 @@
   corrected names, aliases and unresolved identification points.
 
 ## Pipeline (prospective — no job code issued yet)
+
+- **Lush — proposed Jabi Mall, Abuja store.** `RPT-2026-LUSH-001_DOVA-Futures_Lush-Abuja-Store-Feasibility` is in `drafts/` as HTML and PDF. The preliminary assessment covers the Lush ethical requirements, Nigerian/local-hybrid/import material routes, alternatives and delivery controls. Independent checker approved the corrected three-page HTML/PDF on 2026-09-14. No BOQ, quotation, job code or unconditional delivery commitment has been made. Awaiting principal review and confirmation of the store area/layout, opening date, budget, current Jabi Mall fit-out manual, fire/MEP requirements and final Lush approvals.
 
 - **Broll Properties — Ikeja City Mall roof leakage remedial works.** Internal
   brief and client-facing drafts are in `drafts/` under ICM references
@@ -104,6 +109,7 @@
 - Osogbo job created with scope + estimate + report (PR #20, commit 06719e2).
 
 ## Open / blocked
+- **LUSH:** principal review remains open (independent checker **APPROVED 2026-09-14**); after approval obtain the store area/layout, opening date, budget, Jabi Mall fit-out manual, final Lush material approvals, samples and supplier evidence. Keep the report draft-only; do not issue or create a job code until authorised.
 - ROAD: blocked on client feedback — pavement alternate choice + quote
   acceptance; then draft INV-2026-ROAD-001 once the principal confirms the
   payment stage (do NOT invoice before acceptance).
