@@ -791,3 +791,10 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** none.
 - **Unresolved issues:** Bionic still requires a user restart before its current live session can be assumed to load the saved settings. Final independent QA remains required.
 - **Recommendations for the next agent:** Verify only the two repaired QA defects and the original Phase 1 acceptance criteria; do not edit source.
+
+### 2026-09-16 — @lead/vector [codex] — PR #39 conflict resolution
+- **Model:** GPT-6.
+- **Workspace:** dova-futures-intelligence.
+- **Authorization:** Principal supplied PR #39's merge-conflict task after authorising continued GPT-6 work.
+- **Changes:** Reconciled main's Phase 0 merge into the PR branch; retained both phases' audit entries and the current Phase 1 next action. Four affected files: this log and workspace memory/status.md, memory/next-up.md, memory/done-log.md.
+- **Verification:** All 23 core tests pass; diff whitespace and conflict-marker checks pass. Source profiles and baseline/execution reports match the pre-merge PR head. Principal merge decision remains pending; no merge to main or workstation configuration change is included.

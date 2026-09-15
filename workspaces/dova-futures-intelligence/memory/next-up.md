@@ -1,6 +1,6 @@
 # Next Up
 
-1. Final independent QA of the repaired Phase 1 implementation: inspect `drafts/DOVA_AI_WORKSTATION_PHASE0_BASELINE.md`, `drafts/DOVA_AI_WORKSTATION_PHASE1_EXECUTION.md`, the six agent-profile edits, local configuration values, rollback manifest, BAS measurements, and test evidence. Do not edit source.
+1. Review reconciled PR #39 for the principal's merge decision. The optional checker pass after the manifest-only repair was declined; Phase 2 remains unimplemented.
 2. Complete independent review and merge of the live GitHub/read-only OneDrive integration (PR #35); PR #34 is already merged.
 3. Verify the private Hub deployment, DNS and SSL status before applying any still-needed DNS changes.
 4. Register the Microsoft Entra SPA, add the Hub redirect origins and configure `MICROSOFT_CLIENT_ID`, `MICROSOFT_TENANT_ID` and the approved `ONEDRIVE_ROOT_PATH`.

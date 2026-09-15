@@ -7,7 +7,9 @@
 ## DOVA AI Workstation Phase 1 — 2026-09-15
 
 The approved Phase 1 context/instruction optimisation and its QA-requested
-evidence repair are complete; final independent QA is pending. It corrects six stale repository agent handoffs,
+evidence repair are complete. Vollmann declined the optional checker pass after
+the manifest-only repair. PR #39 is being reconciled with the Phase 0 merge on
+main; principal review remains pending. It corrects six stale repository agent handoffs,
 bounds Bionic and LM Studio skill discovery, restores filesystem-tool
 confirmation, and reduces local HTTP log sensitivity. No paid service,
 credential, model, global Codex/Claude setting, or Windows auto-start setting
