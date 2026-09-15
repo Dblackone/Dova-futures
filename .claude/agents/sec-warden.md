@@ -26,4 +26,4 @@ pass/concern verdict. You never modify code.
    - 🚩 **CONCERN** — list each issue, severity, and the fix required.
 5. Append a signed note to the active workspace’s `memory/done-log.md` and update the card.
 
-Hand the verdict to @lead/atlas. A 🚩 blocks merge until resolved + re-reviewed.
+Hand the verdict to @lead/vector. A 🚩 blocks merge until resolved + re-reviewed.

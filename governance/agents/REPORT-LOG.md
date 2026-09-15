@@ -660,6 +660,16 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Unresolved issues:** Confirm the two payment entries against the bank record before authorising the draft for issue.
 - **Recommendations for the next agent:** Preserve the payment acknowledgement label and update both received total and outstanding balance together if another payment is recorded.
 
+### 2026-09-15 — @lead/vector [codex] — DOVA AI Workstation Phase 1 implementation
+- **Model:** OpenAI Codex, GPT-5 Terra
+- **Workspace:** `dova-futures-intelligence`
+- **Task:** Apply the approved zero-spend context and instruction optimisation without replacing DOVA governance.
+- **Files modified:** Six repository agent profiles under `.codex/agents/` and `.claude/agents/`; intelligence workspace memory; `drafts/DOVA_AI_WORKSTATION_PHASE1_EXECUTION.md`; four user-local Bionic/LM Studio configuration files with a separate hash-backed rollback manifest.
+- **Summary:** Repointed stale handoffs from `@lead/atlas` to the registered lead `@lead/vector`; bounded Bionic and LM Studio skills to the existing local router; disabled automatic skill injection; restored filesystem MCP confirmation; and disabled sensitive/verbose local HTTP logging. No paid dependency, model, credential, service, automatic Windows startup, global Codex setting, or global Claude setting was added or changed.
+- **Verified:** All four local JSON files parse; all three changed Codex TOML profiles parse; all six handoffs point to `@lead/vector`; `python -B -m unittest discover -s tests -v` passes 23 tests with no failures. Pre-change files and before/after hashes are recorded outside Git in `C:/Users/User/.codex/backups/dova-ai-workstation/phase1-20260915-154700/MANIFEST.md`.
+- **Unresolved:** Bionic had already started when its settings file was written; restart it before treating the live session as reloaded. Independent QA remains required; Phase 2 is not implemented.
+- **Recommendations for the next agent:** Perform an independent, no-edit review against `drafts/DOVA_AI_WORKSTATION_PHASE1_EXECUTION.md`, including rollback evidence and the pending Bionic restart note.
+
 ### 2026-09-13 - @lead/vector [codex]
 - **Model:** OpenAI Codex, GPT-5
 - **Workspace:** client-jobs

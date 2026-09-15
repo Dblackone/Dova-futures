@@ -1,5 +1,7 @@
 # Done Log
 
+- 2026-09-15 - Implemented approved DOVA AI Workstation Phase 1 context and instruction optimisation. Corrected six stale `@lead/atlas` handoffs to `@lead/vector`; bounded Bionic and LM Studio skill discovery to the existing local router; disabled automatic skill injection; restored filesystem MCP confirmation; and disabled sensitive/verbose local HTTP logging. Created a hash-backed external rollback manifest. JSON/TOML parsing and 23 core tests pass. Bionic live reload remains pending a user restart; independent QA is required before Phase 2 consideration. Agent: @lead/vector [codex].
+
 - 2026-09-01 - Assessed the installed OpenClaw, LM Studio and Ollama environment; reviewed recent DOVA/Codex workflows; produced `drafts/DOVA_OPENCLAW_AI_PRODUCT_BRIEF.md` with the recommended OpenClaw runtime boundary, DOVA feature set, local/hybrid model strategy, MCP integration plan, phased delivery gates and principal decisions. Generated a preview-only high-fidelity DOVA Intelligence UI concept outside the repository. No OpenClaw configuration or implementation was changed. Agent: @lead/vector [codex] (GPT-5).
 - 2026-08-24 — Implemented draft PR #35 with owner-authenticated live GitHub metadata for the Hub, website and pre-order repositories plus Microsoft Entra SPA/PKCE scaffolding for read-only OneDrive project listing, file search and OneDrive web opening. Added five server/authentication tests; production build, ESLint and npm audit pass. No OneDrive write permission or document output was enabled. — by @lead/vector [codex]
 

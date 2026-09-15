@@ -30,4 +30,4 @@ verdict. Be sceptical — assume nothing, trust no "tests pass" you didn't run.
    (`verified by @qa/vera`) and update the card on `memory/board.md`.
 
 You only verify. You never edit source, never merge, never approve your own
-prior work. Hand the verdict back to @lead/atlas.
+prior work. Hand the verdict back to @lead/vector.

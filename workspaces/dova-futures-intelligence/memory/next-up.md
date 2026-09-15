@@ -1,6 +1,7 @@
 # Next Up
 
-1. Complete independent review and merge of the live GitHub/read-only OneDrive integration (PR #35); PR #34 is already merged.
+1. Independently QA `drafts/DOVA_AI_WORKSTATION_PHASE1_EXECUTION.md` and the six agent-profile edits: inspect the diff, validate the four local configuration files and rollback manifest, and rerun relevant tests without editing source. Confirm that Bionic's pending restart is documented rather than treated as evidence of live reload.
+2. Complete independent review and merge of the live GitHub/read-only OneDrive integration (PR #35); PR #34 is already merged.
 2. Verify the private Hub deployment, DNS and SSL status before applying any still-needed DNS changes.
 3. Register the Microsoft Entra SPA, add the Hub redirect origins and configure `MICROSOFT_CLIENT_ID`, `MICROSOFT_TENANT_ID` and the approved `ONEDRIVE_ROOT_PATH`.
 4. Review the first read-only OneDrive metadata view and approve the output folder and canonical template workflow before enabling document writes or moving files.
