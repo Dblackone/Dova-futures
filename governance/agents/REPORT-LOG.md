@@ -660,6 +660,16 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Unresolved issues:** Confirm the two payment entries against the bank record before authorising the draft for issue.
 - **Recommendations for the next agent:** Preserve the payment acknowledgement label and update both received total and outstanding balance together if another payment is recorded.
 
+### 2026-09-15 — @lead/vector [codex] — DOVA AI Workstation Phase 1 implementation
+- **Model:** OpenAI Codex, GPT-5 Terra
+- **Workspace:** `dova-futures-intelligence`
+- **Task:** Apply the approved zero-spend context and instruction optimisation without replacing DOVA governance.
+- **Files modified:** Six repository agent profiles under `.codex/agents/` and `.claude/agents/`; intelligence workspace memory; `drafts/DOVA_AI_WORKSTATION_PHASE1_EXECUTION.md`; four user-local Bionic/LM Studio configuration files with a separate hash-backed rollback manifest.
+- **Summary:** Repointed stale handoffs from `@lead/atlas` to the registered lead `@lead/vector`; bounded Bionic and LM Studio skills to the existing local router; disabled automatic skill injection; restored filesystem MCP confirmation; and disabled sensitive/verbose local HTTP logging. No paid dependency, model, credential, service, automatic Windows startup, global Codex setting, or global Claude setting was added or changed.
+- **Verified:** All four local JSON files parse; all three changed Codex TOML profiles parse; all six handoffs point to `@lead/vector`; `python -B -m unittest discover -s tests -v` passes 23 tests with no failures. Pre-change files and before/after hashes are recorded outside Git in `C:/Users/User/.codex/backups/dova-ai-workstation/phase1-20260915-154700/MANIFEST.md`.
+- **Unresolved:** Bionic had already started when its settings file was written; restart it before treating the live session as reloaded. Independent QA remains required; Phase 2 is not implemented.
+- **Recommendations for the next agent:** Perform an independent, no-edit review against `drafts/DOVA_AI_WORKSTATION_PHASE1_EXECUTION.md`, including rollback evidence and the pending Bionic restart note.
+
 ### 2026-09-13 - @lead/vector [codex]
 - **Model:** OpenAI Codex, GPT-5
 - **Workspace:** client-jobs
@@ -770,3 +780,21 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** None.
 - **Unresolved issues:** Final independent QA must verify the repaired report and confirm the three original defects are resolved.
 - **Recommendations for the next agent:** Verify only the repair and original Phase 0 criteria. Do not edit source.
+
+### 2026-09-15 — @lead/vector [codex] — Phase 1 QA evidence repair
+- **Model:** OpenAI Codex, GPT-5.6 Terra (medium)
+- **Workspace:** `dova-futures-intelligence`
+- **Task:** Correct the two numbered Phase 1 QA defects only.
+- **Files modified:** Restored `drafts/DOVA_AI_WORKSTATION_PHASE0_BASELINE.md` and its relevant workspace/governance ledgers; updated `drafts/DOVA_AI_WORKSTATION_PHASE1_EXECUTION.md`; updated the external `phase1-20260915-154700` rollback manifest.
+- **Summary of changes:** Moved the implementation onto `fix/vector/phase1-qa-evidence`, preserved Phase 0 as commit `7619d4c`, and added the reproducible BAS comparison and exact PowerShell restore commands requested by QA.
+- **Verified:** Re-ran BAS-00 through BAS-06 according to the Phase 0 capture contract; core tests pass 23/23; `git diff --check` passes. The local configuration values and backups remain unchanged by this repair.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Bionic still requires a user restart before its current live session can be assumed to load the saved settings. Final independent QA remains required.
+- **Recommendations for the next agent:** Verify only the two repaired QA defects and the original Phase 1 acceptance criteria; do not edit source.
+
+### 2026-09-16 — @lead/vector [codex] — PR #39 conflict resolution
+- **Model:** GPT-6.
+- **Workspace:** dova-futures-intelligence.
+- **Authorization:** Principal supplied PR #39's merge-conflict task after authorising continued GPT-6 work.
+- **Changes:** Reconciled main's Phase 0 merge into the PR branch; retained both phases' audit entries and the current Phase 1 next action. Four affected files: this log and workspace memory/status.md, memory/next-up.md, memory/done-log.md.
+- **Verification:** All 23 core tests pass; diff whitespace and conflict-marker checks pass. Source profiles and baseline/execution reports match the pre-merge PR head. Principal merge decision remains pending; no merge to main or workstation configuration change is included.
