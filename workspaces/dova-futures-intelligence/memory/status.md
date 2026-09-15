@@ -8,8 +8,7 @@
 
 The approved Phase 1 context/instruction optimisation and its QA-requested
 evidence repair are complete. Vollmann declined the optional checker pass after
-the manifest-only repair. PR #39 is being reconciled with the Phase 0 merge on
-main; principal review remains pending. It corrects six stale repository agent handoffs,
+the manifest-only repair. PR #39 is merged into main. It corrects six stale repository agent handoffs,
 bounds Bionic and LM Studio skill discovery, restores filesystem-tool
 confirmation, and reduces local HTTP log sensitivity. No paid service,
 credential, model, global Codex/Claude setting, or Windows auto-start setting
@@ -17,6 +16,14 @@ was introduced or changed. See
 `drafts/DOVA_AI_WORKSTATION_PHASE1_EXECUTION.md` for the exact scope and
 rollback evidence. Bionic was already running when its settings were written;
 a user restart is needed before its live session is assumed to have reloaded.
+
+## DOVA AI Workstation Phase 2 — 2026-09-16
+
+Phase 2 planning is complete. The plan evaluates the installed OmniRoute
+compression path before considering standalone RTK, defines a fixed benchmark
+corpus and retention/reduction gates, and preserves zero-spend and manual-start
+boundaries. No RTK package or global configuration was installed or changed.
+See `drafts/DOVA_AI_WORKSTATION_PHASE2_PLAN.md`.
 
 The workspace retains the provider-neutral local gateway and repository-scoped
 integration suite for Agent Reach, Hallmark, Career Ops, HyperFrames, World

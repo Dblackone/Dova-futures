@@ -798,3 +798,14 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Authorization:** Principal supplied PR #39's merge-conflict task after authorising continued GPT-6 work.
 - **Changes:** Reconciled main's Phase 0 merge into the PR branch; retained both phases' audit entries and the current Phase 1 next action. Four affected files: this log and workspace memory/status.md, memory/next-up.md, memory/done-log.md.
 - **Verification:** All 23 core tests pass; diff whitespace and conflict-marker checks pass. Source profiles and baseline/execution reports match the pre-merge PR head. Principal merge decision remains pending; no merge to main or workstation configuration change is included.
+
+### 2026-09-16 — @lead/vector [codex] — Phase 2 RTK evaluation planning
+- **Model:** OpenAI Codex, GPT-5.
+- **Workspace:** `dova-futures-intelligence`.
+- **Task:** Define the Phase 2 evaluation of the existing OmniRoute compression path before any standalone RTK installation.
+- **Files modified:** `workspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_PLAN.md`; workspace Phase 2 status, next-up and decision records.
+- **Summary:** Confirmed OmniRoute 3.8.49 is installed and includes Caveman/RTK compression code and an API-free benchmark design. Standalone `rtk` and Bun are absent; the published package does not ship the referenced benchmark entry point, and direct harness execution currently fails on its packaged `@/shared` alias.
+- **Verified:** CLI help and local package metadata were inspected; no OmniRoute server/process/listener was running; no RTK package or configuration was installed or changed.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** The implementation run must establish whether the installed OmniRoute package can execute the fixed offline corpus; if not, record the packaging limitation and apply the standalone RTK zero-spend gate before considering installation.
+- **Recommendations for the next agent:** Implement the Phase 2 plan, benchmark raw/bundled/standalone conditions where executable, and stop after results for independent QA. Do not begin Phase 3.
