@@ -1,5 +1,27 @@
 # Next Up
 
+## AI workstation optimisation — final independent QA handoff — 2026-09-15
+
+1. **Astra final independent QA:** inspect
+   workspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE0_BASELINE.md
+   and the planning-ledger diff against the approved Phase 0 scope. Do not edit
+   any file.
+2. Confirm the report correctly separates confirmed facts from proposals,
+   distinguishes configured from active MCPs, preserves the DOVA architecture,
+   names the six stale handoffs accurately, and keeps Phase 1 through Phase 5
+   behind their required gates. Confirm the BAS-00 through BAS-06 commands,
+   directories, capture rules and values are reproducible.
+3. Confirm Bionic and LM Studio paths, keys and proposed values; verify that
+   skills-plugin command execution is not conflated with filesystem MCP access,
+   and that LM Studio app-launch HTTP-server behaviour is not described as
+   Windows startup. Check the scoped diff, rerun the necessary validation, and
+   return only APPROVE or REJECT with a numbered defect list. If approved, the
+   work goes to Vollmann for review and explicit Phase 1 authority.
+4. Do not install RTK or Headroom, start any local AI service, alter global
+   configuration, or perform LinkedIn activity during QA.
+
+## Existing delivery sequence
+
 1. Complete independent review and merge of the live GitHub/read-only OneDrive integration (PR #35); PR #34 is already merged.
 2. Verify the private Hub deployment, DNS and SSL status before applying any still-needed DNS changes.
 3. Register the Microsoft Entra SPA, add the Hub redirect origins and configure `MICROSOFT_CLIENT_ID`, `MICROSOFT_TENANT_ID` and the approved `ONEDRIVE_ROOT_PATH`.
