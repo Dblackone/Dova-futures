@@ -2,7 +2,7 @@
 
 **Project:** DOVA Futures Intelligence  
 **Status:** Active — private Hub and cloud intelligence operational; live GitHub and read-only OneDrive views implemented in draft PR #35; Microsoft registration, merge and deployment pending.
-**Last verified:** 2026-08-24 — @lead/vector [codex]
+**Last verified:** 2026-09-15 — @lead/vector [codex]
 
 The workspace retains the provider-neutral local gateway and repository-scoped
 integration suite for Agent Reach, Hallmark, Career Ops, HyperFrames, World
@@ -32,3 +32,46 @@ The separate `drafts/DOVA_OPENCLAW_AI_PRODUCT_BRIEF.md` assesses the installed O
 ## Repository reconciliation — 2026-09-07
 
 PR #34 is already merged. PR #35 is being reconciled with current main; integration deployment and Microsoft registration remain pending. Historical verification above records the original implementation checks.
+
+## AI workstation optimisation — Phase 0 planning — 2026-09-15
+
+Read-only discovery and planning for the DOVA AI workstation brief are
+complete. No package, model, service, global configuration, credential,
+startup entry, or external integration was installed, enabled, removed, or
+rewritten. The working branch is
+docs/vector/ai-workstation-phase0.
+
+- **Runtime baseline:** Windows 11 Home; 31.71 GB usable RAM; Intel UHD plus
+  RTX 4060 Laptop GPU; Git 2.53.0; Node 24.19.0; npm 11.17.0; pnpm 11.19.0;
+  Python 3.14.3; uv 0.12.2; Codex CLI 0.154.0-alpha.6.2; Claude Code
+  2.1.221. Rust, rustup, Docker and a working WSL distribution were not
+  present.
+- **Local stack:** LM Studio 0.4.23+1, Bionic 1.1.1+5 and OpenClaw
+  2026.7.1-2 are installed. Target ports 1234, 18789, 11434, 17493 and
+  18801 had no listeners at the final check. The Ollama Startup shortcut
+  remains and was not changed. No local model or gateway was started for this
+  phase.
+- **Context risks:** Bionic is configured to discover five external harness
+  skill roots containing about 4,597 top-level skill directories, including
+  duplicated catalogues. Its internal auto-fit context value is 478,187 while
+  the normal LM Studio/Bionic default is 8,192. LM Studio has auto-injection
+  enabled for up to 12 skills. The existing OpenClaw shared-skill router is
+  already bounded and should remain the single on-demand discovery pattern.
+- **Routing drift:** the repository arch-sol, qa-vera and sec-warden agent
+  definitions hand verdicts to @lead/atlas, while the registry and lead-vector
+  definition make @lead/vector the lead orchestrator. This is a Phase 1
+  correction candidate, not a Phase 0 mutation.
+- **Existing capability:** the DOVA provider-neutral orchestrator, policy
+  engine, capability registry, gateway, repository-scoped integration suite
+  and shared-skill router already cover the proposed control-plane and
+  discovery roles. OmniRoute is installed globally and advertises RTK/Caveman
+  context compression, but its server is stopped and Codex/Claude/OpenClaw
+  are not configured for it; it must be evaluated before any standalone RTK
+  installation is considered.
+
+The baseline report at drafts/DOVA_AI_WORKSTATION_PHASE0_BASELINE.md now
+contains the reproducible BAS-00 through BAS-06 measurement contract, exact
+proposed Phase 1 configuration keys and values, and the corrected LM Studio
+MCP, confirmation and app-launch distinctions. Final independent QA is the
+next action. No global instruction, skill, logging, startup or MCP
+configuration has been changed.
