@@ -34,6 +34,32 @@ Restore only the relevant file from that directory, then restart the affected
 desktop application. The earlier `phase1-20260915-154500` directory is not a
 rollback source because its duplicate filenames make its contents ambiguous.
 
+## Before and after measurements
+
+The Phase 0 baseline is preserved in
+`drafts/DOVA_AI_WORKSTATION_PHASE0_BASELINE.md` and records the command,
+working directory and normalisation contract. The post-change capture used the
+same commands: combined standard output/error, CRLF normalised to LF, trailing
+LF removed, non-empty lines counted, and UTF-8 bytes counted without a byte
+order mark. These are output-size indicators, not model-token measurements.
+
+| ID | Baseline lines / bytes | Post-change lines / bytes | Baseline elapsed | Post-change elapsed |
+| --- | ---: | ---: | ---: | ---: |
+| BAS-01 `git status --short --branch` | 7 / 391 | 1 / 32 | 114.9 ms | 141.9 ms |
+| BAS-02 core test suite | 26 / 3,336 | 26 / 3,336 | 697.2 ms | 237.1 ms |
+| BAS-03 targeted architecture search | 93 / 11,647 | 93 / 11,647 | 55.4 ms | 39.8 ms |
+| BAS-04 tracked intelligence files | 250 / 19,923 | 252 / 20,090 | 56.7 ms | 56.1 ms |
+| BAS-05 shared skill-directory listing | 1,565 / 31,454 | 1,565 / 31,454 | 74.3 ms | 78.0 ms |
+| BAS-06 Codex agent-file listing | 63 / 1,385 | 63 / 1,385 | 14.2 ms | 13.7 ms |
+
+BAS-01 fell because the implementation is committed on
+`fix/vector/phase1-qa-evidence`; it is not claimed as an application-context
+gain. BAS-04 rose by two files because the Phase 0 and Phase 1 records are now
+tracked. BAS-05 remains deliberately unchanged: Phase 1 prevents Bionic and
+the LM Studio skills plugin from eagerly importing that catalogue; it does not
+delete or alter the shared library. BAS-00 was also rerun: the relevant PATH
+entries remain present and `cargo`, `rustc`, `rustup`, and `rtk` remain absent.
+
 ## Verification
 
 - Parsed all four changed JSON configuration files with PowerShell
@@ -45,6 +71,7 @@ rollback source because its duplicate filenames make its contents ambiguous.
 - Confirmed the final configuration values match the table above.
 - Ran `python -B -m unittest discover -s tests -v`: **23 tests passed**, no
   failures.
+- Ran `git diff --check`: passed.
 
 ## Runtime note
 

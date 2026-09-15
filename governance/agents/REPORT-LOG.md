@@ -780,3 +780,14 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Governance suggestions submitted:** None.
 - **Unresolved issues:** Final independent QA must verify the repaired report and confirm the three original defects are resolved.
 - **Recommendations for the next agent:** Verify only the repair and original Phase 0 criteria. Do not edit source.
+
+### 2026-09-15 — @lead/vector [codex] — Phase 1 QA evidence repair
+- **Model:** OpenAI Codex, GPT-5.6 Terra (medium)
+- **Workspace:** `dova-futures-intelligence`
+- **Task:** Correct the two numbered Phase 1 QA defects only.
+- **Files modified:** Restored `drafts/DOVA_AI_WORKSTATION_PHASE0_BASELINE.md` and its relevant workspace/governance ledgers; updated `drafts/DOVA_AI_WORKSTATION_PHASE1_EXECUTION.md`; updated the external `phase1-20260915-154700` rollback manifest.
+- **Summary of changes:** Moved the implementation onto `fix/vector/phase1-qa-evidence`, preserved Phase 0 as commit `7619d4c`, and added the reproducible BAS comparison and exact PowerShell restore commands requested by QA.
+- **Verified:** Re-ran BAS-00 through BAS-06 according to the Phase 0 capture contract; core tests pass 23/23; `git diff --check` passes. The local configuration values and backups remain unchanged by this repair.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** Bionic still requires a user restart before its current live session can be assumed to load the saved settings. Final independent QA remains required.
+- **Recommendations for the next agent:** Verify only the two repaired QA defects and the original Phase 1 acceptance criteria; do not edit source.
