@@ -1,6 +1,6 @@
 # Next Up
 
-1. Review reconciled PR #39 for the principal's merge decision. The optional checker pass after the manifest-only repair was declined; Phase 2 remains unimplemented.
+1. Retain the Phase 2 no-integration decision: noisy retention is 47.6%; original-command latency and wrapper behaviour remain unmeasured. Vollmann authorised same-model repair, two QA passes and merge. Phase 3 requires a separate instruction.
 2. Complete independent review and merge of the live GitHub/read-only OneDrive integration (PR #35); PR #34 is already merged.
 3. Verify the private Hub deployment, DNS and SSL status before applying any still-needed DNS changes.
 4. Register the Microsoft Entra SPA, add the Hub redirect origins and configure `MICROSOFT_CLIENT_ID`, `MICROSOFT_TENANT_ID` and the approved `ONEDRIVE_ROOT_PATH`.

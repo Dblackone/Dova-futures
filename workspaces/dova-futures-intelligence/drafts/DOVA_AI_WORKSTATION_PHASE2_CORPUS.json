@@ -1,0 +1,95 @@
+{
+  "schema": "dova-ai-workstation-phase2-corpus-v1",
+  "purpose": "Offline compression comparison; contains no credentials, cookies, client records, prompts, or network responses.",
+  "cases": [
+    {
+      "id": "git-status",
+      "kind": "command-output",
+      "command": "git status --short --branch",
+      "input": "## docs/vector/ai-workstation-phase2...origin/main [ahead 1]\n M workspaces/dova-futures-intelligence/memory/status.md\n M workspaces/dova-futures-intelligence/memory/next-up.md\n?? workspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_RESULTS.md\n",
+      "technicalEntities": [
+        "docs/vector/ai-workstation-phase2",
+        "origin/main",
+        "workspaces/dova-futures-intelligence/memory/status.md",
+        "workspaces/dova-futures-intelligence/memory/next-up.md",
+        "workspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_RESULTS.md"
+      ]
+    },
+    {
+      "id": "git-diff",
+      "kind": "command-output",
+      "command": "git diff --stat && git diff --check",
+      "input": "diff --git a/workspaces/dova-futures-intelligence/memory/status.md b/workspaces/dova-futures-intelligence/memory/status.md\nindex 0370d19..705587b 100644\n--- a/workspaces/dova-futures-intelligence/memory/status.md\n+++ b/workspaces/dova-futures-intelligence/memory/status.md\n@@ -20,6 +20,12 @@\n ## DOVA AI Workstation Phase 2 — 2026-09-16\n+Phase 2 planning is complete.\n+OmniRoute 3.8.49 is the existing local compression candidate.\n+The benchmark retains paths, URLs, identifiers, versions, commands, failures and final status.\n+The benchmark retains paths, URLs, identifiers, versions, commands, failures and final status.\n+The benchmark retains paths, URLs, identifiers, versions, commands, failures and final status.\n+No RTK package or global configuration was installed or changed during planning.\n+\n+workspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_PLAN.md | 112 +++++++++++++++++++++\n+1 file changed, 112 insertions(+)\n+\n+diff --check: PASS\n",
+      "technicalEntities": [
+        "workspaces/dova-futures-intelligence/memory/status.md",
+        "0370d19",
+        "705587b",
+        "DOVA_AI_WORKSTATION_PHASE2_PLAN.md",
+        "OmniRoute 3.8.49",
+        "diff --check: PASS"
+      ]
+    },
+    {
+      "id": "rg-search",
+      "kind": "command-output",
+      "command": "rg -n \"InteractionGateway|compression|rtk\" workspaces/dova-futures-intelligence",
+      "input": "workspaces/dova-futures-intelligence/core/gateway.py:41:class InteractionGateway:\nworkspaces/dova-futures-intelligence/core/gateway.py:88:    def execute_local_command(self, command: str) -> GatewayResult:\nworkspaces/dova-futures-intelligence/core/policy.py:27:        \"filesystem.write\": ApprovalRequired\nworkspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_PLAN.md:34:- Standalone rtk is not on PATH.\nworkspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_PLAN.md:35:- OmniRoute 3.8.49 advertises Caveman/RTK compression.\nworkspaces/dova-futures-intelligence/tests/test_gateway.py:116:        self.assertEqual(result.status, \"ok\")\nworkspaces/dova-futures-intelligence/tests/test_gateway.py:151:        self.assertEqual(result.status, \"approval_required\")\n",
+      "technicalEntities": [
+        "workspaces/dova-futures-intelligence/core/gateway.py",
+        "InteractionGateway",
+        "execute_local_command",
+        "workspaces/dova-futures-intelligence/core/policy.py",
+        "filesystem.write",
+        "workspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_PLAN.md",
+        "OmniRoute 3.8.49",
+        "workspaces/dova-futures-intelligence/tests/test_gateway.py",
+        "approval_required"
+      ]
+    },
+    {
+      "id": "pytest-or-unittest",
+      "kind": "command-output",
+      "command": "python -B -m unittest discover -s tests -v",
+      "input": "test_gateway_approval_required (tests.test_gateway.GatewayTests.test_gateway_approval_required) ... ok\ntest_gateway_core_list (tests.test_gateway.GatewayTests.test_gateway_core_list) ... ok\ntest_gateway_write (tests.test_gateway.GatewayTests.test_gateway_write) ... ok\n----------------------------------------------------------------------\nRan 23 tests in 0.184s\n\nOK\n\nFailure fixture: test_missing_fixture (tests.test_example.ExampleTests.test_missing_fixture) ...\nTraceback (most recent call last):\n  File \"C:\\workspace\\Dova-futures\\tests\\test_example.py\", line 27, in test_missing_fixture\n    raise FileNotFoundError(\"fixture missing: tests/fixtures/sample.json\")\nFileNotFoundError: fixture missing: tests/fixtures/sample.json\nCommand exited with status 1\n",
+      "technicalEntities": [
+        "tests.test_gateway.GatewayTests.test_gateway_approval_required",
+        "tests.test_gateway.GatewayTests.test_gateway_core_list",
+        "tests.test_gateway.GatewayTests.test_gateway_write",
+        "Ran 23 tests",
+        "FileNotFoundError",
+        "tests/fixtures/sample.json",
+        "status 1"
+      ]
+    },
+    {
+      "id": "npm-or-build",
+      "kind": "command-output",
+      "command": "npm run build",
+      "input": "> dova-futures-intelligence@0.1.0 build\n> node scripts/build.mjs\n\n(node:4242) Warning: experimental-loader is deprecated; use register() instead\nwarning: generated cache entry skipped because .cache/build.json is ignored\nBundling workspaces/dova-futures-intelligence/hub-app/server/index.ts\nBundling workspaces/dova-futures-intelligence/hub-app/client/index.tsx\nBuild completed in 2.41s\nOutput: workspaces/dova-futures-intelligence/hub-app/dist/index.html\nBuild status: success\n",
+      "technicalEntities": [
+        "dova-futures-intelligence@0.1.0",
+        "experimental-loader",
+        ".cache/build.json",
+        "workspaces/dova-futures-intelligence/hub-app/server/index.ts",
+        "workspaces/dova-futures-intelligence/hub-app/client/index.tsx",
+        "workspaces/dova-futures-intelligence/hub-app/dist/index.html",
+        "Build status: success"
+      ]
+    },
+    {
+      "id": "json-tool-output",
+      "kind": "structured-output",
+      "command": "dova-tool inspect --json",
+      "input": "{\n  \"requestId\": \"req-phase2-0001\",\n  \"status\": \"error\",\n  \"version\": \"3.8.49\",\n  \"path\": \"workspaces/dova-futures-intelligence/core/gateway.py\",\n  \"error\": {\n    \"code\": \"LOCAL_SERVICE_UNAVAILABLE\",\n    \"message\": \"OmniRoute server is not listening on 127.0.0.1:17493\"\n  },\n  \"retryable\": true\n}",
+      "technicalEntities": [
+        "req-phase2-0001",
+        "error",
+        "3.8.49",
+        "workspaces/dova-futures-intelligence/core/gateway.py",
+        "LOCAL_SERVICE_UNAVAILABLE",
+        "127.0.0.1:17493",
+        "retryable"
+      ]
+    }
+  ]
+}

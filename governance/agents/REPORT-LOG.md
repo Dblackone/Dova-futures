@@ -699,6 +699,13 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Archive:** `C:/Users/User/OneDrive/Documents/DOVA Futures Limited/01_Projects/FHS POOL IBAFO/01_Documents/04_Costs_and_Procurement/INV-2026-POOL-006.html` and `.pdf`.
 - **Unresolved:** This is prepared for principal review and external sending; no client message or delivery was made. Confirm the consolidated treatment of earlier invoice balances before issue to avoid duplicate billing.
 
+### 2026-09-16 — @lead/vector [codex] — Revise FHS waterfall to Option D discount
+- **Authority/scope:** Principal instructed that the client-selected Option D replace Option C and be billed at an agreed discounted ₦550,000; scope covers the existing waterfall quotation revision and INV-2026-POOL-006.
+- **Changed:** Preserved the original VQ as historical record; created `VQ-2026-POOL-001_REV-01_Waterfall-Option-D-Discounted` with Option D marked selected, standard ₦598,000, ₦48,000 discount and agreed ₦550,000. Updated INV-2026-POOL-006 and reset issue/due dates to 16 September/16 October 2026; total changed to ₦1,544,050.
+- **Verified:** Revised quotation renders as two pages and its extracted text/raster review confirms Option D, no Option C recommendation, ₦550,000, ₦598,000 and ₦48,000. Invoice renders as one A4 page through the canonical renderer; extracted text confirms Option D, ₦550,000 and total ₦1,544,050; visual inspection found no clipping or overflow. Existing items remain ₦794,050, ₦115,000 and ₦85,000. `git diff --check` clean for the target changes.
+- **Archive:** Existing folder only; revised invoice at `C:/Users/User/OneDrive/Documents/DOVA Futures Limited/01_Projects/FHS POOL IBAFO/01_Documents/04_Costs_and_Procurement/INV-2026-POOL-006.html` and `.pdf`; revised quotation at the matching `VQ-2026-POOL-001_REV-01_Waterfall-Option-D-Discounted` names. No new folder and no external delivery.
+- **Unresolved:** Confirm earlier invoice delivery/payment status before client issue to avoid duplicate billing; principal review and sending remain pending.
+
 ### 2026-09-14 — @lead/vector [codex] — Lush Abuja store feasibility report
 - **Model:** OpenAI Codex, GPT-5
 - **Workspace:** `client-jobs`
@@ -798,3 +805,47 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Authorization:** Principal supplied PR #39's merge-conflict task after authorising continued GPT-6 work.
 - **Changes:** Reconciled main's Phase 0 merge into the PR branch; retained both phases' audit entries and the current Phase 1 next action. Four affected files: this log and workspace memory/status.md, memory/next-up.md, memory/done-log.md.
 - **Verification:** All 23 core tests pass; diff whitespace and conflict-marker checks pass. Source profiles and baseline/execution reports match the pre-merge PR head. Principal merge decision remains pending; no merge to main or workstation configuration change is included.
+
+### 2026-09-16 — @lead/vector [codex] — Phase 2 RTK evaluation planning
+- **Model:** OpenAI Codex, GPT-5.
+- **Workspace:** `dova-futures-intelligence`.
+- **Task:** Define the Phase 2 evaluation of the existing OmniRoute compression path before any standalone RTK installation.
+- **Files modified:** `workspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_PLAN.md`; workspace Phase 2 status, next-up and decision records.
+- **Summary:** Confirmed OmniRoute 3.8.49 is installed and includes Caveman/RTK compression code and an API-free benchmark design. Standalone `rtk` and Bun are absent; the published package does not ship the referenced benchmark entry point, and direct harness execution currently fails on its packaged `@/shared` alias.
+- **Verified:** CLI help and local package metadata were inspected; no OmniRoute server/process/listener was running; no RTK package or configuration was installed or changed.
+- **Governance suggestions submitted:** none.
+- **Unresolved issues:** The implementation run must establish whether the installed OmniRoute package can execute the fixed offline corpus; if not, record the packaging limitation and apply the standalone RTK zero-spend gate before considering installation.
+- **Recommendations for the next agent:** Implement the Phase 2 plan, benchmark raw/bundled/standalone conditions where executable, and stop after results for independent QA. Do not begin Phase 3.
+
+### 2026-09-16 — @lead/vector [codex] — Phase 2 RTK evaluation execution
+
+- **Model:** OpenAI Codex, GPT-5 (current runtime; executed the approved Luna planning record)
+- **Workspace:** `dova-futures-intelligence`.
+- **Task:** Execute the approved Phase 2 evaluation of the existing OmniRoute compression path and standalone RTK under the zero-spend gate.
+- **Files modified:** `workspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_RESULTS.md`; `workspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_CORPUS.json`; `workspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_OMNIROUTE_REQUEST.json`; `workspaces/dova-futures-intelligence/drafts/DOVA_AI_WORKSTATION_PHASE2_BENCHMARK.ps1`; workspace status, next-up and decision records; this report log.
+- **Summary:** Exercised OmniRoute first; its stopped local server returned no preview/test payload, its published benchmark entry points were absent, and direct harness import failed on `@/shared`, so bundled compression is unmeasured. The exact winget package install failed before installation with `0x80072ee7`; the official v0.48.0 portable archive was checksum-verified and used from ignored scratch with telemetry disabled. Three repetitions after one warm-up per six-case fixture produced 32.2% noisy-case median byte reduction but 47.7% technical-entity retention; standalone RTK is not recommended or retained as a DOVA integration.
+- **Authorization:** Principal's direct build instruction and the approved Phase 2 plan authorised local evaluation, the zero-spend package gate and reversible evidence capture. No paid service, credential, cloud inference, global hook, PATH change, Bionic/LM Studio setting or Phase 3 work was authorised or performed.
+- **Verified:** Tracked benchmark runner returns 18 rows across six cases with zero process errors; the workspace suite passes 23/23 with `python -B`; JSON/script checks and `git diff --check` pass; conflict markers are absent from the target evidence files. `.codex\RTK.md` remains absent, `winget list` reports no RTK installation, and the local RTK runtime files created during measurement were moved to the exact ignored scratch root.
+- **Unresolved issues:** Independent QA must verify the report's measurements, failed retention/status criteria, OmniRoute packaging limitation, and no-global-integration claim. The results must not be treated as approval to begin Phase 3.
+- **Recommendations for the next agent:** Review only the Phase 2 results, corpus, runner and original acceptance criteria. Return APPROVE or REJECT with numbered defects; do not edit the implementation.
+
+### 2026-09-16 — @lead/vector [codex] — Phase 2 benchmark evidence repair
+
+- **Model:** OpenAI Codex, GPT-5 (current runtime)
+- **Workspace:** `dova-futures-intelligence`.
+- **Task:** Fix independent-QA defects 1–3 only in the Phase 2 benchmark evidence and affected workspace ledgers; preserve configuration and return for final QA.
+- **Files modified:** `drafts/DOVA_AI_WORKSTATION_PHASE2_BENCHMARK.ps1`; `drafts/DOVA_AI_WORKSTATION_PHASE2_RESULTS.md`; workspace `memory/status.md`, `memory/next-up.md`, `memory/decisions.md`, `memory/done-log.md`; this report log.
+- **Summary:** Added a tracked deterministic median routine with explicit odd/even handling and retained all 18 filter measurements plus six summaries. Removed the invalid RTK passthrough/raw timing comparison from the evidence path and marked original-command latency unmeasured. Limited the generic `log` cases to filter-only coverage and marked producer exit-status/command-wrapper propagation unmeasured. Regenerated the report's medians, spreads and acceptance statements from the corrected runner.
+- **Authorization:** Principal directly instructed repair of defects 1–3 only. Existing corpus, workstation configuration, DOVA/LM Studio/Bionic settings and implementation boundaries were preserved; no package installation, global integration, service start or Phase 3 work was performed.
+- **Verified:** Corrected runner completed with 18 measurements, six summaries, one warm-up and three repetitions per case; fresh aggregate is 32.2% noisy-case reduction and 47.7% retention, with the retention gate failing and latency/wrapper gates explicitly unmeasured. Newly recreated RTK runtime files were moved from `C:\Users\User\AppData\Local\rtk` into the exact ignored scratch evidence root, leaving the global runtime directory empty. Final affected checks remain pending completion below.
+- **Unresolved issues:** Final independent QA must verify the corrected runner, report, ledger statements, failed retention/status gates and no-global-integration boundary. The results must not be treated as approval to begin Phase 3.
+- **Recommendations for the next agent:** Verify only the repaired Phase 2 evidence and original acceptance criteria; do not edit source. Return APPROVE or REJECT with numbered defects.
+
+### 2026-09-16 — @lead/vector [codex] — Final Phase 2 repair and client integration
+
+- **Model/authority:** GPT-6. Vollmann explicitly requested this model repair the defects, perform two QA passes, commit, push and merge; he then explicitly included the existing FHS client changes. These are same-model checks, not independent approval.
+- **Scope:** Intelligence benchmark/report and ledgers; reviewed existing Option D quotation/invoice and client ledgers; cross-workspace coordination recorded in memory/board.md.
+- **Correction:** Historical Phase 2 aggregate claims are superseded by 32.3% noisy reduction, 47.6% noisy retention and 83.3% overall retention. Fixed seven-column results-table separator. The earlier pending-checker/pending-check statements are superseded by the owner's same-model QA instruction.
+- **Evidence:** Tracked PHASE2_CHECK.ps1 exercises odd/even medians, 18 actual filter measurements, full-precision aggregates, timing spreads, scope limits and table columns. Client PDF text, arithmetic and A4 checks pass; invoice is one page, quotation two; three raster pages inspected. Canonical invoice renderer and overflow regression pass. See workspace done logs for final QA results. No configuration/integration or Phase 3 change.
+- **Boundary:** RTK fails retention and remains unintegrated. Client sending and reconciliation of earlier payments remain separate from this authorised Git merge.
+- **Final QA results:** Pass 1 passed actual benchmark regression checks, all 23 core tests, client PDF/arithmetic/raster review and renderer overflow tests. Pass 2 passed independent rational-number recalculation (same model), all report-table column checks, byte/hash parity for client deliverables, scoped staged-diff review, whitespace/conflict checks and unchanged deployment boundary. Both requested review passes are complete; no remaining defect was found in the scoped changes.
