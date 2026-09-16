@@ -117,12 +117,16 @@ prompts or network responses.
 
 The tracked runner is
 `DOVA_AI_WORKSTATION_PHASE2_BENCHMARK.ps1`. It uses one discarded warm-up
-and three measured repetitions per case. Raw metrics use UTF-8 bytes and the
-same estimated-token rule for every condition (`ceil(bytes / 4)`). Retention
-is exact substring survival for the technical entities declared by each
-fixture. Filter latency is compared with the same-process RTK passthrough
-baseline to isolate wrapper/filter overhead. The original raw fixture remains
-recoverable from the corpus file.
+and three measured repetitions per case, retaining all 18 measurements and
+emitting six tracked case summaries. Its `Get-Median` routine sorts the
+measurements and uses an explicit floor for the odd-count middle index, while
+averaging the two middle values for an even count. Raw metrics use UTF-8 bytes
+and the same estimated-token rule for every condition (`ceil(bytes / 4)`).
+Retention is exact substring survival for the technical entities declared by
+each fixture. The runner measures only the RTK filter/JSON transformation
+process; it does not execute a comparable original command, so latency
+overhead and command-wrapper status propagation are unmeasured. The original
+raw fixture remains recoverable from the corpus file.
 
 Exact runner command:
 
@@ -137,28 +141,30 @@ pwsh -NoProfile -File DOVA_AI_WORKSTATION_PHASE2_BENCHMARK.ps1 `
 
 The benchmark used RTK `git-status`, `git-diff`, `rg` and `log` pipe filters;
 the unittest fixture used the generic `log` filter rather than claiming
-pytest-parser coverage; the JSON fixture used `rtk json`.
+pytest-parser coverage; the JSON fixture used `rtk json`. These are
+filter-only invocations. The runner does not invoke producer commands through
+`rtk test`, `rtk npm` or equivalent wrappers, so producer exit-status and
+wrapper behaviour remain unmeasured.
 
 ### Median results
 
-| Case | RTK operation | Raw B / lines / tokens | Output B / lines / tokens | Reduction | Retention | Filter ms median (spread) | Overhead vs passthrough |
+| Case | RTK operation | Raw B / lines / tokens | Output B / lines / tokens | Reduction | Retention | Filter process ms median (min–max) |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| `git-status` | `pipe --filter git-status` | 261 / 4 / 66 | 259 / 4 / 65 | 0.8% | 100.0% | 104.3 (84.8–104.3) | 8.3% |
-| `git-diff` | `pipe --filter git-diff` | 970 / 17 / 243 | 760 / 15 / 190 | 21.6% | 66.7% | 48.2 (40.5–48.2) | -38.5% |
-| `rg-search` | `pipe --filter rg` | 791 / 7 / 198 | 675 / 12 / 169 | 14.7% | 100.0% | 65.7 (51.7–65.7) | 36.0% |
-| `pytest-or-unittest` | `pipe --filter log` | 758 / 12 / 190 | 255 / 7 / 64 | 66.4% | 28.6% | 99.4 (50.4–99.4) | 57.6% |
-| `npm-or-build` | `pipe --filter log` | 478 / 9 / 120 | 273 / 7 / 69 | 42.9% | 28.6% | 57.6 (50.7–57.6) | -21.7% |
-| `json-tool-output` | `json` | 296 / 11 / 74 | 277 / 12 / 70 | 6.4% | 100.0% | 83.1 (71.8–83.1) | 5.7% |
+| `git-status` | `pipe --filter git-status` | 261 / 4 / 66 | 259 / 4 / 65 | 0.8% | 100.0% | 51.140 (42.400–89.931) |
+| `git-diff` | `pipe --filter git-diff` | 970 / 17 / 243 | 760 / 15 / 190 | 21.6% | 66.7% | 49.355 (41.451–59.686) |
+| `rg-search` | `pipe --filter rg` | 791 / 7 / 198 | 675 / 12 / 169 | 14.7% | 100.0% | 55.188 (37.330–59.766) |
+| `pytest-or-unittest` | `pipe --filter log` | 758 / 12 / 190 | 255 / 7 / 64 | 66.4% | 28.6% | 39.042 (38.192–40.381) |
+| `npm-or-build` | `pipe --filter log` | 478 / 9 / 120 | 273 / 7 / 69 | 42.9% | 28.6% | 42.767 (42.466–104.974) |
+| `json-tool-output` | `json` | 296 / 11 / 74 | 277 / 12 / 70 | 6.4% | 100.0% | 53.987 (50.347–54.018) |
 
 Aggregate medians:
 
 - all six cases: **18.2% reduction**, **83.4% retention**;
 - noisy command cases (`git-diff`, `rg-search`, `pytest-or-unittest`,
-  `npm-or-build`): **32.2% reduction**, **47.7% retention**, **7.2% median
-  overhead** versus passthrough;
-- the reduction and aggregate median latency gates pass on the noisy subset,
-  but the 98% retention gate fails. `rg-search` and `pytest-or-unittest` also
-  exceed 25% per-case median overhead.
+  `npm-or-build`): **32.2% reduction**, **47.7% retention**;
+- the 98% retention gate fails. Latency overhead is **UNMEASURED** because
+  there is no comparable original-command baseline in this runner, and
+  command-wrapper status propagation is **UNMEASURED** for the same reason.
 
 The lost technical entities were:
 
@@ -177,9 +183,9 @@ recovered, but the compressed stream must not replace the raw failure record.
 | --- | --- | --- |
 | DOVA approval boundary, manual-start stack, bounded router and maker/checker governance intact | PASS | No DOVA runtime, Bionic, LM Studio, startup or protected instruction-hierarchy file changed; only the append-only report log and workspace ledgers were updated; no service started |
 | No paid API, credentials, cloud inference or unapproved telemetry | PASS | Local sanitised fixtures only; telemetry environment disabled; no package-manager install completed |
-| Reproducible named fixtures, hashes and three repetitions | PASS | Tracked corpus and runner; 18 rows; one warm-up plus three repetitions per case |
-| Final status and actionable diagnostics preserved | FAIL | Diff/test/build filters drop IDs, paths or final status; pipe exit code does not represent producer status |
-| At least 20% noisy median reduction, at least 98% retention, at most 25% median latency | FAIL | Reduction 32.2% and aggregate overhead 7.2%, but retention 47.7%; two per-case latency medians exceed 25% |
+| Reproducible named fixtures, hashes and three repetitions | PASS | Tracked corpus and runner; 18 measurements plus six summaries; one warm-up plus three repetitions per case |
+| Final status and actionable diagnostics preserved | FAIL / wrapper unmeasured | Diff/test/build filters drop IDs, paths or final status; producer exit-status propagation through command wrappers remains unmeasured |
+| At least 20% noisy median reduction, at least 98% retention, at most 25% median latency | FAIL / latency unmeasured | Reduction is 32.2% but retention is 47.7%; the latency gate cannot be evaluated without a comparable original-command baseline |
 | Raw output recoverable and transformations explicit/reversible | PASS | Raw fixture remains in the tracked corpus; only bounded scratch files were used |
 | Standalone RTK has material advantage over usable bundled path | UNMEASURED / NOT RECOMMENDED | OmniRoute bundled path could not execute; standalone itself failed retention and no integration need was demonstrated |
 | Phase 3 or later work started | PASS | No Phase 3 changes were made |
@@ -202,8 +208,10 @@ proposal without a separate review of DOVA's instruction hierarchy.
 
 ## Maker verification and handoff
 
-- Tracked benchmark runner: 18 rows, six cases, three repetitions each,
-  zero filtered/passthrough process errors and zero captured stderr.
+- Tracked benchmark runner: 18 measurements and six tracked summaries, six
+  cases, three repetitions each, zero filtered process errors and zero captured
+  stderr. The runner's metadata records filter-only scope, an unmeasured
+  latency baseline and unmeasured command-wrapper coverage.
 - Required workspace unit suite passed: 23 tests, zero failures, with Python
   bytecode disabled. JSON fixtures and benchmark-script parsing passed;
   `git diff --check` passed and the target evidence files contain no conflict

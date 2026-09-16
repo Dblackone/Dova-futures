@@ -29,6 +29,27 @@ function Measure-Retention([string] $Text, $Entities) {
   }
 }
 
+function Get-Median([object[]] $Values) {
+  $sorted = @($Values | ForEach-Object { [double] $_ } | Sort-Object)
+  if ($sorted.Count -eq 0) { return 0 }
+  $middle = [int][Math]::Floor($sorted.Count / 2)
+  if (($sorted.Count % 2) -eq 1) {
+    return [double] $sorted[$middle]
+  }
+  return ([double] $sorted[$middle - 1] + [double] $sorted[$middle]) / 2
+}
+
+function Get-Spread([object[]] $Values) {
+  $sorted = @($Values | ForEach-Object { [double] $_ } | Sort-Object)
+  if ($sorted.Count -eq 0) {
+    return [pscustomobject]@{ min = 0; max = 0 }
+  }
+  [pscustomobject]@{
+    min = [Math]::Round($sorted[0], 3)
+    max = [Math]::Round($sorted[$sorted.Count - 1], 3)
+  }
+}
+
 function Invoke-Rtk([string[]] $Arguments, [string] $InputText) {
   $psi = [Diagnostics.ProcessStartInfo]::new()
   $psi.FileName = $RtkExe
@@ -83,10 +104,8 @@ foreach ($case in $corpusData.cases) {
   } else {
     $arguments = @('pipe', '--filter', $filters[$case.id])
   }
-  $passthroughArguments = @('pipe', '--passthrough')
 
-  # One warm-up per condition is discarded before the three reported runs.
-  [void] (Invoke-Rtk $passthroughArguments $case.input)
+  # One filter-only warm-up is discarded before the three reported runs.
   if ($case.id -eq 'json-tool-output') {
     [void] (Invoke-Rtk $arguments $null)
   } else {
@@ -95,10 +114,6 @@ foreach ($case in $corpusData.cases) {
 
   $rawMetrics = Measure-Text $case.input
   for ($rep = 1; $rep -le 3; $rep++) {
-    $rawTimer = [Diagnostics.Stopwatch]::StartNew()
-    $rawText = [string]::Copy($case.input)
-    $rawTimer.Stop()
-    $pass = Invoke-Rtk $passthroughArguments $case.input
     if ($case.id -eq 'json-tool-output') {
       $filtered = Invoke-Rtk $arguments $null
     } else {
@@ -111,10 +126,7 @@ foreach ($case in $corpusData.cases) {
       case = $case.id
       repetition = $rep
       raw = $rawMetrics
-      rawElapsedMs = [Math]::Round($rawTimer.Elapsed.TotalMilliseconds, 3)
-      passthroughElapsedMs = [Math]::Round($pass.elapsedMs, 3)
       filteredElapsedMs = [Math]::Round($filtered.elapsedMs, 3)
-      passthroughExitCode = $pass.exitCode
       filteredExitCode = $filtered.exitCode
       output = $compressedMetrics
       retention = $retention
@@ -123,4 +135,60 @@ foreach ($case in $corpusData.cases) {
   }
 }
 
-$rows | ConvertTo-Json -Depth 8
+$summaries = foreach ($case in $corpusData.cases) {
+  $caseRows = @($rows | Where-Object { $_.case -eq $case.id })
+  $outputBytes = Get-Median @($caseRows | ForEach-Object { $_.output.utf8Bytes })
+  $outputLines = Get-Median @($caseRows | ForEach-Object { $_.output.nonEmptyLines })
+  $outputTokens = Get-Median @($caseRows | ForEach-Object { $_.output.estimatedTokens })
+  $retentionScore = Get-Median @($caseRows | ForEach-Object { $_.retention.score })
+  $latencyValues = @($caseRows | ForEach-Object { $_.filteredElapsedMs })
+  $latencySpread = Get-Spread $latencyValues
+  [pscustomobject]@{
+    case = $case.id
+    operation = if ($case.id -eq 'json-tool-output') { 'json' } else { "pipe --filter $($filters[$case.id])" }
+    repetitions = $caseRows.Count
+    raw = $caseRows[0].raw
+    output = [pscustomobject]@{
+      utf8Bytes = [int][Math]::Round($outputBytes)
+      nonEmptyLines = [int][Math]::Round($outputLines)
+      estimatedTokens = [int][Math]::Round($outputTokens)
+    }
+    reductionPercent = [Math]::Round((1 - ($outputBytes / $caseRows[0].raw.utf8Bytes)) * 100, 1)
+    retentionPercent = [Math]::Round($retentionScore * 100, 1)
+    filteredLatencyMs = [pscustomobject]@{
+      median = [Math]::Round((Get-Median $latencyValues), 3)
+      spread = $latencySpread
+    }
+    filteredExitCodes = @($caseRows | ForEach-Object { $_.filteredExitCode } | Sort-Object -Unique)
+    stderrCount = @($caseRows | Where-Object { $_.stderr.Length -gt 0 }).Count
+    lostEntities = @($caseRows | ForEach-Object { $_.retention.lost } | Sort-Object -Unique)
+  }
+}
+
+$noisyCaseIds = @('git-diff', 'rg-search', 'pytest-or-unittest', 'npm-or-build')
+$noisySummaries = @($summaries | Where-Object { $noisyCaseIds -contains $_.case })
+$aggregate = [pscustomobject]@{
+  allCases = [pscustomobject]@{
+    caseCount = @($summaries).Count
+    reductionPercent = [Math]::Round((Get-Median @($summaries | ForEach-Object { $_.reductionPercent })), 1)
+    retentionPercent = [Math]::Round((Get-Median @($summaries | ForEach-Object { $_.retentionPercent })), 1)
+  }
+  noisyCases = [pscustomobject]@{
+    caseIds = $noisyCaseIds
+    caseCount = $noisySummaries.Count
+    reductionPercent = [Math]::Round((Get-Median @($noisySummaries | ForEach-Object { $_.reductionPercent })), 1)
+    retentionPercent = [Math]::Round((Get-Median @($noisySummaries | ForEach-Object { $_.retentionPercent })), 1)
+  }
+  latencyBaseline = 'UNMEASURED: the fixture runner does not execute a comparable original command.'
+  wrapperCoverage = 'UNMEASURED: the fixture runner invokes pipe filters and json, not producer commands through rtk wrappers.'
+}
+
+[pscustomobject]@{
+  schema = 'dova-ai-workstation-phase2-benchmark-v2'
+  evaluationScope = 'RTK filter/JSON transformations only; original command execution and command-wrapper status propagation are unmeasured.'
+  warmupPerCase = 1
+  repetitionsPerCase = 3
+  measurements = @($rows)
+  summaries = @($summaries)
+  aggregate = $aggregate
+} | ConvertTo-Json -Depth 10
