@@ -1,6 +1,6 @@
 # Next Up
 
-1. Implement the approved Phase 2 evaluation plan in `drafts/DOVA_AI_WORKSTATION_PHASE2_PLAN.md`: inspect OmniRoute's existing compression path, evaluate standalone RTK only under the zero-spend gate, benchmark the fixed sanitised corpus, and stop after reporting results. Do not begin Phase 3.
+1. Independently QA `drafts/DOVA_AI_WORKSTATION_PHASE2_RESULTS.md`, its fixed corpus and benchmark runner against the Phase 2 plan. Confirm the failed retention/status gates and the no-global-integration boundary. Do not begin Phase 3.
 2. Complete independent review and merge of the live GitHub/read-only OneDrive integration (PR #35); PR #34 is already merged.
 3. Verify the private Hub deployment, DNS and SSL status before applying any still-needed DNS changes.
 4. Register the Microsoft Entra SPA, add the Hub redirect origins and configure `MICROSOFT_CLIENT_ID`, `MICROSOFT_TENANT_ID` and the approved `ONEDRIVE_ROOT_PATH`.

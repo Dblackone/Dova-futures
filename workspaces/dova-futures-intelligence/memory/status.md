@@ -19,11 +19,19 @@ a user restart is needed before its live session is assumed to have reloaded.
 
 ## DOVA AI Workstation Phase 2 — 2026-09-16
 
-Phase 2 planning is complete. The plan evaluates the installed OmniRoute
-compression path before considering standalone RTK, defines a fixed benchmark
-corpus and retention/reduction gates, and preserves zero-spend and manual-start
-boundaries. No RTK package or global configuration was installed or changed.
-See `drafts/DOVA_AI_WORKSTATION_PHASE2_PLAN.md`.
+Phase 2 evaluation is complete and awaiting independent QA. The installed
+OmniRoute CLI/source path was exercised first but remained unmeasured because
+the local server was stopped, its preview/test calls returned no payload, and
+the published package's benchmark entry points and `@/shared` source alias were
+not executable. A verified RTK v0.48.0 portable binary was measured from
+ignored scratch only; its noisy-case reduction median was 32.2%, but technical
+entity retention was 47.7%, so the 98% gate failed. Standalone RTK is not
+recommended or retained as a DOVA integration. No RTK global hook, Codex file,
+PATH entry, Bionic/LM Studio setting, service start or Phase 3 work was added.
+See `drafts/DOVA_AI_WORKSTATION_PHASE2_RESULTS.md` and the tracked benchmark
+runner/corpus.
+
+**Last verified:** 2026-09-16 — @lead/vector [codex]
 
 The workspace retains the provider-neutral local gateway and repository-scoped
 integration suite for Agent Reach, Hallmark, Career Ops, HyperFrames, World
