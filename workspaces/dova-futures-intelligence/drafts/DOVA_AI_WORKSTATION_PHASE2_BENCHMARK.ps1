@@ -24,7 +24,7 @@ function Measure-Retention([string] $Text, $Entities) {
   [pscustomobject]@{
     total = $total
     survived = $survived
-    score = if ($total -eq 0) { 1 } else { [Math]::Round($survived / $total, 4) }
+    score = if ($total -eq 0) { 1 } else { $survived / $total }
     lost = @($Entities | Where-Object { -not $Text.Contains([string] $_) })
   }
 }
@@ -153,8 +153,9 @@ $summaries = foreach ($case in $corpusData.cases) {
       nonEmptyLines = [int][Math]::Round($outputLines)
       estimatedTokens = [int][Math]::Round($outputTokens)
     }
-    reductionPercent = [Math]::Round((1 - ($outputBytes / $caseRows[0].raw.utf8Bytes)) * 100, 1)
-    retentionPercent = [Math]::Round($retentionScore * 100, 1)
+    # Preserve precision for aggregation; round only when formatting the report.
+    reductionPercent = (1 - ($outputBytes / $caseRows[0].raw.utf8Bytes)) * 100
+    retentionPercent = $retentionScore * 100
     filteredLatencyMs = [pscustomobject]@{
       median = [Math]::Round((Get-Median $latencyValues), 3)
       spread = $latencySpread

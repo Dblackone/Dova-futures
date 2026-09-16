@@ -1,6 +1,6 @@
 # Next Up
 
-1. Final independent QA of `drafts/DOVA_AI_WORKSTATION_PHASE2_RESULTS.md`, its fixed corpus and repaired benchmark runner against the Phase 2 plan. Verify the tracked median routine, corrected filter-only latency/wrapper scope, failed retention/status gates and the no-global-integration boundary. Do not begin Phase 3.
+1. Retain the Phase 2 no-integration decision: noisy retention is 47.6%; original-command latency and wrapper behaviour remain unmeasured. Vollmann authorised same-model repair, two QA passes and merge. Phase 3 requires a separate instruction.
 2. Complete independent review and merge of the live GitHub/read-only OneDrive integration (PR #35); PR #34 is already merged.
 3. Verify the private Hub deployment, DNS and SSL status before applying any still-needed DNS changes.
 4. Register the Microsoft Entra SPA, add the Hub redirect origins and configure `MICROSOFT_CLIENT_ID`, `MICROSOFT_TENANT_ID` and the approved `ONEDRIVE_ROOT_PATH`.

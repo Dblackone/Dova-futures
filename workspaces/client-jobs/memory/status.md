@@ -4,17 +4,17 @@
 **Health:** 🟢 on track
 
 ## Now
-- 2026-09-14: Principal selected Option C from `VQ-2026-POOL-001` (2ft wall waterfall with integrated LED light). `INV-2026-POOL-006` now includes the ₦623,000 variation and totals ₦1,617,050; revised HTML/PDF are filed in the existing FHS company archive folder. Prepared for principal review before sending.
+- 2026-09-16: Following the client's discount request, the principal selected Option D from `VQ-2026-POOL-001` (2ft wall waterfall without integrated LED light) at an agreed ₦550,000. Revised quotation and `INV-2026-POOL-006` are filed in the existing FHS company archive folder; invoice total is ₦1,544,050. Prepared for principal review before sending.
 - 2026-09-14: Preliminary Lush Abuja store feasibility and material-sourcing report `RPT-2026-LUSH-001` drafted from the canonical report template. It concludes that a Jabi Mall store is feasible in principle, with a Nigerian-first/local-hybrid/import schedule and ethical procurement controls. Independent checker approved the corrected three-page HTML/PDF; principal review remains pending and the draft has not been issued.
 - 2026-09-13: Canonical invoice print fix implemented in template + renderer; POOL-006 regenerated as one A4 page with 10mm margins and filed in the company archive `01_Projects/FHS POOL IBAFO/01_Documents/04_Costs_and_Procurement/`. See tools/INVOICE-STANDARD.md. Not sent; formal cross-model review remains pending.
 - **4 formal project records:**
   - **DFL-2026-POOL-001** (FHS Hotel Swimming Pool, Ibafo) — invoices
-    INV-001..006 issued/drafted, VQ-2026-POOL-001 waterfall variation quoted,
+    INV-001..006 issued/drafted, VQ-2026-POOL-001 waterfall variation revised,
     PROGRESS-REPORT-001 (June 2026) filed, HNM July correspondence on file.
-    Consolidated INV-2026-POOL-006 for ₦1,617,050 is saved under the project’s
+    Consolidated INV-2026-POOL-006 for ₦1,544,050 is saved under the project’s
     existing `01-Documents/` folder; it combines the ₦794,050 contract balance,
     ₦115,000 Aqua Seal/transport expenditure, ₦85,000 concrete mixer rental and
-    the selected ₦623,000 Option C waterfall variation.
+    the selected discounted ₦550,000 Option D waterfall variation.
   - **DFL-2026-ROAD-001** (C. K. Musa access road erosion repair, Afuze, Edo) —
     quotation submitted; awaiting client response and pavement alternate choice.
     Items 1–4 firm, subtotal ₦2,295,000; pavement 200m² priced as alternates:

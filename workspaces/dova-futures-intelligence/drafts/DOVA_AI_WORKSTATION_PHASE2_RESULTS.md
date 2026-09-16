@@ -4,7 +4,7 @@
 **Builder:** @lead/vector [codex]
 **Runtime model:** OpenAI Codex, GPT-5; executed the approved Luna planning record
 **Workspace:** `dova-futures-intelligence`
-**Status:** Results complete; awaiting independent QA
+**Status:** Evidence repaired; same-model verification authorised by Vollmann
 **Scope stop:** Phase 3 and later work was not started.
 
 ## Decision
@@ -149,7 +149,7 @@ wrapper behaviour remain unmeasured.
 ### Median results
 
 | Case | RTK operation | Raw B / lines / tokens | Output B / lines / tokens | Reduction | Retention | Filter process ms median (min–max) |
-| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
 | `git-status` | `pipe --filter git-status` | 261 / 4 / 66 | 259 / 4 / 65 | 0.8% | 100.0% | 51.140 (42.400–89.931) |
 | `git-diff` | `pipe --filter git-diff` | 970 / 17 / 243 | 760 / 15 / 190 | 21.6% | 66.7% | 49.355 (41.451–59.686) |
 | `rg-search` | `pipe --filter rg` | 791 / 7 / 198 | 675 / 12 / 169 | 14.7% | 100.0% | 55.188 (37.330–59.766) |
@@ -159,9 +159,9 @@ wrapper behaviour remain unmeasured.
 
 Aggregate medians:
 
-- all six cases: **18.2% reduction**, **83.4% retention**;
+- all six cases: **18.2% reduction**, **83.3% retention**;
 - noisy command cases (`git-diff`, `rg-search`, `pytest-or-unittest`,
-  `npm-or-build`): **32.2% reduction**, **47.7% retention**;
+  `npm-or-build`): **32.3% reduction**, **47.6% retention**;
 - the 98% retention gate fails. Latency overhead is **UNMEASURED** because
   there is no comparable original-command baseline in this runner, and
   command-wrapper status propagation is **UNMEASURED** for the same reason.
@@ -185,7 +185,7 @@ recovered, but the compressed stream must not replace the raw failure record.
 | No paid API, credentials, cloud inference or unapproved telemetry | PASS | Local sanitised fixtures only; telemetry environment disabled; no package-manager install completed |
 | Reproducible named fixtures, hashes and three repetitions | PASS | Tracked corpus and runner; 18 measurements plus six summaries; one warm-up plus three repetitions per case |
 | Final status and actionable diagnostics preserved | FAIL / wrapper unmeasured | Diff/test/build filters drop IDs, paths or final status; producer exit-status propagation through command wrappers remains unmeasured |
-| At least 20% noisy median reduction, at least 98% retention, at most 25% median latency | FAIL / latency unmeasured | Reduction is 32.2% but retention is 47.7%; the latency gate cannot be evaluated without a comparable original-command baseline |
+| At least 20% noisy median reduction, at least 98% retention, at most 25% median latency | FAIL / latency unmeasured | Reduction is 32.3% but retention is 47.6%; the latency gate cannot be evaluated without a comparable original-command baseline |
 | Raw output recoverable and transformations explicit/reversible | PASS | Raw fixture remains in the tracked corpus; only bounded scratch files were used |
 | Standalone RTK has material advantage over usable bundled path | UNMEASURED / NOT RECOMMENDED | OmniRoute bundled path could not execute; standalone itself failed retention and no integration need was demonstrated |
 | Phase 3 or later work started | PASS | No Phase 3 changes were made |
@@ -216,5 +216,11 @@ proposal without a separate review of DOVA's instruction hierarchy.
   bytecode disabled. JSON fixtures and benchmark-script parsing passed;
   `git diff --check` passed and the target evidence files contain no conflict
   markers.
-- Independent QA must review this record, the corpus and runner, verify the
-  numbered acceptance failures, and must not edit the implementation.
+- Vollmann explicitly authorised GPT-6 to repair and perform two same-model
+  QA passes before committing, pushing and merging. This is an authorised
+  exception to independent maker/checker separation, not independent review.
+- Final arithmetic correction: aggregate unrounded ratios, then round once.
+  This supersedes the historical 32.2% noisy reduction, 47.7% noisy retention
+  and 83.4% overall retention claims with 32.3%, 47.6% and 83.3% respectively.
+  The table above retains the first repair run's filter-process timings;
+  subsequent execution verifies content metrics and median computation.

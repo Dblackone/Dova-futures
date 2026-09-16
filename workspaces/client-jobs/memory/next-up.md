@@ -15,7 +15,8 @@
      any client presentation or invoice issue. Confirm both recorded payment
      dates and amounts against the bank record before authorising INV-004.
 2. [ ] **POOL: confirm invoice status** — revised `INV-2026-POOL-006` now includes
-   selected VQ-2026-POOL-001 Option C and totals ₦1,617,050. With the principal,
+   selected VQ-2026-POOL-001 Option D at the agreed discounted ₦550,000 and totals
+   ₦1,544,050. With the principal,
    confirm which of INV-2026-POOL-001..005 are delivered/paid before sending the
    consolidated invoice; log outcomes to avoid duplicate billing.
 3. [ ] **OSG: principal review** — RPT-2026-OSG-001 + cost estimate need the

@@ -54,3 +54,7 @@ a page (7 → 8).
 ## 2026-09-07 — merge reconciliation
 
 @lead/vector [codex] owns `codex/resolve-september-conflicts` for the principal's request to resolve repository conflicts and merge. Scope spans PR #35 (intelligence), PR #36 (website handoff), and already-committed conflict markers in shared/client history. Existing log entries are preserved; no client deliverable or external website source changes are included. Independent integration review is in progress.
+
+## 2026-09-16 — authorised Phase 2 and client integration
+
+@lead/vector [codex] owns `codex/phase2-final-repair` for Vollmann's explicit repair, two same-model QA passes and merge request. Scope spans `dova-futures-intelligence` evidence/ledgers and the existing `client-jobs` FHS Option D quotation, POOL-006 invoice and ledgers. Original files are preserved while an isolated checkout is reviewed. No external client delivery or Phase 3 work is included.

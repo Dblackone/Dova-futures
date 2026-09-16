@@ -699,6 +699,13 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Archive:** `C:/Users/User/OneDrive/Documents/DOVA Futures Limited/01_Projects/FHS POOL IBAFO/01_Documents/04_Costs_and_Procurement/INV-2026-POOL-006.html` and `.pdf`.
 - **Unresolved:** This is prepared for principal review and external sending; no client message or delivery was made. Confirm the consolidated treatment of earlier invoice balances before issue to avoid duplicate billing.
 
+### 2026-09-16 — @lead/vector [codex] — Revise FHS waterfall to Option D discount
+- **Authority/scope:** Principal instructed that the client-selected Option D replace Option C and be billed at an agreed discounted ₦550,000; scope covers the existing waterfall quotation revision and INV-2026-POOL-006.
+- **Changed:** Preserved the original VQ as historical record; created `VQ-2026-POOL-001_REV-01_Waterfall-Option-D-Discounted` with Option D marked selected, standard ₦598,000, ₦48,000 discount and agreed ₦550,000. Updated INV-2026-POOL-006 and reset issue/due dates to 16 September/16 October 2026; total changed to ₦1,544,050.
+- **Verified:** Revised quotation renders as two pages and its extracted text/raster review confirms Option D, no Option C recommendation, ₦550,000, ₦598,000 and ₦48,000. Invoice renders as one A4 page through the canonical renderer; extracted text confirms Option D, ₦550,000 and total ₦1,544,050; visual inspection found no clipping or overflow. Existing items remain ₦794,050, ₦115,000 and ₦85,000. `git diff --check` clean for the target changes.
+- **Archive:** Existing folder only; revised invoice at `C:/Users/User/OneDrive/Documents/DOVA Futures Limited/01_Projects/FHS POOL IBAFO/01_Documents/04_Costs_and_Procurement/INV-2026-POOL-006.html` and `.pdf`; revised quotation at the matching `VQ-2026-POOL-001_REV-01_Waterfall-Option-D-Discounted` names. No new folder and no external delivery.
+- **Unresolved:** Confirm earlier invoice delivery/payment status before client issue to avoid duplicate billing; principal review and sending remain pending.
+
 ### 2026-09-14 — @lead/vector [codex] — Lush Abuja store feasibility report
 - **Model:** OpenAI Codex, GPT-5
 - **Workspace:** `client-jobs`
@@ -833,3 +840,12 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Verified:** Corrected runner completed with 18 measurements, six summaries, one warm-up and three repetitions per case; fresh aggregate is 32.2% noisy-case reduction and 47.7% retention, with the retention gate failing and latency/wrapper gates explicitly unmeasured. Newly recreated RTK runtime files were moved from `C:\Users\User\AppData\Local\rtk` into the exact ignored scratch evidence root, leaving the global runtime directory empty. Final affected checks remain pending completion below.
 - **Unresolved issues:** Final independent QA must verify the corrected runner, report, ledger statements, failed retention/status gates and no-global-integration boundary. The results must not be treated as approval to begin Phase 3.
 - **Recommendations for the next agent:** Verify only the repaired Phase 2 evidence and original acceptance criteria; do not edit source. Return APPROVE or REJECT with numbered defects.
+
+### 2026-09-16 — @lead/vector [codex] — Final Phase 2 repair and client integration
+
+- **Model/authority:** GPT-6. Vollmann explicitly requested this model repair the defects, perform two QA passes, commit, push and merge; he then explicitly included the existing FHS client changes. These are same-model checks, not independent approval.
+- **Scope:** Intelligence benchmark/report and ledgers; reviewed existing Option D quotation/invoice and client ledgers; cross-workspace coordination recorded in memory/board.md.
+- **Correction:** Historical Phase 2 aggregate claims are superseded by 32.3% noisy reduction, 47.6% noisy retention and 83.3% overall retention. Fixed seven-column results-table separator. The earlier pending-checker/pending-check statements are superseded by the owner's same-model QA instruction.
+- **Evidence:** Tracked PHASE2_CHECK.ps1 exercises odd/even medians, 18 actual filter measurements, full-precision aggregates, timing spreads, scope limits and table columns. Client PDF text, arithmetic and A4 checks pass; invoice is one page, quotation two; three raster pages inspected. Canonical invoice renderer and overflow regression pass. See workspace done logs for final QA results. No configuration/integration or Phase 3 change.
+- **Boundary:** RTK fails retention and remains unintegrated. Client sending and reconciliation of earlier payments remain separate from this authorised Git merge.
+- **Final QA results:** Pass 1 passed actual benchmark regression checks, all 23 core tests, client PDF/arithmetic/raster review and renderer overflow tests. Pass 2 passed independent rational-number recalculation (same model), all report-table column checks, byte/hash parity for client deliverables, scoped staged-diff review, whitespace/conflict checks and unchanged deployment boundary. Both requested review passes are complete; no remaining defect was found in the scoped changes.
