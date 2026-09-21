@@ -1,9 +1,10 @@
 # status.md — Current Snapshot (client-jobs)
 
-**Last updated:** 2026-09-14 — Lush Abuja feasibility draft recorded; awaiting principal review
+**Last updated:** 2026-09-21 — Afuze bar concept and preliminary quote recorded; awaiting principal review
 **Health:** 🟢 on track
 
 ## Now
+- 2026-09-21: Afuze bar add-on for the existing Engineer C. K. Musa residence is filed as draft review material. `BAR-2026-001` shows one bar stool and `BAR-2026-002` shows no bar stool; both are material/finish concepts that preserve the photographed entrance, floor arrangement and architecture. `QTE-2026-003` records the two alternatives with all quantities/rates TBC. Private review copies are in the existing `C. K. MUSA - AFUZE PROJECT/90_Needs_Review/` archive; nothing has been issued externally.
 - 2026-09-16: Following the client's discount request, the principal selected Option D from `VQ-2026-POOL-001` (2ft wall waterfall without integrated LED light) at an agreed ₦550,000. Revised quotation and `INV-2026-POOL-006` are filed in the existing FHS company archive folder; invoice total is ₦1,544,050. Prepared for principal review before sending.
 - 2026-09-14: Preliminary Lush Abuja store feasibility and material-sourcing report `RPT-2026-LUSH-001` drafted from the canonical report template. It concludes that a Jabi Mall store is feasible in principle, with a Nigerian-first/local-hybrid/import schedule and ethical procurement controls. Independent checker approved the corrected three-page HTML/PDF; principal review remains pending and the draft has not been issued.
 - 2026-09-13: Canonical invoice print fix implemented in template + renderer; POOL-006 regenerated as one A4 page with 10mm margins and filed in the company archive `01_Projects/FHS POOL IBAFO/01_Documents/04_Costs_and_Procurement/`. See tools/INVOICE-STANDARD.md. Not sent; formal cross-model review remains pending.

@@ -1,5 +1,9 @@
 # next-up.md — Prioritised Queue (client-jobs)
 
+## Immediate review
+
+- [ ] **AFUZE BAR: principal review of `QTE-2026-003` and concept options** — confirm whether the added bar area should proceed, select Option 1 (one bar stool) or Option 2 (no bar stool), then confirm site measurements, services, materials, quantities and rates before any priced quotation or mobilisation. The AI visuals are concepts only and both retain the existing entrance, floor arrangement and architecture. Nothing has been issued to Engineer C. K. Musa.
+
 1. [ ] **ROAD: client decision on QTE-2026-001** — quote is submitted to
    C. K. Musa for the Afuze site; once the client picks a pavement alternate
    (A concrete ₦6,014,625 / B interlocking ₦5,369,625, recommended) and accepts:
