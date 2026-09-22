@@ -31,15 +31,19 @@ Treat the packaged files as a portable snapshot. If the canonical Dova-futures r
 
 Do not use legacy claims or taglines found in old design-system commentary or raster logo artwork. In particular, do not substitute “Rethink the future” for the canonical tagline `DESIGNERS · BUILDERS · DEVELOPERS`.
 
-Apply one documented exception to the normal precedence order: although the current `references/brand.md` snapshot names a raster primary-logo path, the artwork at that path visibly carries the conflicting historical tagline. Until the principal approves corrected primary artwork, quarantine those raster files and use only the lockup extracted from the canonical letterhead fixed header.
+The principal has approved a working placement pack under `assets/logo-variations/`.
+Use its manifest and keep the historical files in `assets/legacy-logos/`
+quarantined. The letterhead SVG remains the template lockup where the services
+descriptor is required.
 
 ## Produce branded visual work
 
 - Copy `assets/design-system/` into the consuming project and import `styles.css`; adapt token delivery to the project's existing stack without changing token values.
 - Prefer semantic aliases such as `--brand`, `--surface-page`, `--text-body`, and `--focus-ring` in components.
 - Preserve the dark-green/cream surface rhythm, architectural restraint, sharp geometry, thin framing lines, generous spacing, and restrained clay accent described in `references/DESIGN.md`.
-- Use `assets/brand/dova-letterhead-lockup-on-dark.svg`, extracted from the canonical letterhead, on dark forest-green surfaces. Keep it on a green field when a light page needs a logo treatment; do not invent a recoloured variant.
-- Do not use `assets/legacy-logos/` in new work. Those supplied raster files visibly carry the historical “Rethink the future” line, two are 1×1 placeholders, and the artwork conflicts with the canonical tagline. Keep them only as a source inventory until the principal approves replacement artwork.
+- Select logo files from `assets/logo-variations/logo-manifest.json` by surface and placement. Use the horizontal green-on-white file for light wide layouts, the cream-on-green file for dark wide layouts, the stacked files for square name-bearing placements, and the symbol files where the name would become unreadable. Preserve aspect ratio and clear space; the PNGs are opaque and are not transparent overlays.
+- Use `assets/brand/dova-letterhead-lockup-on-dark.svg`, extracted from the canonical letterhead, when the existing letterhead services descriptor is required. Keep the template lockup unchanged until a deliberate document-system migration.
+- Do not use `assets/legacy-logos/` in new work. Those supplied raster files visibly carry the historical “Rethink the future” line, two are 1×1 placeholders, and the artwork conflicts with the canonical tagline. Keep them only as a source inventory; use the principal-approved files in `assets/logo-variations/` instead.
 - Use Bebas Neue for display headings and Inter for body/UI. Use the bundled Google Fonts import unless the consuming project already self-hosts the exact families and weights.
 - Keep layouts responsive and accessible. Preserve visible focus states, keyboard operation, text contrast, reduced-motion behaviour, meaningful alternative text, and usable touch targets.
 - Match the consuming repository's architecture. Do not introduce a framework or dependency solely to apply the brand.
@@ -76,6 +80,7 @@ Report deviations precisely and propose the smallest correction that restores co
 ## Reuse packaged resources
 
 - `references/DESIGN.md` — semantic visual system and implementation guidance.
+- `references/logo-usage.md` — cross-surface placement and export guidance.
 - `references/brand.md` — canonical identity snapshot.
 - `references/voice-and-tone.md` — canonical writing style snapshot.
 - `references/company-goals.md` — company positioning and priorities.
@@ -84,6 +89,7 @@ Report deviations precisely and propose the smallest correction that restores co
 - `references/source-map.md` — provenance, precedence, and refresh map.
 - `assets/design-system/` — sanitised CSS tokens and the global entry point. Historical demo content and unverifiable claims are excluded.
 - `assets/brand/` — canonical letterhead mark and lockup for dark-green surfaces.
+- `assets/logo-variations/` — principal-approved placement pack and manifest.
 - `assets/legacy-logos/` — quarantined historical raster inventory; never use in new work without principal approval.
 
 ---

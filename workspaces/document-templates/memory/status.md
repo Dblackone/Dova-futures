@@ -1,11 +1,17 @@
 # status.md — Current Snapshot (document-templates)
 
-**Last updated:** 2026-08-11 — Combined editable offline Word template
-collection added; Document System Phase 2 still awaits review
+**Last updated:** 2026-09-22 — Principal-approved working logo variation pack
+embedded in the canonical design system and portable company-brand skill;
+Document System Phase 2 still awaits review
 **Health:** 🟡 blocked on review — and Phase 2 surfaced a high-severity library
 defect (see "Open / blocked")
 
 ## Now
+- 2026-09-22: The principal directed the complete DOVA logo pack to become the
+  working logo variation system. The eight named RGB PNG variants, machine
+  manifest, placement guide, canonical SVG copies and portable Codex skill assets
+  are now stored under the design-system package. Existing template inline SVG
+  remains unchanged because it carries the services descriptor.
 - 2026-09-13: At the principal's explicit instruction, invoice template 03 now owns safe A4 print CSS used by the client-jobs renderer. One-page/overflow regressions pass; no other template changed. Formal checker review pending; see client-jobs/tools/INVOICE-STANDARD.md.
 - Design-system rules and the website-facing component contract were extracted
   into `workspaces/website/drafts/DOVA-WEBSITE-HANDOVER.md` for the new website
@@ -31,6 +37,9 @@ defect (see "Open / blocked")
   link decided).
 
 ## Recently done (last 3)
+- Principal-approved DOVA logo variation system — eight named placement assets,
+  machine-readable selection manifest, usage guide, portable skill copy and
+  exportable brand/design-system archives; verified asset parity and ZIP hashes.
 - Combined editable Word collection — blank letterhead plus templates 01–09 in
   one 18-page `.docx`; technically approved by an independent Codex QA run.
 - Portable DOVA company-brand Codex skill — canonical policy snapshots,
@@ -65,6 +74,9 @@ defect (see "Open / blocked")
   scaling across all ten templates + `documents/_ds/` (`memory/board.md`,
   2026-07-31). Note this interacts directly with the A4 overflow above — the
   same change added a page to `RPT-2026-DEMO-001`.
+- Logo-system follow-up: create a common vector master and clean transparent/
+  production exports before manufacturing, strict colour workflows or replacing
+  the current template SVG.
 
 ## Notes for the next run
 - Never edit letterhead/logo/colours in templates — fixed by `company/brand.md`.

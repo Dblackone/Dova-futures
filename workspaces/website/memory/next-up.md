@@ -6,3 +6,4 @@
 4. Confirm the desired contact-form backend host and SMTP configuration.
 5. Supply approved personal Instagram/TikTok/LinkedIn handles before adding social actions to the digital card.
 6. Continue content, photography, SEO, and product work in the external repository only.
+7. Prepare and review a clean vector master for the new logo variations; keep the current raster pack as the working set until that master is approved.

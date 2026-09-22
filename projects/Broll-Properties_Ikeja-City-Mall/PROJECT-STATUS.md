@@ -8,7 +8,7 @@
   - roof leakage remedial works
   - fire detection and alarm system replacement
   - Body Shop outlet, Ikate City Mall
-  - Body Shop outlet, “Seku Mall”, Lekki
+  - Body Shop outlet, Circle Mall, Lekki
   - Ikeja conference-room design
 - Draft client documents remain in `workspaces/client-jobs/drafts/` until principal approval and client response.
 - Unresolved wording: the report note described as “MTR on subject for CFO is the belt” needs clarification.

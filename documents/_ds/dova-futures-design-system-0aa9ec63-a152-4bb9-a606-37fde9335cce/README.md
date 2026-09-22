@@ -1,6 +1,6 @@
 # DOVA Futures — Design System
 
-> The brand toolkit for **DOVA Futures Limited** (Dova Futures Developers) — a Nigerian
+> The brand toolkit for **DOVA FUTURES LIMITED** — a Nigerian
 > design-build construction, interior, and development company. Premium, modern,
 > sustainable, and architectural, anchored in **deep forest green**, natural materials,
 > and bold, legible typography.
@@ -10,24 +10,26 @@ type tokens, brand assets, reusable UI components, and full-screen UI-kit
 recreations of the company's real products. Consuming projects link the single
 root `styles.css`; the compiler indexes everything else.
 
+Identity, contact details, approved tagline and logo precedence come from
+`company/brand.md`. This README describes the visual system; it is not a source
+for unverified project metrics or historical marketing copy.
+
 ---
 
 ## 1. Company context
 
 **DOVA Futures Limited** delivers integrated **design-build** construction across
 Nigeria — architectural planning, full-scale construction, premium interior
-fit-outs, renovations, landscaping, and real-estate development. The pitch:
-*design and construction under one roof* — eliminating the disconnect between
-drawings and on-site execution for predictable budgets and exceptional outcomes.
+fit-outs, renovations, landscaping, and real-estate development. The visual
+system supports the integrated design-build model without authoring project
+claims or performance guarantees.
 
-- **Tagline:** "Rethink the future" · headline voice: *"Designed With Intent. Built With Precision."*
-- **Positioning:** premium, professional, innovative, reliable, long-term value.
-- **Brand pillars:** professionalism, innovation, reliability, sustainability.
-- **Founder/CEO:** Vollmann Olamide Akarakiri — Construction Project Manager & BIM
-  specialist (Revit, Dynamo, AutoCAD, Navisworks). The company's depth is in BIM-led,
-  technology-driven project delivery.
-- **Reach:** Lagos HQ; projects across Ondo, Ekiti, Edo and multiple Nigerian states.
-  Currency is the **Naira (₦)**.
+- **Tagline:** `DESIGNERS · BUILDERS · DEVELOPERS` · voice: confident, precise and premium.
+- **Business:** premium Nigerian design-build construction firm.
+- **Public positioning and company claims:** use `company/brand.md` and
+  `company/voice-and-tone.md`; do not duplicate unverified claims in this visual
+  reference.
+- **Currency:** Naira (`₦`) where a verified commercial surface requires it.
 - **Contact:** info@dovafutures.com · +234 816 367 5439 · dovafutures.com ·
   Instagram / TikTok / WhatsApp.
 
@@ -66,9 +68,9 @@ those who do.
 Explore these repos further to recreate DOVA designs with higher fidelity.
 
 **Assets imported into this system** (`/assets/`):
-- `logo/DOVA Logo.png` — black line-art building skyline + wordmark (light backgrounds)
-- `logo/DOVA Logo - W.png` — white version (dark/green backgrounds)
-- `logo/DOVA Logo metadata.png` — bold wordmark variant
+- `brand/dova-letterhead-lockup-on-dark.svg` — canonical template lockup with the services descriptor
+- `brand/dova-mark-icon.svg` — canonical architectural mark source
+- `logo-variations/` — the principal-approved horizontal, stacked, symbol, wordmark and monochrome PNG variants; choose through `logo-variations/logo-manifest.json`
 - `projects/ado-hall/before.jpg`, `after.png` — before/after hero reveal imagery
 - `widgets/icons/{instagram,tiktok,whatsapp}.svg` — social glyphs
 
@@ -93,8 +95,9 @@ designer — engineering language ("precision", "engineered", "coordination",
 - **Body copy:** measured, benefit-led, no fluff. Sentences run 1–3 lines. Leads with
   outcomes (transparency, predictable budgets, quality) then mechanism (design-build,
   one roof, structured supervision).
-- **Numbers:** real metrics build trust — `20+ concurrent sites`, `₦350M+ project
-  value`, `₦10M+ savings`, `5-step process`. Always Naira `₦` for money.
+- **Numbers:** use only verified project facts supplied for the specific surface.
+  Do not reuse historical metrics that once appeared in this README. Always use
+  Naira `₦` for money.
 - **Punctuation flourish:** the en-dash in **"design–build"** is part of the brand
   lexicon. Section CTAs use first-person-plural invitations ("Let's discuss…").
 - **Tone words to reach for:** integrated, seamless, precision, premium, transparent,
@@ -104,8 +107,8 @@ designer — engineering language ("precision", "engineered", "coordination",
 
 **Examples (verbatim from the site):**
 - Eyebrow → headline: `WHAT WE DO` / **OUR CORE SERVICES**
-- Hero sub: *"Rethink the future — integrated design and construction excellence,
-  engineered for precision."*
+- Hero sub: write and verify project-specific copy against `company/brand.md` and
+  `company/voice-and-tone.md`; this design system does not author public claims.
 - Difference: *"We eliminate the disconnect between architectural drawings and on-site
   execution."*
 - CTA: **"Let's Build It Properly."**
@@ -199,9 +202,13 @@ should feel like a high-end architecture monograph — calm, precise, expensive.
 - **Emoji:** never. **Unicode geometric marks** (⬡ ◈ ⬟ ⬗ ◉) appear as decorative
   bullets in the portfolio product only — acceptable there, but prefer Lucide line
   icons for DOVA-brand surfaces.
-- **Logo:** the line-art building-skyline mark + "DOVA FUTURES DEVELOPERS" wordmark.
-  Use `DOVA Logo - W.png` on green/dark, `DOVA Logo.png` on cream/light. Give it clear
-  space; never recolor or stretch.
+- **Logo:** use the named asset from `logo-usage.md` and
+  `assets/logo-variations/logo-manifest.json`. Use the horizontal green-on-white
+  file on light wide surfaces, the cream-on-green file on dark wide surfaces,
+  the stacked files in square placements, and the symbol files when the name
+  would become unreadable. Preserve aspect ratio and clear space. These PNGs
+  have opaque backgrounds; the existing letterhead SVG remains the template
+  lockup where the services descriptor is required.
 
 ---
 
@@ -210,12 +217,18 @@ should feel like a high-end architecture monograph — calm, precise, expensive.
 **Root**
 - `styles.css` — global entry point (consumers link this). `@import`s only.
 - `README.md` — this guide.
-- `SKILL.md` — Agent-Skill wrapper.
+- `logo-usage.md` — cross-surface logo placement and export rules.
+- `exports/` — portable design-system and logo-only ZIP handoffs.
+- The Agent-Skill wrapper is maintained at `.agents/skills/dova-company-brand/SKILL.md`.
 
 **`tokens/`** — `fonts.css` · `colors.css` · `typography.css` · `spacing.css` · `effects.css`
 
-**`assets/`** — `logo/` (3 logo variants) · `projects/ado-hall/` (before/after) ·
+**`assets/`** — `brand/` (canonical SVG lockups) · `logo-variations/` (approved
+PNG placement pack + machine manifest) · `projects/ado-hall/` (before/after) ·
 `widgets/icons/` (social SVGs)
+
+**`logo-usage.md`** — the placement rules shared by document, website, app and
+tutorial work.
 
 **`guidelines/`** — 12 foundation specimen cards (Design System tab): Colors (green
 scale, neutrals, ink, accent/semantic) · Type (display, body, eyebrow) · Spacing
@@ -234,7 +247,8 @@ scale, neutrals, ink, accent/semantic) · Type (display, body, eyebrow) · Spaci
 
 ## 7. Status / next up
 
-✅ Tokens, fonts, `styles.css`, brand assets, README · 12 foundation cards ·
+✅ Tokens, fonts, `styles.css`, brand assets, logo variation pack + manifest,
+logo usage guide, README · 12 foundation cards ·
 13 components (3 demo cards) · `dova-website` UI kit · `SKILL.md`.
 🔜 Akarakiri AEC-portfolio UI kit (secondary product) · self-hosted webfonts if needed ·
 real per-project photography to replace the Ado Hall stand-in imagery.

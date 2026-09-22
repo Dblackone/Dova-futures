@@ -40,12 +40,26 @@
 
 ## Logo
 
-- Primary logo: `assets/logo/DOVA Logo - W.png` (white on transparent, ~28 KB).
-- Other lockups: `assets/logo/` (`DOVA Logo.png`, `logo.png`, metadata variant).
-- Web favicons/app icons: `public/favicon.png`, `public/apple-touch-icon.png`,
-  `public/icon-512.png`, `public/logo/`.
-- In document templates the logo is embedded as **inline SVG** — do not replace
-  it with a raster image or remove it.
+The principal-approved working logo system is the three-building identity and
+its placement variants in `assets/logo-variations/`. Use `logo-manifest.json`
+to select a variant by surface and placement:
+
+| Variant | File | Use |
+|---------|------|-----|
+| Primary horizontal | `01-horizontal-green-on-white.png` | Light document headers, website/light surfaces, presentations and business cards |
+| Reversed horizontal | `02-horizontal-cream-on-green.png` | Forest-green headers, dark website surfaces, covers and banners |
+| Stacked full name | `03-square-stacked-green-on-white.png` | Square profile or directory placements; review the noted line artefact before issue |
+| Reversed stacked full name | `04-square-stacked-cream-on-green.png` | Square dark profile tiles and green presentation covers |
+| Symbol only, light | `05-symbol-green-on-white.png` | Small light-background avatars, compact markers and favicon source artwork |
+| Symbol only, dark | `06-symbol-cream-on-green.png` | Small dark-background avatars and app-icon source artwork |
+| Wordmark | `07-wordmark-green-on-white.png` | Narrow name-led placements where the mark is already nearby |
+| Monochrome | `08-horizontal-black-on-white.png` | Single-colour printing and black-and-white references |
+
+The files are opaque RGB PNG exports. Preserve their proportions and clear space;
+do not present them as transparent overlays or vector production masters. The
+existing letterhead SVG remains the canonical services-descriptor lockup for
+current document templates until that template system is deliberately migrated.
+Historical raster files remain quarantined under `assets/legacy-logos/`.
 
 ## The programmatic design system
 

@@ -1,6 +1,6 @@
 # Status — website
 
-**Last updated:** 2026-09-06 — @lead/vector [codex]
+**Last updated:** 2026-09-22 — @lead/vector [codex]
 
 **Health:** Green — source and custom domain migrated
 
@@ -23,3 +23,11 @@ The branch is pushed but is not merged or deployed.
 Verification: all three Playwright tests pass across 320, 375, 768 and 1280px;
 portfolio/card assets are checked by MIME type and signature; the QR decodes to
 `https://dovafutures.com/vollmann/`; independent technical review approved.
+
+## Shared company logo pack
+
+On 2026-09-22, the current website worktree received all eight variants, the
+manifest and placement guidance at `assets/logo/brand-pack-2026-09-22/`. The
+header/footer reference the dark horizontal variation; the favicon and Apple
+touch icon use the symbol variation. The site edits are local and uncommitted;
+no deployment was performed. The new variation vector master remains pending.

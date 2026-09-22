@@ -3,6 +3,8 @@
 ## Immediate review
 
 - [ ] **AFUZE BAR: principal review of `QTE-2026-003` and concept options** — confirm whether the added bar area should proceed, select Option 1 (one bar stool) or Option 2 (no bar stool), then confirm site measurements, services, materials, quantities and rates before any priced quotation or mobilisation. The AI visuals are concepts only and both retain the existing entrance, floor arrangement and architecture. Nothing has been issued to Engineer C. K. Musa.
+- [ ] **AFUZE ROOM: review `ROOM-2026-002_Codex-Room-Design-Revised-L-Layout.png`** — confirm the 4-ft storage-bed position, compact far-wall desk beside the headboard, shallow overhead storage, finishes, lighting and required site dimensions before treating the visual as a design instruction. The image is a geometry-preserving concept only; no room alteration or external issue has been authorised.
+- [ ] **CIRCLE MALL / JENNIFER: confirm source-sketch basis** — confirm the restaurant/trading name and full client identity, units and orientation, clean overall plan/area, kitchen equipment and services, pickup/merchandising brief, and Circle Mall fit-out requirements before design development. The four source sketches are preserved in `drafts/CIRCLE-MALL-LEKKI-JENNIFER-STORE/`; no job code or external delivery is authorised.
 
 1. [ ] **ROAD: client decision on QTE-2026-001** — quote is submitted to
    C. K. Musa for the Afuze site; once the client picks a pavement alternate
@@ -76,8 +78,8 @@
    dosage, sand allowance and labour/access constraints. No job code exists and
    none of the documents may be issued externally before principal approval.
 
-8. [ ] **Project inventory confirmations** — confirm Afuye spelling, “Seku
-   Mall” spelling, Uselu/Ikenne/Iselewu details,
+8. [ ] **Project inventory confirmations** — confirm Afuye spelling,
+   Uselu/Ikenne/Iselewu details,
    Renovation Akure identity, and the meaning of the MTR/CFO belt report note.
 
 9. [ ] **LUSH: principal review of feasibility draft** — review

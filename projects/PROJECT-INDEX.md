@@ -34,7 +34,7 @@
 - Roof leakage remedial works — draft report/quotation/invoice; no response recorded.
 - Fire detection and alarm system — procurement motivation; approval pending.
 - Body Shop outlet, Ikate City Mall — separate outlet project.
-- Body Shop outlet, “Seku Mall”, Lekki — separate outlet project; mall spelling requires confirmation.
+- Body Shop outlet, Circle Mall, Lekki — separate outlet project.
 - Ikeja conference-room design — belongs under the Ikeja City Mall/Broll project family.
 - MTR/“CFO is the belt” report note — wording needs clarification before it is filed as a project.
 

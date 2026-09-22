@@ -857,3 +857,49 @@ into `memory/archive/`, leaving a dated pointer here.*
 - **Correction:** Replaced the mistaken Asokoro identity with `Engineer C. K. Musa — Afuze`; retired the earlier mislabeled concept and quote artifacts into recoverable superseded folders.
 - **Deliverables:** `BAR-2026-001` (one bar stool), `BAR-2026-002` (no bar stool), and `QTE-2026-003` HTML/PDF. Both concepts retain the photographed opening, visible entrance/right-hand access, floor arrangement and architecture; the quote records all pricing as TBC and states that the visuals are concepts only.
 - **Verification:** Rendered the quote through `workspaces/client-jobs/tools/render-pdf.js` as two A4 pages; extracted PDF text confirms Afuze, Engineer C. K. Musa, both stool options and no Asokoro label; raster inspection found no table/footer collision. Private review copies are in the existing Afuze project archive. Nothing was issued externally.
+
+### 2026-09-21 — @lead/vector [codex] — CIRCLE-MALL-01 — corrected longstanding mall name
+- **Workspace:** `client-jobs`.
+- **Task:** Correct the confirmed mall name in the repository project records.
+- **Files modified:** `projects/PROJECT-INDEX.md`; `projects/Broll-Properties_Ikeja-City-Mall/PROJECT-STATUS.md`; `workspaces/client-jobs/memory/status.md`; `workspaces/client-jobs/memory/next-up.md`; `workspaces/client-jobs/memory/decisions.md`; `workspaces/client-jobs/memory/done-log.md`; this report log.
+- **Summary:** Updated the three live project-record references to **Circle Mall, Lekki** and removed the resolved spelling-confirmation queue item. No new job code, project folder, or client deliverable was created.
+- **Authorization:** Direct principal instruction in the active conversation.
+- **Verified:** Exact-match audit and scoped diff review completed; unrelated pre-existing working-tree changes were preserved; `git diff --check` passed.
+- **Unresolved issues:** None for this naming correction. The prospective Circle Mall client/project scope remains separate from this record correction and needs confirmed inputs before a job code is opened.
+- **Recommendations for the next agent:** Use **Circle Mall, Lekki** in future repository records and do not reintroduce the legacy label.
+
+### 2026-09-21 — @lead/vector [codex] — CIRCLE-MALL-INTAKE-01 — filed preliminary site sketches
+- **Workspace:** `client-jobs`.
+- **Task:** Intake the four attached WhatsApp sketches for the provisional Jennifer food-delivery store at Circle Mall, Lekki.
+- **Files modified:** `workspaces/client-jobs/drafts/CIRCLE-MALL-LEKKI-JENNIFER-STORE/01-Source-Sketches/` (four source JPEGs); `SOURCE-SKETCH-INTAKE.md`; client-jobs status, next-up, decisions and done-log; this report log.
+- **Summary:** Preserved all four source images unchanged, identified the two apparent duplicate pairs, and recorded a conservative reading of visible doors, kitchen/service layout, openings and a labelled column. The printed notebook text was excluded from client/project identity, and “Belly Deli” remains unconfirmed.
+- **Authorization:** Principal’s request to use the attached engineer/site-measure sketches for the new Circle Mall client project; no design approval, job-code promotion or external delivery inferred.
+- **Verified:** All four source files copied into the exact draft folder; source images were visually inspected; uncertain handwriting and units were marked for confirmation; no formal `projects/` record or job code was created.
+- **Unresolved issues:** Confirm the exact restaurant and client names, unit/orientation, clean dimensioned plan and overall area, equipment/services brief, pickup/merchandising requirements, and Circle Mall fit-out constraints.
+- **Recommendations for the next agent:** Continue from the provisional intake note only after the outstanding confirmations; keep the source sketches and all resulting work draft-only.
+
+### 2026-09-21 — @lead/vector [codex] — AFUZE-ROOM-01 — furnished room concept from referenced photo set
+
+- **Workspace:** `client-jobs`; **Project context:** filed with the existing `C. K. MUSA - AFUZE PROJECT` review archive because the request followed the Afuze residence bar work.
+- **Task:** Create a visual design for the room described in the referenced “Codex Room Design Prompt” conversation.
+- **Inputs:** Eight photographs of the same compact room were inspected; five representative views were supplied to the built-in image tool because its local-reference limit is five.
+- **Design:** Cleaned construction clutter in the concept; retained the doorway, door jamb/hardware, left barred window, tiled floor, ceiling pattern, fan and room geometry; added a compact 4-ft storage bed on the window side and shallow right-wall storage, shelving and desk with one chair.
+- **Verification:** Generated image was visually inspected against the source views and saved to the repository draft folder and the existing Afuze project `90_Needs_Review` archive. It remains a concept visual pending site dimensions, design review and approval; no external delivery was made.
+
+### 2026-09-21 — @lead/vector [codex] — AFUZE-ROOM-02 — revised compact L-layout concept
+
+- **Task:** Revise the first room concept after the principal clarified the room dimensions as approximately 2.0 m wide × 2.5 m long.
+- **Correction:** Kept the 4-ft bed along the window wall; removed the full right-wall wardrobe/workstation; placed a compact desk and tucked chair beside the headboard on the far wall; added shallow overhead storage above the headboard/desk zone.
+- **Preservation:** Doorway, door jamb/hardware, left window, tiled floor, ceiling pattern, fan, wall positions and room geometry remain unchanged in the concept. The right wall is kept mostly clear for circulation.
+- **Verification:** Generated and visually inspected `ROOM-2026-002_Codex-Room-Design-Revised-L-Layout.png`; matching copies are in the client-jobs draft folder and existing Afuze `90_Needs_Review` archive. Draft concept only; no external delivery.
+
+### 2026-09-22 — @lead/vector [codex] — DOVA-LOGO-SYSTEM — cross-project brand integration
+
+- **Model/authority:** OpenAI Codex (`codex`); direct principal instruction in the active conversation authorised the working logo pack to become the shared design-system selection set.
+- **Workspace:** `document-templates`; cross-workspace handover guidance updated for `website`.
+- **Task:** Embed the principal-approved eight-variant three-building logo pack into the canonical design system and portable company-brand skill, document placement rules, and create exportable handoffs for other Codex projects, apps and the website.
+- **Files modified:** `company/brand.md`; `documents/README.md`; `documents/_ds/dova-futures-design-system-0aa9ec63-a152-4bb9-a606-37fde9335cce/README.md`; `documents/_ds/.../logo-usage.md`; `documents/_ds/.../assets/brand/`; `documents/_ds/.../assets/logo-variations/`; `documents/_ds/.../exports/`; `documents/_ds/.../_ds_bundle.js`; `.agents/skills/dova-company-brand/SKILL.md`; `.agents/skills/dova-company-brand/references/{brand.md,DESIGN.md,source-map.md,logo-usage.md}`; `.agents/skills/dova-company-brand/assets/logo-variations/`; `workspaces/website/drafts/DOVA-WEBSITE-HANDOVER.md`; document-templates workspace memory files.
+- **Summary:** Added named light/dark horizontal, stacked, symbol, wordmark and monochrome variants; copied canonical SVG sources into the design-system assets; added `logo-manifest.json`, human placement rules and portable skill assets. Updated the generated preview bundle to use the dark horizontal pack and removed stale “Rethink the future”, “DOVA FUTURES DEVELOPERS” and unverified metric text from its visible preview copy. Existing inline template SVG remains unchanged because it carries the canonical services descriptor.
+- **Verified:** Eight PNG variants are present in both canonical and portable locations with matching SHA-256 hashes; manifest parses with eight variants; dimensions are 2172×724 for horizontal assets and 1254×1254 for square assets; `git diff --check` and stale-claim search were run; design-system and logo-only ZIP archives were created and the repository/private-archive copies have matching SHA-256 values; archive entries contain the tokens, SVG sources, logo pack, manifest and usage guide. A separate visual checker confirmed spelling, building order and aspect ratios.
+- **Unresolved issues:** PNGs are opaque RGB review/digital exports, not transparent vector masters. Independently generated variants have small proportion/texture differences. The light stacked file `03-square-stacked-green-on-white.png` retains a faint line above the right tower and is marked review-only. Existing document templates still use the inline SVG by design.
+- **Recommendations for the next agent:** Keep the named manifest as the selection authority. Produce one geometry-matched vector master and clean transparent/reversed exports before manufacturing, strict colour workflows, favicon production or migrating template artwork. Do not publish or replace external website assets from this repository without the principal's separate deployment approval.

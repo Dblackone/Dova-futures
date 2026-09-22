@@ -138,9 +138,23 @@ Pair one eyebrow with one concise Bebas Neue heading. Large metrics use the disp
 
 Use real project photography where authorised: warm daylight, visible materials, construction craft, architectural detail, and human scale. Apply a dark-green protection overlay when text sits over a photograph. Do not present AI-generated imagery as a built-project photograph.
 
-Use `../assets/brand/dova-letterhead-lockup-on-dark.svg` on a dark forest-green surface. It is extracted from the canonical letterhead and carries the canonical tagline. If a light layout needs branding, keep the lockup inside a deliberate green field rather than fabricating a recoloured version. Preserve aspect ratio, clear space, legibility, and the complete lockup. Do not recolour, stretch, crop, trace, rotate, shadow, or place it on a visually noisy background.
+Use the named logo variant that matches the surface. The default light-surface
+lockup is `../assets/logo-variations/01-horizontal-green-on-white.png`; the
+default dark-surface lockup is `../assets/logo-variations/02-horizontal-cream-on-green.png`.
+Use the stacked files only in square placements, the symbol files when the name
+would become unreadable, the wordmark in narrow name-led placements, and the
+monochrome file for single-colour printing. Preserve aspect ratio and clear
+space; these PNGs have opaque backgrounds and must not be treated as transparent
+overlays. The complete map and platform notes are in
+`../assets/logo-variations/logo-manifest.json`.
 
-Do not use the files in `../assets/legacy-logos/` for new work. They are retained only for provenance: the visible artwork includes the historical “Rethink the future” line and conflicts with the canonical tagline, while two files are empty 1×1 placeholders. Replacement primary logo artwork requires the principal's approval.
+Use `../assets/brand/dova-letterhead-lockup-on-dark.svg` when the existing
+letterhead services descriptor `DESIGNERS · BUILDERS · DEVELOPERS` is required.
+It remains the template lockup until the document system is deliberately
+migrated. Do not recolour, stretch, crop, trace, rotate, shadow, or place any
+logo on a visually noisy background.
+
+Do not use the files in `../assets/legacy-logos/` for new work. They are retained only for provenance: the visible artwork includes the historical “Rethink the future” line and conflicts with the canonical tagline, while two files are empty 1×1 placeholders.
 
 Use thin geometric line icons, preferably 1.5–2px strokes on a 24px grid. Lucide is a compatible substitute when a brand-provided icon is unavailable. Do not use emoji as interface or marketing iconography.
 

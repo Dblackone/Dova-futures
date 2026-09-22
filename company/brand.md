@@ -40,12 +40,34 @@
 
 ## Logo
 
-- Primary logo: `assets/logo/DOVA Logo - W.png` (white on transparent, ~28 KB).
-- Other lockups: `assets/logo/` (`DOVA Logo.png`, `logo.png`, metadata variant).
-- Web favicons/app icons: `public/favicon.png`, `public/apple-touch-icon.png`,
-  `public/icon-512.png`, `public/logo/`.
-- In document templates the logo is embedded as **inline SVG** — do not replace
-  it with a raster image or remove it.
+The working DOVA logo system is the principal-approved three-building identity
+and its placement variants. The canonical files and machine-readable map live in
+`documents/_ds/dova-futures-design-system-0aa9ec63-a152-4bb9-a606-37fde9335cce/assets/logo-variations/`.
+The portable copy is bundled at
+`.agents/skills/dova-company-brand/assets/logo-variations/` for other Codex
+projects and sessions.
+
+| Variant | File | Use |
+|---------|------|-----|
+| Primary horizontal | `01-horizontal-green-on-white.png` | Light document headers, website/light surfaces, presentations and business cards |
+| Reversed horizontal | `02-horizontal-cream-on-green.png` | Forest-green headers, dark website surfaces, covers and banners |
+| Stacked full name | `03-square-stacked-green-on-white.png` | Square profile or directory placements where the name must remain visible; review the noted line artefact before issue |
+| Reversed stacked full name | `04-square-stacked-cream-on-green.png` | Square dark profile tiles and green presentation covers |
+| Symbol only, light | `05-symbol-green-on-white.png` | Small light-background avatars, compact markers and favicon source artwork |
+| Symbol only, dark | `06-symbol-cream-on-green.png` | Small dark-background avatars and app-icon source artwork |
+| Wordmark | `07-wordmark-green-on-white.png` | Narrow name-led placements where the mark is already nearby |
+| Monochrome | `08-horizontal-black-on-white.png` | Single-colour printing and black-and-white references |
+
+Use the variant map in `logo-manifest.json` rather than inventing a new lockup.
+Keep each file's aspect ratio and clear space. These are opaque RGB PNG export
+assets; they are not transparent overlays or manufacturing-ready vector masters.
+The vector production master remains a separate follow-up. The existing inline
+SVG lockup in document templates remains in place because it carries the
+canonical services descriptor `DESIGNERS · BUILDERS · DEVELOPERS`; migrate it
+only as a deliberate template-system change.
+
+Legacy files under historical `assets/logo/` paths are provenance only. Do not
+use them for new work because some carry the retired “Rethink the future” line.
 
 ## The programmatic design system
 

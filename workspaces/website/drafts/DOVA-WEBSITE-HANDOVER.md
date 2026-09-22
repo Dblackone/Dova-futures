@@ -1,6 +1,7 @@
 # DOVA Futures Website — New Repository Handover
 
 **Prepared:** 11 August 2026  
+**Logo-pack update:** 22 September 2026 — website variants synced into the external repo; local source edits remain uncommitted and unpublished.
 **Prepared by:** @lead/vector [codex]  
 **Source repository:** `Dova-futures`  
 **Destination:** export this file with the website source into the new website repository
@@ -48,6 +49,17 @@ Canonical company details are maintained in `company/brand.md`; the current
 website exposes the phone, email, Victoria Island office and CEO details listed
 there. Do not create a second competing source of truth in the new repository.
 
+### Logo selection
+
+The website should consume `logo-variations/logo-manifest.json` and select by
+available shape: the green-on-white horizontal file for light wide headers, the
+cream-on-green horizontal file for dark headers, the stacked full-name file for
+square name-bearing tiles, and the symbol file for small avatars or favicon
+source artwork. Keep the supplied aspect ratio and clear space. The PNGs have
+opaque backgrounds and are export/reference assets, not transparent overlays or
+vector masters. The light stacked review raster carries a faint line above the
+right tower; use the dark stacked file until a cleaned light export is approved. In the external website repo, the full set is copied to `assets/logo/brand-pack-2026-09-22/`; the dark header/footer use `02-horizontal-cream-on-green.png`, and the favicon and touch icon use `06-symbol-cream-on-green.png`.
+
 ## 3. Current source map
 
 | Source | Role in the current product | New-repo treatment |
@@ -55,7 +67,8 @@ there. Do not create a second competing source of truth in the new repository.
 | `index.html` | Entire frontend: shell, seven views, styles, interactions and content | Extract as the behaviour/content reference; rebuild without changing the approved information architecture until reviewed |
 | `server.js` | Express server, static serving, `POST /api/contact`, SPA catch-all | Preserve endpoint contract; deploy separately from static hosting |
 | `data/projects.js` | Nine-record intended project catalogue and image pool | Normalise into the new content model; reconcile with hardcoded cards first |
-| `assets/logo/` | Logo lockups | Preserve approved variants; use white lockup on dark surfaces and dark lockup on light surfaces |
+| `documents/_ds/dova-futures-design-system-*/assets/logo-variations/` | Principal-approved logo placement pack + manifest | Copy the named variant that matches the surface; do not invent a local lockup |
+| `documents/_ds/dova-futures-design-system-*/assets/brand/` | Canonical SVG mark and current letterhead lockup | Use the SVG lockup where the existing services descriptor is required |
 | `assets/projects/` | Active card covers plus before/after hero pair | Keep referenced paths stable during migration; replace placeholders only with approved assets |
 | `assets/Project Pictures/` | Larger project-photo archive used by some cards | Audit rights, status and filenames before carrying into a public repo |
 | `assets/widgets/icons/` | WhatsApp, Instagram and TikTok SVG icons | Reuse; no emoji substitutes |
@@ -78,7 +91,7 @@ main container to the top. There is no server-side router and no build step.
 - Secondary external CTA: **Preorder Store** → `https://preorder.dovafutures.com`.
 - Mobile full-screen menu with the same navigation and preorder link.
 - Logo is an image link back to Home.
-- Footer repeats DOVA FUTURES DEVELOPERS and the copyright line on each view.
+- Footer uses the DOVA FUTURES LIMITED lockup and the copyright line on each view.
 - Social/contact links include WhatsApp, Instagram and TikTok; verify handles
   before finalising a new build.
 

@@ -785,7 +785,7 @@ function Home({
       maxWidth: "520px",
       margin: "0 0 38px"
     }
-  }, "Rethink the future \u2014 integrated design and construction excellence, engineered for precision across Nigeria."), /*#__PURE__*/React.createElement("div", {
+  }, "Integrated design-build construction across architecture, interiors, and development."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: "14px",
@@ -820,24 +820,24 @@ function Home({
       color: "var(--text-on-dark-mut)",
       margin: "24px 0 18px"
     }
-  }, "DOVA Futures is a premier design\u2013build construction company delivering exceptional architectural and construction services. We combine innovative design with superior craftsmanship to transform ambitious visions into remarkable structures."), /*#__PURE__*/React.createElement("div", {
+  }, "DOVA Futures Limited delivers integrated design-build work across architectural planning, construction, interior finishing, renovations, landscaping, and development."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: "48px",
       marginTop: "34px"
     }
   }, /*#__PURE__*/React.createElement(DStat, {
-    value: "20+",
-    label: "Sites managed",
+    value: "\u2014",
+    label: "Verified sites",
     onDark: true
   }), /*#__PURE__*/React.createElement(DStat, {
-    value: "\u20A6350M+",
-    label: "Project value",
+    value: "\u2014",
+    label: "Verified value",
     onDark: true,
     accent: true
   }), /*#__PURE__*/React.createElement(DStat, {
-    value: "5+",
-    label: "Years delivering",
+    value: "\u2014",
+    label: "Verified years",
     onDark: true
   }))), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1249,13 +1249,13 @@ function Footer() {
       letterSpacing: "0.08em",
       color: "var(--cream)"
     }
-  }, "DOVA FUTURES DEVELOPERS"), /*#__PURE__*/React.createElement("span", {
+  }, "DOVA FUTURES LIMITED"), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-body)",
       fontSize: "13px",
       color: "var(--text-on-dark-mut)"
     }
-  }, "\xA9 2025 DOVA Futures Developers. All Rights Reserved.")));
+  }, "\xA9 2026 DOVA Futures Limited. All Rights Reserved.")));
 }
 window.DovaPages = {
   Home,
@@ -1359,7 +1359,7 @@ const icons = {
     }))
   })
 };
-const WORDMARK = ASSET + "/logo/DOVA Logo - W.png";
+const WORDMARK = ASSET + "/logo-variations/02-horizontal-cream-on-green.png";
 
 /* ---- Navigation ---- */
 function Nav({

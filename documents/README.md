@@ -37,6 +37,11 @@ of truth. Never re-declare or override those values here or in any template.
 
 All templates embed the DOVA logo as an inline SVG — do not replace it with a raster image or remove it.
 
+For new branded surfaces outside the fixed template letterhead, use the named
+variant in the design-system [logo usage guide](<./_ds/dova-futures-design-system-0aa9ec63-a152-4bb9-a606-37fde9335cce/logo-usage.md>)
+and its `assets/logo-variations/logo-manifest.json`. The PNG pack is opaque;
+keep the inline SVG in existing templates until a deliberate template migration.
+
 ---
 
 ## How to Use (Human)

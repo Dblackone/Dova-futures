@@ -51,6 +51,12 @@
    repository consumes the canonical token files and does not carry stale README
    claims or an unapproved local token fork.
 
+8. [ ] **Logo production follow-up** — convert the principal-approved placement
+   pack into one geometry-matched vector master and clean transparent/reversed
+   exports; resolve the faint line in `03-square-stacked-green-on-white.png`
+   before using that light stacked raster for issue. Keep the current PNG pack and
+   letterhead SVG stable while this is reviewed.
+
 ## Someday / backlog
 - Password protection (`express-basic-auth`) if client wants staff-only access.
 - Auto-populate invoices from job data (`projects/` → template fields).
